@@ -1,13 +1,13 @@
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Slide from "@/pages/Common/Home/Slider/Slide";
+import Search from "@/components/Search/Search";
 import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Search from "@/components/Search/Search";
 
 const Slider = () => {
   const { sectionRefs } = useScrollSpy();
@@ -20,20 +20,24 @@ const Slider = () => {
   return (
     <section ref={sectionRef} id="home">
       <div className="bg-black bg-opacity-25">
-        <div className="w-full h-full relative">
+        <div className="w-full relative">
           <Swiper
+            loop
             pagination={{ clickable: true }}
             navigation={{
               prevEl: ".prev",
               nextEl: ".next",
             }}
-            loop
-            modules={[Navigation, Pagination]}
+            autoplay={{
+              delay: 2500,
+              pauseOnMouseEnter: true,
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
             className="mySwiper"
           >
             <SwiperSlide>
               <Slide>
-                <div className="mb-11">
+                <div className="mb-12">
                   <h1 className="lg:text-5xl text-3xl lg:leading-[4rem] font-bold mb-6">
                     Discover Your Perfect University Match in the UK
                   </h1>
@@ -48,7 +52,7 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
               <Slide>
-                <div className="mb-11">
+                <div className="mb-12">
                   <h1 className="lg:text-5xl text-3xl font-bold mb-6">
                     Discover Your Perfect University Match in the UK
                   </h1>

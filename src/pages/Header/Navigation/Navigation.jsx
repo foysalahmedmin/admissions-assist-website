@@ -14,8 +14,6 @@ const Navigation = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
-
-  console.log(scrollY);
   return (
     <nav
       ref={scope}

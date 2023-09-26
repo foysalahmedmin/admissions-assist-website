@@ -1,18 +1,32 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import logo from "@/assets/images/logo.svg";
 import NavMenus from "@/pages/Header/Navigation/NavMenus";
 import { MenuToggle } from "./MenuToggle";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
+import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 
 const Navigation = () => {
   const navigation = useNavigate();
+  const location = useLocation();
+  const { scrollY } = useScrollSpy();
   const [menuActive, setMenuActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
+
+  console.log(scrollY);
   return (
-    <nav ref={scope} className="w-full fixed top-0 z-30 text-white">
+    <nav
+      ref={scope}
+      className={`w-full z-30 top-0 ${
+        location.pathname == "/"
+          ? scrollY > 120
+            ? "glass fixed text-white"
+            : "fixed text-white"
+          : "sticky bg-white"
+      }`}
+    >
       <div className="container">
         <div className="h-20 flex justify-between items-center gap-2 lg:gap-4">
           <div className="h-full flex lg:gap-10 gap-4 items-center">
@@ -36,7 +50,11 @@ const Navigation = () => {
                   setMenuActive={setMenuActive}
                 />
               </ul>
-              <ul className="menu w-[300px] bg-white text-text absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden">
+              <ul
+                className={`menu w-[300px] absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden ${
+                  location.pathname == "/" ? "glass" : "bg-white"
+                }`}
+              >
                 <NavMenus
                   menuActive={menuActive}
                   setMenuActive={setMenuActive}

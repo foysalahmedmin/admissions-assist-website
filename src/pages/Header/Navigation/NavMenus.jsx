@@ -9,7 +9,7 @@ const NavMenus = () => {
     <>
       {location.pathname == "/" ? (
         <li
-          className={scrollActive === "home" ? "text-primary" : "lg:text-white"}
+          className={scrollActive === "home" ? "text-primary" : ""}
         >
           <a href="/#">Home</a>
         </li>
@@ -20,32 +20,32 @@ const NavMenus = () => {
       )}
       <li
         className={
-          scrollActive === "how_it_works" ? "text-primary" : "lg:text-white"
+          scrollActive === "how_it_works" ? "text-primary" : ""
         }
       >
         <a href="/#how_it_works">How it works</a>
       </li>
       <li
         className={
-          scrollActive === "services" ? "text-primary" : "lg:text-white"
+          scrollActive === "services" ? "text-primary" : ""
         }
       >
         <a href="/#services">Services</a>
       </li>
       <li
         className={
-          scrollActive === "testimonials" ? "text-primary" : "lg:text-white"
+          scrollActive === "testimonials" ? "text-primary" : ""
         }
       >
         <a href="/#testimonials">Testimonials</a>
       </li>
       <li
-        className={scrollActive === "blogs" ? "text-primary" : "lg:text-white"}
+        className={scrollActive === "blogs" ? "text-primary" : ""}
       >
         <a href="/#blogs">Blogs</a>
       </li>
       <ActiveLink to={"/contact"}>
-        <li className="lg:text-white">Contact</li>
+        <li className="">Contact</li>
       </ActiveLink>
     </>
   );

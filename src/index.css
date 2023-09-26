@@ -12,9 +12,8 @@
 }
 
 * {
-  color: #2B303B;
-  font-family: 'Poppins', sans-serif;
   border-color: #2B303B;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +27,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 3.5rem;
+  color: #2B303B;
 }
 
 /* scrollbar */

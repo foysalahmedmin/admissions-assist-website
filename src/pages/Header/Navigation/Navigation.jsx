@@ -12,7 +12,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
   return (
-    <nav ref={scope} className="w-full fixed top-0 z-30">
+    <nav ref={scope} className="w-full fixed top-0 z-30 text-white">
       <div className="container">
         <div className="h-20 flex justify-between items-center gap-2 lg:gap-4">
           <div className="h-full flex lg:gap-10 gap-4 items-center">
@@ -36,7 +36,7 @@ const Navigation = () => {
                   setMenuActive={setMenuActive}
                 />
               </ul>
-              <ul className="menu w-[300px] bg-white absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden">
+              <ul className="menu w-[300px] bg-white text-text absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden">
                 <NavMenus
                   menuActive={menuActive}
                   setMenuActive={setMenuActive}

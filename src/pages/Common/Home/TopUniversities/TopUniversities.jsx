@@ -8,6 +8,7 @@ import slide3 from "@/assets/images/university-slide-3.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Button from "@/components/Buttons/Button";
 
 const TopUniversities = () => {
   return (
@@ -42,39 +43,71 @@ const TopUniversities = () => {
                 className="top-universities-slider"
               >
                 <SwiperSlide>
-                  <div className="h-[420px] rounded-xl overflow-hidden">
+                  <div className="h-[420px] rounded-xl overflow-hidden relative">
                     <img
                       className="w-full h-full object-cover"
                       src={slide1}
                       alt=""
                     />
+                    <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                      <div className="mt-auto">
+                        <h3 className="text-2xl font-bold">
+                          University of Oxford
+                        </h3>
+                        <p className="font-bold">65 Courses </p>
+                      </div>
+                    </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="h-[420px] rounded-xl overflow-hidden">
+                  <div className="h-[420px] rounded-xl overflow-hidden relative">
                     <img
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover "
                       src={slide2}
                       alt=""
                     />
+                    <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                      <div className="mt-auto">
+                        <h3 className="text-2xl font-bold">
+                          University of Essex
+                        </h3>
+                        <p className="font-bold">75 Courses </p>
+                      </div>
+                    </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="h-[420px] rounded-xl overflow-hidden">
+                  <div className="h-[420px] rounded-xl overflow-hidden relative">
                     <img
                       className="w-full h-full object-cover"
                       src={slide3}
                       alt=""
                     />
+                    <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                      <div className="mt-auto">
+                        <h3 className="text-2xl font-bold">
+                          University of Cambridge
+                        </h3>
+                        <p className="font-bold">38 Courses </p>
+                      </div>
+                    </div>
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="h-[420px] rounded-xl overflow-hidden">
+                  <div className="h-[420px] rounded-xl overflow-hidden relative">
                     <img
                       className="w-full h-full object-cover"
                       src={slide2}
                       alt=""
                     />
+                    <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                      <div className="mt-auto">
+                        <h3 className="text-2xl font-bold">
+                          University of Oxford
+                        </h3>
+                        <p className="font-bold">65 Courses </p>
+                      </div>
+                    </div>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -91,10 +124,13 @@ const TopUniversities = () => {
             </div>
           </div>
           <div className="mt-12">
-            <button className="primary-btn mx-auto">
-              <span>View More</span>{" "}
-              <span className="material-icons-outlined">trending_flat</span>
-            </button>
+            <Button
+              className={"mx-auto"}
+              value={"View More"}
+              icon={
+                <span className="material-icons-outlined">trending_flat</span>
+              }
+            />
           </div>
         </div>
       </div>

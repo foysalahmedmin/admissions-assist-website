@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import WorkCard from "@/pages/Common/Home/HowItWorks/WorkCard";
+import { useEffect } from "react";
 const card_data = [
   {
     serial_no: "1",
@@ -41,7 +42,10 @@ const card_data = [
 
 const HowItWorks = () => {
   return (
-    <section className="lg:py-24 py-14 bg-[url('/background/how_it_works-section.svg')] bg-no-repeat bg-cover bg-top">
+    <section
+      className="lg:py-24 py-14 bg-[url('/background/how_it_works-section.svg')] bg-no-repeat bg-cover bg-top"
+      id="how_it_works"
+    >
       <div className="container">
         <SectionTitle
           subtitle={"How it Works"}

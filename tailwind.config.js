@@ -21,6 +21,27 @@ export default {
       },
       boxShadow: {
         'custom': '3px 3px 30px rgba(212, 223, 234, 0.80)',
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        pop: {
+          '0%': {
+            transform: 'scale(.95)',
+          },
+          '40%': {
+            transform: 'scale(1.03)',
+          },
+          '100%': {
+            transform: 'scale(1)'
+          }
+        }
+      },
+      animation: {
+        wiggle: 'wiggle .3s ease-in-out infinite',
+        pop: 'pop 1s ease-in-out',
       }
     }
   },

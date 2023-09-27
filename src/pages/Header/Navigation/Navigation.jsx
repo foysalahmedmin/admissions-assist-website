@@ -6,6 +6,8 @@ import NavMenus from "@/pages/Header/Navigation/NavMenus";
 import { MenuToggle } from "./MenuToggle";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
+import Button from "@/components/Buttons/Button";
+import { FiArrowRight, FiUser } from "react-icons/fi";
 
 const Navigation = () => {
   const navigation = useNavigate();
@@ -49,7 +51,7 @@ const Navigation = () => {
                 />
               </ul>
               <ul
-                className={`menu w-[300px] absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden ${
+                className={`menu w-[300px] h-[calc(100vh-10rem)] absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden ${
                   location.pathname == "/" ? "glass" : "bg-white"
                 }`}
               >
@@ -62,12 +64,18 @@ const Navigation = () => {
           </div>
           <div className="flex gap-2 lg:gap-4 items-center">
             <ActiveLink to={"/login"}>
-              <button className="flex items-center gap-3 2xl:px-7 py-4">
-                <span className="font-semibold">Log In</span>
-              </button>
+              <Button
+                className={"ghost-btn flex-row-reverse"}
+                value={"Log In"}
+                icon={<FiUser className="text-2xl" />}
+              />
             </ActiveLink>
-            <Link to={"/user_type"}>
-              <button className="primary-btn hidden xl:block">Sign Up</button>
+            <Link to={"/user_type"} className="hidden lg:block">
+              <Button
+                className={"mx-auto"}
+                value={"Sign Up"}
+                icon={<FiArrowRight className="text-xl" />}
+              />
             </Link>
           </div>
         </div>

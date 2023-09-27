@@ -1,6 +1,6 @@
 const SectionTitle = ({ title, subtitle, text }) => {
   return (
-    <div className="max-w-[35rem] mx-auto text-center mb-12">
+    <div className="max-w-[45rem] mx-auto text-center mb-12">
       <div className="text-secondary capitalize">
         -- <span>{subtitle}</span> --
       </div>

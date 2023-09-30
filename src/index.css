@@ -77,6 +77,10 @@ select option:checked {
   color: #705ec8;
 }
 
+.swiper-slide.swiper-slide-active .top-round-style{
+  @apply animate-longPop origin-top-left
+}
+
 @layer components {
 
   .title {
@@ -132,5 +136,7 @@ select option:checked {
     backdrop-filter: blur(var(--glass-blur, 40px));
     background-color: #000000c9;
   }
+
+  
   
 }

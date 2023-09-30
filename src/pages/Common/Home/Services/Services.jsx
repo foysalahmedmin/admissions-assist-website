@@ -4,6 +4,8 @@ import cardIcon1 from "@/assets/images/icons/student-consultation.svg";
 import cardIcon2 from "@/assets/images/icons/student-counselling.svg";
 import cardIcon3 from "@/assets/images/icons/student-sinance-support.svg";
 import servicerImg from "@/assets/images/servicer-women.png";
+import Button from "@/components/Buttons/Button";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -59,9 +61,33 @@ const Services = () => {
                   </p>
                 </div>
                 <div className="mb-7">
-                  <div className="flex gap-4 items-center"></div>
-                  <div className="flex gap-4 items-center"></div>
+                  <div className="flex gap-4 items-center mb-4">
+                    <div className="h-12 w-12 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                      <span className="material-icons-outlined">check</span>
+                    </div>
+                    <strong className="text-black font-bold">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    </strong>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <div className="h-12 w-12 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                      <span className="material-icons-outlined">check</span>
+                    </div>
+                    <strong className="text-black font-bold">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    </strong>
+                  </div>
                 </div>
+                <Link to={"/user_type"}>
+                  <Button
+                    value={"Create An Account"}
+                    icon={
+                      <span className="material-icons-outlined">
+                        trending_flat
+                      </span>
+                    }
+                  />
+                </Link>
               </div>
               <div className="">
                 <img

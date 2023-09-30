@@ -3,11 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import logo from "@/assets/images/logo.svg";
 import NavMenus from "@/pages/Header/Navigation/NavMenus";
-import { MenuToggle } from "./MenuToggle";
+import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Button from "@/components/Buttons/Button";
-import { FiArrowRight, FiUser } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
 
 const Navigation = () => {
   const navigation = useNavigate();
@@ -72,9 +72,10 @@ const Navigation = () => {
             </ActiveLink>
             <Link to={"/user_type"} className="hidden lg:block">
               <Button
-                className={"mx-auto"}
                 value={"Sign Up"}
-                icon={<FiArrowRight className="text-xl" />}
+                icon={
+                  <span className="material-icons-outlined">trending_flat</span>
+                }
               />
             </Link>
           </div>

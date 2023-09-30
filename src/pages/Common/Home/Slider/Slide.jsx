@@ -12,7 +12,7 @@ const Slide = ({ bg_img, children }) => {
           </div>
         </div>
         <img
-          className="absolute -z-10 top-0 left-0"
+          className="top-round-style absolute -z-10 top-0 left-0"
           src="/background/home-slider-round.svg"
           alt="home-slider-round-bg"
         />

@@ -37,11 +37,23 @@ export default {
           '100%': {
             transform: 'scale(1)'
           }
+        },
+        longPop: {
+          '0%': {
+            transform: 'scale(.50)',
+          },
+          '40%': {
+            transform: 'scale(1.10)',
+          },
+          '100%': {
+            transform: 'scale(1)'
+          }
         }
       },
       animation: {
         wiggle: 'wiggle .3s ease-in-out infinite',
-        pop: 'pop 1s ease-in-out',
+        pop: 'pop .5s ease-in-out',
+        longPop: 'longPop 1.5s ease-in-out',
       }
     }
   },

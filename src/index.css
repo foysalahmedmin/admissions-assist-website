@@ -80,6 +80,9 @@ select option:checked {
 .swiper-slide.swiper-slide-active .top-round-style{
   @apply animate-longPop origin-top-left
 }
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  @apply bg-secondary
+}
 
 @layer components {
 

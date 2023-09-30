@@ -43,8 +43,8 @@ const Services = () => {
             </div>
           </div>
           <div>
-            <div className="grid lg:grid-cols-2 grid-rows-1 items-center gap-12">
-              <div className="">
+            <div className="grid lg:grid-cols-2 grid-rows-1 items-end gap-12">
+              <div className="mb-12 lg:mb-24">
                 <div className="mb-7">
                   <h1 className="text-title text-3xl lg:text-5xl font-bold mb-4">
                     Elevate Your Learning Journey With us

@@ -4,7 +4,9 @@ import Slider from "@/pages/Common/Home/Slider/Slider";
 import HowItWorks from "@/pages/Common/Home/HowItWorks/HowItWorks";
 import TopUniversities from "@/pages/Common/Home/TopUniversities/TopUniversities";
 import Services from "@/pages/Common/Home/Services/Services";
-import Categories from "../Categories/Categories";
+import Categories from "@/pages/Common/Home/Categories/Categories";
+import ThemeVideo from "@/pages/Common/Home/ThemeVideo/ThemeVideo";
+import Testimonials from "@/pages/Common/Home/Testimonials/Testimonials";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -22,6 +24,8 @@ const Home = () => {
       <TopUniversities />
       <Services />
       <Categories />
+      <ThemeVideo />
+      <Testimonials />
     </main>
   );
 };

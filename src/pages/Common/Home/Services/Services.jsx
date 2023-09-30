@@ -18,7 +18,7 @@ const Services = () => {
         />
         <div>
           <div className="mb-12">
-            <div className="grid gap-12 lg:grid-cols-[repeat(3,_minmax(22.5rem,_22.5rem))] justify-between">
+            <div className="grid gap-12 xl:grid-cols-[repeat(3,_minmax(22.5rem,_22.5rem))] justify-between">
               <ServiceCard
                 data={{
                   icon_url: cardIcon1,
@@ -62,7 +62,7 @@ const Services = () => {
                 </div>
                 <div className="mb-7">
                   <div className="flex gap-4 items-center mb-4">
-                    <div className="h-12 w-12 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                    <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
                       <span className="material-icons-outlined">check</span>
                     </div>
                     <strong className="text-black font-bold">
@@ -70,7 +70,7 @@ const Services = () => {
                     </strong>
                   </div>
                   <div className="flex gap-4 items-center">
-                    <div className="h-12 w-12 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                    <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
                       <span className="material-icons-outlined">check</span>
                     </div>
                     <strong className="text-black font-bold">

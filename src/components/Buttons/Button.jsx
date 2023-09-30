@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Button = ({ style, className, value, icon, isLoading }) => {
+const Button = ({ style, className, text, icon, isLoading, ...rest }) => {
   const [isMouseDown, setIsMouseDown] = useState(false);
   return (
     <button
@@ -11,12 +11,12 @@ const Button = ({ style, className, value, icon, isLoading }) => {
       className={`${
         className && className.includes("btn")
           ? className
-          : value
+          : text
           ? `primary-btn ${className}`
           : `rounded-btn ${className}`
       } ${isMouseDown ? "scale-95" : "animate-pop"}`}
     >
-      {value && <span>{value}</span>}
+      {text && <span>{text}</span>}
       {icon && !isLoading && (
         <span className="flex items-center my-auto">{icon}</span>
       )}

@@ -66,13 +66,13 @@ const Navigation = () => {
             <ActiveLink to={"/login"}>
               <Button
                 className={"ghost-btn flex-row-reverse"}
-                value={"Log In"}
+                text={"Log In"}
                 icon={<FiUser className="text-2xl" />}
               />
             </ActiveLink>
             <Link to={"/user_type"} className="hidden lg:block">
               <Button
-                value={"Sign Up"}
+                text={"Sign Up"}
                 icon={
                   <span className="material-icons-outlined">trending_flat</span>
                 }

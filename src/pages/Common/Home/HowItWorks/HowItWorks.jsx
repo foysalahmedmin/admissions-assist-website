@@ -1,41 +1,40 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import WorkCard from "@/pages/Common/Home/HowItWorks/WorkCard";
-import { useEffect } from "react";
 const card_data = [
   {
     serial_no: "1",
     title: "Create Your Profile",
-    description:
+    text:
       "Fill in your personal information, academic background, desired courses, and preferences.",
   },
   {
     serial_no: "2",
     title: "Explore Top Universities",
-    description:
+    text:
       "Browse through our curated list of top-ranked UK universities, tailored to your academic interests",
   },
   {
     serial_no: "3",
     title: "Find Preferred Course",
-    description:
+    text:
       "Search and explore trending courses that match your career goals and align with global demands",
   },
   {
     serial_no: "4",
     title: "Get Expert Guidance",
-    description:
+    text:
       "Connect with dedicated counselors who'll guide you through university selection, application processes, and any queries you might have",
   },
   {
     serial_no: "5",
     title: "Submit Applications",
-    description:
+    text:
       "Once you've made your choice, our platform streamlines your application process, ensuring you meet all requirements",
   },
   {
     serial_no: "6",
     title: "Celebrate  Acceptance",
-    description:
+    text:
       "Upon acceptance, celebrate your success! And don’t stop there — access our resources to prepare for your move to the UK",
   },
 ];

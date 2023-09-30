@@ -4,6 +4,7 @@ import Slider from "@/pages/Common/Home/Slider/Slider";
 import HowItWorks from "@/pages/Common/Home/HowItWorks/HowItWorks";
 import TopUniversities from "@/pages/Common/Home/TopUniversities/TopUniversities";
 import Services from "@/pages/Common/Home/Services/Services";
+import Categories from "../Categories/Categories";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -20,6 +21,7 @@ const Home = () => {
       <HowItWorks />
       <TopUniversities />
       <Services />
+      <Categories />
     </main>
   );
 };

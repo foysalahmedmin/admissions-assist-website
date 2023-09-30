@@ -126,7 +126,7 @@ const TopUniversities = () => {
           <div className="mt-12">
             <Button
               className={"mx-auto"}
-              value={"View More"}
+              text={"View More"}
               icon={
                 <span className="material-icons-outlined">trending_flat</span>
               }

@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "@/pages/Common/Home/Services/ServiceCard";
 import cardIcon1 from "@/assets/images/icons/student-consultation.svg";
 import cardIcon2 from "@/assets/images/icons/student-counselling.svg";
 import cardIcon3 from "@/assets/images/icons/student-sinance-support.svg";
@@ -18,26 +18,26 @@ const Services = () => {
         />
         <div>
           <div className="mb-12">
-            <div className="grid gap-12 xl:grid-cols-[repeat(3,_minmax(22.5rem,_22.5rem))] justify-between">
+            <div className="grid gap-12 lg:grid-cols-[repeat(3,_minmax(22.5rem,_22.5rem))] justify-between">
               <ServiceCard
                 data={{
                   icon_url: cardIcon1,
                   title: "Student Consultation",
-                  description: `We conduct virtual sessions to provide personalized guidance in navigating your academic journey, directing you towards your desired educational institution, considering your qualifications and prior experiences.`,
+                  text: `We conduct virtual sessions to provide personalized guidance in navigating your academic journey, directing you towards your desired educational institution, considering your qualifications and prior experiences.`,
                 }}
               />
               <ServiceCard
                 data={{
                   icon_url: cardIcon2,
                   title: "Student Counselling",
-                  description: `Our dedicated support includes personalized assistance throughout the application process and conducting informative IAG (Information, Advice, and Guidance) sessions, equipping you with the necessary skills and confidence to excel in admission assessments.`,
+                  text: `Our dedicated support includes personalized assistance throughout the application process and conducting informative IAG (Information, Advice, and Guidance) sessions, equipping you with the necessary skills and confidence to excel in admission assessments.`,
                 }}
               />
               <ServiceCard
                 data={{
                   icon_url: cardIcon3,
                   title: "Student Finance Support",
-                  description: `Our team of experienced and committed professionals will provide step-by-step guidance to navigate the intricate student finance application process, ensuring you receive the necessary support and assistance along the way.`,
+                  text: `Our team of experienced and committed professionals will provide step-by-step guidance to navigate the intricate student finance application process, ensuring you receive the necessary support and assistance along the way.`,
                 }}
               />
             </div>
@@ -80,7 +80,7 @@ const Services = () => {
                 </div>
                 <Link to={"/user_type"}>
                   <Button
-                    value={"Create An Account"}
+                    text={"Create An Account"}
                     icon={
                       <span className="material-icons-outlined">
                         trending_flat

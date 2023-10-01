@@ -7,6 +7,7 @@ import Services from "@/pages/Common/Home/Services/Services";
 import Categories from "@/pages/Common/Home/Categories/Categories";
 import ThemeVideo from "@/pages/Common/Home/ThemeVideo/ThemeVideo";
 import Testimonials from "@/pages/Common/Home/Testimonials/Testimonials";
+import Executives from "@/pages/Common/Home/Executives/Executives";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -26,6 +27,7 @@ const Home = () => {
       <Categories />
       <ThemeVideo />
       <Testimonials />
+      <Executives />
     </main>
   );
 };

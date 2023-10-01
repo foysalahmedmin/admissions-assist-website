@@ -4,38 +4,32 @@ const card_data = [
   {
     serial_no: "1",
     title: "Create Your Profile",
-    text:
-      "Fill in your personal information, academic background, desired courses, and preferences.",
+    text: "Fill in your personal information, academic background, desired courses, and preferences.",
   },
   {
     serial_no: "2",
     title: "Explore Top Universities",
-    text:
-      "Browse through our curated list of top-ranked UK universities, tailored to your academic interests",
+    text: "Browse through our curated list of top-ranked UK universities, tailored to your academic interests",
   },
   {
     serial_no: "3",
     title: "Find Preferred Course",
-    text:
-      "Search and explore trending courses that match your career goals and align with global demands",
+    text: "Search and explore trending courses that match your career goals and align with global demands",
   },
   {
     serial_no: "4",
     title: "Get Expert Guidance",
-    text:
-      "Connect with dedicated counselors who'll guide you through university selection, application processes, and any queries you might have",
+    text: "Connect with dedicated counselors who'll guide you through university selection, application processes, and any queries you might have",
   },
   {
     serial_no: "5",
     title: "Submit Applications",
-    text:
-      "Once you've made your choice, our platform streamlines your application process, ensuring you meet all requirements",
+    text: "Once you've made your choice, our platform streamlines your application process, ensuring you meet all requirements",
   },
   {
     serial_no: "6",
     title: "Celebrate  Acceptance",
-    text:
-      "Upon acceptance, celebrate your success! And don’t stop there — access our resources to prepare for your move to the UK",
+    text: "Upon acceptance, celebrate your success! And don’t stop there — access our resources to prepare for your move to the UK",
   },
 ];
 
@@ -53,7 +47,7 @@ const HowItWorks = () => {
 Your UK University Dreams`}
         />
         <div>
-          <div className="grid gap-12 lg:grid-cols-[repeat(3,_minmax(18rem,_18rem))] justify-between">
+          <div className="grid gap-7 lg:gap-12 lg:grid-cols-3 justify-between">
             {card_data?.map((data, i) => (
               <WorkCard key={i} data={data} />
             ))}

@@ -23,7 +23,7 @@ const Testimonials = () => {
             modules={[Pagination, Autoplay]}
             breakpoints={{
               1024: {
-                spaceBetween: 16,
+                spaceBetween: 28,
                 slidesPerView: 3,
               },
             }}

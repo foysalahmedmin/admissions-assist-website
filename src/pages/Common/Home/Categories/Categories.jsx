@@ -20,7 +20,7 @@ const Categories = () => {
           text={`Stay ahead of the curve by enrolling in trending disciplines recognized worldwide.`}
         />
         <div>
-          <div className="grid gap-12 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-between mb-12">
+          <div className="grid gap-7 grid-cols-2 lg:grid-cols-4 justify-around mb-12">
             <CategoryCard
               data={{
                 icon_url: cardIcon1,

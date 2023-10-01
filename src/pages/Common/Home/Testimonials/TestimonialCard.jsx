@@ -25,8 +25,7 @@ const TestimonialCard = ({ data }) => {
         </div>
       </div>
       <div>
-        {rating}
-        <StarRating rating={rating} />
+        <StarRating rating={rating} out_of={5} />
       </div>
     </div>
   );

@@ -6,14 +6,16 @@ const ThemeVideo = () => {
   return (
     <section id="theme-video">
       <div className="container relative  lg:-mb-48 -mb-28">
-        <div className="rounded-3xl overflow-hidden">
-          <ReactPlayer
-            style={{ borderRadius: "0.75rem" }}
-            controls
-            width={"100%"}
-            height={"auto"}
-            url={video}
-          />
+        <div className="px-12">
+          <div className="rounded-3xl overflow-hidden">
+            <ReactPlayer
+              style={{ borderRadius: "0.75rem" }}
+              controls
+              width={"100%"}
+              height={"auto"}
+              url={video}
+            />
+          </div>
         </div>
       </div>
 

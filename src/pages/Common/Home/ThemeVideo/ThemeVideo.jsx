@@ -19,8 +19,8 @@ const ThemeVideo = () => {
         </div>
       </div>
 
-      <div className="bg-[url('/background/theme-video-img.png')] bg-no-repeat bg-cover bg-right">
-        <div className="lg:pt-48 lg:pb-24 pt-28 pb-14 bg-primary bg-opacity-50"></div>
+      <div className="bg-[url('/background/sub-footer.png')] bg-no-repeat bg-cover bg-right">
+        <div className="lg:pt-48 lg:pb-24 pt-28 pb-14 bg-primary bg-opacity-70"></div>
       </div>
     </section>
   );

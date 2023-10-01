@@ -1,3 +1,4 @@
+import Button from "@/components/Buttons/Button";
 import { AiOutlineCalendar, AiOutlineTag } from "react-icons/ai";
 
 const BlogCard = ({ data }) => {
@@ -23,7 +24,11 @@ const BlogCard = ({ data }) => {
           </div>
         </div>
         <h3 className="font-bold text-title text-2xl mb-4">{title}</h3>
-        <div className="flex items-center gap-1 text-secondary"><span>Read More</span><span className="material-icons-outlined !text-base">add</span></div>
+        <Button
+          className={"btn-none flex items-center gap-1 text-secondary"}
+          text={"Read More"}
+          icon={<span className="material-icons-outlined !text-base">add</span>}
+        />
       </div>
     </div>
   );

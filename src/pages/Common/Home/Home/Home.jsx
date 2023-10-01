@@ -9,6 +9,7 @@ import ThemeVideo from "@/pages/Common/Home/ThemeVideo/ThemeVideo";
 import Testimonials from "@/pages/Common/Home/Testimonials/Testimonials";
 import Executives from "@/pages/Common/Home/Executives/Executives";
 import Blogs from "@/pages/Common/Home/Blogs/Blogs";
+import SubFooter from "@/pages/Footer/SubFooter/SubFooter";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -30,6 +31,7 @@ const Home = () => {
       <Testimonials />
       <Executives />
       <Blogs />
+      <SubFooter />
     </main>
   );
 };

@@ -1,20 +1,15 @@
-import ReactPlayer from "react-player";
 import video from "@/assets/videos/theme-video.mp4";
-import { useEffect, useRef, useState } from "react";
+import thumbnail from "@/assets/images/theme-video-thumbnail.png";
 
 const ThemeVideo = () => {
   return (
     <section id="theme-video">
       <div className="container relative  lg:-mb-48 -mb-28">
         <div className="px-12">
-          <div className="rounded-3xl overflow-hidden">
-            <ReactPlayer
-              style={{ borderRadius: "0.75rem" }}
-              controls
-              width={"100%"}
-              height={"auto"}
-              url={video}
-            />
+          <div className="overflow-hidden">
+            <video className="mx-auto rounded-3xl" poster={thumbnail} controls>
+              <source src={video} type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>

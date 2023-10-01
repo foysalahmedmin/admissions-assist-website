@@ -13,7 +13,7 @@ const TestimonialCard = ({ data }) => {
             alt=""
           />
           <div>
-            <h3 className="text-title font-bold text-xl">{name}</h3>
+            <h3 className=" title text-xl">{name}</h3>
             <p>{profession}</p>
           </div>
         </div>

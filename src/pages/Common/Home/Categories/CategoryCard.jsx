@@ -6,7 +6,7 @@ const CategoryCard = ({ data }) => {
         <img className="h-full w-full object-contain" src={icon_url} alt="" />
       </div>
       <div>
-        <h1 className="text-title text-2xl font-bold">{title}</h1>
+        <h1 className=" text-2xl title">{title}</h1>
         <p className="text-lg">{text}</p>
       </div>
     </div>

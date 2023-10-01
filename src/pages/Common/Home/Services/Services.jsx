@@ -47,7 +47,7 @@ const Services = () => {
               <div className="grid lg:grid-cols-2 grid-rows-1 items-end gap-12">
                 <div className="mb-12 lg:mb-24">
                   <div className="mb-7">
-                    <h1 className="text-title text-3xl lg:text-5xl font-bold mb-4">
+                    <h1 className=" text-3xl lg:text-5xl title mb-4">
                       Elevate Your Learning Journey With us
                     </h1>
                     <p>
@@ -66,7 +66,7 @@ const Services = () => {
                       <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
                         <span className="material-icons-outlined">check</span>
                       </div>
-                      <strong className="text-black font-bold">
+                      <strong className="text-black title">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       </strong>
                     </div>
@@ -74,7 +74,7 @@ const Services = () => {
                       <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
                         <span className="material-icons-outlined">check</span>
                       </div>
-                      <strong className="text-black font-bold">
+                      <strong className="text-black title">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       </strong>
                     </div>

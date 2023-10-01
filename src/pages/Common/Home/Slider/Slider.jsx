@@ -38,7 +38,7 @@ const Slider = () => {
             <SwiperSlide>
               <Slide>
                 <div className="mb-12">
-                  <h1 className="lg:text-5xl text-3xl lg:leading-[4rem] font-bold mb-6">
+                  <h1 className="lg:text-5xl text-3xl lg:leading-[4rem] title text-white mb-6">
                     Discover Your Perfect University Match in the UK
                   </h1>
                   <p>
@@ -53,7 +53,7 @@ const Slider = () => {
             <SwiperSlide>
               <Slide>
                 <div className="mb-12">
-                  <h1 className="lg:text-5xl text-3xl font-bold mb-6">
+                  <h1 className="lg:text-5xl text-3xl title text-white mb-6">
                     Discover Your Perfect University Match in the UK
                   </h1>
                   <p>

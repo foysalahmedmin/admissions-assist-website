@@ -23,7 +23,7 @@ const BlogCard = ({ data }) => {
             <span>{category}</span>
           </div>
         </div>
-        <h3 className="font-bold text-title text-2xl mb-4">{title}</h3>
+        <h3 className="title  text-2xl mb-4">{title}</h3>
         <Button
           className={"btn-none flex items-center gap-1 text-secondary"}
           text={"Read More"}

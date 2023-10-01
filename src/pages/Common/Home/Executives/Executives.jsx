@@ -10,7 +10,7 @@ const Executives = () => {
     <section className="lg:py-24 py-14" id="executives">
       <div className="container">
         <div className="text-center mx-auto max-w-[40rem] mb-12">
-          <h3 className="text-title font-bold mb-4">
+          <h3 className=" title mb-4">
             Trusted by engineers and Beloved by Executives
           </h3>
           <hr />

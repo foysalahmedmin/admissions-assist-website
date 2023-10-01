@@ -22,6 +22,10 @@ export default {
       boxShadow: {
         'custom': '3px 3px 30px rgba(212, 223, 234, 0.80)',
       },
+      fontFamily: {
+        'open-sans': ['Open Sans', "sans-serif"],
+        'poppins': ['Poppins', "sans-serif"],
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },

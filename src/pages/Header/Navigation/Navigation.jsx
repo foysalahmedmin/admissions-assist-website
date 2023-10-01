@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import logo from "@/assets/images/logo.svg";
+import logoDark from "@/assets/images/logo-dark.svg";
 import NavMenus from "@/pages/Header/Navigation/NavMenus";
 import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
@@ -38,7 +39,7 @@ const Navigation = () => {
                 style={{ cursor: "pointer" }}
                 onClick={() => navigation("/")}
                 className="h-full"
-                src={logo}
+                src={location.pathname === "/" ? logo : logoDark}
                 alt="logo"
                 loading="lazy"
               />

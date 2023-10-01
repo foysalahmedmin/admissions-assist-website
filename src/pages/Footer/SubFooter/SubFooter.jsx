@@ -8,7 +8,7 @@ const SubFooter = () => {
           <div className="container text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7">
               <div className="flex-1">
-                <h1 className="text-3xl lg:text-5xl font-bold">
+                <h1 className="text-3xl lg:text-5xl title text-white mb-4">
                   Stay Updated with EduBid
                 </h1>
                 <p>

@@ -41,7 +41,7 @@ const Blogs = () => {
           text={`Dive deep into the world of UK education through our curated articles, guides, and student stories`}
         />
         <div>
-          <div className="grid grid-cols-3 gap-7">
+          <div className="grid lg:grid-cols-3 gap-7">
             {card_data.slice(0, 3).map((data, i) => (
               <BlogCard key={i} data={data} />
             ))}

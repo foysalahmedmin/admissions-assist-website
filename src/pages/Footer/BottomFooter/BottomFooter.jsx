@@ -4,8 +4,8 @@ const BottomFooter = () => {
   return (
     <div className="bg-[#283639] py-7">
       <div className="container">
-        <div className="flex items-center justify-between">
-          <strong>
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-4">
+          <strong className="text-center lg:text-left">
             © 2023 Edubid. All Rights Reserved. Design By Tahmidul Hassan
           </strong>
           <div className="flex items-center gap-2">

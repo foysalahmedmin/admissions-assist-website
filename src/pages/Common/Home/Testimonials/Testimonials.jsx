@@ -6,7 +6,7 @@ import TestimonialCard from "./TestimonialCard";
 
 const Testimonials = () => {
   return (
-    <section className="lg:py-24 py-14" id="testimonials">
+    <section className="lg:pt-24 pt-14" id="testimonials">
       <div className="container">
         <SectionTitle
           subtitle={"Our Testimonials"}

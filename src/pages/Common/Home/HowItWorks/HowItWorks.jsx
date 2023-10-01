@@ -47,9 +47,9 @@ const HowItWorks = () => {
 Your UK University Dreams`}
         />
         <div>
-          <div className="grid gap-7 lg:gap-12 lg:grid-cols-3 justify-between">
+          <div className="grid gap-y-7 lg:gap-y-12 lg:grid-cols-3 justify-between">
             {card_data?.map((data, i) => (
-              <WorkCard key={i} data={data} />
+              <WorkCard key={i} index={i} data={data} />
             ))}
           </div>
         </div>

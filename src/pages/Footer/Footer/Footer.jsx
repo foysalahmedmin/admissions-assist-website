@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="h-10 mb-7">
           <img className="h-full" src={logo} alt="" />
         </div>
-        <div className="flex flex-wrap grid-cols-4 justify-between gap-7 lg:gap-12">
+        <div className="flex flex-col lg:flex-row flex-wrap grid-cols-4 justify-between gap-7 lg:gap-12">
           <div className="w-80">
             <p className="text-placeholder mb-7">
               Lorem Ipsum is simply dummy text of the printing and typesetting

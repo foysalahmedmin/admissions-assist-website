@@ -10,6 +10,49 @@ import cardIcon8 from "@/assets/images/icons/music.svg";
 import CategoryCard from "@/pages/Common/Home/Categories/CategoryCard";
 import Button from "@/components/Buttons/Button";
 
+const card_data = [
+  {
+    icon_url: cardIcon1,
+    title: "Development",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon2,
+    title: "Photography",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon4,
+    title: "Language",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon3,
+    title: "Design",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon5,
+    title: "Productivity",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon6,
+    title: "Marketing",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon7,
+    title: "Sport",
+    text: `65 Courses`,
+  },
+  {
+    icon_url: cardIcon8,
+    title: "Music",
+    text: `65 Courses`,
+  },
+];
+
 const Categories = () => {
   return (
     <section id="categories" className="lg:py-24 py-14">
@@ -21,62 +64,9 @@ const Categories = () => {
         />
         <div>
           <div className="grid gap-7 grid-cols-2 lg:grid-cols-4 justify-around mb-12">
-            <CategoryCard
-              data={{
-                icon_url: cardIcon1,
-                title: "Development",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon2,
-                title: "Photography",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon3,
-                title: "Design",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon4,
-                title: "Language",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon5,
-                title: "Productivity",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon6,
-                title: "Marketing",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon7,
-                title: "Sport",
-                text: `65 Courses`,
-              }}
-            />
-            <CategoryCard
-              data={{
-                icon_url: cardIcon8,
-                title: "Music",
-                text: `65 Courses`,
-              }}
-            />
+            {card_data.slice(0, 8).map((data, i) => (
+              <CategoryCard key={i} data={data} />
+            ))}
           </div>
           <div>
             <Button

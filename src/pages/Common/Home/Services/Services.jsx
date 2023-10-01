@@ -7,11 +7,29 @@ import servicerImg from "@/assets/images/servicer-women.png";
 import Button from "@/components/Buttons/Button";
 import { Link } from "react-router-dom";
 
+const card_data = [
+  {
+    icon_url: cardIcon1,
+    title: "Student Consultation",
+    text: `We conduct virtual sessions to provide personalized guidance in navigating your academic journey, directing you towards your desired educational institution, considering your qualifications and prior experiences.`,
+  },
+  {
+    icon_url: cardIcon2,
+    title: "Student Counselling",
+    text: `Our dedicated support includes personalized assistance throughout the application process and conducting informative IAG (Information, Advice, and Guidance) sessions, equipping you with the necessary skills and confidence to excel in admission assessments.`,
+  },
+  {
+    icon_url: cardIcon3,
+    title: "Student Finance Support",
+    text: `Our team of experienced and committed professionals will provide step-by-step guidance to navigate the intricate student finance application process, ensuring you receive the necessary support and assistance along the way.`,
+  },
+];
+
 const Services = () => {
   return (
     <section id="services">
       <div className="container">
-        <div className="lg:pt-24 pt-14 px-12 bg-primary bg-opacity-10">
+        <div className="lg:pt-24 pt-14 lg:px-12 px-7 bg-primary bg-opacity-10">
           <SectionTitle
             subtitle={"Our Services"}
             title={"Our Comprehensive Services"}
@@ -20,27 +38,9 @@ const Services = () => {
           <div>
             <div className="mb-12">
               <div className="grid gap-7 lg:gap-12 lg:grid-cols-3 justify-between">
-                <ServiceCard
-                  data={{
-                    icon_url: cardIcon1,
-                    title: "Student Consultation",
-                    text: `We conduct virtual sessions to provide personalized guidance in navigating your academic journey, directing you towards your desired educational institution, considering your qualifications and prior experiences.`,
-                  }}
-                />
-                <ServiceCard
-                  data={{
-                    icon_url: cardIcon2,
-                    title: "Student Counselling",
-                    text: `Our dedicated support includes personalized assistance throughout the application process and conducting informative IAG (Information, Advice, and Guidance) sessions, equipping you with the necessary skills and confidence to excel in admission assessments.`,
-                  }}
-                />
-                <ServiceCard
-                  data={{
-                    icon_url: cardIcon3,
-                    title: "Student Finance Support",
-                    text: `Our team of experienced and committed professionals will provide step-by-step guidance to navigate the intricate student finance application process, ensuring you receive the necessary support and assistance along the way.`,
-                  }}
-                />
+                {card_data.slice(0, 3).map((data, i) => (
+                  <ServiceCard key={i} data={data} />
+                ))}
               </div>
             </div>
             <div>

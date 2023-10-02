@@ -16,7 +16,7 @@ const useScrollSpy = () => {
       const scrollY = window.scrollY;
       scrollY > 120
         ? !isScrolled && setIsScrolled(true)
-        : isScrolled && setIsScrolled(false);
+        : setIsScrolled(false);
 
       for (const element of elementsArray) {
         if (element) {

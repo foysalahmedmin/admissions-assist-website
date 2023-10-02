@@ -53,7 +53,7 @@ const Navigation = () => {
                 />
               </ul>
               <ul
-                className={`menu w-[300px] min-h-[calc(100vh-5rem)] absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden ${
+                className={`menu w-[300px] min-h-screen-less-20 absolute z-50 top-20 left-0 leading-10 p-5 origin-left scale-x-0 lg:hidden ${
                   location.pathname == "/" ? "glass" : "bg-white"
                 }`}
               >

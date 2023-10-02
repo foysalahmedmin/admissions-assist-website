@@ -19,6 +19,9 @@ export default {
         background: '#F7F8FC',
         Off_white: '#FCFCFC',
       },
+      minHeight: {
+        'screen-less-20': 'calc(100vh - 5rem)',
+      },
       boxShadow: {
         'custom': '3px 3px 30px rgba(212, 223, 234, 0.80)',
       },

@@ -1,10 +1,15 @@
+import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 
 const SubFooter = () => {
   return (
     <>
-      <section className="bg-[url('/background/sub-footer.png')] bg-no-repeat bg-cover bg-right">
-        <div className="lg:py-24 py-14 bg-primary bg-opacity-70">
+      <BackgroundLayer
+        bg_position={"bg-right"}
+        image_url={"/background/sub-footer.png"}
+        className={"lg:py-24 py-14"}
+      >
+        <div className="">
           <div className="container mx-auto text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7">
               <div className="flex-1">
@@ -39,7 +44,7 @@ const SubFooter = () => {
             </div>
           </div>
         </div>
-      </section>
+      </BackgroundLayer>
     </>
   );
 };

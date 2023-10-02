@@ -34,7 +34,7 @@ const card_data = [
 const Blogs = () => {
   return (
     <section className="lg:py-24 py-14 bg-primary bg-opacity-10" id="blogs">
-      <div className="container">
+      <div className="container mx-auto">
         <SectionTitle
           subtitle={"Our Blogs"}
           title={`Insights & Tips from the Experts`}

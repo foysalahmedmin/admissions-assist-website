@@ -8,7 +8,7 @@ import img6 from "@/assets/images/icons/brand-06.svg";
 const Executives = () => {
   return (
     <section className="lg:py-24 py-14" id="executives">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="text-center mx-auto max-w-[40rem] mb-12">
           <h3 className=" title mb-4">
             Trusted by engineers and Beloved by Executives

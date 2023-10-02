@@ -4,7 +4,7 @@ import thumbnail from "@/assets/images/theme-video-thumbnail.png";
 const ThemeVideo = () => {
   return (
     <section id="theme-video">
-      <div className="container relative  lg:-mb-48 -mb-28">
+      <div className="container mx-auto relative  lg:-mb-48 -mb-28">
         <div className="lg:px-12 px-7">
           <div className="overflow-hidden">
             <video className="mx-auto rounded-3xl" poster={thumbnail} controls>

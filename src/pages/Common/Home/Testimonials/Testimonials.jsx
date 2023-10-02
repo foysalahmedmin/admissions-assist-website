@@ -7,7 +7,7 @@ import TestimonialCard from "./TestimonialCard";
 const Testimonials = () => {
   return (
     <section className="lg:pt-24 pt-14" id="testimonials">
-      <div className="container">
+      <div className="container mx-auto">
         <SectionTitle
           subtitle={"Our Testimonials"}
           title={`Hear from Our Success Stories`}

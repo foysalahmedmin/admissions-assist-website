@@ -28,7 +28,7 @@ const card_data = [
 const Services = () => {
   return (
     <section id="services">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="lg:pt-24 pt-14 lg:px-12 px-7 bg-primary bg-opacity-10">
           <SectionTitle
             subtitle={"Our Services"}

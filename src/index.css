@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  border-color: #D9E3E9;
+  font-family: 'Open Sans', sans-serif;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
-* {
-  border-color: #D9E3E9;
-  font-family: 'Open Sans', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,12 +19,6 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 3.5rem;
-  color: #2B303B;
 }
 
 /* scrollbar */
@@ -51,11 +44,9 @@ html {
 ::placeholder {
   color: #A0A9BD;
   opacity: 1;
-  /* Firefox */
 }
 
 ::-ms-input-placeholder {
-  /* Edge 12 -18 */
   color: #A0A9BD;
 }
 
@@ -70,26 +61,25 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-/* select-option */
-select option:checked {
-  color: #705ec8;
+/* swiper slider */
+.swiper-slide.swiper-slide-active .top-round-style {
+  @apply animate-pop-long origin-top-left
 }
 
-.swiper-slide.swiper-slide-active .top-round-style{
-  @apply animate-longPop origin-top-left
-}
-.swiper-pagination-bullet.swiper-pagination-bullet-active{
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
   @apply bg-secondary
+}
+
+@layer base {
+  html {
+    @apply text-text scroll-p-14 scroll-smooth
+  }
 }
 
 @layer components {
 
   .title {
-    @apply  text-title font-bold font-poppins
-  }
-
-  .container {
-    @apply mx-auto px-[3.5%] lg:px-[2.5%] 2xl:px-[1.5%]
+    @apply text-title font-bold font-poppins
   }
 
   .px-custom {
@@ -101,43 +91,41 @@ select option:checked {
   }
 
   .ghost-btn {
-    @apply font-semibold px-4 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply font-semibold px-4 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .gradient-btn {
-    @apply bg-gradient-to-r from-secondary to-secondary px-7 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-gradient-to-r from-secondary to-secondary px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .primary-btn {
-    @apply bg-secondary text-white font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-secondary text-white font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .primary-btn-outline {
-    @apply bg-transparent outline outline-secondary text-secondary font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-transparent outline outline-secondary text-secondary font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .white-btn-outline {
-    @apply bg-transparent outline outline-white text-white px-7 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-transparent outline outline-white text-white px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .rounded-btn {
-    @apply bg-secondary text-white w-12 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-secondary text-white w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .rounded-btn-outline {
-    @apply bg-transparent outline w-12 h-12 flex gap-2 justify-center items-center rounded-full transition-all
+    @apply bg-transparent outline w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
   }
 
   .primary-input {
     @apply px-4 py-2 rounded bg-darkblue focus:outline focus:outline-[#2f3655] border
   }
 
-  .glass{
+  .glass {
     -webkit-backdrop-filter: blur(var(--glass-blur, 40px));
     backdrop-filter: blur(var(--glass-blur, 40px));
     background-color: #000000c9;
   }
 
-  
-  
 }

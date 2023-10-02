@@ -4,7 +4,7 @@ const Slide = ({ bg_img, children }) => {
       className={`bg-[url('/background/slider-1.png')] bg-no-repeat bg-cover bg-right`}
     >
       <div className="bg-black bg-opacity-50 z-10 relative">
-        <div className="container py-20 flex justify-start items-center">
+        <div className="container mx-auto py-20 flex justify-start items-center">
           <div className="lg:px-16">
             <div className="min-h-[35rem] max-w-[50rem] flex justify-start items-center">
               <div className="text-white">{children}</div>

@@ -56,7 +56,7 @@ const card_data = [
 const Categories = () => {
   return (
     <section id="categories" className="lg:py-24 py-14">
-      <div className="container bg-[url('/background/world-map.svg')] bg-no-repeat bg-contain bg-top">
+      <div className="container mx-auto bg-[url('/background/world-map.svg')] bg-no-repeat bg-contain bg-top">
         <SectionTitle
           subtitle={"Categories"}
           title={"Courses Making Global Headlines"}

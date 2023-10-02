@@ -39,7 +39,7 @@ const HowItWorks = () => {
       className="lg:py-24 py-14 bg-[url('/background/how_it_works-section.svg')] bg-no-repeat bg-cover bg-top"
       id="how_it_works"
     >
-      <div className="container">
+      <div className="container mx-auto">
         <SectionTitle
           subtitle={"How it Works"}
           title={"How it Works"}

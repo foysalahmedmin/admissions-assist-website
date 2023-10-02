@@ -13,7 +13,7 @@ import Button from "@/components/Buttons/Button";
 const TopUniversities = () => {
   return (
     <section className="lg:py-24 py-14">
-      <div className="container">
+      <div className="container mx-auto">
         <SectionTitle
           subtitle={"Top Ranked Universities"}
           title={"Pioneering Institutions "}

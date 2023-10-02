@@ -27,10 +27,6 @@ export default {
         'poppins': ['Poppins', "sans-serif"],
       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
-        },
         pop: {
           '0%': {
             transform: 'scale(.95)',
@@ -42,7 +38,7 @@ export default {
             transform: 'scale(1)'
           }
         },
-        longPop: {
+        long_pop: {
           '0%': {
             transform: 'scale(.50)',
           },
@@ -55,11 +51,19 @@ export default {
         }
       },
       animation: {
-        wiggle: 'wiggle .3s ease-in-out infinite',
-        pop: 'pop .5s ease-in-out',
-        longPop: 'longPop 1.5s ease-in-out',
+        'pop': 'pop .5s ease-in-out',
+        'pop-long': 'long_pop 1.5s ease-in-out',
       }
-    }
+    },
+    container: {
+      padding: {
+        DEFAULT: '3.5%',
+        'sm': '3.5%',
+        'lg': '2.5%',
+        'xl': '1.5%',
+        '2xl': '1%',
+      },
+    },
   },
   plugins: [],
 }

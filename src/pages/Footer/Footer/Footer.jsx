@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#2B3D41] text-white">
-      <div className="container lg:py-24 py-14">
+      <div className="container mx-auto lg:py-24 py-14">
         <div className="h-10 mb-7">
           <img className="h-full" src={logo} alt="" />
         </div>

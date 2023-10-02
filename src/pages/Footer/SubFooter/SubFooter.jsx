@@ -5,7 +5,7 @@ const SubFooter = () => {
     <>
       <section className="bg-[url('/background/sub-footer.png')] bg-no-repeat bg-cover bg-right">
         <div className="lg:py-24 py-14 bg-primary bg-opacity-70">
-          <div className="container text-white">
+          <div className="container mx-auto text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7">
               <div className="flex-1">
                 <h1 className="text-3xl lg:text-5xl title text-white mb-4">

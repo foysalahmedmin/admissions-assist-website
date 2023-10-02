@@ -1,44 +1,32 @@
-import { sectionContext } from "@/provider/sectionProvider/SectionProvider";
-import { useContext, useEffect, useState } from "react";
+import { scrollContext } from "@/provider/ScrollProvider/ScrollProvider";
+import { useContext, useEffect } from "react";
 
 const useScrollSpy = () => {
-  
-  const { sectionRefs, sectionsArray, setSectionsArray } =
-    useContext(sectionContext);
-  const [scrollActive, setScrollActive] = useState("");
-  const [scrollY, setScrollY] = useState(0);
+  const {
+    elementsArray,
+    setElementArray,
+    activeElementID,
+    setActiveElementID,
+    isScrolled,
+    setIsScrolled,
+  } = useContext(scrollContext);
 
   useEffect(() => {
-
-    // const handleScroll = () => {
-    //   const scrollY = window.scrollY;
-    //   setScrollY(scrollY);
-    //   for (const sectionRef of sectionRefs?.current) {
-    //     if (sectionRef) {
-    //       const sectionTop = sectionRef.offsetTop - 100;
-    //       const sectionHeight = sectionRef.offsetHeight;
-    //       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-    //         setScrollActive(sectionRef.id);
-    //         break;
-    //       } else {
-    //         setScrollActive("");
-    //       }
-    //     }
-    //   }
-    // };
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setScrollY(scrollY);
-      for (const section of sectionsArray) {
-        if (section) {
-          const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.offsetHeight;
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            setScrollActive(section.id);
+      scrollY > 120
+        ? !isScrolled && setIsScrolled(true)
+        : isScrolled && setIsScrolled(false);
+
+      for (const element of elementsArray) {
+        if (element) {
+          const elementTop = element.offsetTop - 100;
+          const elementHeight = element.offsetHeight;
+          if (scrollY >= elementTop && scrollY < elementTop + elementHeight) {
+            activeElementID !== element.id && setActiveElementID(element.id);
             break;
           } else {
-            setScrollActive("");
+            activeElementID !== "" && setActiveElementID("");
           }
         }
       }
@@ -48,14 +36,13 @@ const useScrollSpy = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [sectionRefs, sectionsArray]);
+  }, [elementsArray]);
 
   return {
-    sectionRefs,
-    sectionsArray,
-    setSectionsArray,
-    scrollActive,
-    scrollY,
+    elementsArray,
+    setElementArray,
+    activeElementID,
+    isScrolled,
   };
 };
 

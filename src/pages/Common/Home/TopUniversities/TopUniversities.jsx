@@ -4,11 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import slide1 from "@/assets/images/university-slide-1.png";
 import slide2 from "@/assets/images/university-slide-2.png";
 import slide3 from "@/assets/images/university-slide-3.png";
+import Button from "@/components/Buttons/Button";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Button from "@/components/Buttons/Button";
 
 const TopUniversities = () => {
   return (
@@ -51,9 +51,7 @@ const TopUniversities = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
                       <div className="mt-auto">
-                        <h3 className="text-2xl title">
-                          University of Oxford
-                        </h3>
+                        <h3 className="text-2xl title">University of Oxford</h3>
                         <p className="title">65 Courses </p>
                       </div>
                     </div>
@@ -68,9 +66,7 @@ const TopUniversities = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
                       <div className="mt-auto">
-                        <h3 className="text-2xl title">
-                          University of Essex
-                        </h3>
+                        <h3 className="text-2xl title">University of Essex</h3>
                         <p className="title">75 Courses </p>
                       </div>
                     </div>
@@ -102,9 +98,7 @@ const TopUniversities = () => {
                     />
                     <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
                       <div className="mt-auto">
-                        <h3 className="text-2xl title">
-                          University of Oxford
-                        </h3>
+                        <h3 className="text-2xl title">University of Oxford</h3>
                         <p className="title">65 Courses </p>
                       </div>
                     </div>

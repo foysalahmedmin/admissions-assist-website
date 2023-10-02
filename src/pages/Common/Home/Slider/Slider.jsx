@@ -1,7 +1,5 @@
-import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Slide from "@/pages/Common/Home/Slider/Slide";
 import Search from "@/components/Search/Search";
-import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
@@ -10,15 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Slider = () => {
-  const { sectionRefs } = useScrollSpy();
-  const sectionRef = useRef(null);
-  useEffect(() => {
-    if (!sectionRefs.current.includes(sectionRef.current)) {
-      sectionRefs.current.push(sectionRef.current);
-    }
-  }, [sectionRefs]);
   return (
-    <section ref={sectionRef} id="home">
+    <section id="home">
       <div className="bg-black bg-opacity-25">
         <div className="w-full relative">
           <Swiper

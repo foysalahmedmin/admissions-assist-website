@@ -1,6 +1,5 @@
 const WorkCard = ({ index, data }) => {
   const { serial_no, title, text } = data;
-  console.log(3 % 3);
   return (
     <div className="text-center">
       <div className="h-14 w-14 lg:h-24 lg:w-24 mb-4 lg:mb-7 mx-auto rounded-full border flex items-center justify-center">

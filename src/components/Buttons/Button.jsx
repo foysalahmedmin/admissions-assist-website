@@ -1,6 +1,8 @@
 const Button = ({ style, className, text, icon, type, isLoading, ...rest }) => {
+  // console.log(...rest);
   return (
     <button
+      {...rest}
       style={style}
       className={`${
         className && className.includes("btn")

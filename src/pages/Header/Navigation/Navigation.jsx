@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
 import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import logo from "@/assets/images/logo.svg";
 import logoDark from "@/assets/images/logo-dark.svg";
 import NavMenus from "@/pages/Header/Navigation/NavMenus";
-import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Button from "@/components/Buttons/Button";
@@ -13,16 +13,17 @@ import { AiOutlineUser } from "react-icons/ai";
 const Navigation = () => {
   const navigation = useNavigate();
   const location = useLocation();
-  const { scrollY } = useScrollSpy();
+  const { isScrolled } = useScrollSpy();
   const [menuActive, setMenuActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
+
   return (
     <nav
       ref={scope}
       className={`w-full z-30 top-0 ${
         location.pathname == "/"
-          ? scrollY > 120
+          ? isScrolled
             ? "glass fixed text-white"
             : "fixed text-white"
           : "sticky bg-white"

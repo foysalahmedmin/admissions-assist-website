@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 
 const NavMenus = () => {
   const location = useLocation();
-  const { scrollActive } = useScrollSpy();
+  const { activeElementID } = useScrollSpy();
   return (
     <>
       {location.pathname == "/" ? (
         <li
-          className={scrollActive === "home" ? "text-primary" : ""}
+          className={activeElementID === "home" ? "text-primary" : ""}
         >
           <a href="/#">Home</a>
         </li>
@@ -20,27 +20,27 @@ const NavMenus = () => {
       )}
       <li
         className={
-          scrollActive === "how_it_works" ? "text-primary" : ""
+          activeElementID === "how_it_works" ? "text-primary" : ""
         }
       >
         <a href="/#how_it_works">How it works</a>
       </li>
       <li
         className={
-          scrollActive === "services" ? "text-primary" : ""
+          activeElementID === "services" ? "text-primary" : ""
         }
       >
         <a href="/#services">Services</a>
       </li>
       <li
         className={
-          scrollActive === "testimonials" ? "text-primary" : ""
+          activeElementID === "testimonials" ? "text-primary" : ""
         }
       >
         <a href="/#testimonials">Testimonials</a>
       </li>
       <li
-        className={scrollActive === "blogs" ? "text-primary" : ""}
+        className={activeElementID === "blogs" ? "text-primary" : ""}
       >
         <a href="/#blogs">Blogs</a>
       </li>

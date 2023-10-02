@@ -13,11 +13,11 @@ import SubFooter from "@/pages/Footer/SubFooter/SubFooter";
 
 const Home = () => {
   const homeRef = useRef(null);
-  const { setSectionsArray } = useScrollSpy();
+  const { setElementArray } = useScrollSpy();
 
   useEffect(() => {
     const childrenArray = Array.from(homeRef.current.children);
-    setSectionsArray(childrenArray);
+    setElementArray(childrenArray);
   }, [homeRef]);
 
   return (

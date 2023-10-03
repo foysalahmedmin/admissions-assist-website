@@ -5,12 +5,12 @@ const LoginForm = () => {
   return (
     <form action="">
       <div className="mb-7">
-        <div className="p-4 flex items-center gap-2 border rounded-xl mb-4">
-          <label className="active:bg-black" htmlFor="email">
-            <AiOutlineMail className="text-2xl text-placeholder" />
+        <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
+          <label htmlFor="email">
+            <AiOutlineMail className="text-2xl" />
           </label>
           <input
-            className="w-full bg-transparent outline-none"
+            className="py-4 w-full bg-transparent outline-none"
             type="email"
             name="email"
             id="email"
@@ -18,12 +18,12 @@ const LoginForm = () => {
             required
           />
         </div>
-        <div className="p-4 flex items-center gap-2 border rounded-xl mb-4">
+        <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text">
           <label htmlFor="password">
-            <AiOutlineLock className="text-2xl text-placeholder" />
+            <AiOutlineLock className="text-2xl" />
           </label>
           <input
-            className="w-full bg-transparent outline-none"
+            className="py-4 w-full bg-transparent outline-none"
             type="password"
             name="password"
             id="password"

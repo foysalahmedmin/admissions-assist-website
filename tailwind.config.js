@@ -11,7 +11,7 @@ export default {
         secondary: '#ff7f45',
         darkblue: '#001032',
         title: '#141D2B',
-        text: '#2B303B',
+        text: '#555F64',
         labels: '#707C94',
         placeholder: '#A0A9BD',
         line: '#D9DEE9',

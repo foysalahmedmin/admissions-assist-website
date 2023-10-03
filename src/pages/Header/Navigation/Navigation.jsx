@@ -65,14 +65,14 @@ const Navigation = () => {
             </div>
           </div>
           <div className="flex gap-2 lg:gap-4 items-center">
-            <ActiveLink to={"/login"}>
+            <ActiveLink to={"/authentication/login"}>
               <Button
                 className={"ghost-btn flex-row-reverse"}
                 text={"Log In"}
                 icon={<AiOutlineUser className="text-2xl" />}
               />
             </ActiveLink>
-            <Link to={"/user_type"} className="hidden lg:block">
+            <Link to={"/authentication/sign_up"} className="hidden lg:block">
               <Button
                 text={"Sign Up"}
                 icon={

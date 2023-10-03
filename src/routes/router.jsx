@@ -1,9 +1,11 @@
+import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "@/components/Loading/Loading";
 const Main = lazy(() => import("@/layout/Main"));
+const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
-const Login = lazy(() => import("@/pages/Common/Login/Login/Login"));
-import { createBrowserRouter } from "react-router-dom";
+const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
+const SignUp = lazy(() => import("@/pages/Authentication/SignUp/SignUp/SignUp"));
 
 const router = createBrowserRouter([
   {
@@ -22,11 +24,29 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+    ],
+  },
+  {
+    path: "/authentication",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Authentication />
+      </Suspense>
+    ),
+    children: [
       {
-        path: "/login",
+        path: "login",
         element: (
           <Suspense fallback={<Loading />}>
             <Login />
+          </Suspense>
+        ),
+      },
+      {
+        path: "sign_up",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SignUp />
           </Suspense>
         ),
       },

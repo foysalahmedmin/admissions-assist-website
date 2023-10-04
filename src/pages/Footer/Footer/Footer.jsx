@@ -49,7 +49,7 @@ const Footer = () => {
                 <Link to={"/blogs"}>blogs</Link>
               </li>
               <li className="text-line">
-                <Link to={"/support"}>Support</Link>
+                <Link to={"/session_book"}>Book a session</Link>
               </li>
               <li className="text-line">
                 <Link to={"/sign_up"}>Create an account</Link>
@@ -57,19 +57,19 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="title text-white text-2xl mb-7">About us</h3>
+            <h3 className="title text-white text-2xl mb-7">Categories</h3>
             <ul className="flex flex-col gap-4">
               <li className="text-line">
-                <Link to={"/career"}>Career</Link>
+                <Link to={"/photography"}>Photography</Link>
               </li>
               <li className="text-line">
-                <Link to={"/login"}>Join our team</Link>
+                <Link to={"/engineering"}>Engineering</Link>
               </li>
               <li className="text-line">
-                <Link to={"/businesses"}>Businesses</Link>
+                <Link to={"/development"}>Development</Link>
               </li>
               <li className="text-line">
-                <Link to={"/employers"}>Employers</Link>
+                <Link to={"/sports"}>Sports</Link>
               </li>
             </ul>
           </div>

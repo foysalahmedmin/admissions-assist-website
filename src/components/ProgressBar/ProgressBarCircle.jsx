@@ -1,47 +1,57 @@
-const ProgressBarCircle = ({ percentage, size, strokeSize }) => {
-const circleSize = size || '48'
+const ProgressBarCircle = ({
+  percentage,
+  size,
+  strokeSize,
+  percentSize,
+  className,
+  text,
+}) => {
+  const circleSize = size || "48";
   const strokeWidth = strokeSize || 4;
   const radius = circleSize / 2 - strokeWidth;
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;
+
   return (
-    <div>
+    <div className={`relative ${className}`}>
       <svg
         width={circleSize}
         height={circleSize}
         viewBox={`0 0 ${circleSize} ${circleSize}`}
+        className="transform -rotate-90"
       >
         <circle
           cx={circleSize / 2}
           cy={circleSize / 2}
-          strokeWidth={`${strokeWidth}px`}
           r={radius}
-          className="stroke-line fill-none"
+          fill="transparent"
+          stroke="#E5E7EB"
+          strokeWidth={`${strokeWidth}px`}
+          strokeLinecap="round"
         />
         <circle
           cx={circleSize / 2}
           cy={circleSize / 2}
-          strokeWidth={`${strokeWidth}px`}
           r={radius}
-          transform={`rotate(-90 ${circleSize / 2} ${circleSize / 2})`}
-          className="stroke-primary fill-none"
-          style={{
-            strokeDasharray: dashArray,
-            strokeDashoffset: dashOffset,
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-          }}
+          fill="transparent"
+          stroke="#10B981"
+          strokeWidth={`${strokeWidth}px`}
+          strokeLinecap="round"
+          strokeDasharray={dashArray}
+          strokeDashoffset={dashOffset}
         />
-        <text
-          x="50%"
-          y="50%"
-          dy="0.3em"
-          textAnchor="middle"
-          className="font-bold"
-        >
-          {percentage}%
-        </text>
       </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center">
+          <span
+            style={{ fontSize: percentSize }}
+            className="text-lg font-bold text-title mb-2"
+          >
+            {percentage}%
+          </span>
+          {text || ""}
+        </div>
+      </div>
     </div>
   );
 };

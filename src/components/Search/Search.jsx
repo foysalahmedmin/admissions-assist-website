@@ -1,10 +1,18 @@
 import { useState } from "react";
 
-const Search = () => {
+const Search = ({ position }) => {
   const [tab, setTab] = useState("all");
   return (
     <div className="p-4 bg-black bg-opacity-50 rounded-xl">
-      <div className="flex gap-4">
+      <div
+        className={`flex gap-4 items-end ${
+          position === "center"
+            ? "justify-center"
+            : position === "right"
+            ? "justify-end"
+            : "justify-start"
+        }`}
+      >
         <button
           onClick={() => setTab("all")}
           className={`py-3 rounded-t-xl ${
@@ -30,7 +38,11 @@ const Search = () => {
           Courses
         </button>
       </div>
-      <div className="w-full flex items-center gap-3 px-4 border border-primary rounded-xl rounded-tl-none bg-primary bg-opacity-20">
+      <div
+        className={`${
+          tab === "all" ? (position !== "center" ? "rounded-tl-none" : "") : ""
+        } w-full flex items-center gap-3 px-4 border border-primary rounded-xl bg-primary bg-opacity-20`}
+      >
         <span className="material-icons">search</span>
         <input
           className="flex-1 w-full bg-transparent outline-none py-4"

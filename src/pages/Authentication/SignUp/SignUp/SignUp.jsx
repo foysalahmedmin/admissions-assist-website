@@ -4,7 +4,7 @@ import { useState } from "react";
 import SignUpInfoForm from "../SignUpInfoForm/SignUpInfoForm";
 
 const SignUp = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   return (
     <>
       {step === 0 && (

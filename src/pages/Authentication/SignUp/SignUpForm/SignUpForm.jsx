@@ -2,9 +2,9 @@ import Button from "@/components/Buttons/Button";
 import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-const SignUpForm = () => {
+const SignUpForm = ({ setStep }) => {
   return (
-    <form action="">
+    <form action="" onSubmit={() => setStep(1)}>
       <div className="mb-7">
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
           <label htmlFor="username">
@@ -54,7 +54,13 @@ const SignUpForm = () => {
           id="keep_login"
         />
         <label className="cursor-pointer" htmlFor="keep_login">
-          I agree to Edubids <Link to={"terms_and_conditions"} className="text-secondary underline">Terms and Conditions</Link>
+          I agree to Edubids{" "}
+          <Link
+            to={"terms_and_conditions"}
+            className="text-secondary underline"
+          >
+            Terms and Conditions
+          </Link>
         </label>
       </div>
       <div>

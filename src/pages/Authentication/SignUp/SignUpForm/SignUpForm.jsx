@@ -11,7 +11,7 @@ const SignUpForm = () => {
             <AiOutlineUser className="text-2xl" />
           </label>
           <input
-            className="py-4 w-full bg-transparent outline-none"
+            className="py-3 w-full bg-transparent outline-none"
             type="text"
             name="username"
             id="username"
@@ -24,7 +24,7 @@ const SignUpForm = () => {
             <AiOutlineMail className="text-2xl" />
           </label>
           <input
-            className="py-4 w-full bg-transparent outline-none"
+            className="py-3 w-full bg-transparent outline-none"
             type="email"
             name="email"
             id="email"
@@ -37,7 +37,7 @@ const SignUpForm = () => {
             <AiOutlineLock className="text-2xl" />
           </label>
           <input
-            className="py-4 w-full bg-transparent outline-none"
+            className="py-3 w-full bg-transparent outline-none"
             type="password"
             name="password"
             id="password"

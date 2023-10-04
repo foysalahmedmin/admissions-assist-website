@@ -10,7 +10,7 @@ const LoginForm = () => {
             <AiOutlineMail className="text-2xl" />
           </label>
           <input
-            className="py-4 w-full bg-transparent outline-none"
+            className="py-3 w-full bg-transparent outline-none"
             type="email"
             name="email"
             id="email"
@@ -23,7 +23,7 @@ const LoginForm = () => {
             <AiOutlineLock className="text-2xl" />
           </label>
           <input
-            className="py-4 w-full bg-transparent outline-none"
+            className="py-3 w-full bg-transparent outline-none"
             type="password"
             name="password"
             id="password"

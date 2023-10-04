@@ -29,7 +29,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="text"
                   name="first_name"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="first_name"
                   placeholder="First name"
                   required
@@ -48,7 +48,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="text"
                   name="last_name"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="last_name"
                   placeholder="Last name"
                   required
@@ -65,7 +65,7 @@ const SignUpInfoForm = () => {
                   <input
                     type="date"
                     name="date_of_birth"
-                    className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                    className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                     id="date_of_birth"
                     required
                   />
@@ -133,7 +133,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="text"
                   name="address"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="address"
                   placeholder="Address"
                   required
@@ -152,7 +152,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="email"
                   name="email_address"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="email_address"
                   placeholder="Email Address"
                   required
@@ -171,7 +171,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="email"
                   name="email_address"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="email_address"
                   placeholder="Email Address"
                   required
@@ -187,7 +187,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="tel"
                   name="phone"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="phone"
                   placeholder="Phone Number"
                   required
@@ -204,7 +204,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="home_country"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="home_country"
                   required
                 >
@@ -221,7 +221,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="nationality"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="nationality"
                   required
                 >
@@ -265,7 +265,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="text"
                   name="home_address"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="home_address"
                   placeholder="Birth Place"
                   required
@@ -282,7 +282,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="english_certificate"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="english_certificate"
                   required
                 >
@@ -297,7 +297,7 @@ const SignUpInfoForm = () => {
                 <input
                   type="number"
                   name="score"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="score"
                   placeholder="Score"
                 />
@@ -313,7 +313,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="study_source"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="study_source"
                   required
                 >
@@ -335,7 +335,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="educational_qualification"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="educational_qualification"
                   required
                 >
@@ -352,7 +352,7 @@ const SignUpInfoForm = () => {
                 <select
                   type="text"
                   name="educational_institute"
-                  className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                   id="educational_institute"
                   required
                 >
@@ -370,7 +370,7 @@ const SignUpInfoForm = () => {
                   <select
                     type="text"
                     name="graduation_year"
-                    className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                    className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                     id="graduation_year"
                     required
                   >
@@ -387,7 +387,7 @@ const SignUpInfoForm = () => {
                   <select
                     type="number"
                     name="result"
-                    className="px-4 py-3 w-full outline-none bg-transparent border focus-within:border-text"
+                    className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
                     id="result"
                     required
                   >

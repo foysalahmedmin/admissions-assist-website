@@ -8,7 +8,7 @@ import NavMenus from "@/pages/Header/Navigation/NavMenus";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Button from "@/components/Buttons/Button";
-import { AiOutlineUser } from "react-icons/ai";
+import { RiUserLine } from "react-icons/ri";
 
 const Navigation = () => {
   const navigation = useNavigate();
@@ -69,7 +69,7 @@ const Navigation = () => {
               <Button
                 className={"ghost-btn flex-row-reverse"}
                 text={"Log In"}
-                icon={<AiOutlineUser className="text-2xl" />}
+                icon={<RiUserLine className="text-2xl" />}
               />
             </ActiveLink>
             <Link to={"/authentication/sign_up"} className="hidden lg:block">

@@ -1,5 +1,6 @@
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
+import { RiCalendarCheckLine } from "react-icons/ri";
 
 const Appointment = () => {
   return (
@@ -14,32 +15,21 @@ const Appointment = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7">
               <div className="flex-1">
                 <h1 className="text-3xl lg:text-5xl title text-white mb-4">
-                  Stay Updated with EduBid
+                  Not Sure! How To Proceed
                 </h1>
                 <p>
-                  Subscribe now for the latest in UK education, course trends,
-                  and exclusive application tips
+                  Tailored recommendations based on your profile, ensuring the
+                  best fit for your academic aspirations.
                 </p>
               </div>
-              <div className="flex-1 ">
-                <div className="lg:max-w-[27rem] w-full lg:ml-auto">
-                  <form className="w-full flex items-center gap-4 p-1 rounded-full border border-white">
-                    <input
-                      className="flex-1 w-full px-4 bg-transparent outline-none"
-                      type="email"
-                      placeholder="Your email address here"
-                      required
-                    />
-                    <Button
-                      type={"submit"}
-                      icon={
-                        <span className="material-icons-outlined">
-                          trending_flat
-                        </span>
-                      }
-                    />
-                  </form>
-                </div>
+              <div>
+                <Button
+                  className={"ml-auto"}
+                  text={"Book a Session"}
+                  icon={
+                    <RiCalendarCheckLine className="text-xl" />
+                  }
+                />
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Button from "@/components/Buttons/Button";
-import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from "react-icons/ai";
+import { RiLockLine, RiMailLine, RiUserLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const SignUpForm = ({ setStep }) => {
@@ -8,7 +8,7 @@ const SignUpForm = ({ setStep }) => {
       <div className="mb-7">
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
           <label htmlFor="username">
-            <AiOutlineUser className="text-2xl" />
+            <RiUserLine className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"
@@ -21,7 +21,7 @@ const SignUpForm = ({ setStep }) => {
         </div>
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
           <label htmlFor="email">
-            <AiOutlineMail className="text-2xl" />
+            <RiMailLine className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"
@@ -34,7 +34,7 @@ const SignUpForm = ({ setStep }) => {
         </div>
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text">
           <label htmlFor="password">
-            <AiOutlineLock className="text-2xl" />
+            <RiLockLine className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"

@@ -7,9 +7,11 @@ const SignUpInfoForm = () => {
     <>
       <div className="flex flex-wrap-reverse items-center justify-between bg-input px-7 py-4">
         <h3 className="title text-3xl">Profile Completeness</h3>
-        <div className="text-center mx-auto">
-          <ProgressBarCircle percentage={45} size={"67"} />
-        </div>
+        <ProgressBarCircle percentage={45} size={67}>
+          <div>
+            <h3 className="text-title font-bold">{45}%</h3>
+          </div>
+        </ProgressBarCircle>
       </div>
       <div className="p-7">
         <form action="">

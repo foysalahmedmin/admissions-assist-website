@@ -2,22 +2,20 @@ const ProgressBarCircle = ({
   percentage,
   size,
   strokeSize,
-  percentSize,
   className,
-  text,
+  children,
 }) => {
-  const circleSize = size || "48";
+  const circleSize = size || "100%";
   const strokeWidth = strokeSize || 4;
   const radius = circleSize / 2 - strokeWidth;
   const dashArray = radius * Math.PI * 2;
   const dashOffset = dashArray - (dashArray * percentage) / 100;
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`${className} relative inline-block`}>
       <svg
         width={circleSize}
         height={circleSize}
-        viewBox={`0 0 ${circleSize} ${circleSize}`}
         className="transform -rotate-90"
       >
         <circle
@@ -26,7 +24,7 @@ const ProgressBarCircle = ({
           r={radius}
           fill="transparent"
           stroke="#E5E7EB"
-          strokeWidth={`${strokeWidth}px`}
+          strokeWidth={strokeWidth + "px"}
           strokeLinecap="round"
         />
         <circle
@@ -35,22 +33,17 @@ const ProgressBarCircle = ({
           r={radius}
           fill="transparent"
           stroke="#1BABA1"
-          strokeWidth={`${strokeWidth}px`}
+          strokeWidth={strokeWidth + "px"}
           strokeLinecap="round"
           strokeDasharray={dashArray}
           strokeDashoffset={dashOffset}
         />
       </svg>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <span
-            style={{ fontSize: percentSize }}
-            className="text-lg font-bold text-title mb-2"
-          >
-            {percentage}%
-          </span>
-          {text || ""}
-        </div>
+      <div
+        style={{ padding: strokeWidth + "px" }}
+        className="absolute inset-0 h-full w-full flex items-center justify-center text-center overflow-hidden"
+      >
+        {children}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import UserAbout from "@/pages/Student/Profile/Status/UserAbout";
 
 const Status = () => {
   return (
-    <section className="pb-80">
+    <section className="pb-80 lg:mb-24 mb-14">
       <BackgroundLayer image_url={"/background/student-status.svg"}>
         <div className="container mx-auto py-1">
           <UserAbout />

@@ -70,6 +70,10 @@ input[type=number] {
   @apply bg-secondary
 }
 
+.guidance-slider .swiper-button-disabled{
+  @apply bg-black bg-opacity-10
+}
+
 @layer base {
   html {
     @apply text-text scroll-p-14 scroll-smooth

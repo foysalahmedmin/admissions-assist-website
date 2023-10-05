@@ -107,10 +107,10 @@ const TopUniversities = () => {
               </Swiper>
             </div>
             <div className="absolute z-10 left-0 right-0 top-[50%] translate-y-[-50%] w-full hidden lg:flex justify-between items-center">
-              <div className="universities-slider-prev cursor-pointer flex items-center justify-center text-white text-xl h-12 w-12 rounded-full overflow-hidden bg-black bg-opacity-30 -translate-x-1/2">
+              <div className="universities-slider-prev cursor-pointer flex items-center justify-center text-white text-xl h-12 w-12 rounded-full overflow-hidden bg-black bg-opacity-30 active:scale-95 animate-pop -translate-x-1/2">
                 <span className="material-icons-outlined">arrow_back_ios</span>
               </div>
-              <div className="universities-slider-next cursor-pointer flex items-center justify-center text-white text-xl h-12 w-12 rounded-full overflow-hidden bg-black bg-opacity-30 translate-x-1/2">
+              <div className="universities-slider-next cursor-pointer flex items-center justify-center text-white text-xl h-12 w-12 rounded-full overflow-hidden bg-black bg-opacity-30 active:scale-95 animate-pop translate-x-1/2">
                 <span className="material-icons-outlined">
                   arrow_forward_ios
                 </span>

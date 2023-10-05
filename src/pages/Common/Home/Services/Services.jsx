@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import ServiceCard from "@/pages/Common/Home/Services/ServiceCard";
+import ServiceCard from "@/components/Cards/ServiceCard/ServiceCard";
 import cardIcon1 from "@/assets/images/icons/student-consultation.svg";
 import cardIcon2 from "@/assets/images/icons/student-counselling.svg";
 import cardIcon3 from "@/assets/images/icons/student-sinance-support.svg";

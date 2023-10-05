@@ -2,7 +2,7 @@ import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import profileImg from "@/assets/images/profile.jpg";
-import TestimonialCard from "./TestimonialCard";
+import TestimonialCard from "../../../../components/Cards/TestimonialCard/TestimonialCard";
 
 const Testimonials = () => {
   return (

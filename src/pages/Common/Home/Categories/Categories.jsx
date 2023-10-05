@@ -7,7 +7,7 @@ import cardIcon5 from "@/assets/images/icons/progress.svg";
 import cardIcon6 from "@/assets/images/icons/mic-speaker.svg";
 import cardIcon7 from "@/assets/images/icons/sport.svg";
 import cardIcon8 from "@/assets/images/icons/music.svg";
-import CategoryCard from "@/pages/Common/Home/Categories/CategoryCard";
+import CategoryCard from "@/components/Cards/CategoryCard/CategoryCard";
 import Button from "@/components/Buttons/Button";
 
 const card_data = [

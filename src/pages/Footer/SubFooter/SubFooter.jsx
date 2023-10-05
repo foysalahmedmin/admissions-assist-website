@@ -23,7 +23,7 @@ const SubFooter = () => {
               </div>
               <div className="flex-1 ">
                 <div className="lg:max-w-[27rem] w-full lg:ml-auto">
-                  <form className="w-full flex items-center gap-4 p-1 rounded-full border border-white">
+                  <form className="w-full flex items-center gap-4 p-1 rounded-full border border-white focus-within:border-secondary focus-within:text-secondary">
                     <input
                       className="flex-1 w-full px-4 bg-transparent outline-none"
                       type="email"

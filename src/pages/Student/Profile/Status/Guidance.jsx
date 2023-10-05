@@ -13,7 +13,7 @@ const Guidance = () => {
   return (
     <div className="text-center relative -mb-80">
       <div className="text-white mb-7">
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className="text-3xl lg:text-5xl title text-white mb-4">
           We Provide You Step by Step Guide
         </h1>
         <p>You have 0 assigned application and 0 not assigned applications</p>

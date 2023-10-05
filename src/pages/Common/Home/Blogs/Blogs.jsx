@@ -1,5 +1,5 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import BlogCard from "./BlogCard";
+import BlogCard from "../../../../components/Cards/BlogCard/BlogCard";
 import img1 from "@/assets/images/university-slide-1.png";
 import img2 from "@/assets/images/university-slide-2.png";
 import img3 from "@/assets/images/university-slide-3.png";

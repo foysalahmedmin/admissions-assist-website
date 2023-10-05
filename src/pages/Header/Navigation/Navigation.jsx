@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="h-20 flex justify-between items-center gap-2 lg:gap-4">
           <div className="h-full flex lg:gap-10 gap-4 items-center">
             <div className="lg:hidden pt-2 flex items-center">
-              <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+              <MenuToggle color={location.pathname === "/" ? 'white' : '#555F64'} toggle={() => setIsOpen(!isOpen)} />
             </div>
             <div className="h-10">
               <img

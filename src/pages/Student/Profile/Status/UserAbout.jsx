@@ -2,10 +2,10 @@ import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
 import profileUserIcon from "@/assets/images/icons/profile-user.svg";
 import { AiOutlineEdit, AiOutlineEnvironment } from "react-icons/ai";
 import Button from "@/components/Buttons/Button";
-import eduCap from "@/assets/images/icons/edu-cap.svg";
-import phoneCall from "@/assets/images/icons/phone-call.svg";
-import badge from "@/assets/images/icons/badge.svg";
-import calendar from "@/assets/images/icons/calendar.svg";
+import eduCap from "@/assets/images/icons/edu-cap-sky-blue.svg";
+import phoneCall from "@/assets/images/icons/phone-call-sky-blue.svg";
+import badge from "@/assets/images/icons/badge-sky-blue.svg";
+import calendar from "@/assets/images/icons/calendar-sky-blue.svg";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
 const UserAbout = () => {
   return (
@@ -70,7 +70,7 @@ const UserAbout = () => {
                 />
               </div>
               <div>
-                <h5 className="font-semibold mb-1">Education</h5>
+                <h5 className="font-semibold ">Education</h5>
                 {(
                   <p className="text-sm text-title">
                     A Level, High School Romania , BA Hons Business
@@ -91,7 +91,7 @@ const UserAbout = () => {
                 />
               </div>
               <div>
-                <h5 className="font-semibold mb-1">Phone Number</h5>
+                <h5 className="font-semibold ">Phone Number</h5>
                 {<p className="text-sm text-title">+8801678788665</p> || (
                   <p className="text-sm text-placeholder">
                     No information for this filed yet
@@ -108,7 +108,7 @@ const UserAbout = () => {
                 />
               </div>
               <div>
-                <h5 className="font-semibold mb-1">Point/Credit</h5>
+                <h5 className="font-semibold ">Point/Credit</h5>
                 {<p className="text-sm text-secondary font-bold">243</p> || (
                   <p className="text-sm text-placeholder">
                     No information for this filed yet
@@ -125,7 +125,7 @@ const UserAbout = () => {
                 />
               </div>
               <div>
-                <h5 className="font-semibold mb-1">Date of Birth</h5>
+                <h5 className="font-semibold ">Date of Birth</h5>
                 {<p className="text-sm text-title">DOB: 18 Aug, 1998</p> || (
                   <p className="text-sm text-placeholder">
                     No information for this filed yet

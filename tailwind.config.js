@@ -23,7 +23,7 @@ export default {
         'screen-less-20': 'calc(100vh - 5rem)',
       },
       boxShadow: {
-        'custom': '3px 3px 30px rgba(212, 223, 234, 0.80)',
+        'custom': '0px 0px 30px 0px rgba(173, 173, 173, 0.29)',
       },
       fontFamily: {
         'open-sans': ['Open Sans', "sans-serif"],

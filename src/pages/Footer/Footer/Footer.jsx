@@ -1,14 +1,14 @@
 import logo from "@/assets/images/logo.svg";
 import BottomFooter from "../BottomFooter/BottomFooter";
-import {
-  AiFillFacebook,
-  AiFillInstagram,
-  AiFillLinkedin,
-  AiOutlineEnvironment,
-  AiOutlineMail,
-  AiOutlineMobile,
-} from "react-icons/ai";
 import { Link } from "react-router-dom";
+import {
+  LuFacebook,
+  LuInstagram,
+  LuLinkedin,
+  LuMail,
+  LuMapPin,
+  LuSmartphone,
+} from "react-icons/lu";
 
 const Footer = () => {
   return (
@@ -27,14 +27,14 @@ const Footer = () => {
             <div>
               <h3 className="title text-white mb-4">Follow us</h3>
               <div className="flex items-center gap-4">
-                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center">
-                  <AiFillFacebook className="text-2xl" />
+                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+                  <LuFacebook className="text-xl" />
                 </div>
-                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center">
-                  <AiFillLinkedin className="text-2xl" />
+                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+                  <LuLinkedin className="text-xl" />
                 </div>
-                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center">
-                  <AiFillInstagram className="text-2xl" />
+                <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+                  <LuInstagram className="text-xl" />
                 </div>
               </div>
             </div>
@@ -78,19 +78,19 @@ const Footer = () => {
             <ul className="flex flex-col gap-4">
               <li className="text-line flex gap-2 items-center">
                 <div className="h-7 w-7 rounded-full border border-primary bg-primary flex items-center justify-center">
-                  <AiOutlineMail className="" />
+                  <LuMail className="font-bold" />
                 </div>
                 <span>info@edubid.com</span>
               </li>
               <li className="text-line flex gap-2 items-center">
                 <div className="h-7 w-7 rounded-full border border-primary bg-primary flex items-center justify-center">
-                  <AiOutlineMobile className="" />
+                  <LuSmartphone className="" />
                 </div>
                 <span>+44 330 3330 232</span>
               </li>
               <li className="text-line flex gap-2 items-center">
                 <div className="h-7 w-7 rounded-full border border-primary bg-primary flex items-center justify-center">
-                  <AiOutlineEnvironment className="" />
+                  <LuMapPin className="" />
                 </div>
                 <span>345 Street 2, Bucharest</span>
               </li>

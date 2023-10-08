@@ -1,5 +1,5 @@
 import Button from "@/components/Buttons/Button";
-import { RiLockLine, RiMailLine, RiUserLine } from "react-icons/ri";
+import { LuLock, LuMail, LuUser2 } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const SignUpForm = ({ setStep }) => {
@@ -8,7 +8,7 @@ const SignUpForm = ({ setStep }) => {
       <div className="mb-7">
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
           <label htmlFor="username">
-            <RiUserLine className="text-2xl" />
+            <LuUser2 className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"
@@ -21,7 +21,7 @@ const SignUpForm = ({ setStep }) => {
         </div>
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
           <label htmlFor="email">
-            <RiMailLine className="text-2xl" />
+            <LuMail className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"
@@ -34,7 +34,7 @@ const SignUpForm = ({ setStep }) => {
         </div>
         <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text">
           <label htmlFor="password">
-            <RiLockLine className="text-2xl" />
+            <LuLock className="text-2xl" />
           </label>
           <input
             className="py-3 w-full bg-transparent outline-none"

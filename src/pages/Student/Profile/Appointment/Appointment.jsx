@@ -1,6 +1,6 @@
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
-import { RiCalendarCheckLine } from "react-icons/ri";
+import { LuCalendarCheck } from "react-icons/lu";
 
 const Appointment = () => {
   return (
@@ -27,7 +27,7 @@ const Appointment = () => {
                   className={"ml-auto"}
                   text={"Book a Session"}
                   icon={
-                    <RiCalendarCheckLine className="text-xl" />
+                    <LuCalendarCheck className="text-xl" />
                   }
                 />
               </div>

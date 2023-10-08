@@ -1,12 +1,12 @@
 import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
 import profileUserIcon from "@/assets/images/icons/profile-user.svg";
-import { AiOutlineEdit, AiOutlineEnvironment } from "react-icons/ai";
 import Button from "@/components/Buttons/Button";
 import eduCap from "@/assets/images/icons/edu-cap-sky-blue.svg";
 import phoneCall from "@/assets/images/icons/phone-call-sky-blue.svg";
 import badge from "@/assets/images/icons/badge-sky-blue.svg";
 import calendar from "@/assets/images/icons/calendar-sky-blue.svg";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
+import { LuMapPin, LuPenSquare } from "react-icons/lu";
 const UserAbout = () => {
   return (
     <div className="relative mb-24 lg:-mt-32 -mt-80">
@@ -25,7 +25,7 @@ const UserAbout = () => {
               <div>
                 <h1 className="text-xl font-bold text-title mb-2">Musa Zain</h1>
                 <div className="flex gap-1 items-center">
-                  <AiOutlineEnvironment className="text-xl text-primary" />
+                  <LuMapPin className="text-xl text-primary" />
                   <span className="text-sm">Nikunjo-2, Khilkhet, Dhaka</span>
                 </div>
               </div>
@@ -33,11 +33,11 @@ const UserAbout = () => {
                 <Button
                   className={"hidden lg:flex"}
                   text={"Edit Profile"}
-                  icon={<AiOutlineEdit className="text-xl" />}
+                  icon={<LuPenSquare className="text-xl" />}
                 />
                 <Button
                   className={"lg:hidden rounded-btn-sm"}
-                  icon={<AiOutlineEdit className="" />}
+                  icon={<LuPenSquare />}
                 />
               </div>
             </div>

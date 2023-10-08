@@ -89,7 +89,7 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
         )}
         {stepTab?.title === "Basic information" && (
           <Suspense fallback={<Loading />}>
-            <Step_BasicInformation />
+            <Step_BasicInformation setStepStatusAndSetTab={setStepStatusAndSetTab} />
           </Suspense>
         )}
         {stepTab?.title === "Additional documents" && (

@@ -1,5 +1,5 @@
 import Button from "@/components/Buttons/Button";
-import { AiOutlineCalendar, AiOutlineTag } from "react-icons/ai";
+import { LuCalendar, LuTag } from "react-icons/lu";
 
 const BlogCard = ({ data }) => {
   const { image_url, date, category, title } = data;
@@ -15,11 +15,11 @@ const BlogCard = ({ data }) => {
       <div>
         <div className="flex flex-wrap gap-2 justify-between mb-4">
           <div className="flex items-center gap-2">
-            <AiOutlineCalendar className="text-2xl" />
+            <LuCalendar className="text-2xl" />
             <span>{date}</span>
           </div>
           <div className="flex items-center gap-2">
-            <AiOutlineTag className="text-2xl" />
+            <LuTag className="text-2xl" />
             <span>{category}</span>
           </div>
         </div>

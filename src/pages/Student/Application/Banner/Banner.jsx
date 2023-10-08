@@ -2,10 +2,10 @@ import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import { Link } from "react-router-dom";
 import profileImg from "@/assets/images/profile.jpg";
 import Button from "@/components/Buttons/Button";
-import { RiCalendarCheckLine } from "react-icons/ri";
 import chat from "@/assets/images/icons/chat-sky-blue.svg";
 import madel from "@/assets/images/icons/madel-sky-blue.svg";
 import StarRating from "@/components/StarRating/StarRating";
+import { LuCalendarCheck } from "react-icons/lu";
 
 const Banner = () => {
   return (
@@ -53,7 +53,7 @@ const Banner = () => {
                       <Button
                         className={"ml-auto"}
                         text={"Book a Session"}
-                        icon={<RiCalendarCheckLine className="text-xl" />}
+                        icon={<LuCalendarCheck className="text-xl" />}
                       />
                     </div>
                   </div>

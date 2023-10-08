@@ -5,7 +5,7 @@ const StepsList = ({ steps, stepTab, setStepTab }) => {
         <h3 className="title text-3xl">Your Steps</h3>
       </div>
       <ul className="flex flex-col gap-4">
-        {steps?.map((step, i) => (
+        { steps?.map((step, i) => (
           <li
             key={i}
             onClick={() => setStepTab(step)}

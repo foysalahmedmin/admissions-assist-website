@@ -1,26 +1,90 @@
 import { Suspense, lazy } from "react";
-import Step_BasicInformation from "../Steps/Step_BasicInformation";
-import Step_AdditionalDocuments from "../Steps/Step_AdditionalDocuments";
 import Loading from "@/components/Loading/Loading";
-import Step_Qualifications from "../Steps/Step_Qualifications";
-import Step_ImmigrationDocuments from "../Steps/Step_ImmigrationDocuments";
-import Step_ApplicationForm from "../Steps/Step_ApplicationForm";
-import Step_StudentFinanceCompleted from "../Steps/Step_StudentFinanceCompleted";
-import Step_StudentCounselling from "../Steps/Step_StudentCounselling";
-import Step_InterviewBooked from "../Steps/Step_InterviewBooked";
+
 const Step_ContactInformation = lazy(() =>
   import(
     "@/pages/Student/Application/Process/StepForm/Steps/Step_ContactInformation"
   )
 );
+const Step_BasicInformation = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_BasicInformation"
+  )
+);
+const Step_AdditionalDocuments = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_AdditionalDocuments"
+  )
+);
+const Step_Qualifications = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_Qualifications"
+  )
+);
+const Step_ImmigrationDocuments = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_ImmigrationDocuments"
+  )
+);
+const Step_ApplicationForm = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_ApplicationForm"
+  )
+);
+const Step_StudentFinanceCompleted = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceCompleted"
+  )
+);
+const Step_StudentCounselling = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentCounselling"
+  )
+);
+const Step_InterviewBooked = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewBooked"
+  )
+);
+const Step_InterviewResult = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewResult"
+  )
+);
+const Step_OfferLetterReceived = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_OfferLetterReceived"
+  )
+);
+const Step_StudentFinanceDate = lazy(() =>
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceDate"
+  )
+);
+const Step_FollowUp = lazy(() =>
+  import("@/pages/Student/Application/Process/StepForm/Steps/Step_FollowUp")
+);
 
 const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
+  const setStepStatusAndSetTab = () => {
+    const index = steps.findIndex((step) => step.title === stepTab.title);
+    const updatedSteps = [...steps];
+    updatedSteps[index].status = "completed";
+    setSteps(updatedSteps);
+
+    const nextStep = steps[index + 1];
+    if (steps.length < nextStep) {
+      setStepTab(nextStep);
+    }
+  };
   return (
     <div>
-      <form action="">
+      <div>
         {stepTab?.title === "Contact information" && (
           <Suspense fallback={<Loading />}>
-            <Step_ContactInformation />
+            <Step_ContactInformation
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Basic information" && (
@@ -58,7 +122,32 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
             <Step_InterviewBooked />
           </Suspense>
         )}
-      </form>
+        {stepTab?.title === "Interview Result" && (
+          <Suspense fallback={<Loading />}>
+            <Step_InterviewResult />
+          </Suspense>
+        )}
+        {stepTab?.title === "Offer Letter Received" && (
+          <Suspense fallback={<Loading />}>
+            <Step_OfferLetterReceived />
+          </Suspense>
+        )}
+        {stepTab?.title === "Student finance date" && (
+          <Suspense fallback={<Loading />}>
+            <Step_StudentFinanceDate />
+          </Suspense>
+        )}
+        {stepTab?.title === "Student finance Completed" && (
+          <Suspense fallback={<Loading />}>
+            <Step_StudentFinanceCompleted />
+          </Suspense>
+        )}
+        {stepTab?.title === "Follow up" && (
+          <Suspense fallback={<Loading />}>
+            <Step_FollowUp />
+          </Suspense>
+        )}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const all_steps = [
   {
     serial: 1,
     title: "Contact information",
-    status: "completed",
+    status: null,
   },
   {
     serial: 2,
@@ -75,7 +75,7 @@ const Process = () => {
   const [stepTab, setStepTab] = useState({
     serial: 1,
     title: "Contact information",
-    status: "completed",
+    status: null,
   });
   return (
     <section>

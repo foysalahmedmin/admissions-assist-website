@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import logo from "@/assets/images/logo.svg";
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
+import Toaster from "@/components/Toaster/Toaster";
 
 const Authentication = () => {
   return (
@@ -25,6 +26,7 @@ const Authentication = () => {
           </div>
         </BackgroundLayer>
       </main>
+      <Toaster />
     </>
   );
 };

@@ -73,9 +73,10 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
     setSteps(updatedSteps);
 
     const nextStep = steps[index + 1];
-    if (steps.length < nextStep) {
+    if ([index + 1] < steps.length) {
       setStepTab(nextStep);
     }
+    console.log(nextStep);
   };
   return (
     <div>
@@ -89,7 +90,9 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
         )}
         {stepTab?.title === "Basic information" && (
           <Suspense fallback={<Loading />}>
-            <Step_BasicInformation setStepStatusAndSetTab={setStepStatusAndSetTab} />
+            <Step_BasicInformation
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Additional documents" && (

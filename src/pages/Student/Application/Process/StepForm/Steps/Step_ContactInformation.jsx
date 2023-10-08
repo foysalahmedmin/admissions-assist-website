@@ -10,7 +10,7 @@ const Step_ContactInformation = ({ setStepStatusAndSetTab }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSave}>
+      <form>
         <div>
           <h1 className="title text-2xl">Contact information</h1>
         </div>
@@ -93,7 +93,7 @@ const Step_ContactInformation = ({ setStepStatusAndSetTab }) => {
         </div>
         <div>
           <Button
-            onClick={() => ""}
+            onClick={handleSave}
             type={"submit"}
             text={"Save"}
             icon={

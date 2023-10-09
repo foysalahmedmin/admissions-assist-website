@@ -6,10 +6,10 @@ const Table = ({table_data}) => {
       <table className="w-full">
         <thead>
           <tr className="bg-input">
-            <th className="text-title text-left px-4 py-2">Activities name</th>
-            <th className="text-title text-left px-4 py-2">Activity details</th>
-            <th className="text-title text-center px-4 py-2">Instruction</th>
-            <th className="text-title text-center px-4 py-2">Actions</th>
+            <th className="text-title text-left px-4 py-2 whitespace-nowrap">Activities name</th>
+            <th className="text-title text-left px-4 py-2 whitespace-nowrap">Activity details</th>
+            <th className="text-title text-center px-4 py-2 whitespace-nowrap">Instruction</th>
+            <th className="text-title text-center px-4 py-2 whitespace-nowrap">Actions</th>
           </tr>
         </thead>
         <tbody>

@@ -51,16 +51,6 @@
     -ms-overflow-style: none;
 }
 
-/* placeholder */
-::placeholder {
-  color: #A0A9BD;
-  opacity: 1;
-}
-
-::-ms-input-placeholder {
-  color: #A0A9BD;
-}
-
 /* number-input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

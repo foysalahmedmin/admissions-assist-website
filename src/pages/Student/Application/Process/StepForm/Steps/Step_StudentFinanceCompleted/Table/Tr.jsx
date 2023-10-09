@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LuDownload, LuFileQuestion, LuTrash2, LuUpload } from "react-icons/lu";
+import { LuFileQuestion } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import DocumentModal from "./DocumentModal";
 
@@ -9,7 +9,9 @@ const Tr = ({ data }) => {
   return (
     <>
       <tr className="odd:bg-white even:bg-slate-50">
-        <td className=" text-left px-4 py-2"><span className="w-60">{activities_name}</span></td>
+        <td className=" text-left px-4 py-2">
+          <span className="w-60">{activities_name}</span>
+        </td>
         <td className="text-left px-4 py-2">
           <Link className="underline text-primary">{activity_details}</Link>
         </td>
@@ -25,24 +27,13 @@ const Tr = ({ data }) => {
         </td>
         <td className="text-left px-4 py-2">
           <div className="flex gap-2 items-center justify-center">
-            <button
-              type="button"
-              className="h-7 w-7 rounded-full flex items-center justify-center bg-primary text-white animate-pop active:scale-95"
-            >
-              <LuDownload />
-            </button>
-            <button
-              type="button"
-              className="h-7 w-7 rounded-full flex items-center justify-center bg-green-500 text-white animate-pop active:scale-95"
-            >
-              <LuUpload />
-            </button>
-            <button
-              type="button"
-              className="h-7 w-7 rounded-full flex items-center justify-center bg-red-500 text-white animate-pop active:scale-95"
-            >
-              <LuTrash2 />
-            </button>
+            <textarea
+              className="py-1 px-4 text-sm resize-none rounded-xl outline-none border focus-within:border-primary"
+              name=""
+              id=""
+              rows="2"
+              placeholder="Start writing here"
+            ></textarea>
           </div>
         </td>
       </tr>

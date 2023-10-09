@@ -170,7 +170,7 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
         )}
         {stepTab?.title === "Follow up" && (
           <Suspense fallback={<Loading />}>
-            <Step_FollowUp />
+            <Step_FollowUp setStepStatusAndSetTab={setStepStatusAndSetTab} />
           </Suspense>
         )}
       </div>

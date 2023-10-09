@@ -5,12 +5,8 @@ import FAQ from "./FAQ";
 const table_data = [
   {
     activities_name:
-      "Proof of Address (Bank statement/Utility bill/Council tax) (Required)",
-    activity_details: "Utility@Monikahasan.pdf",
-  },
-  {
-    activities_name: "Upload CV (Required)",
-    activity_details: "CV@Monika.jpg",
+      "Please see your email and check further instructions for the English Test. (Required)",
+    activity_details: "passed",
   },
 ];
 
@@ -23,7 +19,7 @@ const Step_InterviewResult = ({ setStepStatusAndSetTab }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">Additional Documents</h1>
+          <h1 className="title text-2xl">Interview Result</h1>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { LuDownload, LuFileQuestion, LuTrash2, LuUpload } from "react-icons/lu";
+import { LuCheck, LuDownload, LuFileQuestion } from "react-icons/lu";
+import { BsExclamationLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import DocumentModal from "./DocumentModal";
 
@@ -27,21 +28,15 @@ const Tr = ({ data }) => {
           <div className="flex gap-2 items-center justify-center">
             <button
               type="button"
-              className="h-7 w-7 rounded-full flex items-center justify-center bg-primary text-white animate-pop active:scale-95"
-            >
-              <LuDownload />
-            </button>
-            <button
-              type="button"
               className="h-7 w-7 rounded-full flex items-center justify-center bg-green-500 text-white animate-pop active:scale-95"
             >
-              <LuUpload />
+              <LuCheck />
             </button>
             <button
               type="button"
               className="h-7 w-7 rounded-full flex items-center justify-center bg-red-500 text-white animate-pop active:scale-95"
             >
-              <LuTrash2 />
+              <BsExclamationLg />
             </button>
           </div>
         </td>

@@ -4,13 +4,8 @@ import FAQ from "./FAQ";
 
 const table_data = [
   {
-    activities_name:
-      "Proof of Address (Bank statement/Utility bill/Council tax) (Required)",
-    activity_details: "Utility@Monikahasan.pdf",
-  },
-  {
-    activities_name: "Upload CV (Required)",
-    activity_details: "CV@Monika.jpg",
+    activities_name: "Do you have any feedback/queries?",
+    activity_details: "Feedback",
   },
 ];
 
@@ -23,7 +18,7 @@ const Step_FollowUp = ({ setStepStatusAndSetTab }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">Additional Documents</h1>
+          <h1 className="title text-2xl">Follow Up</h1>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">
@@ -33,7 +28,7 @@ const Step_FollowUp = ({ setStepStatusAndSetTab }) => {
           <Button
             onClick={handleSave}
             type={"submit"}
-            text={"Save"}
+            text={"Submit"}
             icon={
               <span className="material-icons-outlined">trending_flat</span>
             }

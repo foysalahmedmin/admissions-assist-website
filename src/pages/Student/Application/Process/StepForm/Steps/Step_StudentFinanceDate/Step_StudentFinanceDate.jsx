@@ -23,7 +23,7 @@ const Step_StudentFinanceDate = ({ setStepStatusAndSetTab }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">Additional Documents</h1>
+          <h1 className="title text-2xl">Student Finance Date</h1>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">

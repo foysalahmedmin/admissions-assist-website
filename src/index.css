@@ -23,21 +23,32 @@
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  max-width: .5rem;
+  max-height: .5rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1c33;
-  border-radius: 5px;
+  background: #ffffff50;
+  border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #66666666;
-  border-radius: 5px;
+  background: #25252550;
+  border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d5dae2;
+  background: #ff7f45;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hidden{
+    scroll-behavior: none;
+}
+.scroll-hidden{
+    -ms-overflow-style: none;
 }
 
 /* placeholder */
@@ -70,7 +81,7 @@ input[type=number] {
   @apply bg-secondary
 }
 
-.guidance-slider .swiper-button-disabled{
+.guidance-slider .swiper-button-disabled {
   @apply bg-black bg-opacity-10
 }
 

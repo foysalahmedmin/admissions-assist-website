@@ -1,68 +1,71 @@
 import { Suspense, lazy } from "react";
 import Loading from "@/components/Loading/Loading";
+import { toast } from "react-toastify";
 
 const Step_ContactInformation = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_ContactInformation"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_ContactInformation/Step_ContactInformation"
   )
 );
 const Step_BasicInformation = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_BasicInformation"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_BasicInformation/Step_BasicInformation"
   )
 );
 const Step_AdditionalDocuments = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_AdditionalDocuments"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_AdditionalDocuments/Step_AdditionalDocuments"
   )
 );
 const Step_Qualifications = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_Qualifications"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_Qualifications/Step_Qualifications"
   )
 );
 const Step_ImmigrationDocuments = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_ImmigrationDocuments"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_ImmigrationDocuments/Step_ImmigrationDocuments"
   )
 );
 const Step_ApplicationForm = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_ApplicationForm"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_ApplicationForm/Step_ApplicationForm"
   )
 );
 const Step_StudentFinanceCompleted = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceCompleted"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceCompleted/Step_StudentFinanceCompleted"
   )
 );
 const Step_StudentCounselling = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentCounselling"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentCounselling/Step_StudentCounselling"
   )
 );
 const Step_InterviewBooked = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewBooked"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewBooked/Step_InterviewBooked"
   )
 );
 const Step_InterviewResult = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewResult"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_InterviewResult/Step_InterviewResult"
   )
 );
 const Step_OfferLetterReceived = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_OfferLetterReceived"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_OfferLetterReceived/Step_OfferLetterReceived"
   )
 );
 const Step_StudentFinanceDate = lazy(() =>
   import(
-    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceDate"
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_StudentFinanceDate/Step_StudentFinanceDate"
   )
 );
 const Step_FollowUp = lazy(() =>
-  import("@/pages/Student/Application/Process/StepForm/Steps/Step_FollowUp")
+  import(
+    "@/pages/Student/Application/Process/StepForm/Steps/Step_FollowUp/Step_FollowUp"
+  )
 );
 
 const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
@@ -76,7 +79,7 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
     if ([index + 1] < steps.length) {
       setStepTab(nextStep);
     }
-    console.log(nextStep);
+    toast.success(stepTab?.title + " " + "saved");
   };
   return (
     <div>

@@ -1,11 +1,9 @@
 import Button from "@/components/Buttons/Button";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const Step_ContactInformation = ({ setStepStatusAndSetTab }) => {
   const handleSave = (e) => {
     e.preventDefault();
-    toast.success("Contact information saved");
     setStepStatusAndSetTab();
   };
   return (

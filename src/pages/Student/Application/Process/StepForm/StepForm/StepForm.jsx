@@ -100,52 +100,72 @@ const StepForm = ({ steps, setSteps, stepTab, setStepTab }) => {
         )}
         {stepTab?.title === "Additional documents" && (
           <Suspense fallback={<Loading />}>
-            <Step_AdditionalDocuments />
+            <Step_AdditionalDocuments
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Qualifications" && (
           <Suspense fallback={<Loading />}>
-            <Step_Qualifications />
+            <Step_Qualifications
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Immigration documents" && (
           <Suspense fallback={<Loading />}>
-            <Step_ImmigrationDocuments />
+            <Step_ImmigrationDocuments
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Application form" && (
           <Suspense fallback={<Loading />}>
-            <Step_ApplicationForm />
+            <Step_ApplicationForm
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Student Counselling" && (
           <Suspense fallback={<Loading />}>
-            <Step_StudentCounselling />
+            <Step_StudentCounselling
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Interview Booked" && (
           <Suspense fallback={<Loading />}>
-            <Step_InterviewBooked />
+            <Step_InterviewBooked
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Interview Result" && (
           <Suspense fallback={<Loading />}>
-            <Step_InterviewResult />
+            <Step_InterviewResult
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Offer Letter Received" && (
           <Suspense fallback={<Loading />}>
-            <Step_OfferLetterReceived />
+            <Step_OfferLetterReceived
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Student finance date" && (
           <Suspense fallback={<Loading />}>
-            <Step_StudentFinanceDate />
+            <Step_StudentFinanceDate
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Student finance Completed" && (
           <Suspense fallback={<Loading />}>
-            <Step_StudentFinanceCompleted />
+            <Step_StudentFinanceCompleted
+              setStepStatusAndSetTab={setStepStatusAndSetTab}
+            />
           </Suspense>
         )}
         {stepTab?.title === "Follow up" && (

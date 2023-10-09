@@ -1,5 +1,6 @@
 import Button from "@/components/Buttons/Button";
 import { Link } from "react-router-dom";
+import FAQ from "./FAQ";
 
 const Step_ContactInformation = ({ setStepStatusAndSetTab }) => {
   const handleSave = (e) => {
@@ -99,28 +100,8 @@ const Step_ContactInformation = ({ setStepStatusAndSetTab }) => {
             }
           />
         </div>
-        <hr className="my-7" />
-        <div>
-          <h1 className="title text-2xl mb-4">Contact information</h1>
-          <ul className="flex flex-col gap-2 text-title">
-            <li>
-              <Link className="underline">
-                Can I save my application and return to complete it later?
-              </Link>
-            </li>
-            <li>
-              <Link className="underline">How do I upload my documents?</Link>
-            </li>
-            <li>
-              <Link className="underline">
-                My documents are too large to upload. How do I reduce the file
-                size?
-              </Link>
-            </li>
-          </ul>
-        </div>
       </form>
-      <div></div>
+      <FAQ />
     </div>
   );
 };

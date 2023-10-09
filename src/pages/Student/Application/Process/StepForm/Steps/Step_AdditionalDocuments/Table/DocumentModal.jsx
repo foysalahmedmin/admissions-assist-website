@@ -1,4 +1,5 @@
 import Modal from "@/components/Modal/Modal";
+import { Link } from "react-router-dom";
 
 const DocumentModal = ({ isOpen, setIsOpen }) => {
   return (
@@ -14,8 +15,11 @@ const DocumentModal = ({ isOpen, setIsOpen }) => {
         </div>
         <div className="p-7">
           <p>
-            You must submit a legible copy of your valid travel document which
-            you will use to travel.
+            You must submit a legible copy of your valid{" "}
+            <Link className="text-secondary font-semibold">
+              travel document
+            </Link>{" "}
+            which you will use to travel.
           </p>
           <p>If you have a passport, you must provide a copy of:</p>
           <ul className="list-disc ml-7">

@@ -1,14 +1,17 @@
-const StepsList = ({ steps, stepTab, setStepTab }) => {
+const StepsList = ({ steps, stepTab, setStepTab, setIsFormShow }) => {
   return (
     <div>
       <div className="mb-12">
         <h3 className="title text-3xl">Your Steps</h3>
       </div>
       <ul className="flex flex-col gap-4">
-        { steps?.map((step, i) => (
+        {steps?.map((step, i) => (
           <li
             key={i}
-            onClick={() => setStepTab(step)}
+            onClick={() => {
+              setStepTab(step);
+              setIsFormShow(true);
+            }}
             className={`${
               step?.title === stepTab?.title ? "text-white" : "bg-opacity-5"
             } title p-4 flex items-center gap-7 justify-between rounded bg-primary cursor-pointer`}

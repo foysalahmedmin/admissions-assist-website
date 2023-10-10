@@ -11,12 +11,12 @@ const Banner = () => {
   return (
     <BackgroundLayer image_url={"/background/application-banner.png"}>
       <div className="container mx-auto lg:py-24 py-14">
-        <div className="flex items-center justify-between gap-7 lg:gap-12">
-          <div className="text-white">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-7 lg:gap-12">
+          <div className="text-white text-center lg:text-left">
             <h1 className="text-3xl lg:text-5xl title text-white mb-4">
               Application
             </h1>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               <span className="material-icons-outlined">arrow_back</span>
               <div className="flex items-center gap-2">
                 <span>
@@ -33,21 +33,23 @@ const Banner = () => {
           </div>
           <div>
             <div className="py-12 px-7 bg-white rounded-3xl">
-              <div className="flex gap-7">
-                <div className="flex-shrink-0 h-20 w-20">
-                  <img
-                    className="h-full w-full object-cover object-center rounded-full"
-                    src={profileImg}
-                    alt=""
-                  />
-                </div>
+              <div className="flex flex-col lg:flex-row gap-7">
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-7">
-                    <div>
-                      <h3 className="title text-2xl mb-2">Musa Zain</h3>
-                      <button className="py-1 px-4 rounded bg-primary text-white text-sm">
-                        <span>Councilor</span>
-                      </button>
+                  <div className="flex flex-wrap items-center gap-7 mb-7">
+                    <div className="flex items-center gap-7">
+                      <div className="flex-shrink-0 h-20 w-20">
+                        <img
+                          className="h-full w-full object-cover object-center rounded-full"
+                          src={profileImg}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h3 className="title text-2xl mb-2">Musa Zain</h3>
+                        <button className="py-1 px-4 rounded bg-primary text-white text-sm">
+                          <span>Councilor</span>
+                        </button>
+                      </div>
                     </div>
                     <div>
                       <Button
@@ -57,7 +59,7 @@ const Banner = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
                         <img

@@ -19,7 +19,7 @@ const Selector = () => {
         </div>
       </div>
       <div>
-        <div className="max-w-[12rem] lg:ml-auto text-center">
+        <div className="lg:max-w-[12rem] lg:ml-auto lg:text-right">
           <ProgressBarLinear
             percentage={45}
             strokeSize={8}

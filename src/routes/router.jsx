@@ -13,6 +13,9 @@ const Profile = lazy(() => import("@/pages/Student/Profile/Profile/Profile"));
 const Application = lazy(() =>
   import("@/pages/Student/Application/Application/Application")
 );
+const BookSession = lazy(() =>
+  import("@/pages/Student/BookSession/BookSession/BookSession")
+);
 
 const router = createBrowserRouter([
   {
@@ -54,6 +57,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Application />
+          </Suspense>
+        ),
+      },
+      {
+        path: "book_session",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <BookSession />
           </Suspense>
         ),
       },

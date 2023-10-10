@@ -105,7 +105,7 @@ const Process = () => {
               isFormShow ? "" : "hidden lg:block"
             } flex-1 px-7 lg:px-12 py-7 lg:py-14 rounded-3xl shadow-custom`}
           >
-            <div className="h-6 mb-7">
+            <div className="h-6 mb-7 lg:hidden">
               <span
                 onClick={() => setIsFormShow(false)}
                 className="material-icons-outlined cursor-pointer hover:text-secondary"

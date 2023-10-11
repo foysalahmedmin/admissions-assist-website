@@ -5,6 +5,7 @@ const Main = lazy(() => import("@/layout/Main"));
 const Student = lazy(() => import("@/layout/Student"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
+const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
   import("@/pages/Authentication/SignUp/SignUp/SignUp")
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Contact />
           </Suspense>
         ),
       },

@@ -5,7 +5,7 @@ import { BiLogoZoom, BiSolidTimeFive, BiWorld } from "react-icons/bi";
 import Calendar from "../../../../components/Calendar/Calendar";
 
 const Schedule = () => {
-  const [selectedDay, setSelectedDay] = useState([]);
+  const [days, setDays] = useState([]);
   return (
     <section className="lg:py-24 py-14">
       <div className="container mx-auto">
@@ -63,9 +63,11 @@ const Schedule = () => {
               </div>
               <hr />
               <div className="my-4">
-                {/* <DtPicker withTime onChange={setDate} /> */}
                 <div className="mb-2">
-                  <Calendar />
+                  <Calendar days={days} setDays={setDays} />
+                </div>
+                <div className="mb-4">
+                  <input className="w-full" type="time" name="" id="" />
                 </div>
                 <div className="flex items-center gap-2">
                   <label className="flex items-center gap-2" htmlFor="country">

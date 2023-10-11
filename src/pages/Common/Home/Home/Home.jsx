@@ -10,6 +10,7 @@ import Testimonials from "@/pages/Common/Home/Testimonials/Testimonials";
 import Executives from "@/pages/Common/Home/Executives/Executives";
 import Blogs from "@/pages/Common/Home/Blogs/Blogs";
 import SubFooter from "@/pages/Footer/SubFooter/SubFooter";
+import AppDownload from "../AppDownload/AppDownload";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -28,6 +29,7 @@ const Home = () => {
       <Services />
       <Categories />
       <ThemeVideo />
+      <AppDownload />
       <Testimonials />
       <Executives />
       <Blogs />

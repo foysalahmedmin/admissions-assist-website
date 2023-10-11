@@ -6,6 +6,7 @@ const Student = lazy(() => import("@/layout/Student"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
+const Search = lazy(() => import("@/pages/Common/Search/Search/Search"));
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
   import("@/pages/Authentication/SignUp/SignUp/SignUp")
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/search",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Search />
           </Suspense>
         ),
       },

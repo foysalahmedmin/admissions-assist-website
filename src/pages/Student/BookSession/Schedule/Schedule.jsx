@@ -1,11 +1,8 @@
 import Button from "@/components/Buttons/Button";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { useState } from "react";
-import { DtPicker } from "react-calendar-datetime-picker";
-import "react-calendar-datetime-picker/dist/style.css";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { BiLogoZoom, BiSolidTimeFive, BiWorld } from "react-icons/bi";
-import { Calendar } from "react-modern-calendar-datepicker";
+import Calendar from "../../../../components/Calendar/Calendar";
 
 const Schedule = () => {
   const [selectedDay, setSelectedDay] = useState([]);
@@ -19,7 +16,7 @@ const Schedule = () => {
             "Stay ahead of the curve by enrolling in trending disciplines recognized worldwide."
           }
         />
-        <div className="max-w-5xl mx-auto py-7 px-7 shadow-custom">
+        <div className="max-w-5xl mx-auto py-7 px-7 lg:px-12 rounded-3xl shadow-custom">
           <div className="flex items-center justify-between mb-12">
             <div></div>
             <div>
@@ -29,7 +26,7 @@ const Schedule = () => {
               />
             </div>
           </div>
-          <div className="flex justify-between gap-7">
+          <div className="flex flex-col lg:flex-row justify-between gap-7">
             <div className="flex-1">
               <div className="py-4">
                 <h3 className="text-2xl title text-text">
@@ -57,7 +54,7 @@ const Schedule = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[1px] bg-line"></div>
+            <div className="w-[1px] bg-line hidden lg:block"></div>
             <div className="flex-1">
               <div className="py-4">
                 <h3 className="text-2xl title text-text">
@@ -68,30 +65,20 @@ const Schedule = () => {
               <div className="my-4">
                 {/* <DtPicker withTime onChange={setDate} /> */}
                 <div className="mb-2">
-                  <input
-                    className="w-full outline-none bg-white shadow-custom rounded-xl px-7 py-2 mb-2"
-                    type="time"
-                    name=""
-                    id=""
-                  />
-
-                  <Calendar
-                    colorPrimary="#1BABA1"
-                    calendarClassName="!w-full"
-                    calendarSelectedDayClassName="!rounded-none"
-                    value={selectedDay}
-                    onChange={setSelectedDay}
-                    shouldHighlightWeekends
-                  />
+                  <Calendar />
                 </div>
-                <div className="flex items-center gap-2 bg-white shadow-custom rounded-xl px-7 py-2">
+                <div className="flex items-center gap-2">
                   <label className="flex items-center gap-2" htmlFor="country">
                     <span>
                       <BiWorld className="text-xl" />
                     </span>
                     <span>Eastern Time -</span>
                   </label>
-                  <select className="outline-none flex-1" name="country" id="country">
+                  <select
+                    className="outline-none flex-1"
+                    name="country"
+                    id="country"
+                  >
                     <option value="">Bangladesh</option>
                     <option value="">US & Canada</option>
                   </select>

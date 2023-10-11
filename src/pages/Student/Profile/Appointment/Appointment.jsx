@@ -1,6 +1,7 @@
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 import { LuCalendarCheck } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const Appointment = () => {
   return (
@@ -23,13 +24,13 @@ const Appointment = () => {
                 </p>
               </div>
               <div>
-                <Button
-                  className={"ml-auto"}
-                  text={"Book a Session"}
-                  icon={
-                    <LuCalendarCheck className="text-xl" />
-                  }
-                />
+                <Link to={'/student/book_session'}>
+                  <Button
+                    className={"ml-auto"}
+                    text={"Book a Session"}
+                    icon={<LuCalendarCheck className="text-xl" />}
+                  />
+                </Link>
               </div>
             </div>
           </div>

@@ -1,20 +1,28 @@
 import { useState } from "react";
 import Filter from "../Filter/Filter";
 import Sort from "../Sort/Sort";
+import Courses from "../Courses/Courses";
 
 const Search = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   console.log(selectedOptions);
+
+  const addSelectedOption = (optionValue) => {
+    if (!selectedOptions.includes(optionValue)) {
+      setSelectedOptions([...selectedOptions, optionValue]);
+    }
+  };
+  const removeSelectedOption = (optionValue) => {
+    setSelectedOptions(
+      selectedOptions.filter((option) => option !== optionValue)
+    );
+  };
   const handleSelect = (e) => {
     const checkbox = e.target;
     if (checkbox.checked) {
-      if (!selectedOptions.includes(checkbox.value)) {
-        setSelectedOptions([...selectedOptions, checkbox.value]);
-      }
+      addSelectedOption(checkbox.value);
     } else {
-      setSelectedOptions(
-        selectedOptions.filter((option) => option !== checkbox.value)
-      );
+      removeSelectedOption(checkbox.value);
     }
   };
   return (
@@ -40,8 +48,14 @@ const Search = () => {
           <hr />
           <div className="py-7 flex gap-7 lg:gap-12">
             <aside className="border rounded-3xl">
-              <Filter handleSelect={handleSelect} />
+              <Filter handleSelect={handleSelect} selectedOptions={selectedOptions} />
             </aside>
+            <div>
+              <Courses
+                selectedOptions={selectedOptions}
+                removeSelectedOption={removeSelectedOption}
+              />
+            </div>
           </div>
         </div>
       </main>

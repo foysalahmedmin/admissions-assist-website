@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FilterMenuOption from "./FilterMenuOption";
 
-const FilterMenu = ({ menu, handleSelect }) => {
+const FilterMenu = ({ menu, handleSelect, selectedOptions }) => {
   const { title, options } = menu;
   const [isShowOption, setIsShowOption] = useState(true);
   const [sliceLength, setSliceLength] = useState(3);
@@ -29,7 +29,12 @@ const FilterMenu = ({ menu, handleSelect }) => {
       >
         <ul className="grid grid-cols-1 gap-2">
           {options.slice(0, sliceLength).map((option, i) => (
-            <FilterMenuOption key={i} option={option} handleSelect={handleSelect} />
+            <FilterMenuOption
+              key={i}
+              option={option}
+              handleSelect={handleSelect}
+              selectedOptions={selectedOptions}
+            />
           ))}
         </ul>
         {options?.length > 4 && (

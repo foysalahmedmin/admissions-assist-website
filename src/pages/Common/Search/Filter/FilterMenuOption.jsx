@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FilterMenuOption = ({ option, handleSelect }) => {
+const FilterMenuOption = ({ option, handleSelect, selectedOptions }) => {
   const [isShowChildren, setIsShowChildren] = useState(false);
   const handleChild = (e) => {
     const checkbox = e.target;
@@ -18,6 +18,8 @@ const FilterMenuOption = ({ option, handleSelect }) => {
             handleSelect(e);
             handleChild(e);
           }}
+          defaultChecked={selectedOptions?.includes(option?.title)}
+          checked={selectedOptions?.includes(option?.title)}
           className="h-4 w-4"
           type="checkbox"
           name={option?.value}
@@ -26,13 +28,18 @@ const FilterMenuOption = ({ option, handleSelect }) => {
         />
         <label htmlFor={option?.value}>{option?.title}</label>
       </div>
-      {option?.options && isShowChildren && (
-        <ul className="grid grid-cols-1 gap-2 ml-4 mt-2">
+      {option?.options && (
+        <ul
+          className={`${
+            isShowChildren ? "mt-2 max-h-screen" : "max-h-0"
+          } transition-all overflow-hidden grid grid-cols-1 gap-2 ml-4`}
+        >
           {option?.options.map((option, i) => (
             <FilterMenuOption
               key={i}
               option={option}
               handleSelect={handleSelect}
+              selectedOptions={selectedOptions}
             />
           ))}
         </ul>

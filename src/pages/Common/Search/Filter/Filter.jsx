@@ -77,7 +77,7 @@ const filter_menus = [
   },
 ];
 
-const Filter = ({ handleSelect }) => {
+const Filter = ({ handleSelect, selectedOptions }) => {
   return (
     <div className="w-96">
       <div className="px-7 py-4">
@@ -88,7 +88,7 @@ const Filter = ({ handleSelect }) => {
       <hr />
       <div className="px-7 pb-7 pt-4 grid grid-cols-1 gap-2">
         {filter_menus?.map((menu, i) => (
-          <FilterMenu handleSelect={handleSelect} key={menu._id} menu={menu} />
+          <FilterMenu handleSelect={handleSelect} key={menu._id} menu={menu} selectedOptions={selectedOptions} />
         ))}
       </div>
     </div>

@@ -4,9 +4,9 @@ import downloadImg from "@/assets/images/app-download.png";
 
 const AppDownload = () => {
   return (
-    <section className="lg:py-24 py-14 bg-primary bg-opacity-5 lg:bg-opacity-100 lg:bg-[url('/background/app-download.png')] bg-no-repeat bg-cover bg-right">
+    <section className="lg:py-24 pt-14 bg-primary bg-opacity-5 lg:bg-opacity-100 lg:bg-[url('/background/app-download.png')] bg-no-repeat bg-cover bg-right">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0">
           <div>
             <div className="mb-7">
               <h1 className="title text-3xl lg:text-5xl mb-4">
@@ -42,7 +42,7 @@ const AppDownload = () => {
             </div>
           </div>
           <div>
-            <img className="h-full object-cover lg:hidden" src={downloadImg} alt="" />
+            <img className="h-80 object-cover lg:hidden" src={downloadImg} alt="" />
           </div>
         </div>
       </div>

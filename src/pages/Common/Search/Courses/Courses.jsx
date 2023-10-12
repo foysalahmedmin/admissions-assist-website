@@ -1,3 +1,5 @@
+import CourseCard from "@/components/Cards/CourseCard/CourseCard";
+
 const Courses = ({ selectedOptions, removeSelectedOption }) => {
   return (
     <div>
@@ -17,9 +19,7 @@ const Courses = ({ selectedOptions, removeSelectedOption }) => {
           ))}
         </div>
       </div>
-      <div>
-        
-      </div>
+      <div className="gird grid-cols-2 gap-7">{<CourseCard />}</div>
     </div>
   );
 };

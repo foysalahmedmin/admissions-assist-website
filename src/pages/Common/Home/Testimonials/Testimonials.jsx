@@ -3,6 +3,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import profileImg from "@/assets/images/profile.jpg";
 import TestimonialCard from "../../../../components/Cards/TestimonialCard/TestimonialCard";
+import "swiper/css/pagination";
 
 const Testimonials = () => {
   return (

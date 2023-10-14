@@ -7,6 +7,9 @@ const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
 const Search = lazy(() => import("@/pages/Common/Search/Search/Search"));
+const UniversityDetails = lazy(() =>
+  import("@/pages/Common/UniversityDetails/UniversityDetails/UniversityDetails")
+);
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
   import("@/pages/Authentication/SignUp/SignUp/SignUp")
@@ -49,6 +52,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Search />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/university_details/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <UniversityDetails />
           </Suspense>
         ),
       },

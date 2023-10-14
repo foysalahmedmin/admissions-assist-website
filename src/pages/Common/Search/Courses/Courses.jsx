@@ -29,15 +29,15 @@ const Courses = ({
       <div className="flex items-center gap-4 mb-7">
         <Button
           onClick={filterSideToggle}
-          className={"bg-primary lg:hidden"}
+          className={"bg-primary flex-shrink-0 lg:hidden"}
           icon={<LuFilter className="text-2xl pt-1" />}
         />
-        <span className="py-3 flex-shrink-0">Filtered By:</span>
-        <div className="flex flex-wrap items-center gap-4">
+        <span className="py-2 flex-shrink-0 hidden lg:block">Filtered By:</span>
+        <div className="flex flex-wrap items-center gap-2 lg:gap-4">
           {selectedOptions?.map((option, i) => (
             <div
               key={i}
-              className="py-2 px-7 rounded-full border flex items-center gap-4"
+              className="py-1 lg:py-2 px-4 lg:px-7 rounded-full border flex items-center gap-2 lg:gap-4 text-sm lg:text-base"
             >
               <span className="capitalize">{option}</span>
               <button

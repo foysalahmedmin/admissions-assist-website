@@ -35,7 +35,7 @@ const Search = () => {
       <Sort />
       <main>
         <div className="container mx-auto">
-          <div className="flex items-center justify-between py-7">
+          <div className="flex flex-wrap-reverse items-center justify-around md:justify-between gap-4 py-7">
             <div className="flex items-center gap-4">
               <div className="py-4 px-7 rounded-full shadow-custom title">
                 <span>{7285}</span> <span>Courses</span>
@@ -45,7 +45,7 @@ const Search = () => {
               </div>
             </div>
             <div>
-              <h3 className="title text-2xl">
+              <h3 className="title text-center text-xl lg:text-2xl">
                 <span>{2825}</span> <span>Courses</span>
               </h3>
             </div>

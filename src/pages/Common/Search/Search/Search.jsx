@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Filter from "../Filter/Filter";
 import Sort from "../Sort/Sort";
 import Courses from "../Courses/Courses";
+import { useClickOutside } from "@/hooks/useClickOutside/useClickOutside";
 
 const Search = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-  console.log(selectedOptions);
+  const [isFilterSideOpen, setIsFilterSideOpen] = useState(false);
+  const filterSide = useRef();
+
+  const filterSideToggle = () => setIsFilterSideOpen(!isFilterSideOpen);
+  useClickOutside(filterSide, () => setIsFilterSideOpen(false));
 
   const addSelectedOption = (optionValue) => {
     if (!selectedOptions.includes(optionValue)) {
@@ -46,12 +51,22 @@ const Search = () => {
             </div>
           </div>
           <hr />
-          <div className="py-7 flex gap-7 lg:gap-12">
-            <aside className="border rounded-3xl">
-              <Filter handleSelect={handleSelect} selectedOptions={selectedOptions} />
+          <div className="py-7 flex gap-7 lg:gap-12 relative">
+            <aside
+              ref={filterSide}
+              className={`${
+                isFilterSideOpen ? "scale-x-100" : "scale-x-0 lg:scale-x-100"
+              } bg-white z-10 border rounded-3xl lg:static lg:h-auto absolute origin-left transition-all duration-300`}
+            >
+              <Filter
+                handleSelect={handleSelect}
+                selectedOptions={selectedOptions}
+                filterSideToggle={filterSideToggle}
+              />
             </aside>
-            <div>
+            <div className="flex-1">
               <Courses
+                filterSideToggle={filterSideToggle}
                 selectedOptions={selectedOptions}
                 removeSelectedOption={removeSelectedOption}
               />

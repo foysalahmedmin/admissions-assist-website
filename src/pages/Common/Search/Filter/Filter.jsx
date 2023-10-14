@@ -77,18 +77,29 @@ const filter_menus = [
   },
 ];
 
-const Filter = ({ handleSelect, selectedOptions }) => {
+const Filter = ({ filterSideToggle, handleSelect, selectedOptions }) => {
   return (
-    <div className="w-96">
-      <div className="px-7 py-4">
+    <div className="w-full sm:w-96">
+      <div className="px-7 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2 title text-2xl">
           <LuFilter className="text-3xl text-primary" /> <span>Filter</span>
         </div>
+        <button
+          onClick={() => filterSideToggle(false)}
+          className="hover:text-secondary lg:hidden"
+        >
+          ✕
+        </button>
       </div>
       <hr />
-      <div className="px-7 pb-7 pt-4 grid grid-cols-1 gap-2">
+      <div className="px-7 pb-7 pt-4 grid grid-cols-1 gap-2 lg:h-auto h-[calc(100vh-9.5rem)] overflow-y-auto">
         {filter_menus?.map((menu, i) => (
-          <FilterMenu handleSelect={handleSelect} key={menu._id} menu={menu} selectedOptions={selectedOptions} />
+          <FilterMenu
+            handleSelect={handleSelect}
+            key={menu._id}
+            menu={menu}
+            selectedOptions={selectedOptions}
+          />
         ))}
       </div>
     </div>

@@ -1,16 +1,28 @@
-import { BiAward, BiBookOpen, BiHistory, BiMoney } from "react-icons/bi";
+import {
+  BiAward,
+  BiBookOpen,
+  BiHistory,
+  BiMoney,
+  BiTimeFive,
+} from "react-icons/bi";
 import cardImg from "@/assets/images/course-card.png";
 import { Link } from "react-router-dom";
 
 const CourseCard = () => {
   return (
     <div>
-      <div className="h-60 mb-7">
+      <div className="h-60 mb-7 relative">
         <img
           className="h-full w-full object-cover object-center"
           src={cardImg}
           alt=""
         />
+        <div className="flex items-center justify-center gap-2 px-4 py-1 bg-secondary text-white rounded absolute top-4 right-4">
+          <span>
+            <BiTimeFive />
+          </span>
+          <span>2 Years</span>
+        </div>
       </div>
       <div className="mb-7">
         <div className="mb-4">

@@ -18,7 +18,6 @@ const FilterMenuOption = ({ option, handleSelect, selectedOptions }) => {
             handleSelect(e);
             handleChild(e);
           }}
-          defaultChecked={selectedOptions?.includes(option?.title)}
           checked={selectedOptions?.includes(option?.title)}
           className="h-4 w-4"
           type="checkbox"

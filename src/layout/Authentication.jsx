@@ -7,7 +7,7 @@ const Authentication = () => {
   return (
     <>
       <main>
-        <BackgroundLayer bg_position={"bg-top"}>
+        <BackgroundLayer bg_position={"bg-top bg-fixed"}>
           <div className="container mx-auto">
             <div className="min-h-screen py-14 flex items-center justify-center">
               <div>

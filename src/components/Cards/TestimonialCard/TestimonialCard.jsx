@@ -4,7 +4,7 @@ import StarRating from "@/components/StarRating/StarRating";
 const TestimonialCard = ({ data }) => {
   const { name, image_url, profession, comment, rating } = data;
   return (
-    <div className="min-h-[320px] p-7 bg-primary bg-opacity-10 rounded-xl overflow-hidden relative">
+    <div className="min-h-[320px] p-7 mb-14 bg-background rounded-xl overflow-hidden relative">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-4">
           <img

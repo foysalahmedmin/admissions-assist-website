@@ -11,7 +11,7 @@ const SubFooter = () => {
       >
         <div className="">
           <div className="container mx-auto text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-7">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-7">
               <div className="flex-1">
                 <h1 className="text-3xl lg:text-5xl title text-white mb-4">
                   Stay Updated with EduBid
@@ -21,11 +21,11 @@ const SubFooter = () => {
                   and exclusive application tips
                 </p>
               </div>
-              <div className="flex-1 ">
-                <div className="lg:max-w-[27rem] w-full lg:ml-auto">
+              <div className="">
+                <div className="lg:w-[27rem] w-full lg:ml-auto">
                   <form className="w-full flex items-center gap-4 p-1 rounded-full border border-white focus-within:border-secondary focus-within:text-secondary">
                     <input
-                      className="flex-1 w-full px-4 bg-transparent outline-none"
+                      className="flex-1 w-full px-4 bg-transparent outline-none placeholder:text-white focus:placeholder:text-secondary"
                       type="email"
                       placeholder="Your email address here"
                       required

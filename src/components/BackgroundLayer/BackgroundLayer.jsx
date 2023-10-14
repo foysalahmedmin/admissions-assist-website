@@ -12,7 +12,7 @@ const BackgroundLayer = ({
       style={{
         backgroundImage: `url(${image_url || "/background/common.png"})`,
       }}
-      className={`${bg_position || "bg-center"} bg-no-repeat bg-cover bg-right`}
+      className={twMerge("bg-no-repeat bg-cover bg-right", bg_position)}
     >
       <div
         style={style}

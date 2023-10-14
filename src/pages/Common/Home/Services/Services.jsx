@@ -29,7 +29,7 @@ const Services = () => {
   return (
     <section id="services">
       <div className="container mx-auto">
-        <div className="lg:pt-24 pt-14 lg:px-12 px-7 bg-primary bg-opacity-10">
+        <div className="lg:pt-24 pt-14 lg:px-12 px-7 bg-[#F0FAFA] rounded-xl">
           <SectionTitle
             subtitle={"Our Services"}
             title={"Our Comprehensive Services"}
@@ -44,7 +44,7 @@ const Services = () => {
               </div>
             </div>
             <div>
-              <div className="grid lg:grid-cols-2 grid-rows-1 items-end gap-12">
+              <div className="grid lg:grid-cols-2 grid-rows-1 items-end gap-4">
                 <div className="mb-12 lg:mb-24">
                   <div className="mb-7">
                     <h1 className=" text-3xl lg:text-5xl title mb-4">
@@ -79,7 +79,7 @@ const Services = () => {
                       </strong>
                     </div>
                   </div>
-                  <Link to={"/user_type"}>
+                  <Link to={"/authentication/sign_up"}>
                     <Button
                       text={"Create An Account"}
                       icon={

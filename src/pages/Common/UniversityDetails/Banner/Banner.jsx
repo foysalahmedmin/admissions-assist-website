@@ -12,12 +12,13 @@ const Banner = () => {
               <span className="material-icons-outlined">arrow_back</span>
               <div className="flex items-center gap-2">
                 <span>
-                  <Link to={"/"}>Home</Link>
+                  <Link to={"/search"}>Search</Link>
                 </span>
                 <span>/</span>
                 <span>
                   <Link to={"/university"}>University</Link>
                 </span>
+                :<span>University of Oxford</span>
               </div>
             </div>
             <div className="py-14">
@@ -79,26 +80,26 @@ const Banner = () => {
             </div>
             <div>
               <nav>
-                <ul className="flex justify-center lg:justify-start">
-                  <li>
+                <ul className="w-full flex flex-wrap justify-center lg:justify-start">
+                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
                     <a
-                      className={`px-4 py-2 border border-b-0 hover:bg-white hover:text-primary inline-block`}
+                      className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#overview"
                     >
                       Overview
                     </a>
                   </li>
-                  <li>
+                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
                     <a
-                      className={`px-4 py-2 border border-b-0 hover:bg-white hover:text-primary inline-block`}
+                      className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#scholarship"
                     >
                       Scholarship
                     </a>
                   </li>
-                  <li>
+                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
                     <a
-                      className={`px-4 py-2 border border-b-0 hover:bg-white hover:text-primary inline-block`}
+                      className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#courses"
                     >
                       Courses

@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import CourseCard from "./CourseCard";
 const Courses = () => {
   return (
-    <section className="lg:py-24 py-14" id="Courses">
+    <section className="lg:py-24 py-14" id="courses">
       <div className="container mx-auto">
         <SectionTitle
           subtitle={"Top Courses"}

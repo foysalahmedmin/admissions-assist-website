@@ -2,8 +2,12 @@ import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 import { BiAward, BiBookOpen, BiHistory, BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import AvailableCourseModal from "../AvailableCourseModal/AvailableCourseModal";
+import { useState } from "react";
 
 const Banner = () => {
+  const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
+    useState(false);
   return (
     <>
       <BackgroundLayer image_url={"/background/application-banner.png"}>
@@ -90,7 +94,18 @@ const Banner = () => {
                     </div>
                   </div>
                 </div>
-                <Button text={"2 Course options available"} />
+                <div>
+                  <Button
+                    onClick={() =>
+                      setIsAvailableCourseModalOpen(true)
+                    }
+                    text={"2 Course options available"}
+                  />
+                  <AvailableCourseModal
+                    isOpen={isAvailableCourseModalOpen}
+                    setIsOpen={setIsAvailableCourseModalOpen}
+                  />
+                </div>
               </div>
               <div>
                 <nav>

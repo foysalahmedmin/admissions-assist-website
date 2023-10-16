@@ -5,7 +5,7 @@ import usePagination from "@/hooks/usePagination/usePagination";
 import { useEffect, useState } from "react";
 import { LuFilter } from "react-icons/lu";
 
-const Courses = ({
+const AllCourses = ({
   filterSideToggle,
   selectedOptions,
   removeSelectedOption,
@@ -70,4 +70,4 @@ const Courses = ({
   );
 };
 
-export default Courses;
+export default AllCourses;

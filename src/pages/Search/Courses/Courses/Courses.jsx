@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
+import { useClickOutside } from "@/hooks/useClickOutside/useClickOutside";
 import Filter from "../Filter/Filter";
 import Sort from "../Sort/Sort";
-import Courses from "../Courses/Courses";
-import { useClickOutside } from "@/hooks/useClickOutside/useClickOutside";
+import AllCourses from "../AllCourses/AllCourses";
 
-const Search = () => {
+const Courses = () => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isFilterSideOpen, setIsFilterSideOpen] = useState(false);
   const filterSide = useRef();
@@ -65,7 +65,7 @@ const Search = () => {
               />
             </aside>
             <div className="flex-1">
-              <Courses
+              <AllCourses
                 filterSideToggle={filterSideToggle}
                 selectedOptions={selectedOptions}
                 removeSelectedOption={removeSelectedOption}
@@ -78,4 +78,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Courses;

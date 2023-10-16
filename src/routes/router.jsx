@@ -1,17 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "@/components/Loading/Loading";
+import Courses from "@/pages/Search/Courses/Courses/Courses";
 const Main = lazy(() => import("@/layout/Main"));
+const Search = lazy(() => import("@/layout/Search"));
 const Student = lazy(() => import("@/layout/Student"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
-const Search = lazy(() => import("@/pages/Common/Search/Search/Search"));
-const UniversityDetails = lazy(() =>
-  import("@/pages/Common/UniversityDetails/UniversityDetails/UniversityDetails")
+const Blogs = lazy(() => import("@/pages/Common/Blogs/Blogs/Blogs"));
+// const Courses = lazy(() => import("@/pages/Search/Courses/Courses/Courses"));
+const Universities = lazy(() =>
+  import("@/pages/Search/Universities/Universities/Universities")
 );
 const CourseDetails = lazy(() =>
   import("@/pages/Common/CourseDetails/CourseDetails/CourseDetails")
+);
+const UniversityDetails = lazy(() =>
+  import("@/pages/Common/UniversityDetails/UniversityDetails/UniversityDetails")
 );
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
@@ -51,28 +57,66 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/blogs",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Blogs />
+          </Suspense>
+        ),
+      },
+      {
         path: "/search",
         element: (
           <Suspense fallback={<Loading />}>
             <Search />
           </Suspense>
         ),
-      },
-      {
-        path: "/university_details/:id",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <UniversityDetails />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/course_details/:id",
-        element: (
-          <Suspense fallback={<Loading />}>
-            <CourseDetails />
-          </Suspense>
-        ),
+        children: [
+          {
+            path: "",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Courses />
+              </Suspense>
+            ),
+          },
+          {
+            path: "courses",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Courses />
+              </Suspense>
+            ),
+            children: [
+              {
+                path: ":id",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <CourseDetails />
+                  </Suspense>
+                ),
+              },
+            ],
+          },
+          {
+            path: "universities",
+            element: (
+              <Suspense fallback={<Loading />}>
+                <Universities />
+              </Suspense>
+            ),
+            children: [
+              {
+                path: ":id",
+                element: (
+                  <Suspense fallback={<Loading />}>
+                    <UniversityDetails />
+                  </Suspense>
+                ),
+              },
+            ],
+          },
+        ],
       },
     ],
   },

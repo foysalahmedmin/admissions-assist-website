@@ -5,7 +5,7 @@ import Scholarship from "../Scholarship/Scholarship";
 import Blogs from "../Blogs/Blogs";
 import Option from "../Option/Option";
 
-const UniversityDetails = () => {
+const University = () => {
   return (
     <main>
       <Banner />
@@ -18,4 +18,4 @@ const UniversityDetails = () => {
   );
 };
 
-export default UniversityDetails;
+export default University;

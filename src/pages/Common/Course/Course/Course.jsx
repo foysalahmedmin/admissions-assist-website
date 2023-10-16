@@ -6,7 +6,7 @@ import HowToApply from "../HowToApply/HowToApply";
 import LanguageRequirements from "../LanguageRequirements/LanguageRequirements";
 import Option from "../Option/Option";
 
-const CourseDetails = () => {
+const Course = () => {
   return (
     <main>
       <Banner />
@@ -20,4 +20,4 @@ const CourseDetails = () => {
   );
 };
 
-export default CourseDetails;
+export default Course;

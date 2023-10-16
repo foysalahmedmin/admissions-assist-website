@@ -1,9 +1,10 @@
 import Button from "@/components/Buttons/Button";
-import CourseCard from "@/components/Cards/CourseCard/CourseCard";
+import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
 import Pagination from "@/components/Pagination/Pagination";
 import usePagination from "@/hooks/usePagination/usePagination";
 import { useEffect, useState } from "react";
 import { LuFilter } from "react-icons/lu";
+import cardImg from "@/assets/images/university-slide-1.png";
 
 const AllUniversities = ({
   filterSideToggle,
@@ -54,7 +55,11 @@ const AllUniversities = ({
         {cards
           .slice(pageNumber * limit, pageNumber * limit + limit)
           .map((x) => (
-            <CourseCard key={x} />
+            <UniversityCard key={x} data={{
+              image_url: cardImg,
+              title: "University of Oxford",
+              course_quantity: 65,
+            }} />
           ))}
       </div>
       <div>

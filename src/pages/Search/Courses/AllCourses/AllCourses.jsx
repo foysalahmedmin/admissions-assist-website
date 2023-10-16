@@ -2,6 +2,7 @@ import Button from "@/components/Buttons/Button";
 import CourseCard from "@/components/Cards/CourseCard/CourseCard";
 import Pagination from "@/components/Pagination/Pagination";
 import usePagination from "@/hooks/usePagination/usePagination";
+import cardImg from "@/assets/images/course-card.png";
 import { useEffect, useState } from "react";
 import { LuFilter } from "react-icons/lu";
 
@@ -54,7 +55,23 @@ const AllCourses = ({
         {cards
           .slice(pageNumber * limit, pageNumber * limit + limit)
           .map((x) => (
-            <CourseCard key={x} />
+            <CourseCard
+              key={x}
+              data={{
+                title: "Engineering",
+                image: cardImg,
+                institution: "Barnsley College Higher Education",
+                location:
+                  "Barnsley College Higher Education Church Street Campus",
+                bio: "Barnsley College Higher Education Church Street Campus",
+                duration: "2 Years",
+                session: "2024-2025",
+                study_mode: "Full Time",
+                ranking: 103,
+                class_starts: "2 March, 2024",
+                tuition_fee: 18000,
+              }}
+            />
           ))}
       </div>
       <div>

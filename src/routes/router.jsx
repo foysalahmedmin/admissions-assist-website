@@ -13,11 +13,9 @@ const Blogs = lazy(() => import("@/pages/Common/Blogs/Blogs/Blogs"));
 const Universities = lazy(() =>
   import("@/pages/Search/Universities/Universities/Universities")
 );
-const CourseDetails = lazy(() =>
-  import("@/pages/Common/CourseDetails/CourseDetails/CourseDetails")
-);
-const UniversityDetails = lazy(() =>
-  import("@/pages/Common/UniversityDetails/UniversityDetails/UniversityDetails")
+const Course = lazy(() => import("@/pages/Common/Course/Course/Course"));
+const University = lazy(() =>
+  import("@/pages/Common/University/University/University")
 );
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
@@ -87,16 +85,6 @@ const router = createBrowserRouter([
                 <Courses />
               </Suspense>
             ),
-            children: [
-              {
-                path: ":id",
-                element: (
-                  <Suspense fallback={<Loading />}>
-                    <CourseDetails />
-                  </Suspense>
-                ),
-              },
-            ],
           },
           {
             path: "universities",
@@ -105,18 +93,24 @@ const router = createBrowserRouter([
                 <Universities />
               </Suspense>
             ),
-            children: [
-              {
-                path: ":id",
-                element: (
-                  <Suspense fallback={<Loading />}>
-                    <UniversityDetails />
-                  </Suspense>
-                ),
-              },
-            ],
           },
         ],
+      },
+      {
+        path: "/course/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Course />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/university/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <University />
+          </Suspense>
+        ),
       },
     ],
   },

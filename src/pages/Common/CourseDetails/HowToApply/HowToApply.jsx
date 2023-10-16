@@ -4,7 +4,7 @@ const HowToApply = () => {
       <div className="container mx-auto">
         <div className="mb-7">
           <h2 className="title text-3xl mb-7">How to apply</h2>
-          <div className="flex items-center gap-7">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-7">
             <div className="w-32 h-32 flex flex-col rounded-xl overflow-hidden bg-white">
               <div className="flex-1 flex items-center justify-center">
                 <span className="title text-5xl">02</span>

@@ -20,7 +20,7 @@ const table_data = [
   },
 ];
 
-const AvailableCourseModal = ({ isOpen, setIsOpen, className }) => {
+const AvailableCourseModal = ({ isOpen, setIsOpen }) => {
   return (
     <Modal
       isOpen={isOpen}

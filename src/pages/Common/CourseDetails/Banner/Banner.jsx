@@ -154,7 +154,7 @@ const Banner = () => {
                 </nav>
               </div>
             </div>
-            <div>
+            <div className="hidden lg:block">
               <div className="w-[25rem]"></div>
             </div>
           </div>

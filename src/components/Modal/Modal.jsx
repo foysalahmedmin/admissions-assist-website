@@ -26,12 +26,12 @@ const Modal = ({
         <div
           className={`${
             isOpen ? "scale-100" : "scale-0"
-          } overflow-y-auto overflow-hidden transform transition-all duration-300 `}
+          } overflow-y-auto overflow-hidden transform transition-all duration-300 w-full lg:w-auto`}
         >
           <div
             ref={modalRef}
             className={twMerge(
-              `bg-white overflow-hidden shadow-xl`,
+              `bg-white overflow-hidden shadow-xl mx-auto`,
               className
             )}
           >

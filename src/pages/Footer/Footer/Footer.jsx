@@ -1,14 +1,12 @@
 import logo from "@/assets/images/logo.svg";
 import BottomFooter from "../BottomFooter/BottomFooter";
 import { Link } from "react-router-dom";
+import { LuMail, LuMapPin, LuSmartphone } from "react-icons/lu";
 import {
-  LuFacebook,
-  LuInstagram,
-  LuLinkedin,
-  LuMail,
-  LuMapPin,
-  LuSmartphone,
-} from "react-icons/lu";
+  BiLogoFacebook,
+  BiLogoInstagramAlt,
+  BiLogoLinkedin,
+} from "react-icons/bi";
 
 const Footer = () => {
   return (
@@ -28,13 +26,13 @@ const Footer = () => {
               <h3 className="title text-white mb-4">Follow us</h3>
               <div className="flex items-center gap-4">
                 <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
-                  <LuFacebook className="text-xl" />
+                  <BiLogoFacebook className="text-xl" />
                 </div>
                 <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
-                  <LuLinkedin className="text-xl" />
+                  <BiLogoLinkedin className="text-xl" />
                 </div>
                 <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
-                  <LuInstagram className="text-xl" />
+                  <BiLogoInstagramAlt className="text-xl" />
                 </div>
               </div>
             </div>

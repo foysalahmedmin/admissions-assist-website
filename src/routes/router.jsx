@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "@/components/Loading/Loading";
-import Courses from "@/pages/Search/Courses/Courses/Courses";
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
 const Student = lazy(() => import("@/layout/Student"));
@@ -9,7 +8,8 @@ const Authentication = lazy(() => import("@/layout/Authentication"));
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
 const Blogs = lazy(() => import("@/pages/Common/Blogs/Blogs/Blogs"));
-// const Courses = lazy(() => import("@/pages/Search/Courses/Courses/Courses"));
+const Blog = lazy(() => import("@/pages/Common/Blog/Blog/Blog"));
+const Courses = lazy(() => import("@/pages/Search/Courses/Courses/Courses"));
 const Universities = lazy(() =>
   import("@/pages/Search/Universities/Universities/Universities")
 );
@@ -95,6 +95,14 @@ const router = createBrowserRouter([
             ),
           },
         ],
+      },
+      {
+        path: "/blog/:id",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Blog />
+          </Suspense>
+        ),
       },
       {
         path: "/course/:id",

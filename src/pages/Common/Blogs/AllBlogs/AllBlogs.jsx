@@ -49,14 +49,15 @@ const AllBlogs = () => {
         </div>
         <div
           className={`${
-            position == "list" ? "" : " md:grid-cols-2 lg:grid-cols-3"
-          } grid gap-7 mb-7`}
+            position == "list" ? "xl:grid-cols-2" : " md:grid-cols-2 lg:grid-cols-3"
+          } grid gap-7 mb-12`}
         >
           {cards
             .slice(pageNumber * limit, pageNumber * limit + limit)
             .map((x) => (
               <BlogCard
                 key={x}
+                position={position}
                 data={{
                   image_url: cardImg,
                   date: "02 September, 2023",

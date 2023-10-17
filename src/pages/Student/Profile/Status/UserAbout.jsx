@@ -7,20 +7,38 @@ import badge from "@/assets/images/icons/badge-sky-blue.svg";
 import calendar from "@/assets/images/icons/calendar-sky-blue.svg";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
 import { LuMapPin, LuPenSquare } from "react-icons/lu";
+import { useState } from "react";
+import ProfileUploadModal from "./ProfileUploadModal";
 const UserAbout = () => {
+  const [imageFile, setImageFile] = useState(null);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   return (
     <div className="relative mb-24 lg:-mt-32 -mt-80">
       <div className="rounded-xl bg-white flex items-center justify-between gap-7 p-7 ">
         <div className="flex-1">
           <div className="flex flex-wrap items-center gap-4 mb-4 lg:mb-7">
-            <div className="h-24 w-24 rounded-full border-4 flex-shrink-0">
+            <div
+              onClick={() => setIsProfileModalOpen(true)}
+              className="h-24 w-24 rounded-full border-4 flex-shrink-0 relative"
+            >
               <img
-                className="h-full w-full object-cover object-center"
-                src={profileUserIcon}
+                className="h-full w-full rounded-full object-cover object-center"
+                src={
+                  (imageFile && URL.createObjectURL(imageFile)) ||
+                  profileUserIcon
+                }
                 alt=""
                 loading="lazy"
               />
+              <div className="absolute -bottom-1 -right-1 h-8 w-8 flex items-center justify-center border-4 border-white rounded-full bg-secondary text-white">
+                <span className="material-icons-outlined">add</span>
+              </div>
             </div>
+            <ProfileUploadModal
+              isOpen={isProfileModalOpen}
+              setIsOpen={setIsProfileModalOpen}
+              setImageFile={setImageFile}
+            />
             <div className="flex lg:items-center gap-4 lg:gap-7">
               <div>
                 <h1 className="text-xl font-bold text-title mb-2">Musa Zain</h1>

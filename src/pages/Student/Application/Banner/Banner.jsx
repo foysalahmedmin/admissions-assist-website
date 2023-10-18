@@ -2,10 +2,15 @@ import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import { Link } from "react-router-dom";
 import profileImg from "@/assets/images/profile.jpg";
 import Button from "@/components/Buttons/Button";
-import chat from "@/assets/images/icons/chat-sky-blue.svg";
+import groupTalk from "@/assets/images/icons/group-talk-sky-blue.svg";
 import madel from "@/assets/images/icons/madel-sky-blue.svg";
 import StarRating from "@/components/StarRating/StarRating";
-import { LuCalendarCheck } from "react-icons/lu";
+import { LuCalendarCheck, LuMessageCircle } from "react-icons/lu";
+import {
+  BiLogoFacebook,
+  BiLogoInstagramAlt,
+  BiLogoLinkedin,
+} from "react-icons/bi";
 
 const Banner = () => {
   return (
@@ -32,68 +37,91 @@ const Banner = () => {
             </div>
           </div>
           <div>
-            <div className="py-12 px-7 bg-white rounded-3xl">
-              <div className="flex flex-col lg:flex-row gap-7">
-                <div>
-                  <div className="flex flex-wrap items-center gap-7 mb-7">
-                    <div className="flex items-center gap-7">
-                      <div className="flex-shrink-0 h-20 w-20">
-                        <img
-                          className="h-full w-full object-cover object-center rounded-full"
-                          src={profileImg}
-                          alt=""
-                        />
-                      </div>
-                      <div>
-                        <h3 className="title text-2xl mb-2">Musa Zain</h3>
-                        <button className="py-1 px-4 rounded bg-primary text-white text-sm">
-                          <span>Councilor</span>
-                        </button>
-                      </div>
-                    </div>
-                    <div>
-                      <Button
-                        className={"ml-auto"}
-                        text={"Book a Session"}
-                        icon={<LuCalendarCheck className="text-xl" />}
+            <div className="py-12 px-7 bg-white rounded-3xl w-full md:w-[35rem] flex gap-7">
+              <div className="flex-shrink-0 h-20 w-20 hidden lg:block">
+                <img
+                  className="h-full w-full object-cover object-center rounded-full"
+                  src={profileImg}
+                  alt=""
+                />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-7">
+                    <div className="flex-shrink-0 h-20 w-20 lg:hidden">
+                      <img
+                        className="h-full w-full object-cover object-center rounded-full"
+                        src={profileImg}
+                        alt=""
                       />
                     </div>
-                  </div>
-                  <div className="flex flex-wrap justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
-                        <img
-                          className="h-5 w-5 object-contain object-center"
-                          src={chat}
-                          alt=""
-                        />
-                      </div>
-                      <div>
-                        <h5 className="font-semibold">Students Counselled</h5>
-                        {<p className="text-sm text-title">12</p> || (
-                          <p className="text-sm text-placeholder">N/A</p>
-                        )}
-                      </div>
+                    <div>
+                      <h3 className="title text-2xl mb-2">Musa Zain</h3>
+                      <button className="py-1 px-4 rounded bg-primary text-white text-sm">
+                        <span>Councilor</span>
+                      </button>
                     </div>
+                  </div>
+                  <div>
                     <div className="flex items-center gap-4">
-                      <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
-                        <img
-                          className="h-5 w-5 object-contain object-center"
-                          src={madel}
-                          alt=""
-                        />
+                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                        <BiLogoFacebook className="text-xl" />
                       </div>
-                      <div>
-                        <h5 className="font-semibold">Rating</h5>
-                        {(
-                          <div className="flex gap-2 items-center">
-                            <StarRating rating={3.5} starSize={20} />{" "}
-                            <span>({5})</span>
-                          </div>
-                        ) || <p className="text-sm text-placeholder">N/A</p>}
+                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                        <BiLogoLinkedin className="text-xl" />
+                      </div>
+                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                        <BiLogoInstagramAlt className="text-xl" />
                       </div>
                     </div>
                   </div>
+                </div>
+                <div className="flex flex-wrap justify-between gap-4 mb-4">
+                  <div className="flex items-center gap-4">
+                    <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+                      <img
+                        className="h-5 w-5 object-contain object-center"
+                        src={groupTalk}
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <h5 className="text-sm text-labels">Students Counselled</h5>
+                      {<p className="text-sm text-title">12</p> || (
+                        <p className="text-sm text-placeholder">N/A</p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+                      <img
+                        className="h-5 w-5 object-contain object-center"
+                        src={madel}
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <h5 className="text-sm text-labels">Rating</h5>
+                      {(
+                        <div className="flex gap-2 items-center">
+                          <StarRating rating={3.5} starSize={20} />{" "}
+                          <span>({5})</span>
+                        </div>
+                      ) || <p className="text-sm text-placeholder">N/A</p>}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <Button
+                    className={"auto"}
+                    text={"Book a Session"}
+                    icon={<LuCalendarCheck className="text-xl" />}
+                  />
+                  <Button
+                    className={"auto bg-primary"}
+                    text={"Chat now"}
+                    icon={<LuMessageCircle className="text-xl" />}
+                  />
                 </div>
               </div>
             </div>

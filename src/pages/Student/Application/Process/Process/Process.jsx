@@ -89,7 +89,7 @@ const Process = () => {
           <div
             className={`${
               !isFormShow ? "" : "hidden lg:block"
-            } w-[30rem] px-7 lg:px-12 py-7 lg:py-14 rounded-3xl shadow-custom`}
+            } w-full lg:w-[30rem] px-7 lg:px-12 py-7 lg:py-14 rounded-3xl shadow-custom`}
           >
             <div className="h-[calc(100vh-8.5rem)] lg:h-auto overflow-y-auto">
               <StepsList

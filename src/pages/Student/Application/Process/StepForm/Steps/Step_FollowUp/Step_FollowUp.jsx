@@ -1,6 +1,8 @@
 import Button from "@/components/Buttons/Button";
 import Table from "./Table/Table";
 import FAQ from "./FAQ";
+import FeedbackModal from "./FeedbackModal";
+import { useState } from "react";
 
 const table_data = [
   {
@@ -10,6 +12,7 @@ const table_data = [
 ];
 
 const Step_FollowUp = ({ setStepStatusAndSetTab }) => {
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
   const handleSave = (e) => {
     e.preventDefault();
     setStepStatusAndSetTab();
@@ -26,12 +29,16 @@ const Step_FollowUp = ({ setStepStatusAndSetTab }) => {
         </div>
         <div>
           <Button
-            onClick={handleSave}
-            type={"submit"}
+            onClick={() => setIsFeedbackModalOpen(true)}
             text={"Submit"}
             icon={
               <span className="material-icons-outlined">trending_flat</span>
             }
+          />
+          <FeedbackModal
+            isOpen={isFeedbackModalOpen}
+            setIsOpen={setIsFeedbackModalOpen}
+            handleSave={handleSave}
           />
         </div>
       </div>

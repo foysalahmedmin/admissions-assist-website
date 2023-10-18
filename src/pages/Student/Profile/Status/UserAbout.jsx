@@ -7,11 +7,16 @@ import badge from "@/assets/images/icons/badge-sky-blue.svg";
 import calendar from "@/assets/images/icons/calendar-sky-blue.svg";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
 import { LuMapPin, LuPenSquare } from "react-icons/lu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProfileUploadModal from "./ProfileUploadModal";
 const UserAbout = () => {
   const [imageFile, setImageFile] = useState(null);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  useEffect(() => {
+    if (imageFile) {
+      setIsProfileModalOpen(false);
+    }
+  }, [imageFile]);
   return (
     <div className="relative mb-24 lg:-mt-32 -mt-80">
       <div className="rounded-xl bg-white flex items-center justify-between gap-7 p-7 ">

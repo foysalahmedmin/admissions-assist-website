@@ -8,7 +8,7 @@ const ChatSystem = () => {
       <TopSearch />
       <div className="container mx-auto">
         <div className="flex">
-          <aside className="py-7 w-40 border-r">
+          <aside className="py-14 w-40 border-r">
             <Sidebar />
           </aside>
           <section className="flex-1">

@@ -1,7 +1,13 @@
 import { format } from "date-fns";
 import profileImg from "@/assets/images/profile.jpg";
 
-const SingleChatList = ({ singleData, currentUser, setDisplayChats_Id }) => {
+const SingleChatList = ({
+  singleData,
+  currentUser,
+  displayChats_Id,
+  setDisplayChats_Id,
+  setIsChatsShow,
+}) => {
   const {
     id,
     participants,
@@ -11,11 +17,16 @@ const SingleChatList = ({ singleData, currentUser, setDisplayChats_Id }) => {
     lastReaders,
     favorite,
   } = singleData;
-  const opponents = participants?.filter((x) => x.username !== currentUser.username);
+  const opponents = participants?.filter(
+    (x) => x.username !== currentUser.username
+  );
   return (
     <div
-      onClick={() => setDisplayChats_Id(id)}
-      className="py-2 hover:bg-input px-7 cursor-pointer"
+      onClick={() => {
+        setDisplayChats_Id(id);
+        setIsChatsShow(true);
+      }}
+      className={`${displayChats_Id === id ? "bg-primary bg-opacity-10" : "hover:bg-input"} py-2 px-7 cursor-pointer`}
     >
       <div className="w-full flex items-center gap-4">
         <div className="flex-shrink-0">
@@ -29,7 +40,9 @@ const SingleChatList = ({ singleData, currentUser, setDisplayChats_Id }) => {
           <div className="flex-1">
             <h3 className="text-title font-semibold">{opponents[0]?.name}</h3>
             <p className="text-xs">
-              {lastMessageSenderUsername === currentUser.username && <span>You:</span>}{" "}
+              {lastMessageSenderUsername === currentUser.username && (
+                <span>You:</span>
+              )}{" "}
               {lastMessage}
             </p>
           </div>

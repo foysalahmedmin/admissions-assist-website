@@ -10,12 +10,12 @@ import ChatActiveLink from "./ChatActiveLink";
 const Sidebar = () => {
   return (
     <div>
-      <ul className="flex flex-col items-start gap-4 text-labels">
+      <ul className="flex lg:flex-col items-start gap-4 text-labels">
         <ChatActiveLink to={"/student/chat"}>
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuMessagesSquare className="text-2xl" />
-              <span className="font-semibold">Chat</span>
+              <span className="font-semibold hidden lg:block">Chat</span>
             </div>
           </li>
         </ChatActiveLink>
@@ -23,7 +23,7 @@ const Sidebar = () => {
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuFile className="text-2xl" />
-              <span className="font-semibold">Files</span>
+              <span className="font-semibold hidden lg:block">Files</span>
             </div>
           </li>
         </ChatActiveLink>
@@ -31,7 +31,7 @@ const Sidebar = () => {
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuCalendarCheck className="text-2xl" />
-              <span className="font-semibold">Calendar</span>
+              <span className="font-semibold hidden lg:block">Calendar</span>
             </div>
           </li>
         </ChatActiveLink>
@@ -39,15 +39,7 @@ const Sidebar = () => {
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuPhoneCall className="text-2xl" />
-              <span className="font-semibold">Calls</span>
-            </div>
-          </li>
-        </ChatActiveLink>
-        <ChatActiveLink to={"/student/chat/feedback"}>
-          <li>
-            <div className="flex items-center gap-4 py-1">
-              <LuVolume2 className="text-2xl" />
-              <span className="font-semibold">Feedback</span>
+              <span className="font-semibold hidden lg:block">Calls</span>
             </div>
           </li>
         </ChatActiveLink>

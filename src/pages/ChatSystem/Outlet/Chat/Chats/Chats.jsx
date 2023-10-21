@@ -28,10 +28,10 @@ const Chats = ({
   return (
     <div>
       <div className="h-14 px-7 border-b flex justify-between items-center">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 lg:gap-4">
           <span
             onClick={() => setIsChatsShow(false)}
-            className="material-icons-outlined cursor-pointer hover:text-secondary"
+            className="material-icons-outlined cursor-pointer hover:text-secondary lg:!hidden"
           >
             arrow_back
           </span>
@@ -42,14 +42,14 @@ const Chats = ({
           />
           <h3 className="title text-xl">{opponents[0]?.name}</h3>
         </div>
-        <div className="flex justify-between items-center gap-4">
-          <button className="rounded-full h-9 w-9 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+        <div className="flex justify-between items-center gap-2 lg:gap-4">
+          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
             <BiVideo className="text-2xl" />
           </button>
-          <button className="rounded-full h-9 w-9 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
-            <BiPhone className="text-2xl" />
+          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+            <BiPhone className="text-xl" />
           </button>
-          <button className="rounded-full h-9 w-9 flex items-center justify-center">
+          <button className="rounded-full h-8 w-8 flex items-center justify-center">
             <BiDotsVerticalRounded className="text-2xl" />
           </button>
         </div>

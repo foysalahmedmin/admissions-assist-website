@@ -1,7 +1,13 @@
 import { LuPenSquare } from "react-icons/lu";
 import SingleChatList from "./SingleChatList";
 
-const ChatList = ({ chatListData, currentUser, setDisplayChats_Id }) => {
+const ChatList = ({
+  chatListData,
+  currentUser,
+  displayChats_Id,
+  setDisplayChats_Id,
+  setIsChatsShow,
+}) => {
   return (
     <aside>
       <div className="px-7 h-14 flex items-center justify-between border-b">
@@ -12,7 +18,13 @@ const ChatList = ({ chatListData, currentUser, setDisplayChats_Id }) => {
         <ul className="flex flex-col gap-4">
           {chatListData.map((singleData, i) => (
             <li key={i}>
-              <SingleChatList singleData={singleData} currentUser={currentUser} setDisplayChats_Id={setDisplayChats_Id}/>
+              <SingleChatList
+                singleData={singleData}
+                currentUser={currentUser}
+                displayChats_Id={displayChats_Id}
+                setDisplayChats_Id={setDisplayChats_Id}
+                setIsChatsShow={setIsChatsShow}
+              />
             </li>
           ))}
         </ul>

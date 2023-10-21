@@ -41,12 +41,14 @@ const Chat = () => {
       <div
         className={`${
           !isChatsShow ? "w-full lg:w-[25rem]" : "w-0 lg:w-[25rem]"
-        }  lg:border-r transition-all`}
+        }  lg:border-r overflow-hidden transition-all`}
       >
         <ChatList
           chatListData={chatListData}
           currentUser={currentUser}
+          displayChats_Id={displayChats_Id}
           setDisplayChats_Id={setDisplayChats_Id}
+          setIsChatsShow={setIsChatsShow}
         />
       </div>
       <div className={`${isChatsShow ? "block" : "hidden lg:block"} flex-1`}>

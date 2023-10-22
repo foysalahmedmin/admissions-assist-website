@@ -10,9 +10,11 @@ const Files = () => {
         </div>
         <div className="col-span-2 ml-auto">
           <Button
-            className={"h-10"}
+            className={"h-8 text-sm px-4"}
             text={"New"}
-            icon={<span className="material-icons-outlined">add</span>}
+            icon={
+              <span className="material-icons-outlined !text-base">add</span>
+            }
           />
         </div>
       </div>
@@ -21,7 +23,9 @@ const Files = () => {
           <thead>
             <tr className="border-b">
               <th className="text-left py-2 font-normal text-title">Files</th>
-              <th className="text-left py-2 px-7 font-normal text-title">Opened</th>
+              <th className="text-left py-2 px-7 font-normal text-title">
+                Opened
+              </th>
               <th className="text-left py-2 font-normal text-title">Owner</th>
             </tr>
           </thead>
@@ -32,7 +36,9 @@ const Files = () => {
                   <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-xl bg-input text-secondary">
                     <BsFileEarmarkPdf />
                   </div>
-                  <a className="whitespace-nowrap" href="">Passport@Monika_hasan.pdf</a>
+                  <a className="whitespace-nowrap" href="">
+                    Passport@Monika_hasan.pdf
+                  </a>
                 </div>
               </td>
               <td className="py-4 px-7 whitespace-nowrap">Jul 14, 2022</td>

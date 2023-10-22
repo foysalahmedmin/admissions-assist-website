@@ -5,6 +5,7 @@ import ChatSystem from "@/layout/ChatSystem";
 import Chat from "@/pages/ChatSystem/Outlet/Chat/Chat/Chat";
 import Files from "@/pages/ChatSystem/Outlet/Files/Files/Files";
 import Calls from "@/pages/ChatSystem/Outlet/Calls/Calls/Calls";
+import Calendar from "@/pages/ChatSystem/Outlet/Calendar/Calendar/Calendar";
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
 const Student = lazy(() => import("@/layout/Student"));
@@ -180,6 +181,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Files />
+          </Suspense>
+        ),
+      },
+      {
+        path: "calendar",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Calendar />
           </Suspense>
         ),
       },

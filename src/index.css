@@ -62,6 +62,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+input.icon-none::-webkit-inner-spin-button,
+input.icon-none::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
 /* swiper slider */
 .swiper-slide.swiper-slide-active .top-round-style {
   @apply animate-pop-long origin-top-left

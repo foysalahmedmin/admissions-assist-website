@@ -27,7 +27,7 @@ const Chats = ({
   }, [displayChats, displayChats_Id]);
   return (
     <div>
-      <div className="h-14 px-7 border-b flex justify-between items-center">
+      <div className="h-14 px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] border-b flex justify-between items-center">
         <div className="flex items-center gap-2 lg:gap-4">
           <span
             onClick={() => setIsChatsShow(false)}
@@ -56,7 +56,7 @@ const Chats = ({
       </div>
       <div
         ref={chatBoxRef}
-        className="h-[calc(100vh-14.5rem)] overflow-y-auto px-7 py-4"
+        className="h-[calc(100vh-14.5rem)] overflow-y-auto px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4"
       >
         {displayChats.map((chat, i) => (
           <SingleChat

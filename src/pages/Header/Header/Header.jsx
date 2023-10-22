@@ -1,9 +1,9 @@
 import Navigation from "@/pages/Header/Navigation/Navigation";
 
-const Header = () => {
+const Header = ({ navigationClassName }) => {
   return (
     <>
-      <Navigation />
+      <Navigation className={navigationClassName} />
     </>
   );
 };

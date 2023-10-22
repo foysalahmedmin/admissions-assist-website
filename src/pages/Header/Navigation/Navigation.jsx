@@ -9,8 +9,9 @@ import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import Button from "@/components/Buttons/Button";
 import { LuUser2 } from "react-icons/lu";
+import { twMerge } from "tailwind-merge";
 
-const Navigation = () => {
+const Navigation = ({className}) => {
   const navigation = useNavigate();
   const location = useLocation();
   const { isScrolled } = useScrollSpy();
@@ -29,7 +30,7 @@ const Navigation = () => {
           : "sticky bg-white"
       }`}
     >
-      <div className="container mx-auto">
+      <div className={twMerge('mx-auto', className)}>
         <div className="h-20 flex justify-between items-center gap-2 lg:gap-4">
           <div className="h-full flex lg:gap-10 gap-4 items-center">
             <div className="lg:hidden pt-2 flex items-center">

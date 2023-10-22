@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 import Loading from "@/components/Loading/Loading";
 import ChatSystem from "@/layout/ChatSystem";
 import Chat from "@/pages/ChatSystem/Outlet/Chat/Chat/Chat";
+import Files from "@/pages/ChatSystem/Outlet/Files/Files/Files";
+import Calls from "@/pages/ChatSystem/Outlet/Calls/Calls/Calls";
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
 const Student = lazy(() => import("@/layout/Student"));
@@ -122,18 +124,8 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-    ],
-  },
-  {
-    path: "/student",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <Student />
-      </Suspense>
-    ),
-    children: [
       {
-        path: "",
+        path: "profile",
         element: (
           <Suspense fallback={<Loading />}>
             <Profile />
@@ -156,23 +148,48 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+    ],
+  },
+  // {
+  //   path: "/student",
+  //   element: (
+  //     <Suspense fallback={<Loading />}>
+  //       <Student />
+  //     </Suspense>
+  //   ),
+  //   children: [],
+  // },
+  {
+    path: "/chat_system",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <ChatSystem />
+      </Suspense>
+    ),
+    children: [
       {
         path: "chat",
         element: (
           <Suspense fallback={<Loading />}>
-            <ChatSystem />
+            <Chat />
           </Suspense>
         ),
-        children: [
-          {
-            path: "",
-            element: (
-              <Suspense fallback={<Loading />}>
-                <Chat />
-              </Suspense>
-            ),
-          },
-        ],
+      },
+      {
+        path: "files",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Files />
+          </Suspense>
+        ),
+      },
+      {
+        path: "calls",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Calls />
+          </Suspense>
+        ),
       },
     ],
   },

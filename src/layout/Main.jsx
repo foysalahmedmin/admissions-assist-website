@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 const Main = () => {
   return (
     <>
-      <Header />
+      <Header navigationClassName={"container mx-auto"} />
       <Outlet />
       <Footer />
       <Toaster />

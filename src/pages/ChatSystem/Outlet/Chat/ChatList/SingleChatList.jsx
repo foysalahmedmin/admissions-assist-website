@@ -26,7 +26,7 @@ const SingleChatList = ({
         setDisplayChats_Id(id);
         setIsChatsShow(true);
       }}
-      className={`${displayChats_Id === id ? "bg-primary bg-opacity-10" : "hover:bg-input"} py-2 px-7 cursor-pointer`}
+      className={`${displayChats_Id === id ? "bg-primary bg-opacity-10" : "hover:bg-input"} py-2 px-[3.5vw] lg:px-7 cursor-pointer`}
     >
       <div className="w-full flex items-center gap-4">
         <div className="flex-shrink-0">

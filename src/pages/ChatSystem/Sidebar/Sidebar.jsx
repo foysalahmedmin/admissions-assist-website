@@ -3,15 +3,14 @@ import {
   LuFile,
   LuMessagesSquare,
   LuPhoneCall,
-  LuVolume2,
 } from "react-icons/lu";
 import ChatActiveLink from "./ChatActiveLink";
 
 const Sidebar = () => {
   return (
     <div>
-      <ul className="flex lg:flex-col items-start gap-4 text-labels">
-        <ChatActiveLink to={"/student/chat"}>
+      <ul className="px-[3.5vw] lg:px-0 flex lg:flex-col items-start justify-center lg:justify-start gap-4 text-labels">
+        <ChatActiveLink to={"/chat_system/chat"}>
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuMessagesSquare className="text-2xl" />
@@ -19,7 +18,7 @@ const Sidebar = () => {
             </div>
           </li>
         </ChatActiveLink>
-        <ChatActiveLink to={"/student/chat/files"}>
+        <ChatActiveLink to={"/chat_system/files"}>
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuFile className="text-2xl" />
@@ -27,7 +26,7 @@ const Sidebar = () => {
             </div>
           </li>
         </ChatActiveLink>
-        <ChatActiveLink to={"/student/chat/calendar"}>
+        <ChatActiveLink to={"/chat_system/calendar"}>
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuCalendarCheck className="text-2xl" />
@@ -35,7 +34,7 @@ const Sidebar = () => {
             </div>
           </li>
         </ChatActiveLink>
-        <ChatActiveLink to={"/student/chat/feedback"}>
+        <ChatActiveLink to={"/chat_system/calls"}>
           <li>
             <div className="flex items-center gap-4 py-1">
               <LuPhoneCall className="text-2xl" />

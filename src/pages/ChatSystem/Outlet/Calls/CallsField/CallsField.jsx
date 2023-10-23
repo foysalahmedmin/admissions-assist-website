@@ -25,10 +25,12 @@ const CallsField = ({
           </span>
           <div className="flex items-center gap-1">
             <h3 className="title">History</h3>
-            <span className="material-icons-outlined mt-1">keyboard_arrow_down</span>
+            <span className="material-icons-outlined mt-1">
+              keyboard_arrow_down
+            </span>
           </div>
         </div>
-        <div className="flex justify-between items-center gap-2 lg:gap-4 text-title">
+        <div className="flex justify-between items-center gap-2 text-title text-sm">
           <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary hover:bg-opacity-10 hover:text-primary">
             <span>All</span>
           </button>

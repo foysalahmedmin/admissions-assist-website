@@ -1,5 +1,6 @@
 import Button from "@/components/Buttons/Button";
 import { useState } from "react";
+import BigCalendar from "../BigCalendar/BigCalendar";
 import ScheduleModal from "../ScheduleModal/ScheduleModal";
 
 const Calendar = () => {
@@ -25,7 +26,9 @@ const Calendar = () => {
           />
         </div>
       </div>
-      <div className="px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4 grid grid-cols-1 overflow-x-auto"></div>
+      <div className="px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4 grid grid-cols-1 overflow-x-auto">
+        <BigCalendar />
+      </div>
     </div>
   );
 };

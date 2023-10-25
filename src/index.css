@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 * {
-  border-color: #D9E3E9;
-  font-family: 'Open Sans', sans-serif;
+  border-color: #d9e3e9;
+  font-family: "Open Sans", sans-serif;
 }
 
 :root {
@@ -23,18 +23,18 @@
 
 /* scrollbar */
 ::-webkit-scrollbar {
-  max-width: .5rem;
-  max-height: .5rem;
+  max-width: 0.5rem;
+  max-height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
   background: #ffffff50;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #25252550;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -44,11 +44,11 @@
 .scroll-hidden::-webkit-scrollbar {
   display: none;
 }
-.scroll-hidden{
-    scroll-behavior: none;
+.scroll-hidden {
+  scroll-behavior: none;
 }
-.scroll-hidden{
-    -ms-overflow-style: none;
+.scroll-hidden {
+  -ms-overflow-style: none;
 }
 
 /* number-input */
@@ -58,87 +58,86 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
 input.icon-none::-webkit-inner-spin-button,
 input.icon-none::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+  display: none;
+  -webkit-appearance: none;
 }
 
 /* swiper slider */
 .swiper-slide.swiper-slide-active .top-round-style {
-  @apply animate-pop-long origin-top-left
+  @apply animate-pop-long origin-top-left;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  @apply bg-secondary
+  @apply bg-secondary;
 }
 
 .guidance-slider .swiper-button-disabled {
-  @apply bg-black bg-opacity-10
+  @apply bg-black bg-opacity-10;
 }
 
 @layer base {
   html {
-    @apply text-text scroll-p-14 scroll-smooth
+    @apply text-text scroll-p-14 scroll-smooth;
   }
 }
 
 @layer components {
-
   .title {
-    @apply text-title font-bold font-poppins
+    @apply text-title font-bold font-poppins;
   }
 
   .px-custom {
-    @apply mx-auto px-[3.5%] lg:px-[2.5%] 2xl:px-[1.5%]
+    @apply mx-auto px-[3.5%] lg:px-[2.5%] 2xl:px-[1.5%];
   }
 
   .text-gradient {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary;
   }
 
   .ghost-btn {
-    @apply font-semibold px-4 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply font-semibold px-4 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .gradient-btn {
-    @apply bg-gradient-to-r from-secondary to-secondary px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-gradient-to-r from-secondary to-secondary px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .primary-btn {
-    @apply bg-secondary text-white font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-secondary text-white font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .primary-btn-sm {
-    @apply bg-secondary text-white text-sm font-semibold px-4 h-7 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-secondary text-white text-sm font-semibold px-4 h-7 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .primary-btn-outline {
-    @apply bg-transparent outline outline-secondary text-secondary font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-transparent outline outline-secondary text-secondary font-semibold px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .white-btn-outline {
-    @apply bg-transparent outline outline-white text-white px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-transparent outline outline-white text-white px-7 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .rounded-btn {
-    @apply bg-secondary text-white w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-secondary text-white w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .rounded-btn-sm {
-    @apply bg-secondary text-white text-sm w-7 h-7 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-secondary text-white text-sm w-7 h-7 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .rounded-btn-outline {
-    @apply bg-transparent outline w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all
+    @apply bg-transparent outline w-12 h-12 flex gap-2 justify-center items-center rounded-full active:scale-95 animate-pop transition-all;
   }
 
   .primary-input {
-    @apply px-4 py-2 rounded bg-darkblue focus:outline focus:outline-[#2f3655] border
+    @apply px-4 py-2 rounded bg-darkblue focus:outline focus:outline-[#2f3655] border;
   }
 
   .glass {
@@ -146,5 +145,4 @@ input.icon-none::-webkit-calendar-picker-indicator {
     backdrop-filter: blur(var(--glass-blur, 40px));
     background-color: #000000c9;
   }
-
 }

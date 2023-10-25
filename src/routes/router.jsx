@@ -1,16 +1,14 @@
-import { createBrowserRouter } from "react-router-dom";
-import { lazy, Suspense } from "react";
 import Loading from "@/components/Loading/Loading";
-import ChatSystem from "@/layout/ChatSystem";
-import Chat from "@/pages/ChatSystem/Outlet/Chat/Chat/Chat";
-import Files from "@/pages/ChatSystem/Outlet/Files/Files/Files";
-import Calls from "@/pages/ChatSystem/Outlet/Calls/Calls/Calls";
-import Calendar from "@/pages/ChatSystem/Outlet/Calendar/Calendar/Calendar";
-import MoveToChat from "@/pages/ChatSystem/Outlet/MoveToChat";
+import { lazy, Suspense } from "react";
+import { createBrowserRouter } from "react-router-dom";
+
+/* Layouts */
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
-const Student = lazy(() => import("@/layout/Student"));
+// const Student = lazy(() => import("@/layout/Student"));
+const ChatSystem = lazy(() => import("@/layout/ChatSystem"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
+/* Main Layout's Pages */
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
 const Blogs = lazy(() => import("@/pages/Common/Blogs/Blogs/Blogs"));
@@ -23,10 +21,12 @@ const Course = lazy(() => import("@/pages/Common/Course/Course/Course"));
 const University = lazy(() =>
   import("@/pages/Common/University/University/University")
 );
+/* Authentication Layout's Pages */
 const Login = lazy(() => import("@/pages/Authentication/Login/Login/Login"));
 const SignUp = lazy(() =>
   import("@/pages/Authentication/SignUp/SignUp/SignUp")
 );
+/* Student Layout's Pages */
 const Profile = lazy(() => import("@/pages/Student/Profile/Profile/Profile"));
 const Application = lazy(() =>
   import("@/pages/Student/Application/Application/Application")
@@ -34,6 +34,14 @@ const Application = lazy(() =>
 const BookSession = lazy(() =>
   import("@/pages/Student/BookSession/BookSession/BookSession")
 );
+/* Chat system Layout's Pages */
+const MoveToChat = lazy(() => import("@/pages/ChatSystem/Outlet/MoveToChat"));
+const Chat = lazy(() => import("@/pages/ChatSystem/Outlet/Chat/Chat/Chat"));
+const Files = lazy(() => import("@/pages/ChatSystem/Outlet/Files/Files/Files"));
+const Calendar = lazy(() =>
+  import("@/pages/ChatSystem/Outlet/Calendar/Calendar/Calendar")
+);
+const Calls = lazy(() => import("@/pages/ChatSystem/Outlet/Calls/Calls/Calls"));
 
 const router = createBrowserRouter([
   {

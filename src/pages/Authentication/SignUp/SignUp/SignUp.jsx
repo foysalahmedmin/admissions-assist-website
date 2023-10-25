@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import SignUpForm from "@/pages/Authentication/SignUp/SignUpForm/SignUpForm";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import SignUpInfoForm from "../SignUpInfoForm/SignUpInfoForm";
 
 const SignUp = () => {

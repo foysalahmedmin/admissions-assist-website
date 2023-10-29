@@ -1,24 +1,7 @@
-import "@/assets/css/react-big-calendar.css";
-import moment from "moment";
-import { Calendar, momentLocalizer } from "react-big-calendar";
-import Events from "./Events";
-
-const localizer = momentLocalizer(moment);
+import FullCalendar from "@/components/Calendar/FullCalendar/FullCalendar";
 
 const BigCalendar = () => {
-  return (
-    <div>
-      <Calendar
-        views={["month", "agenda"]}
-        localizer={localizer}
-        defaultView="month"
-        events={Events}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 500 }}
-      />
-    </div>
-  );
+  return <FullCalendar />;
 };
 
 export default BigCalendar;

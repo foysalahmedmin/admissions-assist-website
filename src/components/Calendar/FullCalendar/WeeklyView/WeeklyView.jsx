@@ -1,18 +1,27 @@
 import { addDays, addHours, format, isSameDay, startOfWeek } from "date-fns";
+import { useEffect, useState } from "react";
 import Time from "./Time";
 
 const WeeklyView = ({ today, currentDate, setCurrentDate, events }) => {
-  const days = [];
-  const start = startOfWeek(currentDate);
-  const times = Array.from({ length: 24 }, (_, i) => addHours(new Date(), i));
+  const [days, setDays] = useState([]);
+  const times = Array.from({ length: 24 }, (_, i) =>
+    addHours(new Date().setHours(0), i)
+  );
 
-  for (let i = 0; i < 7; i++) {
-    const day = {};
-    const newDay = addDays(start, i);
-    day.day = newDay;
-    day.times = Array.from({ length: 24 }, (_, i) => addHours(newDay, i));
-    days.push(day);
-  }
+  useEffect(() => {
+    const days = [];
+    const start = startOfWeek(currentDate);
+
+    for (let i = 0; i < 7; i++) {
+      const day = {};
+      const newDay = addDays(start, i);
+      day.day = newDay;
+      day.times = Array.from({ length: 24 }, (_, i) => addHours(newDay, i));
+      days.push(day);
+    }
+
+    setDays(days);
+  }, [currentDate]);
 
   return (
     <div className="flex">

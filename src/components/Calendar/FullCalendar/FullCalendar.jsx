@@ -6,26 +6,28 @@ import DailyView from "./DailyView/DailyView";
 import MonthlyView from "./MonthlyView/MonthlyView";
 import WeeklyView from "./WeeklyView/WeeklyView";
 
-const Calendar = () => {
+const Calendar = ({ Events }) => {
   const today = new Date();
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState("monthly");
-  const [events, setEvents] = useState([
-    {
-      start: new Date(2023, 9, 29, 10, 30),
-      end: new Date(2023, 9, 29, 14, 0),
-      title: "Webinar",
-      platform: "zoom",
-      type: "meeting",
-    },
-    {
-      start: new Date(2023, 10, 1, 11, 0),
-      end: new Date(2023, 10, 3, 12, 0),
-      title: "App Development Course",
-      platform: null,
-      type: "course",
-    },
-  ]);
+  const [events, setEvents] = useState(
+    Events || [
+      {
+        start: new Date(2023, 9, 29, 6, 30),
+        end: new Date(2023, 9, 29, 9, 0),
+        title: "Webinar",
+        platform: "zoom",
+        type: "meeting",
+      },
+      {
+        start: new Date(2023, 10, 1, 11, 0),
+        end: new Date(2023, 10, 3, 12, 0),
+        title: "App Development Course",
+        platform: null,
+        type: "course",
+      },
+    ]
+  );
 
   const next = () => {
     if (view === "monthly") {

@@ -1,36 +1,45 @@
-import { addDays, format, isSameDay } from "date-fns";
+import {
+  addDays,
+  endOfMonth,
+  endOfWeek,
+  startOfMonth,
+  startOfWeek,
+  subDays,
+} from "date-fns";
+import { useEffect, useState } from "react";
+import Day from "./Day";
 
-const MonthlyView = ({ today, currentDate, setCurrentDate, events }) => {
-  const startOfMonth = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth(),
-    1
-  );
-  const endOfMonth = new Date(
-    currentDate.getFullYear(),
-    currentDate.getMonth() + 1,
-    0
-  );
+const MonthlyView = ({ today, currentDate, events }) => {
+  const [calendarDates, setCalendarDates] = useState([]);
 
-  const weeks = [];
-  let current = startOfMonth;
-  let currentWeek = [null, null, null, null, null, null, null];
+  useEffect(() => {
+    const start = startOfWeek(startOfMonth(currentDate), { weekStartsOn: 0 });
+    const end = endOfWeek(endOfMonth(currentDate), { weekStartsOn: 0 });
 
-  while (current <= endOfMonth) {
-    currentWeek[current.getDay()] = current;
+    const dates = [];
+    let current = start;
 
-    if (current.getDay() === 6) {
-      weeks.push(currentWeek);
-      currentWeek = [];
+    while (current <= end) {
+      dates.push(current);
+      current = addDays(current, 1);
     }
 
-    current = addDays(current, 1);
-  }
+    // Add dates from the previous month as needed
+    let prev = start;
+    while (prev.getDay() !== 0) {
+      prev = subDays(prev, 1);
+      dates.unshift(prev);
+    }
 
-  // Handle the last week if it's not complete
-  if (currentWeek.length > 0) {
-    weeks.push(currentWeek);
-  }
+    // Add dates from the next month as needed
+    let next = end;
+    while (next.getDay() !== 6) {
+      next = addDays(next, 1);
+      dates.push(next);
+    }
+
+    setCalendarDates(dates);
+  }, [currentDate]);
 
   return (
     <div className="monthly-view">
@@ -42,36 +51,17 @@ const MonthlyView = ({ today, currentDate, setCurrentDate, events }) => {
         ))}
       </div>
       <div className="month-days">
-        {weeks.map((week, weekIndex) => (
-          <div key={weekIndex} className="week w-full grid grid-cols-7">
-            {week.map((day, dayIndex) =>
-              day ? (
-                <div
-                  key={dayIndex}
-                  className={`${
-                    isSameDay(day, today) ? "text-primary" : ""
-                  } h-24 px-2 py-2 border text-right`}
-                >
-                  <h3>{format(day, "d")}</h3>
-                  <div className="events">
-                    {events
-                      .filter((event) => isSameDay(event.start, day))
-                      .map((event, index) => (
-                        <div key={index} className="event">
-                          {event.title}
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              ) : (
-                <div
-                  key={dayIndex}
-                  className="h-24 px-2 py-2 border text-right"
-                ></div>
-              )
-            )}
-          </div>
-        ))}
+        <div className="week w-full grid grid-cols-7">
+          {calendarDates?.map((day, dayIndex) => (
+            <Day
+              key={dayIndex}
+              day={day}
+              currentDate={currentDate}
+              today={today}
+              events={events}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

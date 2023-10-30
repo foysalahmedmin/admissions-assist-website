@@ -6,9 +6,16 @@ const AgendaView = ({ events }) => {
   return (
     <div className="agenda-view">
       {sortedEvents.map((event, index) => (
-        <div key={index} className="event">
-          <h3>{format(event.start, "MMMM d, yyyy - H:mm")}</h3>
-          <p>{event.title}</p>
+        <div key={index} className="border-b pb-2 mb-2">
+          <h3 className="title">{event.title}</h3>
+          <p>
+            <span>Start:</span>{" "}
+            <span>{format(event.start, "MMMM d, yyyy - H:mm")}</span>
+          </p>
+          <p>
+            <span>End:</span>{" "}
+            <span>{format(event.end, "MMMM d, yyyy - H:mm")}</span>
+          </p>
         </div>
       ))}
     </div>

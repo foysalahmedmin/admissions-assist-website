@@ -4,12 +4,13 @@ import courseImg from "@/assets/images/calendar-course.png";
 import { format } from "date-fns";
 import { useEffect, useRef, useState } from "react";
 import { BiLogoZoom } from "react-icons/bi";
+import EventModal from "../EventModal/EventModal";
 
 const EventView = ({ event }) => {
   const [gap, setGap] = useState({});
   const [timeBlockWidth, setTimeBlockWidth] = useState(96);
+  const [isEventModalOpen, setIsEventModalOpen] = useState(false);
   const timeBlockRef = useRef(null);
-  console.log(timeBlockWidth);
   useEffect(() => {
     const eventGapMeasureHandle = () => {
       let gap = { days: 0, hours: 0 };
@@ -46,6 +47,7 @@ const EventView = ({ event }) => {
     <div ref={timeBlockRef} className="relative flex-1">
       {event?.type == "course" ? (
         <div
+          onClick={() => setIsEventModalOpen(true)}
           style={{
             height: `${3.5 * (gap?.hours + 1) - 1}rem`,
             width: `${timeBlockWidth * (gap?.days + 1) - 16}px`,
@@ -56,24 +58,24 @@ const EventView = ({ event }) => {
             <img className="rounded-xl" src={courseImg} alt="" />
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <h5 className="title text-sm text-white md:text-base mb-2">
                 {event.title}
               </h5>
               <div className="flex items-center">
                 <img
-                  className="rounded-full border-white border"
+                  className="rounded-full h-6 w-6 object-cover object-center border-white border-2"
                   src={courseImg1}
                   alt=""
                 />
                 <img
-                  className="rounded-full border-white border relative -ml-2"
+                  className="rounded-full h-6 w-6 object-cover object-center border-white border-2 relative -ml-2"
                   src={courseImg2}
                   alt=""
                 />
               </div>
             </div>
-            <div className="mt-auto flex items-center justify-between">
+            <div className="mt-auto flex items-center justify-between gap-2">
               <span className="block font-semibold text-sm">
                 {format(event.start, "EEE")}
               </span>
@@ -86,6 +88,7 @@ const EventView = ({ event }) => {
         </div>
       ) : (
         <div
+          onClick={() => setIsEventModalOpen(true)}
           style={{
             height: `${3.5 * (gap?.hours + 1) - 1}rem`,
             width: `${timeBlockWidth * (gap?.days + 1) - 16}px`,
@@ -116,6 +119,11 @@ const EventView = ({ event }) => {
           </div>
         </div>
       )}
+      <EventModal
+        isOpen={isEventModalOpen}
+        setIsOpen={setIsEventModalOpen}
+        event={event}
+      />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Button from "@/components/Buttons/Button";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
+import { LuFlag } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const GuidanceStep = ({ image_url }) => {
@@ -47,6 +48,12 @@ const GuidanceStep = ({ image_url }) => {
                 </ProgressBarLinear>
               </div>
             </div>
+          </div>
+          <div className="mb-7">
+            <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
+              <LuFlag />
+              <span>Passport was not properly uploated</span>
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
             <Link>

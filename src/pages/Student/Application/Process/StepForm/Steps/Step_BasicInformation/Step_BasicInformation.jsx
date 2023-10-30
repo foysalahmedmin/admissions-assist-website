@@ -1,6 +1,7 @@
 import Button from "@/components/Buttons/Button";
-import Table from "./Table/Table";
+import { LuFlag } from "react-icons/lu";
 import FAQ from "./FAQ";
+import Table from "./Table/Table";
 
 const table_data = [
   {
@@ -22,7 +23,13 @@ const Step_BasicInformation = ({ setStepStatusAndSetTab }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">Basic information</h1>
+          <div className="flex flex-wrap gap-4 items-center">
+            <h1 className="title text-2xl">Basic information</h1>
+            <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
+              <LuFlag />
+              <span>Passport was not properly uploated</span>
+            </p>
+          </div>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">

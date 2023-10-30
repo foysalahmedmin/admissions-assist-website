@@ -1,8 +1,8 @@
 import Button from "@/components/Buttons/Button";
+import ShortCalendar from "@/components/Calendar/ShortCalendar/ShortCalendar";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { useState } from "react";
 import { BiLogoZoom, BiSolidTimeFive, BiWorld } from "react-icons/bi";
-import Calendar from "../../../../components/Calendar/Calendar";
 
 const Schedule = () => {
   const [days, setDays] = useState([]);
@@ -64,7 +64,7 @@ const Schedule = () => {
               <hr />
               <div className="my-4">
                 <div className="mb-2">
-                  <Calendar days={days} setDays={setDays} />
+                  <ShortCalendar days={days} setDays={setDays} />
                 </div>
                 <div className="mb-4">
                   <input className="w-full" type="time" name="" id="" />

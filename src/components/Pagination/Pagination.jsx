@@ -13,7 +13,10 @@ const Pagination = ({
         </p> */}
       </div>
       <div className="flex gap-4">
-        <button onClick={previousHandle} className="ghost-btn text-secondary">
+        <button
+          onClick={previousHandle}
+          className="ghost-btn text-secondary-500"
+        >
           <span className="material-icons"> keyboard_arrow_left</span>
         </button>
         <div className="flex gap-3 justify-center items-center">
@@ -22,8 +25,8 @@ const Pagination = ({
           }).map((x, index) => (
             <button
               onClick={() => setPageNumber(index)}
-              className={`h-7 w-7 flex items-center justify-center rounded-full border border-secondary text-secondary hover:text-white hover:bg-secondary cursor-pointer ${
-                pageNumber == index && "text-white bg-secondary"
+              className={`h-7 w-7 flex items-center justify-center rounded-full border border-secondary-500 text-secondary-500 hover:text-white hover:bg-secondary-500 cursor-pointer ${
+                pageNumber == index && "text-white bg-secondary-500"
               }`}
               key={index}
             >
@@ -31,7 +34,7 @@ const Pagination = ({
             </button>
           ))}
         </div>
-        <button onClick={nextHandle} className="ghost-btn text-secondary">
+        <button onClick={nextHandle} className="ghost-btn text-secondary-500">
           <span className="material-icons"> keyboard_arrow_right</span>
         </button>
       </div>

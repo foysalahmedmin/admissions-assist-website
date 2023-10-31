@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Tr = ({ data, active, setActive }) => {
   const { _id, location, duration, session, study_mode, class_starts } = data;
 
@@ -9,8 +7,8 @@ const Tr = ({ data, active, setActive }) => {
         htmlFor="hello"
         className={`${
           active == _id
-            ? "bg-primary text-white"
-            : "hover:bg-primary hover:bg-opacity-10"
+            ? "bg-primary-500 text-white"
+            : "hover:bg-primary-500 hover:bg-opacity-10"
         } `}
       >
         <td className="text-left">
@@ -49,7 +47,7 @@ const Tr = ({ data, active, setActive }) => {
                 value={`${_id}`}
                 id={`${_id}`}
               />
-              <div className="peer-checked:border-white border-title h-6 w-6 border-2 rounded-full relative peer-checked:after:content-[''] after:absolute after:left-1 after:right-1 after:top-1 after:bottom-1 after:mx-auto peer-checked:after:border-[6px] peer-checked:after:border-white after:rounded-full"></div>
+              <div className="peer-checked:border-white border-text-900 h-6 w-6 border-2 rounded-full relative peer-checked:after:content-[''] after:absolute after:left-1 after:right-1 after:top-1 after:bottom-1 after:mx-auto peer-checked:after:border-[6px] peer-checked:after:border-white after:rounded-full"></div>
             </div>
           </label>
         </td>

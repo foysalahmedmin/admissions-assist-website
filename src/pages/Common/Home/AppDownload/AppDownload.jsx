@@ -1,11 +1,11 @@
-import appStore from "@/assets/images/app-store.png";
-import playStore from "@/assets/images/play-store.png";
 import downloadImg from "@/assets/images/app-download.png";
+import appStore from "@/assets/images/app-store.png";
 import downloadIcon from "@/assets/images/icons/download-sky-blue.svg";
+import playStore from "@/assets/images/play-store.png";
 
 const AppDownload = () => {
   return (
-    <section className="lg:py-40 pt-14 lg:min-h-screen-less-20 flex flex-col items-center justify-center gap-12 lg:gap-0 bg-primary bg-opacity-5 lg:bg-opacity-100 lg:bg-[url('/background/app-download.png')] bg-no-repeat bg-cover bg-bottom">
+    <section className="lg:py-40 pt-14 lg:min-h-screen-less-20 flex flex-col items-center justify-center gap-12 lg:gap-0 bg-primary-500 bg-opacity-5 lg:bg-opacity-100 lg:bg-[url('/background/app-download.png')] bg-no-repeat bg-cover bg-bottom">
       <div className="container mx-auto">
         <div className="lg:w-1/2 lg:text-left text-center">
           <div className="mb-7">

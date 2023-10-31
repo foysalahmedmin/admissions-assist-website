@@ -3,7 +3,7 @@ import { useState } from "react";
 const Search = ({ position }) => {
   const [tab, setTab] = useState("all");
   return (
-    <div className="p-4 bg-black bg-opacity-50 rounded-xl">
+    <div className="p-4 bg-black-900 bg-opacity-50 rounded-xl">
       <div
         className={`flex gap-4 items-end ${
           position === "center"
@@ -16,7 +16,7 @@ const Search = ({ position }) => {
         <button
           onClick={() => setTab("all")}
           className={`py-3 rounded-t-xl ${
-            tab === "all" ? "bg-primary px-4" : ""
+            tab === "all" ? "bg-primary-500 px-4" : ""
           }`}
         >
           All Results
@@ -24,7 +24,7 @@ const Search = ({ position }) => {
         <button
           onClick={() => setTab("universities")}
           className={`py-3 rounded-t-xl ${
-            tab === "universities" ? "bg-primary px-4" : ""
+            tab === "universities" ? "bg-primary-500 px-4" : ""
           }`}
         >
           Universities
@@ -32,7 +32,7 @@ const Search = ({ position }) => {
         <button
           onClick={() => setTab("courses")}
           className={`py-3 rounded-t-xl ${
-            tab === "courses" ? "bg-primary px-4" : ""
+            tab === "courses" ? "bg-primary-500 px-4" : ""
           }`}
         >
           Courses
@@ -41,7 +41,7 @@ const Search = ({ position }) => {
       <div
         className={`${
           tab === "all" ? (position !== "center" ? "rounded-tl-none" : "") : ""
-        } w-full flex items-center gap-3 px-4 border border-primary rounded-xl bg-primary bg-opacity-20`}
+        } w-full flex items-center gap-3 px-4 border border-primary-500 rounded-xl bg-primary-500 bg-opacity-20`}
       >
         <span className="material-icons">search</span>
         <input

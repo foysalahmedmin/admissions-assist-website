@@ -22,7 +22,7 @@ const Modal = ({
           isOpen ? "visible" : "invisible"
         }`}
       >
-        <div className="fixed inset-0 bg-black opacity-25"></div>
+        <div className="fixed inset-0 bg-black-900 opacity-25"></div>
         <div
           className={`${
             isOpen ? "scale-100" : "scale-0"
@@ -38,7 +38,7 @@ const Modal = ({
             {isCloseBtn && (
               <div className="flex justify-end mb-7 flex-shrink-0">
                 <button
-                  className="h-7 w-7 flex items-center justify-center border rounded-full text-gray-700 hover:text-secondary flex-shrink-0"
+                  className="h-7 w-7 flex items-center justify-center border rounded-full text-gray-700 hover:text-secondary-500 flex-shrink-0"
                   onClick={() => setIsOpen(false)}
                 >
                   ✕

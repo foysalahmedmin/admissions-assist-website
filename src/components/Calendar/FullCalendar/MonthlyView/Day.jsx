@@ -5,7 +5,9 @@ const Day = ({ day, currentDate, today, events }) => {
   const filteredEvents = events?.filter((event) => isSameDay(event.start, day));
   return (
     <div
-      className={`${isSameDay(day, today) ? "text-primary font-bold" : ""} ${
+      className={`${
+        isSameDay(day, today) ? "text-primary-500 font-bold" : ""
+      } ${
         format(day, "MM") !== format(currentDate, "MM") ? "bg-slate-100" : ""
       } h-24 border flex flex-col`}
     >

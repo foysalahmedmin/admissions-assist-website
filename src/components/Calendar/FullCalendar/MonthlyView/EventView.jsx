@@ -44,7 +44,7 @@ const EventView = ({ event, day }) => {
         style={{
           width: `${dayBlockWidth * gap?.horizontal - 16}px`,
         }}
-        className="absolute left-2 top-0 bottom-2 text-left px-2 py-1 text-white rounded-lg bg-primary"
+        className="absolute left-2 top-0 bottom-2 text-left px-2 py-1 text-white rounded-lg bg-primary-500"
       >
         <div className="flex items-center gap-2">
           <h5>{event.title}</h5>

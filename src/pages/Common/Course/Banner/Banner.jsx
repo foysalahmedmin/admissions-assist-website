@@ -1,9 +1,9 @@
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
+import { useState } from "react";
 import { BiAward, BiBookOpen, BiHistory, BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import AvailableCourseModal from "../AvailableCourseModal/AvailableCourseModal";
-import { useState } from "react";
 
 const Banner = () => {
   const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
@@ -47,7 +47,7 @@ const Banner = () => {
                             </div>
                           </div>
                         ) || (
-                          <p className="text-sm text-placeholder">
+                          <p className="text-sm text-text-100">
                             No information for this filed yet
                           </p>
                         )}
@@ -60,7 +60,7 @@ const Banner = () => {
                       <div>
                         <h5 className="text-sm ">Duration</h5>
                         {<p className="text-sm">2 Years</p> || (
-                          <p className="text-sm text-placeholder">
+                          <p className="text-sm text-text-100">
                             No information for this filed yet
                           </p>
                         )}
@@ -73,7 +73,7 @@ const Banner = () => {
                       <div>
                         <h5 className="text-sm ">Session</h5>
                         {<p className="text-sm">2024-2025</p> || (
-                          <p className="text-sm text-placeholder">
+                          <p className="text-sm text-text-100">
                             No information for this filed yet
                           </p>
                         )}
@@ -86,7 +86,7 @@ const Banner = () => {
                       <div>
                         <h5 className="text-sm ">Study Mode</h5>
                         {<p className="text-sm">Full Time</p> || (
-                          <p className="text-sm text-placeholder">
+                          <p className="text-sm text-text-100">
                             No information for this filed yet
                           </p>
                         )}
@@ -96,9 +96,7 @@ const Banner = () => {
                 </div>
                 <div>
                   <Button
-                    onClick={() =>
-                      setIsAvailableCourseModalOpen(true)
-                    }
+                    onClick={() => setIsAvailableCourseModalOpen(true)}
                     text={"2 Course options available"}
                   />
                   <AvailableCourseModal
@@ -110,7 +108,7 @@ const Banner = () => {
               <div>
                 <nav>
                   <ul className="w-full flex flex-wrap justify-center lg:justify-start">
-                    <li className="border border-b-0 hover:bg-white hover:text-primary text-center flex-1 shrink-0">
+                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#course_summary"
@@ -118,7 +116,7 @@ const Banner = () => {
                         Course summary
                       </a>
                     </li>
-                    <li className="border border-b-0 hover:bg-white hover:text-primary text-center flex-1 shrink-0">
+                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#how_to_apply"
@@ -126,7 +124,7 @@ const Banner = () => {
                         How to apply
                       </a>
                     </li>
-                    <li className="border border-b-0 hover:bg-white hover:text-primary text-center flex-1 shrink-0">
+                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#entry_requirements"
@@ -134,7 +132,7 @@ const Banner = () => {
                         Entry requirements
                       </a>
                     </li>
-                    <li className="border border-b-0 hover:bg-white hover:text-primary text-center flex-1 shrink-0">
+                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#fees_and_funding"
@@ -142,7 +140,7 @@ const Banner = () => {
                         Fees and funding
                       </a>
                     </li>
-                    <li className="border border-b-0 hover:bg-white hover:text-primary text-center flex-1 shrink-0">
+                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#career_opportunity "

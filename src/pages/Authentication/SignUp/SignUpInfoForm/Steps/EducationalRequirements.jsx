@@ -11,14 +11,14 @@ const Inputs = ({ idIndex }) => {
           htmlFor={`educational_qualification_name_${idIndex}`}
           className="block mb-4"
         >
-          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
             Qualification Name
           </span>
         </label>
         <select
           type="text"
           name={`educational_qualification_name_${idIndex}`}
-          className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+          className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
           id={`educational_qualification_name_${idIndex}`}
           required
         >
@@ -31,14 +31,14 @@ const Inputs = ({ idIndex }) => {
           htmlFor={`educational_institute_name_${idIndex}`}
           className="block mb-4"
         >
-          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
             Institute Name
           </span>
         </label>
         <select
           type="text"
           name={`educational_institute_name_${idIndex}`}
-          className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+          className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
           id={`educational_institute_name_${idIndex}`}
           required
         >
@@ -49,14 +49,14 @@ const Inputs = ({ idIndex }) => {
       <div className="grid grid-cols-2 gap-7 mb-7">
         <div>
           <label htmlFor={`graduation_year_${idIndex}`} className="block mb-4">
-            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
               Graduation Year
             </span>
           </label>
           <select
             type="text"
             name={`graduation_year_${idIndex}`}
-            className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+            className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id={`graduation_year_${idIndex}`}
             required
           >
@@ -66,14 +66,14 @@ const Inputs = ({ idIndex }) => {
         </div>
         <div>
           <label htmlFor={`result_${idIndex}`} className="block mb-4">
-            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
               Result
             </span>
           </label>
           <select
             type="number"
             name={`result_${idIndex}`}
-            className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+            className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id={`result_${idIndex}`}
             required
           >
@@ -84,10 +84,10 @@ const Inputs = ({ idIndex }) => {
       </div>
       <div className="mb-7">
         <label htmlFor={`eduction_file_${idIndex}`} className="block mb-4">
-          <span className="block text-title">Attachment File</span>
+          <span className="block text-text-900">Attachment File</span>
         </label>
         <label
-          className="primary-btn inline-flex"
+          className="secondary-btn inline-flex"
           htmlFor={`eduction_file_${idIndex}`}
         >
           <span>Upload file</span>{" "}

@@ -9,7 +9,7 @@ import ChatActiveLink from "./ChatActiveLink";
 const Sidebar = () => {
   return (
     <div>
-      <ul className="px-[3.5vw] lg:px-0 flex lg:flex-col items-start justify-center lg:justify-start gap-4 text-labels">
+      <ul className="px-[3.5vw] lg:px-0 flex lg:flex-col items-start justify-center lg:justify-start gap-4 text-text-300">
         <ChatActiveLink to={"/chat_system/chat"}>
           <li>
             <div className="flex items-center gap-4 py-1">

@@ -3,7 +3,7 @@ const WorkCard = ({ index, data }) => {
   return (
     <div className="text-center">
       <div className="h-14 w-14 lg:h-24 lg:w-24 mb-4 lg:mb-7 mx-auto rounded-full border flex items-center justify-center">
-        <span className="text-3xl lg:text-5xl text-primary title">
+        <span className="text-3xl lg:text-5xl text-primary-500 title">
           {serial_no}
         </span>
       </div>
@@ -17,7 +17,9 @@ const WorkCard = ({ index, data }) => {
         </div>
       </div>
       <div className="px-6">
-        <h1 className="text-primary text-2xl font-semibold mb-4">{title}</h1>
+        <h1 className="text-primary-500 text-2xl font-semibold mb-4">
+          {title}
+        </h1>
         <p className="text-lg">{text}</p>
       </div>
     </div>

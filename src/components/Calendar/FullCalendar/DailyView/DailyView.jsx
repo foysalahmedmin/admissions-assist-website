@@ -11,7 +11,7 @@ const DailyView = ({ today, currentDate, setCurrentDate, events }) => {
     days.push(
       <div
         key={current}
-        className={`day ${isSameDay(current, today) ? "text-primary" : ""}`}
+        className={`day ${isSameDay(current, today) ? "text-primary-500" : ""}`}
       >
         <h3>{format(current, "MMMM d, yyyy")}</h3>
         <div className="time-slots">

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BiAward,
   BiBookOpen,
@@ -35,7 +34,7 @@ const CourseCard = ({ data, rounded }) => {
               alt=""
             />
             {duration && (
-              <div className="flex items-center justify-center gap-2 px-4 py-1 bg-secondary text-white rounded absolute top-4 right-4">
+              <div className="flex items-center justify-center gap-2 px-4 py-1 bg-secondary-500 text-white rounded absolute top-4 right-4">
                 <span>
                   <BiTimeFive />
                 </span>
@@ -51,66 +50,66 @@ const CourseCard = ({ data, rounded }) => {
             </div>
             <div className="grid grid-cols-2 gap-7">
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiHistory />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Session</h5>
+                  <h5 className="text-sm text-text-300">Session</h5>
                   {session ? (
-                    <p className="text-sm text-title">{session}</p>
+                    <p className="text-sm text-text-900">{session}</p>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiBookOpen />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Study Mode</h5>
+                  <h5 className="text-sm text-text-300">Study Mode</h5>
                   {study_mode ? (
-                    <p className="text-sm text-title">{study_mode}</p>
+                    <p className="text-sm text-text-900">{study_mode}</p>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiAward />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Ranking</h5>
+                  <h5 className="text-sm text-text-300">Ranking</h5>
                   {ranking ? (
-                    <div className="text-sm text-title flex gap-1">
+                    <div className="text-sm text-text-900 flex gap-1">
                       <span>{ranking}</span>
                       <div className="text-[.5rem] -mt-1 relative">th</div>
                     </div>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiMoney />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Tuition fee</h5>
+                  <h5 className="text-sm text-text-300">Tuition fee</h5>
                   {tuition_fee ? (
-                    <div className="text-sm text-title flex gap-2">
+                    <div className="text-sm text-text-900 flex gap-2">
                       <span>£</span>
                       <span className="">{tuition_fee}</span>
                     </div>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
@@ -122,7 +121,7 @@ const CourseCard = ({ data, rounded }) => {
             <Link to="/course/01">
               {" "}
               {/* Add the correct destination route */}
-              <button className="font-bold text-primary animate-pop active:scale-95">
+              <button className="font-bold text-primary-500 animate-pop active:scale-95">
                 View Details +
               </button>
             </Link>
@@ -137,7 +136,7 @@ const CourseCard = ({ data, rounded }) => {
               src={image}
               alt=""
             />
-            <div className="flex items-center justify-center px-7 bg-title bg-opacity-50 text-white rounded absolute inset-0">
+            <div className="flex items-center justify-center px-7 bg-text-900 bg-opacity-50 text-white rounded absolute inset-0">
               <div className="text-center">
                 <img
                   className="rounded-full mx-auto mb-4"
@@ -158,66 +157,66 @@ const CourseCard = ({ data, rounded }) => {
             </div>
             <div className="grid grid-cols-2 gap-7">
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiHistory />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Session</h5>
+                  <h5 className="text-sm text-text-300">Session</h5>
                   {session ? (
-                    <p className="text-sm text-title">{session}</p>
+                    <p className="text-sm text-text-900">{session}</p>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiBookOpen />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Study Mode</h5>
+                  <h5 className="text-sm text-text-300">Study Mode</h5>
                   {study_mode ? (
-                    <p className="text-sm text-title">{study_mode}</p>
+                    <p className="text-sm text-text-900">{study_mode}</p>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiAward />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Ranking</h5>
+                  <h5 className="text-sm text-text-300">Ranking</h5>
                   {ranking ? (
-                    <div className="text-sm text-title flex gap-1">
+                    <div className="text-sm text-text-900 flex gap-1">
                       <span>{ranking}</span>
                       <div className="text-[.5rem] -mt-1 relative">th</div>
                     </div>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary bg-opacity-10 text-primary flex items-center justify-center">
+                <div className="flex-shrink-0 h-7 w-7 rounded-full bg-primary-500 bg-opacity-10 text-primary-500 flex items-center justify-center">
                   <BiMoney />
                 </div>
                 <div>
-                  <h5 className="text-sm text-labels">Tuition fee</h5>
+                  <h5 className="text-sm text-text-300">Tuition fee</h5>
                   {tuition_fee ? (
-                    <div className="text-sm text-title flex gap-2">
+                    <div className="text-sm text-text-900 flex gap-2">
                       <span>£</span>
                       <span className="">{tuition_fee}</span>
                     </div>
                   ) : (
-                    <p className="text-sm text-placeholder">
+                    <p className="text-sm text-text-100">
                       No information for this field yet
                     </p>
                   )}
@@ -227,7 +226,7 @@ const CourseCard = ({ data, rounded }) => {
           </div>
           <div>
             <Link to="/course/01">
-              <button className="w-full py-4 font-semibold bg-primary text-white animate-pop active:scale-95">
+              <button className="w-full py-4 font-semibold bg-primary-500 text-white animate-pop active:scale-95">
                 View Details
               </button>
             </Link>

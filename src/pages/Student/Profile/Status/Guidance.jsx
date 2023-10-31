@@ -1,10 +1,10 @@
+import stepImg from "@/assets/images/guidance-step.png";
 import noCourses from "@/assets/images/no-courses.svg";
 import Button from "@/components/Buttons/Button";
 import GuidanceStep from "@/pages/Student/Profile/Status/GuidanceStep";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Navigation } from "swiper/modules";
-import stepImg from "@/assets/images/guidance-step.png";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/effect-creative";
@@ -51,12 +51,12 @@ const Guidance = () => {
               </SwiperSlide>
 
               <div className="absolute z-10 mx-auto right-7 top-7 hidden lg:flex gap-4 items-center">
-                <div className="guidance-slider-prev cursor-pointer flex items-center justify-center text-white text-xl h-7 w-7 rounded-full overflow-hidden bg-primary active:scale-95 animate-pop">
+                <div className="guidance-slider-prev cursor-pointer flex items-center justify-center text-white text-xl h-7 w-7 rounded-full overflow-hidden bg-primary-500 active:scale-95 animate-pop">
                   <span className="material-icons-outlined !text-base">
                     arrow_back_ios
                   </span>
                 </div>
-                <div className="guidance-slider-next cursor-pointer flex items-center justify-center text-white text-xl h-7 w-7 rounded-full overflow-hidden bg-primary active:scale-95 animate-pop">
+                <div className="guidance-slider-next cursor-pointer flex items-center justify-center text-white text-xl h-7 w-7 rounded-full overflow-hidden bg-primary-500 active:scale-95 animate-pop">
                   <span className="material-icons-outlined !text-base">
                     arrow_forward_ios
                   </span>
@@ -70,7 +70,7 @@ const Guidance = () => {
               <img className="w-full object-contain" src={noCourses} alt="" />
             </div>
             <div className="mb-4">
-              <strong className="text-title mb-2">
+              <strong className="text-text-900 mb-2">
                 No Courses Applied Yet
               </strong>
               <p>Update your profile and apply to courses</p>

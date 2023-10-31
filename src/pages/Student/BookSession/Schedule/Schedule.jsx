@@ -21,7 +21,7 @@ const Schedule = () => {
             <div></div>
             <div>
               <Button
-                className={"ghost-btn text-white bg-primary"}
+                className={"ghost-btn text-white bg-primary-500"}
                 text={"Book a demo"}
               />
             </div>
@@ -29,13 +29,13 @@ const Schedule = () => {
           <div className="flex flex-col lg:flex-row justify-between gap-7">
             <div className="flex-1">
               <div className="py-4">
-                <h3 className="text-2xl title text-text">
+                <h3 className="text-2xl title text-text-500">
                   ACME <span>lnc</span>
                 </h3>
               </div>
               <hr />
               <div className="my-4">
-                <h3 className="title text-3xl text-primary mb-7">
+                <h3 className="title text-3xl text-primary-500 mb-7">
                   Sales Consulation
                 </h3>
                 <div>
@@ -57,7 +57,7 @@ const Schedule = () => {
             <div className="w-[1px] bg-line hidden lg:block"></div>
             <div className="flex-1">
               <div className="py-4">
-                <h3 className="text-2xl title text-text">
+                <h3 className="text-2xl title text-text-500">
                   Select a date and time
                 </h3>
               </div>

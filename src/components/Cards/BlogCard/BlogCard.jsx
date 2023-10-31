@@ -33,7 +33,7 @@ const BlogCard = ({ data, position }) => {
         </div>
         <h3 className="title  text-2xl mb-4">{title}</h3>
         <Button
-          className={"btn-none flex items-center gap-1 text-secondary"}
+          className={"btn-none flex items-center gap-1 text-secondary-500"}
           text={"Read More"}
           icon={<span className="material-icons-outlined !text-base">add</span>}
         />

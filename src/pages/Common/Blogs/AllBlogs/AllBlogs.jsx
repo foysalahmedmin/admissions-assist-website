@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Pagination from "@/components/Pagination/Pagination";
-import usePagination from "@/hooks/usePagination/usePagination";
 import cardImg from "@/assets/images/university-slide-1.png";
 import BlogCard from "@/components/Cards/BlogCard/BlogCard";
+import Pagination from "@/components/Pagination/Pagination";
+import usePagination from "@/hooks/usePagination/usePagination";
+import { useEffect, useState } from "react";
 import { LuGrip, LuList } from "react-icons/lu";
 
 const AllBlogs = () => {
@@ -32,7 +32,7 @@ const AllBlogs = () => {
             <button
               onClick={() => setPosition("list")}
               className={`${
-                position == "list" ? "text-primary" : ""
+                position == "list" ? "text-primary-500" : ""
               } ghost-btn px-0 py-0 text-3xl lg:text-5xl`}
             >
               <LuList />
@@ -40,7 +40,7 @@ const AllBlogs = () => {
             <button
               onClick={() => setPosition("grip")}
               className={`${
-                position == "grip" ? "text-primary" : ""
+                position == "grip" ? "text-primary-500" : ""
               } ghost-btn px-0 py-0 text-3xl lg:text-5xl`}
             >
               <LuGrip />
@@ -49,7 +49,9 @@ const AllBlogs = () => {
         </div>
         <div
           className={`${
-            position == "list" ? "xl:grid-cols-2" : " md:grid-cols-2 lg:grid-cols-3"
+            position == "list"
+              ? "xl:grid-cols-2"
+              : " md:grid-cols-2 lg:grid-cols-3"
           } grid gap-7 mb-12`}
         >
           {cards

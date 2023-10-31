@@ -11,7 +11,7 @@ const FeedbackModal = ({ isOpen, setIsOpen, handleSave }) => {
       className={"w-full lg:w-[50rem] bg-white"}
     >
       <div className=" ">
-        <div className="w-full bg-primary text-white px-7 py-4">
+        <div className="w-full bg-primary-500 text-white px-7 py-4">
           <h3 className="title text-white text-2xl">Submit your feedback</h3>
         </div>
         <div className="p-7">
@@ -44,8 +44,16 @@ const FeedbackModal = ({ isOpen, setIsOpen, handleSave }) => {
               </div>
             </div>
             <div className="mb-7">
-              <label htmlFor="feedback" className="mb-2 block">Any additional feedback?</label>
-              <textarea className="w-full px-4 py-4 border outline-none focus-within:border-text resize-none" name="feedback" id="feedback" rows="3" placeholder="Write here"></textarea>
+              <label htmlFor="feedback" className="mb-2 block">
+                Any additional feedback?
+              </label>
+              <textarea
+                className="w-full px-4 py-4 border outline-none focus-within:border-text-500 resize-none"
+                name="feedback"
+                id="feedback"
+                rows="3"
+                placeholder="Write here"
+              ></textarea>
             </div>
           </div>
           <Button

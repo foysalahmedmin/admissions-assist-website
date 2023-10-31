@@ -1,13 +1,13 @@
-import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
-import profileUserIcon from "@/assets/images/icons/profile-user.svg";
-import Button from "@/components/Buttons/Button";
-import eduCap from "@/assets/images/icons/edu-cap-sky-blue.svg";
-import phoneCall from "@/assets/images/icons/phone-call-sky-blue.svg";
 import badge from "@/assets/images/icons/badge-sky-blue.svg";
 import calendar from "@/assets/images/icons/calendar-sky-blue.svg";
+import eduCap from "@/assets/images/icons/edu-cap-sky-blue.svg";
+import phoneCall from "@/assets/images/icons/phone-call-sky-blue.svg";
+import profileUserIcon from "@/assets/images/icons/profile-user.svg";
+import Button from "@/components/Buttons/Button";
+import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
-import { LuMapPin, LuPenSquare } from "react-icons/lu";
 import { useEffect, useState } from "react";
+import { LuMapPin, LuPenSquare } from "react-icons/lu";
 import ProfileUploadModal from "./ProfileUploadModal";
 const UserAbout = () => {
   const [imageFile, setImageFile] = useState(null);
@@ -35,7 +35,7 @@ const UserAbout = () => {
                 alt=""
                 loading="lazy"
               />
-              <div className="absolute -bottom-1 -right-1 h-8 w-8 flex items-center justify-center border-4 border-white rounded-full bg-secondary text-white">
+              <div className="absolute -bottom-1 -right-1 h-8 w-8 flex items-center justify-center border-4 border-white rounded-full bg-secondary-500 text-white">
                 <span className="material-icons-outlined">add</span>
               </div>
             </div>
@@ -46,9 +46,11 @@ const UserAbout = () => {
             />
             <div className="flex lg:items-center gap-4 lg:gap-7">
               <div>
-                <h1 className="text-xl font-bold text-title mb-2">Musa Zain</h1>
+                <h1 className="text-xl font-bold text-text-900 mb-2">
+                  Musa Zain
+                </h1>
                 <div className="flex gap-1 items-center">
-                  <LuMapPin className="text-xl text-primary" />
+                  <LuMapPin className="text-xl text-primary-500" />
                   <span className="text-sm">Nikunjo-2, Khilkhet, Dhaka</span>
                 </div>
               </div>
@@ -74,18 +76,20 @@ const UserAbout = () => {
             >
               <div className="flex justify-between items-center gap-4 mb-2">
                 <div className="">
-                  <p className="text-title text-sm font-semibold">
+                  <p className="text-text-900 text-sm font-semibold">
                     Profile Completed
                   </p>
-                  <p className="text-primary text-xs underline">Complete Now</p>
+                  <p className="text-primary-500 text-xs underline">
+                    Complete Now
+                  </p>
                 </div>
-                <h3 className="text-title text-2xl font-bold">{30}%</h3>
+                <h3 className="text-text-900 text-2xl font-bold">{30}%</h3>
               </div>
             </ProgressBarLinear>
           </div>
           <div className="flex flex-col lg:flex-row flex-wrap justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+              <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                 <img
                   className="h-5 w-5 object-contain object-center"
                   src={eduCap}
@@ -95,18 +99,18 @@ const UserAbout = () => {
               <div>
                 <h5 className="font-semibold ">Education</h5>
                 {(
-                  <p className="text-sm text-title">
+                  <p className="text-sm text-text-900">
                     A Level, High School Romania , BA Hons Business
                   </p>
                 ) || (
-                  <p className="text-sm text-placeholder">
+                  <p className="text-sm text-text-100">
                     No information for this filed yet
                   </p>
                 )}
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+              <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                 <img
                   className="h-5 w-5 object-contain object-center"
                   src={phoneCall}
@@ -115,15 +119,15 @@ const UserAbout = () => {
               </div>
               <div>
                 <h5 className="font-semibold ">Phone Number</h5>
-                {<p className="text-sm text-title">+8801678788665</p> || (
-                  <p className="text-sm text-placeholder">
+                {<p className="text-sm text-text-900">+8801678788665</p> || (
+                  <p className="text-sm text-text-100">
                     No information for this filed yet
                   </p>
                 )}
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+              <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                 <img
                   className="h-5 w-5 object-contain object-center"
                   src={badge}
@@ -132,15 +136,17 @@ const UserAbout = () => {
               </div>
               <div>
                 <h5 className="font-semibold ">Point/Credit</h5>
-                {<p className="text-sm text-secondary font-bold">243</p> || (
-                  <p className="text-sm text-placeholder">
+                {(
+                  <p className="text-sm text-secondary-500 font-bold">243</p>
+                ) || (
+                  <p className="text-sm text-text-100">
                     No information for this filed yet
                   </p>
                 )}
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+              <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                 <img
                   className="h-5 w-5 object-contain object-center"
                   src={calendar}
@@ -149,8 +155,8 @@ const UserAbout = () => {
               </div>
               <div>
                 <h5 className="font-semibold ">Date of Birth</h5>
-                {<p className="text-sm text-title">DOB: 18 Aug, 1998</p> || (
-                  <p className="text-sm text-placeholder">
+                {<p className="text-sm text-text-900">DOB: 18 Aug, 1998</p> || (
+                  <p className="text-sm text-text-100">
                     No information for this filed yet
                   </p>
                 )}
@@ -167,12 +173,14 @@ const UserAbout = () => {
             percentSize={"2rem"}
           >
             <div>
-              <h3 className="text-title font-bold text-2xl mb-2">{30}%</h3>
+              <h3 className="text-text-900 font-bold text-2xl mb-2">{30}%</h3>
               <div className="text-center">
-                <p className="text-title text-sm font-semibold">
+                <p className="text-text-900 text-sm font-semibold">
                   Profile Completed
                 </p>
-                <p className="text-primary text-sm underline">Complete Now</p>
+                <p className="text-primary-500 text-sm underline">
+                  Complete Now
+                </p>
               </div>
             </div>
           </ProgressBarCircle>

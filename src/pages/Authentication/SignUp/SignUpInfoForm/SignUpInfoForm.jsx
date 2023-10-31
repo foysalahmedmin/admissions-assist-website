@@ -15,7 +15,7 @@ const SignUpInfoForm = () => {
         <h3 className="title text-3xl">Profile Completeness</h3>
         <ProgressBarCircle percentage={45} size={67}>
           <div>
-            <h3 className="text-title font-bold">{45}%</h3>
+            <h3 className="text-text-900 font-bold">{45}%</h3>
           </div>
         </ProgressBarCircle>
       </div>
@@ -40,7 +40,9 @@ const SignUpInfoForm = () => {
               }
             />
             <button className="ghost-btn mx-auto" type="button">
-              <span className="font-bold text-secondary underline">Skip</span>
+              <span className="font-bold text-secondary-500 underline">
+                Skip
+              </span>
             </button>
           </div>
         </form>

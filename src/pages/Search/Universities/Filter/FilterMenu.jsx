@@ -50,7 +50,7 @@ const FilterMenu = ({ menu, handleSelect, selectedOptions }) => {
             ) : (
               <button
                 onClick={() => setSliceLength(options?.length)}
-                className="text-primary font-semibold"
+                className="text-primary-500 font-semibold"
                 type="button"
               >
                 See More

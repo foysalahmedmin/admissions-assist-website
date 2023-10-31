@@ -8,7 +8,7 @@ const Button = ({ style, className, text, icon, type, isLoading, ...rest }) => {
         className && className.includes("btn")
           ? className
           : text
-          ? `primary-btn ${className}`
+          ? `secondary-btn ${className}`
           : `rounded-btn ${className}`
       }`}
       type={type || "button"}

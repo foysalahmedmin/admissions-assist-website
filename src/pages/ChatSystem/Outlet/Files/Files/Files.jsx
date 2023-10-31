@@ -19,21 +19,25 @@ const Files = () => {
         </div>
       </div>
       <div className="px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4 grid grid-cols-1 overflow-x-auto">
-        <table className="w-full text-title">
+        <table className="w-full text-text-900">
           <thead>
             <tr className="border-b">
-              <th className="text-left py-2 font-normal text-title">Files</th>
-              <th className="text-left py-2 px-7 font-normal text-title">
+              <th className="text-left py-2 font-normal text-text-900">
+                Files
+              </th>
+              <th className="text-left py-2 px-7 font-normal text-text-900">
                 Opened
               </th>
-              <th className="text-left py-2 font-normal text-title">Owner</th>
+              <th className="text-left py-2 font-normal text-text-900">
+                Owner
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b">
               <td className="py-4 whitespace-nowrap">
                 <div className="flex items-center gap-2">
-                  <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-xl bg-input text-secondary">
+                  <div className="flex-shrink-0 h-8 w-8 flex items-center justify-center rounded-full text-xl bg-input text-secondary-500">
                     <BsFileEarmarkPdf />
                   </div>
                   <a className="whitespace-nowrap" href="">

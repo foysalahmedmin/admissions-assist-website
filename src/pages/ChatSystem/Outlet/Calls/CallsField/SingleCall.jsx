@@ -32,9 +32,17 @@ const SingleCall = ({ call, currentUser }) => {
             src={profileImg}
             alt=""
           />
-        ) : <div className="h-8 w-8 bg-primary text-white font-bold text-3xl rounded-full text-center">Y</div>}
+        ) : (
+          <div className="h-8 w-8 bg-primary-500 text-white font-bold text-3xl rounded-full text-center">
+            Y
+          </div>
+        )}
         <div>
-          {isOpponent ? <h1 className="text-title">{call_dialer?.name}</h1> : <h1 className="text-title">{"You"}</h1>}
+          {isOpponent ? (
+            <h1 className="text-text-900">{call_dialer?.name}</h1>
+          ) : (
+            <h1 className="text-text-900">{"You"}</h1>
+          )}
           <div className="flex items-center gap-2">
             {call_status === "video" ? (
               <BiVideo className="mt-[1px]" />
@@ -47,11 +55,11 @@ const SingleCall = ({ call, currentUser }) => {
       </div>
       <div className="min-w-[5rem] text-center">
         {duration && (
-          <p className="text-xs text-title">{formatDuration(duration)}</p>
+          <p className="text-xs text-text-900">{formatDuration(duration)}</p>
         )}
       </div>
       <div className="min-w-[8rem]">
-        <p className="text-xs text-title">
+        <p className="text-xs text-text-900">
           {format(new Date(timestamp), "dd/MM/yy HH:mm a")}
         </p>
       </div>

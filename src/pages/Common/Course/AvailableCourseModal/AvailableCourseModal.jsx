@@ -3,7 +3,7 @@ import Table from "./Table/Table";
 
 const table_data = [
   {
-    _id: '01',
+    _id: "01",
     location: "Barnsley College Higher Education Church Street Campus",
     duration: "2 Years",
     session: "2024-2025",
@@ -11,7 +11,7 @@ const table_data = [
     class_starts: "2 March, 2024",
   },
   {
-    _id: '02',
+    _id: "02",
     location: "Barnsley College Higher Education Church Street Campus",
     duration: "2 Years",
     session: "2024-2025",
@@ -28,12 +28,12 @@ const AvailableCourseModal = ({ isOpen, setIsOpen }) => {
       isCloseBtn={false}
       className={"rounded-3xl"}
     >
-      <div className="text-text px-7 py-14 rounded-3xl">
+      <div className="text-text-500 px-7 py-14 rounded-3xl">
         <div className="mb-7">
           <h1 className="text-3xl title mb-2">
             2 other courses options available
           </h1>
-          <p className="text-title">
+          <p className="text-text-900">
             Select a course option to view the information for the course{" "}
           </p>
         </div>

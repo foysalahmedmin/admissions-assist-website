@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Selector from "../Selector/Selector";
-import StepsList from "../StepsList/StepsList";
 import StepForm from "../StepForm/StepForm/StepForm";
+import StepsList from "../StepsList/StepsList";
 const all_steps = [
   {
     serial: 1,
@@ -108,7 +108,7 @@ const Process = () => {
             <div className="h-6 mb-7 lg:hidden">
               <span
                 onClick={() => setIsFormShow(false)}
-                className="material-icons-outlined cursor-pointer hover:text-secondary"
+                className="material-icons-outlined cursor-pointer hover:text-secondary-500"
               >
                 arrow_back
               </span>

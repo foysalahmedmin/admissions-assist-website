@@ -12,7 +12,9 @@ const ServiceCard = ({ data }) => {
         <p className="text-lg">
           {text}{" "}
           <Link>
-            <span className="text-secondary underline block cursor-pointer">Learn More</span>
+            <span className="text-secondary-500 underline block cursor-pointer">
+              Learn More
+            </span>
           </Link>
         </p>
       </div>

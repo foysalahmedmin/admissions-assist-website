@@ -32,8 +32,8 @@ const SingleComment = ({ data, className }) => {
                 <div>
                   <h3 className="title text-2xl md:mb-2">{name}</h3>
                   <div className="flex items-center gap-2">
-                    <BiTimeFive className="text-xl text-primary" />
-                    <span className="text-sm text-title">{time}</span>
+                    <BiTimeFive className="text-xl text-primary-500" />
+                    <span className="text-sm text-text-900">{time}</span>
                   </div>
                 </div>
               </div>

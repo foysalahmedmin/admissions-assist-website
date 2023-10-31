@@ -1,4 +1,3 @@
-import React from "react";
 import { LuFilter } from "react-icons/lu";
 import FilterMenu from "./FilterMenu";
 
@@ -82,11 +81,11 @@ const Filter = ({ filterSideToggle, handleSelect, selectedOptions }) => {
     <div className="w-full sm:w-96">
       <div className="px-7 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2 title text-2xl">
-          <LuFilter className="text-3xl text-primary" /> <span>Filter</span>
+          <LuFilter className="text-3xl text-primary-500" /> <span>Filter</span>
         </div>
         <button
           onClick={() => filterSideToggle(false)}
-          className="hover:text-secondary lg:hidden"
+          className="hover:text-secondary-500 lg:hidden"
         >
           ✕
         </button>

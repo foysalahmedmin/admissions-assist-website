@@ -10,13 +10,13 @@ const DocumentModal = ({ isOpen, setIsOpen }) => {
         isCloseBtn={false}
         className={"rounded-none"}
       >
-        <div className="py-4 px-7 bg-primary text-white">
+        <div className="py-4 px-7 bg-primary-500 text-white">
           <h3 className="title text-white text-2xl">Document: Passport</h3>
         </div>
         <div className="p-7">
           <p>
             You must submit a legible copy of your valid{" "}
-            <Link className="text-secondary font-semibold">
+            <Link className="text-secondary-500 font-semibold">
               travel document
             </Link>{" "}
             which you will use to travel.

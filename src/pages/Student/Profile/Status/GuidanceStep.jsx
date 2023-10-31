@@ -28,7 +28,9 @@ const GuidanceStep = ({ image_url }) => {
           </div>
           <div className="grid sm:grid-cols-2 gap-4 mb-7">
             <div>
-              <h3 className="title text-2xl text-primary mb-2">Next Step</h3>
+              <h3 className="title text-2xl text-primary-500 mb-2">
+                Next Step
+              </h3>
               <p>Upload English proficiency certificate</p>
             </div>
             <div>
@@ -71,7 +73,7 @@ const GuidanceStep = ({ image_url }) => {
                 icon={
                   <span className="material-icons-outlined">trending_flat</span>
                 }
-                className={"primary-btn-outline mx-auto"}
+                className={"secondary-btn-outline mx-auto"}
               />
             </Link>
           </div>

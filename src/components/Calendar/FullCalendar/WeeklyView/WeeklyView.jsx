@@ -38,7 +38,7 @@ const WeeklyView = ({ today, currentDate, setCurrentDate, events }) => {
           <div key={i} className="min-w-[7rem] w-full">
             <div
               className={`${
-                isSameDay(day.day, today) ? "text-primary" : ""
+                isSameDay(day.day, today) ? "text-primary-500" : ""
               } {isWithinRange(current, { start, end })} px-2 h-14 border`}
             >
               <h3 className="text-xl font-bold">{format(day.day, "d")}</h3>{" "}

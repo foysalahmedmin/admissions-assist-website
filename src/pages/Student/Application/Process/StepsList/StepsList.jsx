@@ -14,11 +14,11 @@ const StepsList = ({ steps, stepTab, setStepTab, setIsFormShow }) => {
             }}
             className={`${
               step?.title === stepTab?.title ? "text-white" : "bg-opacity-5"
-            } title p-4 flex items-center gap-7 justify-between rounded bg-primary cursor-pointer`}
+            } title p-4 flex items-center gap-7 justify-between rounded bg-primary-500 cursor-pointer`}
           >
             <span>{step?.title}</span>
             {step?.status === "completed" ? (
-              <div className="h-7 w-7 bg-primary text-white rounded-full flex items-center justify-center">
+              <div className="h-7 w-7 bg-primary-500 text-white rounded-full flex items-center justify-center">
                 <span
                   className={`material-icons-outlined !text-base transition-all`}
                 >
@@ -26,7 +26,7 @@ const StepsList = ({ steps, stepTab, setStepTab, setIsFormShow }) => {
                 </span>
               </div>
             ) : (
-              <div className="h-7 w-7 bg-white text-primary rounded-full flex items-center justify-center">
+              <div className="h-7 w-7 bg-white text-primary-500 rounded-full flex items-center justify-center">
                 <span
                   className={`material-icons-outlined !text-base transition-all`}
                 >

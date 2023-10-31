@@ -16,7 +16,7 @@ const BackgroundLayer = ({
     >
       <div
         style={style}
-        className={twMerge("bg-primary bg-opacity-80", className)}
+        className={twMerge("bg-primary-500 bg-opacity-80", className)}
       >
         {children}
       </div>

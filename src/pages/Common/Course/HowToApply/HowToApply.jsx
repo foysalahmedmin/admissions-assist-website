@@ -9,7 +9,7 @@ const HowToApply = () => {
               <div className="flex-1 flex items-center justify-center">
                 <span className="title text-5xl">02</span>
               </div>
-              <div className="py-1 text-center bg-primary text-white font-bold">
+              <div className="py-1 text-center bg-primary-500 text-white font-bold">
                 <span>January</span>
               </div>
             </div>

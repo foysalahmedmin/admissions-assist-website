@@ -1,7 +1,7 @@
-import Modal from "@/components/Modal/Modal";
 import dropdownImg from "@/assets/images/icons/dropdown-image.svg";
-import { LuUpload } from "react-icons/lu";
+import Modal from "@/components/Modal/Modal";
 import { useRef, useState } from "react";
+import { LuUpload } from "react-icons/lu";
 
 const ProfileUploadModal = ({ isOpen, setIsOpen, setImageFile }) => {
   const dropRef = useRef(null);
@@ -34,7 +34,7 @@ const ProfileUploadModal = ({ isOpen, setIsOpen, setImageFile }) => {
       className={"w-full lg:w-[50rem] bg-white"}
     >
       <div className=" ">
-        <div className="w-full bg-primary text-white px-7 py-4">
+        <div className="w-full bg-primary-500 text-white px-7 py-4">
           <h3 className="title text-white text-2xl">Upload Profile Picture</h3>
         </div>
         <div className="p-7">
@@ -43,13 +43,13 @@ const ProfileUploadModal = ({ isOpen, setIsOpen, setImageFile }) => {
             onDragLeave={dragLeaveHandle}
             onDrop={dropHandle}
             ref={dropRef}
-            className="min-h-[20rem] flex items-center justify-center border-2 border-primary border-dashed rounded-3xl text-center"
+            className="min-h-[20rem] flex items-center justify-center border-2 border-primary-500 border-dashed rounded-3xl text-center"
           >
             <div>
               <h5 className="title text-xl mb-7">Drag & drop to upload</h5>
               <img className="mx-auto mb-7" src={dropdownImg} alt="" />
               <div>
-                <label htmlFor="profile_image" className="primary-btn">
+                <label htmlFor="profile_image" className="secondary-btn">
                   <span>Upload Profile Picture</span>
                   <LuUpload />
                 </label>

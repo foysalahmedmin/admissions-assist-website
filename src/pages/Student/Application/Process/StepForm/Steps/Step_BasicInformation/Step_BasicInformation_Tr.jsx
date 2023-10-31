@@ -1,4 +1,3 @@
-import Modal from "@/components/Modal/Modal";
 import { useState } from "react";
 import { LuFileQuestion, LuTrash2, LuUpload } from "react-icons/lu";
 import { Link } from "react-router-dom";
@@ -14,13 +13,13 @@ const Step_BasicInformation_Tr = ({ data }) => {
           {activities_name}
         </td>
         <td className="text-left px-4 py-2">
-          <Link className="underline text-primary">{activity_details}</Link>
+          <Link className="underline text-primary-500">{activity_details}</Link>
         </td>
         <td className="text-left px-4 py-2">
           <button
             onClick={() => setIsModalOpen(true)}
             type="button"
-            className="h-7 w-7 mx-auto rounded-full flex items-center justify-center bg-darkblue text-white animate-pop active:scale-95"
+            className="h-7 w-7 mx-auto rounded-full flex items-center justify-center bg-navyblue-900 text-white animate-pop active:scale-95"
           >
             <LuFileQuestion />
           </button>

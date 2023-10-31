@@ -1,10 +1,10 @@
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import ServiceCard from "@/components/Cards/ServiceCard/ServiceCard";
 import cardIcon1 from "@/assets/images/icons/student-consultation.svg";
 import cardIcon2 from "@/assets/images/icons/student-counselling.svg";
 import cardIcon3 from "@/assets/images/icons/student-sinance-support.svg";
 import servicerImg from "@/assets/images/servicer-women.png";
 import Button from "@/components/Buttons/Button";
+import ServiceCard from "@/components/Cards/ServiceCard/ServiceCard";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 
 const card_data = [
@@ -63,18 +63,18 @@ const Services = () => {
                   </div>
                   <div className="mb-7">
                     <div className="flex gap-4 items-center mb-4">
-                      <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                      <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-500 text-primary-500 flex items-center justify-center">
                         <span className="material-icons-outlined">check</span>
                       </div>
-                      <strong className="text-black title">
+                      <strong className="title">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       </strong>
                     </div>
                     <div className="flex gap-4 items-center">
-                      <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary text-primary flex items-center justify-center">
+                      <div className="h-12 w-12 shrink-0 rounded-full border-2 border-primary-500 text-primary-500 flex items-center justify-center">
                         <span className="material-icons-outlined">check</span>
                       </div>
-                      <strong className="text-black title">
+                      <strong className="title">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       </strong>
                     </div>

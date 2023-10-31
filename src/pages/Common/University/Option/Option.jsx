@@ -32,8 +32,8 @@ const Option = () => {
             </div>
           </div>
           <div className="h-24 w-24 rounded-full -mt-4 -mb-4 lg:-ml-7 lg:-mr-7 z-10">
-            <div className="h-full w-full border-4 border-primary rounded-full">
-              <div className="h-full w-full border-4 border-white rounded-full bg-primary flex items-center justify-center">
+            <div className="h-full w-full border-4 border-primary-500 rounded-full">
+              <div className="h-full w-full border-4 border-white rounded-full bg-primary-500 flex items-center justify-center">
                 <h3 className="title text-white text-3xl">Or</h3>
               </div>
             </div>

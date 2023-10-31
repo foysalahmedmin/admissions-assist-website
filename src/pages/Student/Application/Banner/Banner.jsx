@@ -1,16 +1,16 @@
-import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
-import { Link } from "react-router-dom";
-import profileImg from "@/assets/images/profile.jpg";
-import Button from "@/components/Buttons/Button";
 import groupTalk from "@/assets/images/icons/group-talk-sky-blue.svg";
 import madel from "@/assets/images/icons/madel-sky-blue.svg";
+import profileImg from "@/assets/images/profile.jpg";
+import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
+import Button from "@/components/Buttons/Button";
 import StarRating from "@/components/StarRating/StarRating";
-import { LuCalendarCheck, LuMessageCircle } from "react-icons/lu";
 import {
   BiLogoFacebook,
   BiLogoInstagramAlt,
   BiLogoLinkedin,
 } from "react-icons/bi";
+import { LuCalendarCheck, LuMessageCircle } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -57,20 +57,20 @@ const Banner = () => {
                     </div>
                     <div>
                       <h3 className="title text-2xl mb-2">Musa Zain</h3>
-                      <button className="py-1 px-4 rounded bg-primary text-white text-sm">
+                      <button className="py-1 px-4 rounded bg-primary-500 text-white text-sm">
                         <span>Councilor</span>
                       </button>
                     </div>
                   </div>
                   <div>
                     <div className="flex items-center gap-4">
-                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
                         <BiLogoFacebook className="text-xl" />
                       </div>
-                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
                         <BiLogoLinkedin className="text-xl" />
                       </div>
-                      <div className="h-7 w-7 rounded border border-labels hover:border-primary text-labels hover:text-primary flex items-center justify-center cursor-pointer">
+                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
                         <BiLogoInstagramAlt className="text-xl" />
                       </div>
                     </div>
@@ -78,7 +78,7 @@ const Banner = () => {
                 </div>
                 <div className="flex flex-wrap justify-between gap-4 mb-4">
                   <div className="flex items-center gap-4">
-                    <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+                    <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                       <img
                         className="h-5 w-5 object-contain object-center"
                         src={groupTalk}
@@ -86,14 +86,16 @@ const Banner = () => {
                       />
                     </div>
                     <div>
-                      <h5 className="text-sm text-labels">Students Counselled</h5>
-                      {<p className="text-sm text-title">12</p> || (
-                        <p className="text-sm text-placeholder">N/A</p>
+                      <h5 className="text-sm text-text-300">
+                        Students Counselled
+                      </h5>
+                      {<p className="text-sm text-text-900">12</p> || (
+                        <p className="text-sm text-text-100">N/A</p>
                       )}
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="h-7 w-7 rounded bg-primary bg-opacity-10 flex items-center justify-center">
+                    <div className="h-7 w-7 rounded bg-primary-500 bg-opacity-10 flex items-center justify-center">
                       <img
                         className="h-5 w-5 object-contain object-center"
                         src={madel}
@@ -101,13 +103,13 @@ const Banner = () => {
                       />
                     </div>
                     <div>
-                      <h5 className="text-sm text-labels">Rating</h5>
+                      <h5 className="text-sm text-text-300">Rating</h5>
                       {(
                         <div className="flex gap-2 items-center">
                           <StarRating rating={3.5} starSize={20} />{" "}
                           <span>({5})</span>
                         </div>
-                      ) || <p className="text-sm text-placeholder">N/A</p>}
+                      ) || <p className="text-sm text-text-100">N/A</p>}
                     </div>
                   </div>
                 </div>
@@ -118,7 +120,7 @@ const Banner = () => {
                     icon={<LuCalendarCheck className="text-xl" />}
                   />
                   <Button
-                    className={"auto bg-primary"}
+                    className={"auto bg-primary-500"}
                     text={"Chat now"}
                     icon={<LuMessageCircle className="text-xl" />}
                   />

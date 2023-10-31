@@ -1,5 +1,5 @@
-import SingleCall from "./SingleCall";
 import { useEffect, useRef } from "react";
+import SingleCall from "./SingleCall";
 
 const CallsField = ({
   displayCallHistories,
@@ -19,7 +19,7 @@ const CallsField = ({
         <div className="flex items-center gap-2 lg:gap-4">
           <span
             onClick={() => setIsCallHistoryShow(false)}
-            className="material-icons-outlined cursor-pointer hover:text-secondary lg:!hidden"
+            className="material-icons-outlined cursor-pointer hover:text-secondary-500 lg:!hidden"
           >
             arrow_back
           </span>
@@ -30,14 +30,14 @@ const CallsField = ({
             </span>
           </div>
         </div>
-        <div className="flex justify-between items-center gap-2 text-title text-sm">
-          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary hover:bg-opacity-10 hover:text-primary">
+        <div className="flex justify-between items-center gap-2 text-text-900 text-sm">
+          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary-500 hover:bg-opacity-10 hover:text-primary-500">
             <span>All</span>
           </button>
-          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary hover:bg-opacity-10 hover:text-primary">
+          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary-500 hover:bg-opacity-10 hover:text-primary-500">
             <span>Audio calls</span>
           </button>
-          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary hover:bg-opacity-10 hover:text-primary">
+          <button className="rounded-full h-8 px-4 flex items-center justify-center bg-input hover:bg-primary-500 hover:bg-opacity-10 hover:text-primary-500">
             <span>Video calls</span>
           </button>
         </div>

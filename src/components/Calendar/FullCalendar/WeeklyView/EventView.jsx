@@ -102,14 +102,14 @@ const EventView = ({ event }) => {
                 <div className="h-5 w-5 rounded bg-[#4087FC] text-white flex items-center justify-center">
                   <BiLogoZoom />
                 </div>
-                <span className="text-xs text-title capitalize">
+                <span className="text-xs text-text-900 capitalize">
                   {event?.platform}
                 </span>
               </div>
             )}
           </div>
           <div className="mt-auto">
-            <span className="block text-title font-semibold text-sm">
+            <span className="block text-text-900 font-semibold text-sm">
               {format(event.start, "EEE")}
             </span>
             <div className="text-xs">

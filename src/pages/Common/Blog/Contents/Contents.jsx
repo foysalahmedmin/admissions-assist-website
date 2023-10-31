@@ -1,3 +1,4 @@
+import invitedComma from "@/assets/images/icons/inverted-comma.svg";
 import blogImage from "@/assets/images/university-slide-1.png";
 import {
   BiCalendarAlt,
@@ -6,7 +7,6 @@ import {
   BiLogoLinkedin,
   BiMessageSquareDetail,
 } from "react-icons/bi";
-import invitedComma from "@/assets/images/icons/inverted-comma.svg";
 import { LuCheckCircle } from "react-icons/lu";
 const Contents = () => {
   return (
@@ -19,14 +19,14 @@ const Contents = () => {
             alt=""
           />
         </div>
-        <div className="flex gap-4 text-title mb-7">
+        <div className="flex gap-4 text-text-900 mb-7">
           <div className="flex items-center gap-2">
-            <BiCalendarAlt className="text-2xl text-primary" />
+            <BiCalendarAlt className="text-2xl text-primary-500" />
             <span>02 September, 2023</span>
           </div>
-          <div className="w-[1px] bg-title"></div>
+          <div className="w-[1px] bg-text-900"></div>
           <div className="flex items-center gap-2">
-            <BiMessageSquareDetail className="text-2xl text-primary" />
+            <BiMessageSquareDetail className="text-2xl text-primary-500" />
             <span>5 Comment</span>
           </div>
         </div>
@@ -67,7 +67,7 @@ const Contents = () => {
             <div className="flex-shrink-0 flex items-center justify-between py-2">
               <img src={invitedComma} alt="" />
             </div>
-            <div className="w-full h-1 md:w-2 md:h-auto bg-primary"></div>
+            <div className="w-full h-1 md:w-2 md:h-auto bg-primary-500"></div>
             <div className="flex items-center py-2">
               <p className="font-bold text-2xl">
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
@@ -94,7 +94,7 @@ const Contents = () => {
           <ul className="flex flex-col gap-4">
             <li>
               <div className="flex items-center gap-4">
-                <LuCheckCircle className="text-2xl text-primary" />
+                <LuCheckCircle className="text-2xl text-primary-500" />
                 <span className="title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </span>
@@ -102,7 +102,7 @@ const Contents = () => {
             </li>
             <li>
               <div className="flex items-center gap-4">
-                <LuCheckCircle className="text-2xl text-primary" />
+                <LuCheckCircle className="text-2xl text-primary-500" />
                 <span className="title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </span>
@@ -110,7 +110,7 @@ const Contents = () => {
             </li>
             <li>
               <div className="flex items-center gap-4">
-                <LuCheckCircle className="text-2xl text-primary" />
+                <LuCheckCircle className="text-2xl text-primary-500" />
                 <span className="title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </span>
@@ -118,7 +118,7 @@ const Contents = () => {
             </li>
             <li>
               <div className="flex items-center gap-4">
-                <LuCheckCircle className="text-2xl text-primary" />
+                <LuCheckCircle className="text-2xl text-primary-500" />
                 <span className="title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </span>
@@ -126,7 +126,7 @@ const Contents = () => {
             </li>
             <li>
               <div className="flex items-center gap-4">
-                <LuCheckCircle className="text-2xl text-primary" />
+                <LuCheckCircle className="text-2xl text-primary-500" />
                 <span className="title">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 </span>
@@ -164,22 +164,22 @@ const Contents = () => {
         <hr className="my-7" />
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-labels">Tags:</span>
-            <p className="text-title">
+            <span className="text-text-300">Tags:</span>
+            <p className="text-text-900">
               <span>Study abroad </span>, <span>Student</span>,{" "}
               <span>University</span>
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-labels">Share:</span>
+            <span className="text-text-300">Share:</span>
             <div className="flex items-center gap-4">
-              <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+              <div className="h-7 w-7 rounded border border-primary-500 text-primary-500 flex items-center justify-center cursor-pointer">
                 <BiLogoFacebook className="text-xl" />
               </div>
-              <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+              <div className="h-7 w-7 rounded border border-primary-500 text-primary-500 flex items-center justify-center cursor-pointer">
                 <BiLogoLinkedin className="text-xl" />
               </div>
-              <div className="h-7 w-7 rounded border border-primary text-primary flex items-center justify-center cursor-pointer">
+              <div className="h-7 w-7 rounded border border-primary-500 text-primary-500 flex items-center justify-center cursor-pointer">
                 <BiLogoInstagramAlt className="text-xl" />
               </div>
             </div>

@@ -8,7 +8,7 @@ const CommentForm = () => {
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-7 mb-7">
           <div>
             <input
-              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text"
+              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text-500"
               type="text"
               placeholder="Full name"
               name="name"
@@ -16,7 +16,7 @@ const CommentForm = () => {
           </div>
           <div>
             <input
-              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text"
+              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text-500"
               type="email"
               placeholder="Email Address"
               name="email"
@@ -24,7 +24,7 @@ const CommentForm = () => {
           </div>
           <div>
             <input
-              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text"
+              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text-500"
               type="text"
               placeholder="Company name"
               name="company_name"
@@ -32,7 +32,7 @@ const CommentForm = () => {
           </div>
           <div>
             <input
-              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text"
+              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text-500"
               type="url"
               placeholder="Website"
               name="website"
@@ -40,7 +40,7 @@ const CommentForm = () => {
           </div>
           <div className="lg:col-span-2">
             <textarea
-              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text resize-none"
+              className="w-full py-3 px-4 border border-transparent outline-none bg-input rounded focus-within:border-text-500 resize-none"
               type="text"
               rows={3}
               placeholder="Enter your comment here"

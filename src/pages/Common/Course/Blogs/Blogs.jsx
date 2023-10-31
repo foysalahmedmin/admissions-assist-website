@@ -1,8 +1,8 @@
-import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import BlogCard from "../../../../components/Cards/BlogCard/BlogCard";
 import img1 from "@/assets/images/university-slide-1.png";
 import img2 from "@/assets/images/university-slide-2.png";
 import img3 from "@/assets/images/university-slide-3.png";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import BlogCard from "../../../../components/Cards/BlogCard/BlogCard";
 
 const card_data = [
   {
@@ -33,7 +33,7 @@ const card_data = [
 
 const Blogs = () => {
   return (
-    <section className="lg:py-24 py-14 bg-primary bg-opacity-10" id="blogs">
+    <section className="lg:py-24 py-14 bg-primary-500 bg-opacity-10" id="blogs">
       <div className="container mx-auto">
         <SectionTitle
           subtitle={"Our Blogs"}

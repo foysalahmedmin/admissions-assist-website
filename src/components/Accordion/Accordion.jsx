@@ -9,10 +9,12 @@ const Accordion = ({ openStatus, doneStatus, title, children }) => {
         className="cursor-pointer bg-input p-4 flex items-center justify-between"
         type="button"
       >
-        <h1 className="text-title font-semibold">{title}</h1>
+        <h1 className="text-text-900 font-semibold">{title}</h1>
         <div
           className={`${
-            doneStatus ? "bg-primary text-white" : "bg-white text-primary"
+            doneStatus
+              ? "bg-primary-500 text-white"
+              : "bg-white text-primary-500"
           } h-7 w-7 rounded-full flex-shrink-0 flex items-center justify-center`}
         >
           {doneStatus ? (

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import LoginForm from "@/pages/Authentication/Login/LoginForm/LoginForm";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -13,7 +13,7 @@ const Login = () => {
           Don’t have an Account?{" "}
           <Link
             to={"/authentication/sign_up"}
-            className="text-secondary font-bold"
+            className="text-secondary-500 font-bold"
           >
             Sign Up
           </Link>

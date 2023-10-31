@@ -9,7 +9,7 @@ const Appointment = () => {
       <BackgroundLayer
         bg_position={"bg-right"}
         image_url={"/background/appointment.png"}
-        className={"lg:py-24 py-14 bg-black"}
+        className={"lg:py-24 py-14 bg-black-900"}
       >
         <div className="">
           <div className="container mx-auto text-white">
@@ -24,7 +24,7 @@ const Appointment = () => {
                 </p>
               </div>
               <div>
-                <Link to={'/student/book_session'}>
+                <Link to={"/student/book_session"}>
                   <Button
                     className={"ml-auto"}
                     text={"Book a Session"}

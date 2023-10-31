@@ -1,8 +1,8 @@
+import cardImg from "@/assets/images/course-card.png";
 import Button from "@/components/Buttons/Button";
 import CourseCard from "@/components/Cards/CourseCard/CourseCard";
 import Pagination from "@/components/Pagination/Pagination";
 import usePagination from "@/hooks/usePagination/usePagination";
-import cardImg from "@/assets/images/course-card.png";
 import { useEffect, useState } from "react";
 import { LuFilter } from "react-icons/lu";
 
@@ -30,7 +30,7 @@ const AllCourses = ({
       <div className="flex items-center gap-4 mb-7">
         <Button
           onClick={filterSideToggle}
-          className={"bg-primary flex-shrink-0 lg:hidden"}
+          className={"bg-primary-500 flex-shrink-0 lg:hidden"}
           icon={<LuFilter className="text-2xl pt-1" />}
         />
         <span className="py-2 flex-shrink-0 hidden lg:block">Filtered By:</span>
@@ -43,7 +43,7 @@ const AllCourses = ({
               <span className="capitalize">{option}</span>
               <button
                 onClick={() => removeSelectedOption(option)}
-                className="hover:text-secondary"
+                className="hover:text-secondary-500"
               >
                 ✕
               </button>

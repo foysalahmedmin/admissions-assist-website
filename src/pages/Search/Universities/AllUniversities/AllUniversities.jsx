@@ -1,10 +1,10 @@
+import cardImg from "@/assets/images/university-slide-1.png";
 import Button from "@/components/Buttons/Button";
 import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
 import Pagination from "@/components/Pagination/Pagination";
 import usePagination from "@/hooks/usePagination/usePagination";
 import { useEffect, useState } from "react";
 import { LuFilter } from "react-icons/lu";
-import cardImg from "@/assets/images/university-slide-1.png";
 
 const AllUniversities = ({
   filterSideToggle,
@@ -30,7 +30,7 @@ const AllUniversities = ({
       <div className="flex items-center gap-4 mb-7">
         <Button
           onClick={filterSideToggle}
-          className={"bg-primary flex-shrink-0 lg:hidden"}
+          className={"bg-primary-500 flex-shrink-0 lg:hidden"}
           icon={<LuFilter className="text-2xl pt-1" />}
         />
         <span className="py-2 flex-shrink-0 hidden lg:block">Filtered By:</span>
@@ -43,7 +43,7 @@ const AllUniversities = ({
               <span className="capitalize">{option}</span>
               <button
                 onClick={() => removeSelectedOption(option)}
-                className="hover:text-secondary"
+                className="hover:text-secondary-500"
               >
                 ✕
               </button>
@@ -55,11 +55,14 @@ const AllUniversities = ({
         {cards
           .slice(pageNumber * limit, pageNumber * limit + limit)
           .map((x) => (
-            <UniversityCard key={x} data={{
-              image_url: cardImg,
-              title: "University of Oxford",
-              course_quantity: 65,
-            }} />
+            <UniversityCard
+              key={x}
+              data={{
+                image_url: cardImg,
+                title: "University of Oxford",
+                course_quantity: 65,
+              }}
+            />
           ))}
       </div>
       <div>

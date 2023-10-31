@@ -1,8 +1,8 @@
+import DateInputRoundedIcon from "@/components/DateInputRoundedIcon/DateInputRoundedIcon";
 import { useState } from "react";
 import { LuFileQuestion } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import DocumentModal from "./DocumentModal";
-import DateInputRoundedIcon from "@/components/DateInputRoundedIcon/DateInputRoundedIcon";
 
 const Tr = ({ data }) => {
   const { activities_name, activity_details } = data;
@@ -14,13 +14,13 @@ const Tr = ({ data }) => {
           <span className="w-60">{activities_name}</span>
         </td>
         <td className="text-left px-4 py-2">
-          <Link className="underline text-primary">{activity_details}</Link>
+          <Link className="underline text-primary-500">{activity_details}</Link>
         </td>
         <td className="text-left px-4 py-2">
           <button
             onClick={() => setIsModalOpen(true)}
             type="button"
-            className="h-7 w-7 mx-auto rounded-full flex items-center justify-center bg-darkblue text-white animate-pop active:scale-95"
+            className="h-7 w-7 mx-auto rounded-full flex items-center justify-center bg-navyblue-900 text-white animate-pop active:scale-95"
           >
             <LuFileQuestion />
           </button>
@@ -30,7 +30,7 @@ const Tr = ({ data }) => {
           <div className="flex gap-2 items-center justify-center">
             <DateInputRoundedIcon
               className={
-                "p-1 pl-4 border rounded-full focus-within:border-primary"
+                "p-1 pl-4 border rounded-full focus-within:border-primary-500"
               }
             />
           </div>

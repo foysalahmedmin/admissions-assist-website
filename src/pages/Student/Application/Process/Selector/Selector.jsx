@@ -9,7 +9,7 @@ const Selector = () => {
           <select
             type="text"
             name="graduation_year"
-            className="px-7 py-4 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+            className="px-7 py-4 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="graduation_year"
             required
           >

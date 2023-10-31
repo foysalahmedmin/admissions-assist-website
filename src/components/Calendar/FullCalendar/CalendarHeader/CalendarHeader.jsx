@@ -19,7 +19,7 @@ const CalendarHeader = ({
     <div className="flex justify-between items-center gap-7  mb-4">
       <div className="header flex items-center gap-4">
         <label htmlFor="date" className="inline-block">
-          <div className="flex items-center gap-2 text-primary font-bold">
+          <div className="flex items-center gap-2 text-primary-500 font-bold">
             {view === "monthly" ? (
               <h2>{format(currentDate, "MMMM yyyy")}</h2>
             ) : (
@@ -53,7 +53,7 @@ const CalendarHeader = ({
         <button
           className={`${
             view == "monthly"
-              ? "border-b-primary text-primary font-bold"
+              ? "border-b-primary-500 text-primary-500 font-bold"
               : "border-b-transparent"
           } border-t border-b border-t-transparent px-2`}
           onClick={showMonthlyView}
@@ -63,7 +63,7 @@ const CalendarHeader = ({
         <button
           className={`${
             view == "weekly"
-              ? "border-b-primary text-primary font-bold"
+              ? "border-b-primary-500 text-primary-500 font-bold"
               : "border-b-transparent"
           } border-t border-b border-t-transparent px-2`}
           onClick={showWeeklyView}
@@ -72,13 +72,13 @@ const CalendarHeader = ({
         </button>
         {/* <button className={`${
             view == "daily"
-              ? "border-b-primary text-primary font-bold"
+              ? "border-b-primary-500 text-primary-500 font-bold"
               : "border-b-transparent"
           } border-t border-b border-t-transparent px-2`} onClick={showDailyView}>Daily</button> */}
         <button
           className={`${
             view == "agenda"
-              ? "border-b-primary text-primary font-bold"
+              ? "border-b-primary-500 text-primary-500 font-bold"
               : "border-b-transparent"
           } border-t border-b border-t-transparent px-2`}
           onClick={showAgendaView}
@@ -93,7 +93,7 @@ const CalendarHeader = ({
 export default CalendarHeader;
 
 /*
-<h2 className="text-primary font-semibold">
+<h2 className="text-primary-500 font-semibold">
     <select
     className="outline-none"
     value={selectedYear}

@@ -6,7 +6,7 @@ const PersonalDetails = () => {
       <Accordion title={"Personal Details"} doneStatus={true}>
         <div className="mb-7">
           <label htmlFor="first_name" className="block mb-4">
-            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title mb-2">
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
               First and Middle Name(s)
             </span>
             <p>
@@ -17,7 +17,7 @@ const PersonalDetails = () => {
           <input
             type="text"
             name="first_name"
-            className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+            className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="first_name"
             placeholder="First name"
             required
@@ -25,7 +25,7 @@ const PersonalDetails = () => {
         </div>
         <div className="mb-7">
           <label htmlFor="last_name" className="block mb-4">
-            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title mb-2">
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
               Last Name
             </span>
             <p>
@@ -35,7 +35,7 @@ const PersonalDetails = () => {
           <input
             type="text"
             name="last_name"
-            className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+            className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="last_name"
             placeholder="Last name"
             required
@@ -44,7 +44,7 @@ const PersonalDetails = () => {
         <div className="grid grid-cols-2 gap-7">
           <div>
             <label htmlFor="date_of_birth" className="block mb-4">
-              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title mb-2">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
                 Date of Birth (s)
               </span>
               <p>Enter as it appears on any official documents</p>
@@ -52,14 +52,14 @@ const PersonalDetails = () => {
             <input
               type="date"
               name="date_of_birth"
-              className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+              className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
               id="date_of_birth"
               required
             />
           </div>
           <div>
             <div className="block mb-4">
-              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title mb-2">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
                 Gender
               </span>
               <p>Enter as it appears on any official documents</p>
@@ -73,7 +73,7 @@ const PersonalDetails = () => {
                   id="male"
                   value={"male"}
                 />
-                <label htmlFor="male" className="text-title">
+                <label htmlFor="male" className="text-text-900">
                   Male
                 </label>
               </div>
@@ -85,7 +85,7 @@ const PersonalDetails = () => {
                   id="female"
                   value={"female"}
                 />
-                <label htmlFor="female" className="text-title">
+                <label htmlFor="female" className="text-text-900">
                   Female
                 </label>
               </div>
@@ -97,7 +97,7 @@ const PersonalDetails = () => {
                   id="N/A"
                   value={"N/A"}
                 />
-                <label htmlFor="N/A" className="text-title">
+                <label htmlFor="N/A" className="text-text-900">
                   I prefer not to say
                 </label>
               </div>

@@ -39,7 +39,7 @@ const Banner = () => {
                           <div className="text-[.5rem] -mt-1 relative">th</div>
                         </div>
                       ) || (
-                        <p className="text-sm text-placeholder">
+                        <p className="text-sm text-text-100">
                           No information for this filed yet
                         </p>
                       )}
@@ -56,7 +56,7 @@ const Banner = () => {
                           Oxford OX1 2JD, United Kingdom
                         </p>
                       ) || (
-                        <p className="text-sm text-placeholder">
+                        <p className="text-sm text-text-100">
                           No information for this filed yet
                         </p>
                       )}
@@ -69,7 +69,7 @@ const Banner = () => {
                     <div>
                       <h5 className="text-sm ">Website</h5>
                       {<p className="text-sm">https://www.ox.ac.uk/</p> || (
-                        <p className="text-sm text-placeholder">
+                        <p className="text-sm text-text-100">
                           No information for this filed yet
                         </p>
                       )}
@@ -81,7 +81,7 @@ const Banner = () => {
             <div>
               <nav>
                 <ul className="w-full flex flex-wrap justify-center lg:justify-start">
-                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
+                  <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center">
                     <a
                       className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#overview"
@@ -89,7 +89,7 @@ const Banner = () => {
                       Overview
                     </a>
                   </li>
-                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
+                  <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center">
                     <a
                       className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#scholarship"
@@ -97,7 +97,7 @@ const Banner = () => {
                       Scholarship
                     </a>
                   </li>
-                  <li className="border border-b-0 hover:bg-white hover:text-primary text-center" >
+                  <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center">
                     <a
                       className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#courses"

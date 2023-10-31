@@ -1,6 +1,6 @@
+import robotCheckIcon from "@/assets/images/icons/robot-check.svg";
 import Button from "@/components/Buttons/Button";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import robotCheckIcon from "@/assets/images/icons/robot-check.svg";
 
 const ContactForm = () => {
   return (
@@ -18,14 +18,14 @@ const ContactForm = () => {
             <div className="grid lg:grid-cols-2 gap-7 mb-7">
               <div>
                 <label htmlFor="name" className="block mb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
                     Your Name
                   </span>
                 </label>
                 <input
                   type="text"
                   name="name"
-                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text bg-white"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="name"
                   placeholder="Enter your name"
                   required
@@ -33,14 +33,14 @@ const ContactForm = () => {
               </div>
               <div>
                 <label htmlFor="email" className="block mb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
                     Email Address
                   </span>
                 </label>
                 <input
                   type="email"
                   name="email"
-                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text bg-white"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="email"
                   placeholder="Enter your email address"
                   required
@@ -48,14 +48,14 @@ const ContactForm = () => {
               </div>
               <div>
                 <label htmlFor="phone" className="block mb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
                     Phone Number
                   </span>
                 </label>
                 <input
                   type="tel"
                   name="phone"
-                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text bg-white"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="phone"
                   placeholder="Enter your phone number"
                   required
@@ -63,14 +63,14 @@ const ContactForm = () => {
               </div>
               <div>
                 <label htmlFor="inquiry" className="block mb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
                     Select Inquiry
                   </span>
                 </label>
                 <select
                   type="text"
                   name="inquiry"
-                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text bg-white"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="inquiry"
                   required
                 >
@@ -80,14 +80,14 @@ const ContactForm = () => {
               </div>
               <div className="col-span-2">
                 <label htmlFor="describe" className="block mb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-title">
+                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
                     Describe here
                   </span>
                 </label>
                 <textarea
                   type="text"
                   name="describe"
-                  className="px-4 py-3 w-full outline-none bg-transparent text-placeholder border rounded-xl focus-within:text-text focus-within:border-text bg-white"
+                  className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="describe"
                   placeholder="Write here"
                 />

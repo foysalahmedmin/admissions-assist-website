@@ -1,6 +1,6 @@
 import Modal from "@/components/Modal/Modal";
 import { useRef } from "react";
-import { LuCalendar, LuClock, LuMapPin, LuUser2 } from "react-icons/lu";
+import { LuCalendar, LuClock, LuMapPin } from "react-icons/lu";
 
 const ScheduleModal = ({ isOpen, setIsOpen }) => {
   const dateInput = useRef(null);
@@ -13,15 +13,18 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
         className={"w-full lg:w-[50rem] bg-white"}
       >
         <div>
-          <div className="w-full bg-primary text-white px-7 py-4">
+          <div className="w-full bg-primary-500 text-white px-7 py-4">
             <h3 className="title text-white text-2xl">New Meeting</h3>
           </div>
           <div className="bg-white px-7 py-7">
             <div className="mb-4">
-              <label className="text-title block mb-4" htmlFor="meeting_title">
+              <label
+                className="text-text-900 block mb-4"
+                htmlFor="meeting_title"
+              >
                 Add Title
               </label>
-              <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text text-sm">
+              <div className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 text-sm">
                 <input
                   className="py-3 w-full bg-transparent outline-none"
                   type="text"
@@ -33,14 +36,17 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
               </div>
             </div>
             <div className="mb-4">
-              <span className="text-title block mb-4" htmlFor="meeting_title">
+              <span
+                className="text-text-900 block mb-4"
+                htmlFor="meeting_title"
+              >
                 Select Preferable Time
               </span>
               <div className="flex flex-col sm:flex-row gap-4 items-center text-sm">
                 <div className="w-full flex-1 flex flex-col md:flex-row gap-2">
                   <label
                     htmlFor="meeting_start_date"
-                    className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text flex-1"
+                    className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 flex-1"
                   >
                     <LuCalendar className="text-2xl" />
                     <input
@@ -54,7 +60,7 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   </label>
                   <label
                     htmlFor="meeting_start_time"
-                    className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+                    className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
                   >
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
@@ -73,7 +79,7 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                 <div className="w-full flex-1 flex flex-col md:flex-row gap-2">
                   <label
                     htmlFor="meeting_end_date"
-                    className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text flex-1"
+                    className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 flex-1"
                   >
                     <LuCalendar className="text-2xl" />
                     <input
@@ -87,7 +93,7 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   </label>
                   <label
                     htmlFor="meeting_end_time"
-                    className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text"
+                    className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
                   >
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
@@ -103,10 +109,10 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
               </div>
             </div>
             <div className="mb-4">
-              <label className="text-title block mb-4" htmlFor="location">
+              <label className="text-text-900 block mb-4" htmlFor="location">
                 Add Location
               </label>
-              <div className="px-4 py-2 sm:py-0 flex flex-col sm:flex-row items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text text-sm">
+              <div className="px-4 py-2 sm:py-0 flex flex-col sm:flex-row items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 text-sm">
                 <div className="flex-1 w-full sm:w-auto flex items-center gap-2">
                   <LuMapPin className="text-2xl flex-shrink-0" />
                   <input
@@ -140,12 +146,12 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
             </div>
             <div className="mb-4">
               <label
-                className="text-title block mb-4"
+                className="text-text-900 block mb-4"
                 htmlFor="meeting_details"
               >
                 Meeting details
               </label>
-              <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text text-sm">
+              <div className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 text-sm">
                 <textarea
                   className="py-3 w-full bg-transparent outline-none resize-none"
                   type="text"

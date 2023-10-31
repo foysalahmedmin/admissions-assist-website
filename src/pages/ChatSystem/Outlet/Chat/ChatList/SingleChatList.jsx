@@ -1,5 +1,5 @@
-import { format } from "date-fns";
 import profileImg from "@/assets/images/profile.jpg";
+import { format } from "date-fns";
 
 const SingleChatList = ({
   singleData,
@@ -26,7 +26,11 @@ const SingleChatList = ({
         setDisplayChats_Id(id);
         setIsChatsShow(true);
       }}
-      className={`${displayChats_Id === id ? "bg-primary bg-opacity-10" : "hover:bg-input"} py-2 px-[3.5vw] lg:px-7 cursor-pointer`}
+      className={`${
+        displayChats_Id === id
+          ? "bg-primary-500 bg-opacity-10"
+          : "hover:bg-input"
+      } py-2 px-[3.5vw] lg:px-7 cursor-pointer`}
     >
       <div className="w-full flex items-center gap-4">
         <div className="flex-shrink-0">
@@ -38,7 +42,9 @@ const SingleChatList = ({
         </div>
         <div className="flex-1 flex items-center gap-4 justify-between">
           <div className="flex-1">
-            <h3 className="text-title font-semibold">{opponents[0]?.name}</h3>
+            <h3 className="text-text-900 font-semibold">
+              {opponents[0]?.name}
+            </h3>
             <p className="text-xs">
               {lastMessageSenderUsername === currentUser.username && (
                 <span>You:</span>

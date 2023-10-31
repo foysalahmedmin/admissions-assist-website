@@ -1,3 +1,6 @@
+import profileImg from "@/assets/images/profile.jpg";
+import { useEffect, useRef } from "react";
+import { BiDotsVerticalRounded, BiPhone, BiVideo } from "react-icons/bi";
 import {
   LuCalendarPlus,
   LuPaperclip,
@@ -5,16 +8,13 @@ import {
   LuSmile,
 } from "react-icons/lu";
 import SingleChat from "./SingleChat";
-import profileImg from "@/assets/images/profile.jpg";
-import { BiDotsVerticalRounded, BiPhone, BiVideo } from "react-icons/bi";
-import { useEffect, useRef } from "react";
 
 const Chats = ({
   displayChats,
   displayChats_Id,
   DisplayParticipants,
   currentUser,
-  setIsChatsShow
+  setIsChatsShow,
 }) => {
   const opponents = DisplayParticipants?.filter(
     (x) => x.username !== currentUser.username
@@ -31,7 +31,7 @@ const Chats = ({
         <div className="flex items-center gap-2 lg:gap-4">
           <span
             onClick={() => setIsChatsShow(false)}
-            className="material-icons-outlined cursor-pointer hover:text-secondary lg:!hidden"
+            className="material-icons-outlined cursor-pointer hover:text-secondary-500 lg:!hidden"
           >
             arrow_back
           </span>
@@ -43,10 +43,10 @@ const Chats = ({
           <h3 className="title text-xl">{opponents[0]?.name}</h3>
         </div>
         <div className="flex justify-between items-center gap-2 lg:gap-4">
-          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary-500 bg-opacity-10 text-primary-500">
             <BiVideo className="text-2xl" />
           </button>
-          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+          <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary-500 bg-opacity-10 text-primary-500">
             <BiPhone className="text-xl" />
           </button>
           <button className="rounded-full h-8 w-8 flex items-center justify-center">
@@ -70,26 +70,26 @@ const Chats = ({
       <div className="h-24 flex flex-col px-7 py-2">
         <div>
           <input
-            className="w-full px-4 py-2 text-sm outline-none rounded border focus-within:border-text"
+            className="w-full px-4 py-2 text-sm outline-none rounded border focus-within:border-text-500"
             type="text"
             name="content"
             id="content"
             placeholder="Type a message"
           />
         </div>
-        <div className="w-full h-full flex items-center justify-between text-labels">
+        <div className="w-full h-full flex items-center justify-between text-text-300">
           <div className="flex items-center gap-2">
-            <button className="hover:text-primary text-xl">
+            <button className="hover:text-primary-500 text-xl">
               <LuPaperclip />
             </button>
-            <button className="hover:text-primary text-xl">
+            <button className="hover:text-primary-500 text-xl">
               <LuCalendarPlus />
             </button>
-            <button className="hover:text-primary text-xl">
+            <button className="hover:text-primary-500 text-xl">
               <LuSmile />
             </button>
           </div>
-          <div className="hover:text-primary text-2xl">
+          <div className="hover:text-primary-500 text-2xl">
             <button>
               <LuSendHorizonal />
             </button>

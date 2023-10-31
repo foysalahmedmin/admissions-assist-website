@@ -20,7 +20,7 @@ const SingleCallList = ({
       }}
       className={`${
         displayCallHistories_Id === id
-          ? "bg-primary bg-opacity-10"
+          ? "bg-primary-500 bg-opacity-10"
           : "hover:bg-input"
       } py-2 px-[3.5vw] lg:px-7 cursor-pointer`}
     >
@@ -34,13 +34,15 @@ const SingleCallList = ({
         </div>
         <div className="flex-1 flex items-center gap-4 justify-between">
           <div className="flex-1">
-            <h3 className="text-title font-semibold">{opponents[0]?.name}</h3>
+            <h3 className="text-text-900 font-semibold">
+              {opponents[0]?.name}
+            </h3>
           </div>
           <div className="flex justify-between items-center gap-4">
-            <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+            <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary-500 bg-opacity-10 text-primary-500">
               <BiVideo className="text-xl" />
             </button>
-            <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary bg-opacity-10 text-primary">
+            <button className="rounded-full h-8 w-8 flex items-center justify-center bg-primary-500 bg-opacity-10 text-primary-500">
               <BiPhone className="text-xl" />
             </button>
           </div>

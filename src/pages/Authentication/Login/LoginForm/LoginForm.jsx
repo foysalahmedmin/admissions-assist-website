@@ -5,7 +5,7 @@ const LoginForm = () => {
   return (
     <form action="">
       <div className="mb-7">
-        <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text mb-4">
+        <div className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 mb-4">
           <label htmlFor="email">
             <LuMail className="text-2xl" />
           </label>
@@ -18,7 +18,7 @@ const LoginForm = () => {
             required
           />
         </div>
-        <div className="px-4 flex items-center gap-2 text-placeholder border rounded-xl focus-within:text-text focus-within:border-text">
+        <div className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500">
           <label htmlFor="password">
             <LuLock className="text-2xl" />
           </label>

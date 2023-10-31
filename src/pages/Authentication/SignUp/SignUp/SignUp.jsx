@@ -18,7 +18,7 @@ const SignUp = () => {
               Already have an account?{" "}
               <Link
                 to={"/authentication/login"}
-                className="text-secondary font-bold"
+                className="text-secondary-500 font-bold"
               >
                 Log In
               </Link>

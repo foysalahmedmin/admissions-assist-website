@@ -25,12 +25,14 @@ const SingleChat = ({ chat, currentUser }) => {
             isOpponent
               ? "justify-start mr-auto text-left"
               : "justify-end ml-auto text-right"
-          } flex gap-7 text-xs text-title mb-1`}
+          } flex gap-7 text-xs text-text-900 mb-1`}
         >
           {isOpponent && <h1 className="">{sender?.name}</h1>}
           <p>{format(new Date(timestamp), "dd/MM/yy HH:mm a")}</p>
         </div>
-        <p className="px-2 py-1 rounded bg-input text-title text-sm">{content}</p>
+        <p className="px-2 py-1 rounded bg-input text-text-900 text-sm">
+          {content}
+        </p>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import { Suspense, lazy } from "react";
 import Loading from "@/components/Loading/Loading";
+import { Suspense, lazy } from "react";
 import { toast } from "react-toastify";
 
 const Step_ContactInformation = lazy(() =>

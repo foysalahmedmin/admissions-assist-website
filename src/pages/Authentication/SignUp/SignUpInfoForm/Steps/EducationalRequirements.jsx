@@ -1,11 +1,17 @@
 import Accordion from "@/components/Accordion/Accordion";
 import Button from "@/components/Buttons/Button";
 import { useState } from "react";
-import { LuUploadCloud } from "react-icons/lu";
+import { LuTrash2, LuUploadCloud } from "react-icons/lu";
 
 const Inputs = ({ idIndex }) => {
   return (
-    <div>
+    <div className="mb-12">
+      <div className="flex items-center justify-between gap-4 pb-2 border-b mb-4">
+        <h3 className="title font-semibold">Platform - {idIndex}</h3>
+        <button className="h-7 w-7 rounded-full flex items-center justify-center bg-input hover:text-primary-500">
+          <LuTrash2 />
+        </button>
+      </div>
       <div className="mb-7">
         <label
           htmlFor={`educational_qualification_name_${idIndex}`}
@@ -82,7 +88,7 @@ const Inputs = ({ idIndex }) => {
           </select>
         </div>
       </div>
-      <div className="mb-7">
+      <div>
         <label htmlFor={`eduction_file_${idIndex}`} className="block mb-4">
           <span className="block text-text-900">Attachment File</span>
         </label>
@@ -107,10 +113,9 @@ const Inputs = ({ idIndex }) => {
 };
 
 const EducationalRequirements = () => {
-  const [addInputCount, setAddInputCount] = useState(0);
+  const [addInputCount, setAddInputCount] = useState(1);
   return (
     <Accordion title={"Educational Requirements"}>
-      <Inputs idIndex={0} />
       {Array.from(Array(addInputCount).keys()).map((x) => (
         <Inputs key={x} idIndex={x + 1} />
       ))}

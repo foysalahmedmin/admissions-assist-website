@@ -10,7 +10,7 @@ export default {
         line: '#D9DEE9',
         input: '#EFF2F6',
         background: '#F7F8FC',
-        Off_white: '#FCFCFC',
+        off_white: '#FCFCFC',
         text: {
           100: "#A0A9BD",
           300: "#707C94",

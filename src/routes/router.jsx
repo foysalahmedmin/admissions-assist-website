@@ -11,6 +11,9 @@ const Authentication = lazy(() => import("@/layout/Authentication"));
 /* Main Layout's Pages */
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
+const PrivacyPolicy = lazy(() =>
+  import("@/pages/Common/PrivacyPolicy/PrivacyPolicy/PrivacyPolicy")
+);
 const Blogs = lazy(() => import("@/pages/Common/Blogs/Blogs/Blogs"));
 const Blog = lazy(() => import("@/pages/Common/Blog/Blog/Blog"));
 const Courses = lazy(() => import("@/pages/Search/Courses/Courses/Courses"));
@@ -65,6 +68,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/privacy_policy",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <PrivacyPolicy />
           </Suspense>
         ),
       },

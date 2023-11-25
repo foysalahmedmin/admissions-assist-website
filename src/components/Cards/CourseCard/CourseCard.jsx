@@ -26,7 +26,7 @@ const CourseCard = ({ data, rounded }) => {
   return (
     <>
       {!rounded && (
-        <div>
+        <div className="bg-white">
           <div className="h-60 mb-7 relative">
             <img
               className="h-full w-full object-cover object-center"
@@ -129,7 +129,7 @@ const CourseCard = ({ data, rounded }) => {
         </div>
       )}
       {rounded && (
-        <div className="rounded-3xl overflow-hidden">
+        <div className="rounded-3xl overflow-hidden bg-white">
           <div className="h-60 mb-7 relative">
             <img
               className="h-full w-full object-cover object-center"

@@ -8,7 +8,7 @@ import Option from "../Option/Option";
 
 const Course = () => {
   return (
-    <main>
+    <main className="bg-background">
       <Banner />
       <CourseSummary />
       <HowToApply />

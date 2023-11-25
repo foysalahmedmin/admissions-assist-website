@@ -41,7 +41,7 @@ const PersonalDetails = () => {
             required
           />
         </div>
-        <div className="grid grid-cols-2 gap-7">
+        <div className="grid grid-cols-2 gap-7 mb-7">
           <div>
             <label htmlFor="date_of_birth" className="block mb-4">
               <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
@@ -103,6 +103,23 @@ const PersonalDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div>
+          <label htmlFor="known_from" className="block mb-4">
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
+              Where you heard about us?
+            </span>
+          </label>
+          <select
+            type="text"
+            name="known_from"
+            className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
+            id="known_from"
+            required
+          >
+            <option value="">Select</option>
+            <option value="">Agent</option>
+          </select>
         </div>
       </Accordion>
     </>

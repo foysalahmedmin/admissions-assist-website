@@ -7,18 +7,18 @@ const Inputs = ({ idIndex }) => {
   const [jobRunning, setJobRunning] = useState(false);
   return (
     <div className="mb-12">
-      <div className="flex items-center justify-between gap-4 pb-2 border-b mb-4">
-        <h3 className="title font-semibold">Platform - {idIndex}</h3>
-        <button className="h-7 w-7 rounded-full flex items-center justify-center bg-input hover:text-primary-500">
-          <LuTrash2 />
-        </button>
-      </div>
       <div className="mb-7">
-        <label htmlFor={`job_title_${idIndex}`} className="block mb-4">
-          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
+        <div className="flex items-center justify-between gap-4 mb-4">
+          <label
+            htmlFor={`job_title_${idIndex}`}
+            className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900"
+          >
             Job title
-          </span>
-        </label>
+          </label>
+          <button className="h-7 w-7 rounded-full flex items-center justify-center bg-input hover:text-primary-500">
+            <LuTrash2 />
+          </button>
+        </div>
         <input
           type="text"
           name={`job_title_${idIndex}`}

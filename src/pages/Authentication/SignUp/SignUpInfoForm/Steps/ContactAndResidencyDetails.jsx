@@ -13,14 +13,15 @@ const ContactAndResidencyDetails = () => {
             such as your passport, birth certificate or driving license.
           </p>
         </label>
-        <input
+        <textarea
           type="text"
           name="address"
-          className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
+          className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 resize-none"
           id="address"
+          rows={3}
           placeholder="Address"
           required
-        />
+        ></textarea>
       </div>
       <div className="mb-7">
         <label htmlFor="email_address" className="block mb-4">

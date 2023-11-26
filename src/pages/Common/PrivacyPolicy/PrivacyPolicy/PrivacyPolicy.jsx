@@ -4,7 +4,7 @@ import Contents from "../Contents/Contents";
 
 const PrivacyPolicy = () => {
   return (
-    <main className="bg-input">
+    <main className="bg-background">
       <Banner />
       <div className="py-14">
         <Contents />

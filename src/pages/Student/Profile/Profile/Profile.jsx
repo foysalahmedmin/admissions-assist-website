@@ -1,12 +1,12 @@
 import SubFooter from "@/pages/Footer/SubFooter/SubFooter";
+import Appointment from "@/pages/Student/Profile/Appointment/Appointment";
 import Banner from "@/pages/Student/Profile/Banner/Banner";
 import Status from "@/pages/Student/Profile/Status/Status";
-import Appointment from "@/pages/Student/Profile/Appointment/Appointment";
 import TopUniversities from "@/pages/Student/Profile/TopUniversities/TopUniversities";
 
 const Profile = () => {
   return (
-    <main>
+    <main className="bg-background">
       <Banner />
       <Status />
       <Appointment />

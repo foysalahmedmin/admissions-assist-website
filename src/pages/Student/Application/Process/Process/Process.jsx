@@ -82,14 +82,14 @@ const Process = () => {
   return (
     <section className="lg:py-24 py-14">
       <div className="container mx-auto">
-        <div className="rounded-3xl px-7 lg:px-12 py-7 lg:py-14 shadow-custom mb-7">
+        <div className="rounded-3xl px-7 lg:px-12 py-7 lg:py-14 bg-white shadow-custom mb-7">
           <Selector />
         </div>
         <div className="flex gap-7">
           <div
             className={`${
               !isFormShow ? "" : "hidden lg:block"
-            } w-full lg:w-[30rem] px-7 lg:px-12 py-7 lg:py-14 rounded-3xl shadow-custom`}
+            } w-full lg:w-[30rem] px-7 lg:px-12 py-7 lg:py-14 rounded-3xl bg-white shadow-custom`}
           >
             <div className="h-[calc(100vh-8.5rem)] lg:h-auto overflow-y-auto">
               <StepsList
@@ -103,7 +103,7 @@ const Process = () => {
           <div
             className={`${
               isFormShow ? "" : "hidden lg:block"
-            } flex-1 px-7 lg:px-12 py-7 lg:py-14 rounded-3xl shadow-custom`}
+            } flex-1 px-7 lg:px-12 py-7 lg:py-14 rounded-3xl bg-white shadow-custom`}
           >
             <div className="h-6 mb-7 lg:hidden">
               <span

@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="flex items-center justify-center">
           <div className="text-white text-center">
             <h1 className="text-3xl lg:text-5xl title text-white mb-4">
-              Privacy policy
+              Notifications
             </h1>
             <div className="flex items-center justify-center gap-4">
               <span className="material-icons-outlined">arrow_back</span>
@@ -18,7 +18,7 @@ const Banner = () => {
                 </span>
                 <span>/</span>
                 <span>
-                  <Link to={"/privacy_policy"}>Privacy policy</Link>
+                  <Link to={"/notifications"}>Notifications</Link>
                 </span>
               </div>
             </div>

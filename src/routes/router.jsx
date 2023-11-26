@@ -11,6 +11,9 @@ const Authentication = lazy(() => import("@/layout/Authentication"));
 /* Main Layout's Pages */
 const Home = lazy(() => import("@/pages/Common/Home/Home/Home"));
 const Contact = lazy(() => import("@/pages/Common/Contact/Contact/Contact"));
+const Notifications = lazy(() =>
+  import("@/pages/Common/Notifications/Notifications/Notifications")
+);
 const PrivacyPolicy = lazy(() =>
   import("@/pages/Common/PrivacyPolicy/PrivacyPolicy/PrivacyPolicy")
 );
@@ -68,6 +71,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/notifications",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Notifications />
           </Suspense>
         ),
       },

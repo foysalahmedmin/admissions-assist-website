@@ -4,7 +4,7 @@ import Process from "../Process/Process/Process";
 
 const Application = () => {
   return (
-    <main>
+    <main className="bg-background">
       <Banner />
       <Process />
       <SubFooter />

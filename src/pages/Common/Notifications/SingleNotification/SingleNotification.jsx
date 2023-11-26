@@ -1,11 +1,11 @@
 import img from "@/assets/images/profile.jpg";
-import { LuCircleDot, LuCircleDotDashed } from "react-icons/lu";
+import { GoDotFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 
 const SingleNotification = () => {
   return (
     <li className="border-b py-7 flex items-start gap-2 text-sm">
-      <LuCircleDot className="text-primary-500 mt-[2px]" />
+      <GoDotFill className="text-primary-500 mt-[2px]" />
       <div className="flex-1">
         <p className="mb-4">
           First view on <strong>Peter’s Big Cool Idea</strong>
@@ -15,8 +15,7 @@ const SingleNotification = () => {
           <p>
             <strong>Someone</strong>  Uploaded{" "}
             <Link className="underline text-primary-500">name_file.pdf</Link>{" "}
-            <LuCircleDotDashed className="text-xs inline-block" /> about 13
-            hours ago
+            <GoDotFill className="text-xs inline-block" /> about 13 hours ago
           </p>
         </div>
       </div>

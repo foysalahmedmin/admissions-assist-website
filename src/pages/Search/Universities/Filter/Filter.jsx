@@ -1,10 +1,19 @@
-import {LuFilter} from "react-icons/lu";
-import {useState} from "react";
-import {useQuery} from "react-query";
-import {fetchSearchFilteredCountries, fetchSearchFilteredSessions,} from "@/network/common/commonApi.js";
-import {rankings} from "@/constants/filter.js";
-import {useDispatch, useSelector} from "react-redux";
-import {SetCity, SetCountry, SetEndRank, SetSession, SetStartRank,} from "@/redux/filterSlice/filterSlice.js";
+import { rankings } from "@/constants/filter.js";
+import {
+  fetchSearchFilteredCountries,
+  fetchSearchFilteredSessions,
+} from "@/network/common/commonApi.js";
+import {
+  SetCity,
+  SetCountry,
+  SetEndRank,
+  SetSession,
+  SetStartRank,
+} from "@/redux/filterSlice/filterSlice.js";
+import { useState } from "react";
+import { LuFilter } from "react-icons/lu";
+import { useQuery } from "react-query";
+import { useDispatch, useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 const Filter = ({ filterSideToggle }) => {
@@ -15,7 +24,7 @@ const Filter = ({ filterSideToggle }) => {
   const [locationLength, setLocationLength] = useState(3);
   const [sessionLength, setSessionLength] = useState(3);
   const [rankingLength, setRankingLength] = useState(3);
-  const [isShowChildren, setIsShowChildren] = useState(null);
+  const [isChecked, setIsChecked] = useState(null);
   const { country, city, session, start_rank, end_rank } = useSelector(
     (state) => state.filter
   );
@@ -31,9 +40,9 @@ const Filter = ({ filterSideToggle }) => {
   const handleChild = (e, i) => {
     const checkbox = e.target;
     if (checkbox.checked) {
-      setIsShowChildren(i);
+      setIsChecked(i);
     } else {
-      setIsShowChildren(null);
+      setIsChecked(null);
     }
   };
   return (
@@ -95,10 +104,25 @@ const Filter = ({ filterSideToggle }) => {
                     />
                     <label htmlFor={option?.value}>{option?.title}</label>
                   </div>
+                  {(option?.value === "point" || option?.value === "IELTS") && (
+                    <div
+                      className={`${
+                        isChecked === i ? "mt-2 max-h-screen" : "max-h-0"
+                      } transition-all overflow-hidden ml-4`}
+                    >
+                      <input
+                        className="outline-none border-b focus-within:border-text-500"
+                        type="number"
+                        name=""
+                        id=""
+                        placeholder="Point"
+                      />
+                    </div>
+                  )}
                   {option?.options && (
                     <ul
                       className={`${
-                        isShowChildren === i ? "mt-2 max-h-screen" : "max-h-0"
+                        isChecked === i ? "mt-2 max-h-screen" : "max-h-0"
                       } transition-all overflow-hidden grid grid-cols-1 gap-2 ml-4`}
                     >
                       {option?.options?.map((opt, i) => (

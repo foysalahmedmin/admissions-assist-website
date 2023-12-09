@@ -53,7 +53,7 @@ const filter_menus = [
     options: [
       { value: "BSC", title: "BSC" },
       { value: "diploma", title: "Diploma" },
-      { value: "MSC", title: "MSC" },
+      { value: "point", title: "Point" },
     ],
   },
   {

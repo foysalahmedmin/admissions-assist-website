@@ -1,16 +1,16 @@
-import {useState} from "react";
-import {Link, useLocation, useNavigate} from "react-router-dom";
-import {MenuToggle} from "@/pages/Header/Navigation/MenuToggle";
-import ActiveLink from "@/components/ActiveLink/ActiveLink";
-import logo from "@/assets/images/logo.svg";
+import avatar from "@/assets/images/icons/profile-user.svg";
 import logoDark from "@/assets/images/logo-dark.svg";
-import NavMenus from "@/pages/Header/Navigation/NavMenus";
+import logo from "@/assets/images/logo.svg";
+import ActiveLink from "@/components/ActiveLink/ActiveLink";
+import Button from "@/components/Buttons/Button";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
-import Button from "@/components/Buttons/Button";
-import {LuArrowRightFromLine, LuBell, LuUser2} from "react-icons/lu";
-import {twMerge} from "tailwind-merge";
-import avatar from "@/assets/images/icons/profile-user.svg";
+import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
+import NavMenus from "@/pages/Header/Navigation/NavMenus";
+import { useState } from "react";
+import { LuArrowRightFromLine, LuBell, LuUser2 } from "react-icons/lu";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 
 // eslint-disable-next-line react/prop-types
 const Navigation = ({ className }) => {

@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const FilterMenuOption = ({ option, handleSelect, selectedOptions }) => {
-  const [isShowChildren, setIsShowChildren] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const handleChild = (e) => {
     const checkbox = e.target;
     if (checkbox.checked) {
-      setIsShowChildren(true);
+      setIsChecked(true);
     } else {
-      setIsShowChildren(false);
+      setIsChecked(false);
     }
   };
   return (
@@ -27,10 +27,25 @@ const FilterMenuOption = ({ option, handleSelect, selectedOptions }) => {
         />
         <label htmlFor={option?.value}>{option?.title}</label>
       </div>
+      {(option?.value === "point" || option?.value === "IELTS") && (
+        <div
+          className={`${
+            isChecked ? "mt-2 max-h-screen" : "max-h-0"
+          } transition-all overflow-hidden ml-4`}
+        >
+          <input
+            className="outline-none border-b focus-within:border-text-500"
+            type="number"
+            name=""
+            id=""
+            placeholder="Point"
+          />
+        </div>
+      )}
       {option?.options && (
         <ul
           className={`${
-            isShowChildren ? "mt-2 max-h-screen" : "max-h-0"
+            isChecked ? "mt-2 max-h-screen" : "max-h-0"
           } transition-all overflow-hidden grid grid-cols-1 gap-2 ml-4`}
         >
           {option?.options.map((option, i) => (

@@ -1,0 +1,9 @@
+.icon-hidden::-webkit-calendar-picker-indicator {
+    
+    padding: 4px;
+    background: url('../../assets/images/icons/date-input-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-appearance: none;
+}

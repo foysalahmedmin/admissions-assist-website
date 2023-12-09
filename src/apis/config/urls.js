@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+let current =
+  process.env.NODE_ENV === "development"
+    ? "https://cp.admissionsassist.com"
+    : "https://cp.admissionsassist.com";
+export const urls = {
+  mainURL: `${current}`,
+  user_photos: `${current}/uploads/user_photos`,
+  country: `${current}/uploads/utils/country`,
+  university_logo: `${current}/uploads/university/logos`,
+  university_cover: `${current}/uploads/university/covers`,
+  scholarship: `${current}/uploads/university/scholarship`,
+  subject: `${current}/uploads/subject`,
+};

@@ -1,8 +1,8 @@
 import courseImg from "@/assets/images/course-card.png";
 import universityImg from "@/assets/images/course-university.svg";
 import Button from "@/components/Buttons/Button";
-import EnrollModal from "../EnrollModal/EnrollModal";
 import { useState } from "react";
+import EnrollModal from "../EnrollRequireModal/EnrollRequireModal";
 
 const CourseSummary = () => {
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);

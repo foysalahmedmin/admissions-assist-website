@@ -1,12 +1,17 @@
 import Button from "@/components/Buttons/Button";
 import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
 import Pagination from "@/components/Pagination/Pagination";
-import {LuFilter} from "react-icons/lu";
-import {useDispatch, useSelector} from "react-redux";
-import {SetRemoveCity, SetRemoveCountry, SetRemoveRanking, SetRemoveSession,} from "@/redux/filterSlice/filterSlice.js";
-import {getFilteredUniversitySearch} from "@/pages/Search/requests/search.js";
-import {SetTotal} from "@/redux/tableSlice/tableSlice.js";
-import {useQuery} from "react-query";
+import { getFilteredUniversitySearch } from "@/pages/Search/requests/search.js";
+import {
+  SetRemoveCity,
+  SetRemoveCountry,
+  SetRemoveRanking,
+  SetRemoveSession,
+} from "@/redux/filterSlice/filterSlice.js";
+import { SetTotal } from "@/redux/tableSlice/tableSlice.js";
+import { LuFilter } from "react-icons/lu";
+import { useQuery } from "react-query";
+import { useDispatch, useSelector } from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 const AllUniversities = ({ filterSideToggle }) => {

@@ -1,9 +1,9 @@
+import AvailableCourseModal from "@/components/AvailableCourseModal/AvailableCourseModal";
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 import { useState } from "react";
 import { BiAward, BiBookOpen, BiHistory, BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import AvailableCourseModal from "../AvailableCourseModal/AvailableCourseModal";
 
 const Banner = () => {
   const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
@@ -108,7 +108,7 @@ const Banner = () => {
               <div>
                 <nav>
                   <ul className="w-full flex flex-wrap justify-center lg:justify-start">
-                    <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
+                    <li className="border border-b-0 bg-background text-primary-500 hover:bg-white hover:text-primary-500 text-center flex-1 shrink-0">
                       <a
                         className={`px-4 py-2 whitespace-nowrap inline-block`}
                         href="#course_summary"

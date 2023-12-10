@@ -1,26 +1,25 @@
 import Modal from "@/components/Modal/Modal";
 import Table from "./Table/Table";
 
-const table_data = [
-  {
-    _id: "01",
-    location: "Barnsley College Higher Education Church Street Campus",
-    duration: "2 Years",
-    session: "2024-2025",
-    study_mode: "Full Time",
-    class_starts: "2 March, 2024",
-  },
-  {
-    _id: "02",
-    location: "Barnsley College Higher Education Church Street Campus",
-    duration: "2 Years",
-    session: "2024-2025",
-    study_mode: "Full Time",
-    class_starts: "2 March, 2024",
-  },
-];
-
 const AvailableCourseModal = ({ isOpen, setIsOpen }) => {
+  const table_data = [
+    {
+      _id: "01",
+      location: "Barnsley College Higher Education Church Street Campus",
+      duration: "2 Years",
+      session: "2024-2025",
+      study_mode: "Full Time",
+      class_starts: "2 March, 2024",
+    },
+    {
+      _id: "02",
+      location: "Barnsley College Higher Education Church Street Campus",
+      duration: "2 Years",
+      session: "2024-2025",
+      study_mode: "Full Time",
+      class_starts: "2 March, 2024",
+    },
+  ];
   return (
     <Modal
       isOpen={isOpen}

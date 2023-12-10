@@ -1,3 +1,5 @@
+import AvailableCourseModal from "@/components/AvailableCourseModal/AvailableCourseModal";
+import { useState } from "react";
 import {
   BiAward,
   BiBookOpen,
@@ -8,6 +10,8 @@ import {
 import { Link } from "react-router-dom";
 
 const CourseCard = ({ data, rounded }) => {
+  const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
+    useState(false);
   const {
     title,
     image,
@@ -45,8 +49,20 @@ const CourseCard = ({ data, rounded }) => {
           <div className="mb-7">
             <div className="mb-4">
               <h3 className="title text-2xl mb-1">{title}</h3>
-              <h3 className="title mb-1">{institution}</h3>
-              <p className="text-sm">{bio}</p>
+              <h3 className="title">{institution}</h3>
+              <span className="text-sm">{bio}</span>
+            </div>
+            <div className="mb-4">
+              <span
+                onClick={() => setIsAvailableCourseModalOpen(true)}
+                className="text-primary-500 underline font-semibold cursor-pointer inline-block"
+              >
+                2 Course options available
+              </span>
+              <AvailableCourseModal
+                isOpen={isAvailableCourseModalOpen}
+                setIsOpen={setIsAvailableCourseModalOpen}
+              />
             </div>
             <div className="grid grid-cols-2 gap-7">
               <div className="flex items-center gap-4">

@@ -81,7 +81,7 @@ const Banner = () => {
             <div>
               <nav>
                 <ul className="w-full flex flex-wrap justify-center lg:justify-start">
-                  <li className="border border-b-0 hover:bg-white hover:text-primary-500 text-center">
+                  <li className="border border-b-0 bg-background text-primary-500 hover:bg-white hover:text-primary-500 text-center">
                     <a
                       className={`px-4 py-2 whitespace-nowrap inline-block`}
                       href="#overview"

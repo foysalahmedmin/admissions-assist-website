@@ -152,24 +152,24 @@ const CourseCard = ({ data, rounded }) => {
               src={image}
               alt=""
             />
-            <div className="flex items-center justify-center px-7 bg-text-900 bg-opacity-50 text-white rounded absolute inset-0">
+            <div className="flex items-center justify-center px-7 bg-black-900 bg-opacity-70 text-white rounded absolute inset-0">
               <div className="text-center">
                 <img
-                  className="rounded-full mx-auto mb-4"
+                  className="rounded-full h-20 w-20 object-contain mx-auto mb-4"
                   src={institution_image}
                   alt=""
                 />
                 <div>
                   <strong>{institution}</strong>
-                  <p>{bio}</p>
-                  <p>Church Street Campus</p>
+                  <p>{location}</p>
+                  {/*<p>Church Street Campus</p>*/}
                 </div>
               </div>
             </div>
           </div>
           <div className="px-7 mb-7">
             <div className="mb-4">
-              <h3 className="title text-2xl">{title}</h3>
+              <h3 className="title h-14 text-2xl">{title}</h3>
             </div>
             <div className="grid grid-cols-2 gap-7">
               <div className="flex items-center gap-4">

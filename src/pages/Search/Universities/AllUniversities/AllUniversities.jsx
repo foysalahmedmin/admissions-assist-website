@@ -1,17 +1,12 @@
 import Button from "@/components/Buttons/Button";
 import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
 import Pagination from "@/components/Pagination/Pagination";
-import { getFilteredUniversitySearch } from "@/pages/Search/requests/search.js";
-import {
-  SetRemoveCity,
-  SetRemoveCountry,
-  SetRemoveRanking,
-  SetRemoveSession,
-} from "@/redux/filterSlice/filterSlice.js";
-import { SetTotal } from "@/redux/tableSlice/tableSlice.js";
-import { LuFilter } from "react-icons/lu";
-import { useQuery } from "react-query";
-import { useDispatch, useSelector } from "react-redux";
+import {getFilteredUniversitySearch} from "@/pages/Search/requests/search.js";
+import {SetRemoveCity, SetRemoveCountry, SetRemoveRanking, SetRemoveSession,} from "@/redux/filterSlice/filterSlice.js";
+import {SetTotal} from "@/redux/tableSlice/tableSlice.js";
+import {LuFilter} from "react-icons/lu";
+import {useQuery} from "react-query";
+import {useDispatch, useSelector} from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 const AllUniversities = ({ filterSideToggle }) => {
@@ -48,7 +43,6 @@ const AllUniversities = ({ filterSideToggle }) => {
     },
     enabled: search !== "" || country?.length > 0,
   });
-  console.log(isLoading);
   return (
     <div>
       <div className="flex items-center gap-4 mb-7">
@@ -118,6 +112,7 @@ const AllUniversities = ({ filterSideToggle }) => {
             isLoading:isLoading
             data={{
               image_url: x?.cover,
+              _id: x?._id,
               title: x?.name,
               course_quantity: x?.subjects,
             }}

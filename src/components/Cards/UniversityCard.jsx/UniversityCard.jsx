@@ -1,10 +1,11 @@
-import { urls } from "@/apis/config/urls.js";
+import {urls} from "@/apis/config/urls.js";
 import ComponentLoading from "@/components/Loading/ComponentLoading.jsx";
+import {useNavigate} from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const UniversityCard = ({ data, isLoading, isSmall }) => {
-  const { image_url, title, course_quantity } = data;
-  console.log(isLoading);
+  const navigation = useNavigate();
+  const { _id, image_url, title, course_quantity } = data;
   return (
     <div>
       {isLoading ? (
@@ -12,7 +13,10 @@ const UniversityCard = ({ data, isLoading, isSmall }) => {
       ) : (
         <>
           {!isSmall && (
-            <div className="h-[420px] rounded-xl overflow-hidden relative">
+            <div
+              onClick={() => navigation(`/university/${_id}`)}
+              className="h-[420px] rounded-xl overflow-hidden relative cursor-pointer"
+            >
               <img
                 className="w-full h-full object-cover"
                 src={`${urls?.university_cover}/${image_url}`}
@@ -26,8 +30,11 @@ const UniversityCard = ({ data, isLoading, isSmall }) => {
               </div>
             </div>
           )}
-          {!isSmall && (
-            <div className="h-[320px] rounded-xl overflow-hidden relative">
+          {isSmall && (
+            <div
+              onClick={() => navigation(`/university/${_id}`)}
+              className="h-[320px] rounded-xl overflow-hidden relative cursor-pointer"
+            >
               <img
                 className="w-full h-full object-cover"
                 src={`${urls?.university_cover}/${image_url}`}

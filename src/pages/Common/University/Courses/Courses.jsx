@@ -1,15 +1,14 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import cardImg from "@/assets/images/course-card.png";
-import universityImg from "@/assets/images/course-university.svg";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CourseCard from "@/components/Cards/CourseCard/CourseCard";
+import { urls } from "@/apis/config/urls.js";
 
-const Courses = () => {
+const Courses = ({ courses }) => {
   return (
     <section className="lg:py-24 py-14" id="courses">
       <div className="container mx-auto">
@@ -33,25 +32,30 @@ const Courses = () => {
             }}
             className="courses-slider"
           >
-            {Array.from(Array(9).keys()).map((x, i) => (
+            {courses?.requirements?.map((x, i) => (
               <SwiperSlide key={i}>
                 <div className="mb-14">
                   <CourseCard
                     rounded={true}
                     data={{
-                      title: "Engineering",
-                      image: cardImg,
-                      institution: "Barnsley College Higher Education",
-                      institution_image: universityImg,
-                      location:
-                        "Barnsley College Higher Education Church Street Campus",
+                      title: x?.subject?.name,
+                      image: `${urls?.university_cover}/${courses?.cover}`,
+                      institution: courses?.name,
+                      institution_image: `${urls?.university_logo}/${courses?.logo}`,
+                      location: courses?.campuses[0]?.location,
                       bio: "Barnsley College Higher Education Church Street Campus",
-                      duration: "2 Years",
-                      session: "2024-2025",
-                      study_mode: "Full Time",
-                      ranking: 103,
+                      duration: x?.isCourse
+                        ? x?.course?.study_mode
+                        : x?.subject?.study_mode,
+                      session: `${courses?.session?.session} (${courses?.session?.year})`,
+                      study_mode: x?.isCourse
+                        ? x?.course?.study_mode
+                        : x?.subject?.study_mode,
+                      ranking: courses?.ranking,
                       class_starts: "2 March, 2024",
-                      tuition_fee: 18000,
+                      tuition_fee: x?.isCourse
+                        ? x?.course?.fees
+                        : x?.subject?.fees,
                     }}
                   />
                 </div>

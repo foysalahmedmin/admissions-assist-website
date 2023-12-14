@@ -10,13 +10,16 @@ const BackgroundLayer = ({
   return (
     <section
       style={{
-        backgroundImage: `url(${image_url || "/background/common.png"})`,
+        backgroundImage: `url(${image_url})`,
       }}
       className={twMerge("bg-no-repeat bg-cover bg-right", bg_position)}
     >
       <div
         style={style}
-        className={twMerge("bg-primary-500 bg-opacity-80", className)}
+        className={twMerge(
+          "from-[#1baca1f9] via-[#1baca1f9] to-[#1baca16b] bg-gradient-to-r bg-opacity-80",
+          className
+        )}
       >
         {children}
       </div>

@@ -52,6 +52,7 @@ const Calls = lazy(() => import("@/pages/ChatSystem/Outlet/Calls/Calls/Calls"));
 const router = createBrowserRouter([
   {
     path: "/",
+    //no_need
     element: (
       <Suspense fallback={<Loading />}>
         <Main />
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        //no_need
         element: (
           <Suspense fallback={<Loading />}>
             <Home />
@@ -68,6 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
+        //done
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
@@ -100,6 +103,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/search",
+        //no_need
         element: (
           <Suspense fallback={<Loading />}>
             <Search />
@@ -108,6 +112,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
+            //no_need
             element: (
               <Suspense fallback={<Loading />}>
                 <Courses />
@@ -124,6 +129,7 @@ const router = createBrowserRouter([
           },
           {
             path: "universities",
+            //done
             element: (
               <Suspense fallback={<Loading />}>
                 <Universities />
@@ -142,6 +148,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/course/:sId/:rId/:uId",
+        //done
         element: (
           <Suspense fallback={<Loading />}>
             <Course />
@@ -150,6 +157,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/university/:id",
+        //done
         element: (
           <Suspense fallback={<Loading />}>
             <University />
@@ -193,6 +201,7 @@ const router = createBrowserRouter([
   // },
   {
     path: "/chat_system",
+    //no_need
     element: (
       <Suspense fallback={<Loading />}>
         <ChatSystem />
@@ -201,6 +210,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+        //no_need
         element: (
           <Suspense fallback={<Loading />}>
             <MoveToChat />
@@ -243,6 +253,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/authentication",
+    //no_need
     element: (
       <Suspense fallback={<Loading />}>
         <Authentication />
@@ -251,6 +262,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "login",
+        //done
         element: (
           <Suspense fallback={<Loading />}>
             <Login />
@@ -259,6 +271,7 @@ const router = createBrowserRouter([
       },
       {
         path: "sign_up",
+        //done
         element: (
           <Suspense fallback={<Loading />}>
             <SignUp />

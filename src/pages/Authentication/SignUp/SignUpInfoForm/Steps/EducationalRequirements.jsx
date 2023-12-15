@@ -34,15 +34,30 @@ const EducationalRequirements = () => {
     }
   }, [education?.length]);
 
-  console.log(education);
-
-  const handleInputChange = (index, inputName, newValue) => {
+  const handleInputChange = (
+    index,
+    inputName,
+    newValue,
+    isCompound,
+    body,
+    degree
+  ) => {
+    console.log("onchange===>", { index, inputName, newValue });
     const updatedEducation = [...education];
-    updatedEducation[index] = {
-      ...updatedEducation[index],
-      [inputName]: newValue,
-    };
-    dispatch(SetEducation(updatedEducation));
+    if (isCompound) {
+      updatedEducation[index] = {
+        ...updatedEducation[index],
+        body: body,
+        degree: degree,
+      };
+      dispatch(SetEducation(updatedEducation));
+    } else {
+      updatedEducation[index] = {
+        ...updatedEducation[index],
+        [inputName]: newValue,
+      };
+      dispatch(SetEducation(updatedEducation));
+    }
   };
 
   const handleDeleteEducation = (index) => {
@@ -50,7 +65,7 @@ const EducationalRequirements = () => {
     updatedEducation.splice(index, 1);
     dispatch(SetEducation(updatedEducation));
   };
-
+  console.log(education);
   return (
     <Accordion
       title={"Educational Requirements"}
@@ -79,12 +94,17 @@ const EducationalRequirements = () => {
               name={`educational_qualification_name_${index}`}
               value={x?.degree}
               onChange={(e) => {
-                let groupValue =
+                let body =
                   e.target.selectedOptions[0]?.parentNode?.dataset.groupvalue;
-
-                handleInputChange(index, "body", groupValue);
-                handleInputChange(index, "degree", e.target.value);
-                console.log("gdgdg", groupValue);
+                handleInputChange(
+                  index,
+                  "compound",
+                  "",
+                  true,
+                  body,
+                  e.target.value
+                );
+                // handleInputChange(index, "degree", e.target.value);
               }}
               className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
               id={`educational_qualification_name_${index}`}
@@ -213,6 +233,7 @@ const EducationalRequirements = () => {
               SetEducation([
                 ...education,
                 {
+                  body: "",
                   degree: "",
                   institute: "",
                   passing_year: 0,

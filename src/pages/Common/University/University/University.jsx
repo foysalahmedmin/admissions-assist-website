@@ -25,7 +25,6 @@ const University = () => {
     queryFn: () => fetchUniversityWiseCourses(id),
     enabled: !!id,
   });
-  console.log(universityCourses);
   return (
     <main className="bg-background">
       <Banner info={university} />

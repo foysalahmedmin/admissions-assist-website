@@ -9,9 +9,17 @@ export const filterSlice = createSlice({
   initialState: {
     search_tab: "universities",
     country: [],
+    course_types: [],
     city: [],
     session: {},
     start_rank: 0,
+    ielts: false,
+    score: 0,
+    assessment: false,
+    level_3: false,
+    experience: false,
+    isPoint: false,
+    point: 0,
     end_rank: 0,
   },
   reducers: {
@@ -30,6 +38,16 @@ export const filterSlice = createSlice({
         state.city = state.city?.filter((x) => x?.country !== payload?.value);
       }
     },
+    SetCourseType: (state, { payload }) => {
+      let isAdded = state?.course_types?.some((x) => x?._id === payload?._id);
+      if (!isAdded) {
+        state.course_types = [...state.course_types, payload];
+      } else {
+        state.course_types = state.course_types?.filter(
+          (x) => x?._id !== payload?._id
+        );
+      }
+    },
     SetCity: (state, { payload }) => {
       let isAdded = state?.city?.some((x) => x?.value === payload?.value);
       if (!isAdded) {
@@ -39,13 +57,44 @@ export const filterSlice = createSlice({
       }
     },
     SetSession: (state, action) => {
-      state.session = action.payload;
+      if (state.session.value === action.payload.value) {
+        state.session = {};
+      } else {
+        state.session = action.payload;
+      }
     },
     SetStartRank: (state, action) => {
       state.start_rank = action.payload;
     },
     SetEndRank: (state, action) => {
       state.end_rank = action.payload;
+    },
+    SetToggleIelts: (state) => {
+      state.ielts = !state.ielts;
+      if (!state.ielts) {
+        state.score = 0;
+      }
+    },
+    SetScore: (state, action) => {
+      state.score = action.payload;
+    },
+    SetTogglePoint: (state) => {
+      state.isPoint = !state.isPoint;
+      if (!state.isPoint) {
+        state.point = 0;
+      }
+    },
+    SetPoint: (state, action) => {
+      state.point = action.payload;
+    },
+    SetToggleAssessment: (state) => {
+      state.assessment = !state.assessment;
+    },
+    SetToggleLevel3: (state) => {
+      state.level_3 = !state.level_3;
+    },
+    SetToggleExperience: (state) => {
+      state.experience = !state.experience;
     },
     SetRemoveCity: (state, { payload }) => {
       state.city = state.city?.filter((x) => x?.value !== payload?.value);
@@ -74,5 +123,13 @@ export const {
   SetRemoveCity,
   SetRemoveSession,
   SetRemoveRanking,
+  SetCourseType,
+  SetToggleIelts,
+  SetScore,
+  SetTogglePoint,
+  SetPoint,
+  SetToggleAssessment,
+  SetToggleLevel3,
+  SetToggleExperience,
 } = filterSlice.actions;
 export default filterSlice.reducer;

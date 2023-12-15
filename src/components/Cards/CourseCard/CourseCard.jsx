@@ -1,10 +1,11 @@
 import AvailableCourseModal from "@/components/AvailableCourseModal/AvailableCourseModal";
 import {useState} from "react";
 import {BiAward, BiBookOpen, BiHistory, BiMoney, BiTimeFive,} from "react-icons/bi";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const CourseCard = ({ data, params, rounded }) => {
+  const navigation = useNavigate();
   const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
     useState(false);
   const {
@@ -235,13 +236,18 @@ const CourseCard = ({ data, params, rounded }) => {
             </div>
           </div>
           <div>
-            <Link
-              to={`/course/${params?.subject}/${params?.requirement}/${params?.university}`}
-            >
-              <button className="w-full py-4 font-semibold bg-primary-500 text-white animate-pop active:scale-95">
+            <div>
+              <button
+                onClick={() =>
+                  navigation(
+                    `/course/${params?.subject}/${params?.requirement}/${params?.university}`
+                  )
+                }
+                className="w-full py-4 font-semibold bg-primary-500 text-white animate-pop active:scale-95"
+              >
                 View Details
               </button>
-            </Link>
+            </div>
           </div>
         </div>
       )}

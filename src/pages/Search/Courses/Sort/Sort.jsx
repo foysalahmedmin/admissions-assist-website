@@ -1,6 +1,10 @@
 import { LuArrowDownUp, LuSearch } from "react-icons/lu";
+import { useDispatch, useSelector } from "react-redux";
+import { SetSearch, SetSort } from "@/redux/tableSlice/tableSlice.js";
 
 const Sort = () => {
+  const dispatch = useDispatch();
+  const { search, sort } = useSelector((state) => state.table);
   return (
     <section className="lg:h-20 py-4 bg-primary-500">
       <div className="container mx-auto">
@@ -10,6 +14,8 @@ const Sort = () => {
             <input
               className="py-3 flex-1 w-full outline-none bg-transparent block"
               type="text"
+              value={search}
+              onChange={(e) => dispatch(SetSearch(e.target.value))}
               name=""
               id=""
               placeholder="Search"
@@ -27,9 +33,13 @@ const Sort = () => {
               <select
                 className="outline-none bg-transparent font-bold"
                 name="sort"
+                value={sort}
+                onChange={(e) => dispatch(SetSort(Number(e.target.value)))}
                 id="sort"
               >
                 <option value="">Select Sort</option>
+                <option value={-1}>ASC</option>
+                <option value={1}>DESC</option>
               </select>
             </div>
           </div>

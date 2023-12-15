@@ -21,6 +21,13 @@ export async function fetchSearchFilteredSessions() {
   return response?.data;
 }
 
+export async function fetchCourseTypes() {
+  const response = await base.get(
+    `/api/utils/course_type/get_filtered_course_types`
+  );
+  return response?.data;
+}
+
 export async function fetchFilteredCities(country) {
   const response = await base.get(
     `/api/utils/city/get_filtered_cities?country=${country}`

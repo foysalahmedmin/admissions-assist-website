@@ -36,8 +36,8 @@ export const applicationFormSlice = createSlice({
     },
     education: [
       {
-        degree: "",
         body: "",
+        degree: "",
         institute: "",
         passing_year: 0,
         certificate: null,

@@ -8,7 +8,6 @@ const CourseSummary = ({ info }) => {
   const navigation = useNavigate();
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
   const status = JSON.parse(localStorage.getItem("aa_website"));
-  console.log(status);
   return (
     <section className="py-7" id="course_summary">
       <div className="container mx-auto">

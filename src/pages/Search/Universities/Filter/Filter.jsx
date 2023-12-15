@@ -1,19 +1,10 @@
-import { rankings } from "@/constants/filter.js";
-import {
-  fetchSearchFilteredCountries,
-  fetchSearchFilteredSessions,
-} from "@/network/common/commonApi.js";
-import {
-  SetCity,
-  SetCountry,
-  SetEndRank,
-  SetSession,
-  SetStartRank,
-} from "@/redux/filterSlice/filterSlice.js";
-import { useState } from "react";
-import { LuFilter } from "react-icons/lu";
-import { useQuery } from "react-query";
-import { useDispatch, useSelector } from "react-redux";
+import {rankings} from "@/constants/filter.js";
+import {fetchSearchFilteredCountries, fetchSearchFilteredSessions,} from "@/network/common/commonApi.js";
+import {SetCity, SetCountry, SetEndRank, SetSession, SetStartRank,} from "@/redux/filterSlice/filterSlice.js";
+import {useState} from "react";
+import {LuFilter} from "react-icons/lu";
+import {useQuery} from "react-query";
+import {useDispatch, useSelector} from "react-redux";
 
 // eslint-disable-next-line react/prop-types
 const Filter = ({ filterSideToggle }) => {
@@ -104,21 +95,6 @@ const Filter = ({ filterSideToggle }) => {
                     />
                     <label htmlFor={option?.value}>{option?.title}</label>
                   </div>
-                  {(option?.value === "point" || option?.value === "IELTS") && (
-                    <div
-                      className={`${
-                        isChecked === i ? "mt-2 max-h-screen" : "max-h-0"
-                      } transition-all overflow-hidden ml-4`}
-                    >
-                      <input
-                        className="outline-none border-b focus-within:border-text-500"
-                        type="number"
-                        name=""
-                        id=""
-                        placeholder="Point"
-                      />
-                    </div>
-                  )}
                   {option?.options && (
                     <ul
                       className={`${

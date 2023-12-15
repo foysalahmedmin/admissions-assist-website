@@ -1,17 +1,27 @@
 import { useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { fetchFilteredRequirement } from "@/pages/Common/Course/Course/requests/courseApi.js";
+import { useQuery } from "react-query";
 
-const Tr = ({ data, active, setActive }) => {
-  const { _id, location, duration, session, study_mode, class_starts } = data;
+const Tr = ({ data, active, setActive, setIsOpen }) => {
+  const navigation = useNavigate();
+  const { sId, uId } = useParams();
+  const { _id, name, duration, fees, study_mode } = data;
   const inputRef = useRef(null);
 
-  const handleClick = () => {
-    setActive(_id);
-    inputRef.current.checked = true;
-  };
+  const { data: requirement } = useQuery({
+    queryKey: ["filtered_requirement", uId, sId, _id],
+    queryFn: () => fetchFilteredRequirement(uId, sId, _id),
+    enabled: !!uId && !!_id && !!sId,
+  });
 
   return (
     <tr
-      onClick={handleClick}
+      onClick={() => {
+        setIsOpen(false);
+        requirement?._id &&
+          navigation(`/course/${sId}/${requirement?._id}/${uId}`);
+      }}
       className={`${
         active === _id
           ? "bg-primary-500 text-white"
@@ -20,7 +30,7 @@ const Tr = ({ data, active, setActive }) => {
     >
       <td className="text-left">
         <label className="px-7 py-4 block">
-          <p className="w-80">{location}</p>
+          <p className="w-80">{name}</p>
         </label>
       </td>
       <td className="text-left">
@@ -30,17 +40,12 @@ const Tr = ({ data, active, setActive }) => {
       </td>
       <td className="text-left">
         <label className="px-7 py-4 block">
-          <div>{session}</div>
-        </label>
-      </td>
-      <td className="text-left">
-        <label className="px-7 py-4 block">
           <div>{study_mode}</div>
         </label>
       </td>
       <td className="text-left">
         <label className="px-7 py-4 block">
-          <div>{class_starts}</div>
+          <div>{fees}</div>
         </label>
       </td>
       <td className="text-left">

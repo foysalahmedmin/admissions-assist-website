@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { BiBookOpen, BiHistory, BiMap, BiTimeFive } from "react-icons/bi";
+import {useState} from "react";
+import {BiBookOpen, BiHistory, BiMap, BiTimeFive} from "react-icons/bi";
 import Tr from "./Tr";
 
-const Table = ({ table_data }) => {
+// eslint-disable-next-line react/prop-types
+const Table = ({ table_data, setIsOpen }) => {
   const [active, setActive] = useState("");
   return (
     <div className="overflow-x-auto grid grid-cols-1 text-text-900">
@@ -12,7 +13,7 @@ const Table = ({ table_data }) => {
             <th className="text-text-900 text-left px-7 py-4 whitespace-nowrap w-80">
               <div className="flex items-center gap-2">
                 <BiMap className="text-primary-500 text-xl" />
-                <span className="font-normal text-sm">Location</span>
+                <span className="font-normal text-sm">Course</span>
               </div>
             </th>
             <th className="text-text-900 text-left px-7 py-4 whitespace-nowrap">
@@ -24,27 +25,27 @@ const Table = ({ table_data }) => {
             <th className="text-text-900 text-center px-7 py-4 whitespace-nowrap">
               <div className="flex items-center gap-2">
                 <BiHistory className="text-primary-500 text-xl" />
-                <span className="font-normal text-sm">Session</span>
-              </div>
-            </th>
-            <th className="text-text-900 text-center px-7 py-4 whitespace-nowrap">
-              <div className="flex items-center gap-2">
-                <BiBookOpen className="text-primary-500 text-xl" />
                 <span className="font-normal text-sm">Study Mode</span>
               </div>
             </th>
             <th className="text-text-900 text-center px-7 py-4 whitespace-nowrap">
               <div className="flex items-center gap-2">
                 <BiBookOpen className="text-primary-500 text-xl" />
-                <span className="font-normal text-sm">Study Mode</span>
+                <span className="font-normal text-sm">Fees</span>
               </div>
             </th>
             <th className="text-text-900 text-center px-7 py-4 whitespace-nowrap"></th>
           </tr>
         </thead>
         <tbody>
-          {table_data.map((data, i) => (
-            <Tr key={i} data={data} active={active} setActive={setActive} />
+          {table_data?.map((data, i) => (
+            <Tr
+              key={i}
+              data={data}
+              active={active}
+              setActive={setActive}
+              setIsOpen={setIsOpen}
+            />
           ))}
         </tbody>
       </table>

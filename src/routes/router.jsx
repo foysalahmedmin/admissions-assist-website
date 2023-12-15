@@ -1,6 +1,6 @@
 import Loading from "@/components/Loading/Loading";
-import { lazy, Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import {lazy, Suspense} from "react";
+import {createBrowserRouter} from "react-router-dom";
 
 /* Layouts */
 const Main = lazy(() => import("@/layout/Main"));
@@ -141,7 +141,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/course/:id",
+        path: "/course/:sId/:rId/:uId",
         element: (
           <Suspense fallback={<Loading />}>
             <Course />

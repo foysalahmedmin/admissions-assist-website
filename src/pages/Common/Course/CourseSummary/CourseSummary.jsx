@@ -1,32 +1,27 @@
-import courseImg from "@/assets/images/course-card.png";
-import universityImg from "@/assets/images/course-university.svg";
 import Button from "@/components/Buttons/Button";
 import { useState } from "react";
 import EnrollModal from "../EnrollRequireModal/EnrollRequireModal";
+import { urls } from "@/apis/config/urls.js";
+import { useNavigate } from "react-router-dom";
 
-const CourseSummary = () => {
+const CourseSummary = ({ info }) => {
+  const navigation = useNavigate();
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+  const status = JSON.parse(localStorage.getItem("aa_website"));
+  console.log(status);
   return (
     <section className="py-7" id="course_summary">
       <div className="container mx-auto">
         <div className="flex flex-col-reverse lg:flex-row gap-7 lg:gap-12 mb-7">
           <div className="flex-1 flex items-center">
             <div className="max-w-4xl">
-              <h2 className="title text-3xl mb-7">Course Summary</h2>
+              <h2 className="title text-3xl mb-7">
+                {info?.isCourse ? "Course" : "Subject"} Summary
+              </h2>
               <p>
-                The Pearson BTEC Level 5 Higher National Diploma in Engineering
-                offers students seven pathways, designed to support progression
-                into relevant occupational areas or onto degree-level study.
-                These pathways are linked to Professional Body standards (where
-                appropriate) and can provide progression towards professional
-                status or entry to the later stages of an appropriate degree.
-                You will develop a sound understanding of the principles in your
-                field of study, and learn how to apply those principles more
-                widely. You will learn how to evaluate the appropriateness of
-                different approaches to solving problems and be able to perform
-                effectively in your chosen field. You will have the qualities
-                necessary for employment in situations requiring the exercise of
-                personal responsibility and decision-making.
+                {info?.isCourse
+                  ? info?.course_details?.summary
+                  : info?.subject?.summary}
               </p>
             </div>
           </div>
@@ -36,31 +31,35 @@ const CourseSummary = () => {
                 <div className="h-52 relative">
                   <img
                     className="h-full w-full object-cover object-center lg:rounded-t-2xl"
-                    src={courseImg}
+                    src={`${urls?.university_cover}/${info?.university?.cover}`}
                     alt=""
                   />
                 </div>
                 <div className="flex flex-row-reverse flex-wrap lg:flex-col justify-center gap-7 px-7">
                   <div className="flex-shrink-0">
                     <img
-                      className="h-40 w-40 rounded-xl object-cover object-center shadow relative mx-auto -mt-20 z-10"
-                      src={universityImg}
+                      className="h-40 w-40 rounded-xl object-contain object-center shadow relative mx-auto -mt-20 z-10"
+                      src={`${urls?.university_logo}/${info?.university?.logo}`}
                       alt=""
                     />
                   </div>
                   <div className="text-center sm:text-right lg:text-center">
                     <div>
-                      <h5 className="title mb-2">
-                        American International University
-                      </h5>
-                      <p>Barnsley College Higher Education</p>
-                      <p>Church Street Campus</p>
+                      <h5 className="title mb-2">{info?.university?.name}</h5>
+                      <p>{info?.university?.campuses[0]?.name}</p>
+                      <p>{info?.university?.campuses[0]?.location}</p>
                     </div>
                   </div>
                 </div>
                 <div className="py-7 px-7">
                   <Button
-                    onClick={() => setIsEnrollModalOpen(true)}
+                    onClick={() => {
+                      if (status?.accessToken) {
+                        setIsEnrollModalOpen(true);
+                      } else {
+                        navigation("/authentication/sign_up");
+                      }
+                    }}
                     className={"mx-auto w-full"}
                     text={"Enroll Now"}
                     icon={
@@ -80,33 +79,39 @@ const CourseSummary = () => {
         </div>
         <div className="mb-7">
           <h3 className="title text-2xl mb-7">Modules</h3>
-          <p className="mb-7">The two mandatory core units at Level 5 are: </p>
-          <ul className="mb-7">
-            <li className="">
-              <span className="text-2xl">●</span> Unit 34: Research Project
-            </li>
-            <li className="">
-              <span className="text-2xl">●</span> Unit 35: Professional
-              Engineering Management*. *(Unit 35: Professional Engineering
-              Management is also the Pearson-set assignment unit)
-            </li>
-          </ul>
-          <p>
-            For the General Engineering pathway, students take the two mandatory
-            core units
+          <p className="mb-7">
+            {info?.isCourse
+              ? info?.course_details?.modules?.title
+              : info?.subject?.modules?.title}
           </p>
+          <ul className="mb-7">
+            {info?.isCourse
+              ? info?.course_details?.modules?.items?.map((x, i) => (
+                  <li key={i} className="">
+                    <span className="text-2xl">●</span> {x}
+                  </li>
+                ))
+              : info?.subject?.modules?.items?.map((x, i) => (
+                  <li key={i} className="">
+                    <span className="text-2xl">●</span> {x}
+                  </li>
+                ))}
+          </ul>
         </div>
         <div>
           <h3 className="title text-2xl mb-7">Assessment method</h3>
           <ul>
-            <li className="">
-              <span className="text-2xl">●</span> Internally assessed
-              centre-devised internal assignments
-            </li>
-            <li className="">
-              <span className="text-2xl">●</span> Internally assessed
-              Pearson-set Units
-            </li>
+            {info?.isCourse
+              ? info?.course_details?.assessment_method?.map((x, i) => (
+                  <li key={i} className="">
+                    <span className="text-2xl">●</span> {x}
+                  </li>
+                ))
+              : info?.subject?.assessment_method?.map((x, i) => (
+                  <li key={i} className="">
+                    <span className="text-2xl">●</span> {x}
+                  </li>
+                ))}
           </ul>
         </div>
       </div>

@@ -1,13 +1,14 @@
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Autoplay, Pagination} from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CourseCard from "@/components/Cards/CourseCard/CourseCard";
-import { urls } from "@/apis/config/urls.js";
+import {urls} from "@/apis/config/urls.js";
 
+// eslint-disable-next-line react/prop-types
 const Courses = ({ courses }) => {
   return (
     <section className="lg:py-24 py-14" id="courses">
@@ -37,6 +38,11 @@ const Courses = ({ courses }) => {
                 <div className="mb-14">
                   <CourseCard
                     rounded={true}
+                    params={{
+                      university: courses?._id,
+                      subject: x?.subject?._id,
+                      requirement: x?._id,
+                    }}
                     data={{
                       title: x?.subject?.name,
                       image: `${urls?.university_cover}/${courses?.cover}`,
@@ -52,7 +58,6 @@ const Courses = ({ courses }) => {
                         ? x?.course?.study_mode
                         : x?.subject?.study_mode,
                       ranking: courses?.ranking,
-                      class_starts: "2 March, 2024",
                       tuition_fee: x?.isCourse
                         ? x?.course?.fees
                         : x?.subject?.fees,

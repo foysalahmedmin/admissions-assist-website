@@ -25,6 +25,7 @@ const EducationalRequirements = () => {
   const { register } = useSelector((state) => state.progress);
   useEffect(() => {
     if (
+      education[0]?.body &&
       education[0]?.degree &&
       education[0]?.institute &&
       education[0]?.grade
@@ -32,6 +33,8 @@ const EducationalRequirements = () => {
       dispatch(SetRegister(register + 20));
     }
   }, [education?.length]);
+
+  console.log(education);
 
   const handleInputChange = (index, inputName, newValue) => {
     const updatedEducation = [...education];
@@ -75,16 +78,25 @@ const EducationalRequirements = () => {
             <select
               name={`educational_qualification_name_${index}`}
               value={x?.degree}
-              onChange={(e) =>
-                handleInputChange(index, "degree", e.target.value)
-              }
+              onChange={(e) => {
+                let groupValue =
+                  e.target.selectedOptions[0]?.parentNode?.dataset.groupvalue;
+
+                handleInputChange(index, "body", groupValue);
+                handleInputChange(index, "degree", e.target.value);
+                console.log("gdgdg", groupValue);
+              }}
               className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
               id={`educational_qualification_name_${index}`}
               required
             >
               <option value="">Select</option>
               {degrees?.map((d, index) => (
-                <optgroup key={index} label={d?._id?.name}>
+                <optgroup
+                  key={index}
+                  data-groupvalue={d?._id?.id}
+                  label={d?._id?.name}
+                >
                   {d?.degrees?.map((x) => (
                     <option key={x?._id} value={x?._id}>
                       {x?.name}

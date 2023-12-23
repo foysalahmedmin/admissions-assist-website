@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import {LuFilter} from "react-icons/lu";
 import {useState} from "react";
 import {useQuery} from "react-query";
@@ -38,7 +42,6 @@ const Filter = ({ filterSideToggle, handleSelect, selectedOptions }) => {
   const [locationLength, setLocationLength] = useState(3);
   const [sessionLength, setSessionLength] = useState(3);
   const [reqLength, setReqLength] = useState(false);
-  const [engReqLength, setEngReqLength] = useState(3);
   const [rankingLength, setRankingLength] = useState(3);
   const {
     course_types,
@@ -80,8 +83,6 @@ const Filter = ({ filterSideToggle, handleSelect, selectedOptions }) => {
     queryKey: ["search_filtered_sessions"],
     queryFn: () => fetchSearchFilteredSessions(),
   });
-
-  console.log(countries);
 
   return (
     <div className="w-full sm:w-96">

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 // vite.config.js
 import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
@@ -19,5 +23,8 @@ export default defineConfig({
         ".js": "jsx",
       },
     },
+  },
+  define: {
+    "process.env": process.env,
   },
 });

@@ -4,7 +4,7 @@
 
 let current =
   process.env.NODE_ENV === "development"
-    ? "https://cp.admissionsassist.com"
+    ? "http://localhost:5021"
     : "https://cp.admissionsassist.com";
 export const urls = {
   mainURL: `${current}`,
@@ -14,4 +14,5 @@ export const urls = {
   university_cover: `${current}/uploads/university/covers`,
   scholarship: `${current}/uploads/university/scholarship`,
   subject: `${current}/uploads/subject`,
+  submission: `${current}/uploads/submission`,
 };

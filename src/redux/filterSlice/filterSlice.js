@@ -8,6 +8,9 @@ export const filterSlice = createSlice({
   name: "filter",
   initialState: {
     search_tab: "universities",
+    university: {},
+    subject: "",
+    course: "",
     country: [],
     course_types: [],
     city: [],
@@ -25,6 +28,15 @@ export const filterSlice = createSlice({
   reducers: {
     SetSearchTab: (state, action) => {
       state.search_tab = action.payload;
+    },
+    SetUniversity: (state, action) => {
+      state.university = action.payload;
+    },
+    SetSubject: (state, action) => {
+      state.subject = action.payload;
+    },
+    SetCourse: (state, action) => {
+      state.course = action.payload;
     },
     SetCountry: (state, { payload }) => {
       let isAdded = state?.country?.some((x) => x?.value === payload?.value);
@@ -114,6 +126,9 @@ export const filterSlice = createSlice({
 });
 export const {
   SetSearchTab,
+  SetUniversity,
+  SetSubject,
+  SetCourse,
   SetCountry,
   SetCity,
   SetSession,

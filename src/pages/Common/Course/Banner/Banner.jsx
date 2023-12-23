@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import AvailableCourseModal from "@/components/AvailableCourseModal/AvailableCourseModal";
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
@@ -81,10 +85,14 @@ const Banner = ({ info }) => {
                       </div>
                       <div>
                         <h5 className="text-sm ">Session</h5>
-                        <p className="text-sm">
-                          {info?.university?.session?.session} (
-                          {info?.university?.session?.year})
-                        </p>
+                        {info?.university?.session?.session ? (
+                          <p className="text-sm">
+                            {info?.university?.session?.session} (
+                            {info?.university?.session?.year})
+                          </p>
+                        ) : (
+                          "No information"
+                        )}
                       </div>
                     </div>
                     <div className="flex gap-2">

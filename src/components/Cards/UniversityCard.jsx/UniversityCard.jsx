@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import {urls} from "@/apis/config/urls.js";
 import ComponentLoading from "@/components/Loading/ComponentLoading.jsx";
 import {useNavigate} from "react-router-dom";
@@ -5,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const UniversityCard = ({ data, isLoading, isSmall }) => {
   const navigation = useNavigate();
-  const { _id, image_url, title, course_quantity } = data;
+  const { _id, image_url, title, course_quantity, isAddress, ranking } = data;
   return (
     <div>
       {isLoading ? (
@@ -40,14 +44,23 @@ const UniversityCard = ({ data, isLoading, isSmall }) => {
                 src={`${urls?.university_cover}/${image_url}`}
                 alt=""
               />
-              <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
-                <div className="mt-auto">
-                  <h3 className="text-xl title text-white">{title}</h3>
-                  <p className="title text-sm text-white">
-                    {course_quantity} Courses{" "}
-                  </p>
+              {isAddress ? (
+                <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                  <div className="mt-auto">
+                    <h3 className="text-xl title text-white">{title}</h3>
+                    <p className="title text-sm text-white">{ranking} rank</p>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="absolute bottom-0 left-0 right-0 inset-12 bg-gradient-to-t from-[#121212] text-center text-white p-4 pb-12 flex flex-col ">
+                  <div className="mt-auto">
+                    <h3 className="text-xl title text-white">{title}</h3>
+                    <p className="title text-sm text-white">
+                      {course_quantity} Courses{" "}
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </>

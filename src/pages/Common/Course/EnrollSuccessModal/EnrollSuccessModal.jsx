@@ -1,7 +1,13 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Button from "@/components/Buttons/Button";
 import Modal from "@/components/Modal/Modal";
+import {useNavigate} from "react-router-dom";
 
 const EnrollModal = ({ isOpen, setIsOpen }) => {
+  const navigation = useNavigate();
   return (
     <Modal
       isOpen={isOpen}
@@ -14,6 +20,7 @@ const EnrollModal = ({ isOpen, setIsOpen }) => {
         <p className="mb-4">Fill out other steps of application</p>
         <Button
           className={"mx-auto"}
+          onClick={() => navigation("/application")}
           text={"Proceed to  Application"}
           icon={<span className="material-icons-outlined">trending_flat</span>}
         />

@@ -1,5 +1,9 @@
-import { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import {useEffect, useState} from "react";
+import {twMerge} from "tailwind-merge";
 
 const StarRating = ({
   rating,
@@ -15,10 +19,11 @@ const StarRating = ({
   const star_size = parseInt(starSize) || 24;
   const gap = starSize / 5;
   useEffect(() => {
+    setRating_show(rating);
     if (setRating) {
       setRating(rating_show);
     }
-  }, [rating_show]);
+  }, [rating_show, rating]);
   return (
     <div style={{ display: "flex", alignItems: "center", gap: gap + "px" }}>
       {Array.from(

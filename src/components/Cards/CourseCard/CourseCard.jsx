@@ -1,13 +1,18 @@
-import AvailableCourseModal from "@/components/AvailableCourseModal/AvailableCourseModal";
-import {useState} from "react";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import {BiAward, BiBookOpen, BiHistory, BiMoney, BiTimeFive,} from "react-icons/bi";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import Button from "@/components/Buttons/Button.jsx";
+import {FaArrowRight} from "react-icons/fa";
+import {urls} from "@/apis/config/urls.js";
 
 // eslint-disable-next-line react/prop-types
 const CourseCard = ({ data, params, rounded }) => {
   const navigation = useNavigate();
-  const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
-    useState(false);
+  // const [isAvailableCourseModalOpen, setIsAvailableCourseModalOpen] =
+  //   useState(false);
   const {
     title,
     image,
@@ -20,6 +25,7 @@ const CourseCard = ({ data, params, rounded }) => {
     study_mode,
     tuition_fee,
     ranking,
+    course_count,
   } = data;
 
   return (
@@ -29,7 +35,7 @@ const CourseCard = ({ data, params, rounded }) => {
           <div className="h-60 mb-7 relative">
             <img
               className="h-full w-full object-cover object-center"
-              src={image}
+              src={`${urls?.subject}/${image}`}
               alt=""
             />
             {duration && (
@@ -43,21 +49,21 @@ const CourseCard = ({ data, params, rounded }) => {
           </div>
           <div className="mb-7">
             <div className="mb-4">
-              <h3 className="title text-2xl mb-1">{title}</h3>
+              <h3 className="title text-xl mb-1">{title}</h3>
               <h3 className="title">{institution}</h3>
               <span className="text-sm">{bio}</span>
             </div>
             <div className="mb-4">
               <span
-                onClick={() => setIsAvailableCourseModalOpen(true)}
+                // onClick={() => setIsAvailableCourseModalOpen(true)}
                 className="text-primary-500 underline font-semibold cursor-pointer inline-block"
               >
-                2 Course options available
+                {course_count} Course options available
               </span>
-              <AvailableCourseModal
-                isOpen={isAvailableCourseModalOpen}
-                setIsOpen={setIsAvailableCourseModalOpen}
-              />
+              {/*<AvailableCourseModal*/}
+              {/*  isOpen={isAvailableCourseModalOpen}*/}
+              {/*  setIsOpen={setIsAvailableCourseModalOpen}*/}
+              {/*/>*/}
             </div>
             <div className="grid grid-cols-2 gap-7">
               <div className="flex items-center gap-4">
@@ -69,9 +75,7 @@ const CourseCard = ({ data, params, rounded }) => {
                   {session ? (
                     <p className="text-sm text-text-900">{session}</p>
                   ) : (
-                    <p className="text-sm text-text-100">
-                      No information for this field yet
-                    </p>
+                    <p className="text-sm text-text-100">No information</p>
                   )}
                 </div>
               </div>
@@ -84,9 +88,7 @@ const CourseCard = ({ data, params, rounded }) => {
                   {study_mode ? (
                     <p className="text-sm text-text-900">{study_mode}</p>
                   ) : (
-                    <p className="text-sm text-text-100">
-                      No information for this field yet
-                    </p>
+                    <p className="text-sm text-text-100">No information</p>
                   )}
                 </div>
               </div>
@@ -102,9 +104,7 @@ const CourseCard = ({ data, params, rounded }) => {
                       <div className="text-[.5rem] -mt-1 relative">th</div>
                     </div>
                   ) : (
-                    <p className="text-sm text-text-100">
-                      No information for this field yet
-                    </p>
+                    <p className="text-sm text-text-100">No information</p>
                   )}
                 </div>
               </div>
@@ -120,25 +120,28 @@ const CourseCard = ({ data, params, rounded }) => {
                       <span className="">{tuition_fee}</span>
                     </div>
                   ) : (
-                    <p className="text-sm text-text-100">
-                      No information for this field yet
-                    </p>
+                    <p className="text-sm text-text-100">No information</p>
                   )}
                 </div>
               </div>
             </div>
           </div>
+
           <div>
-            <Link to="/course/01">
-              {" "}
-              {/* Add the correct destination route */}
-              <button className="font-bold text-primary-500 animate-pop active:scale-95">
-                View Details +
-              </button>
-            </Link>
+            <Button
+              onClick={() =>
+                navigation(
+                  `/course/${params?.subject}/${params?.requirement}/${params?.university}`
+                )
+              }
+              text={"Details"}
+              icon={<FaArrowRight />}
+              className="secondary-btn-sm"
+            />
           </div>
         </div>
       )}
+
       {rounded && (
         <div className="rounded-3xl overflow-hidden bg-white">
           <div className="h-60 mb-7 relative">

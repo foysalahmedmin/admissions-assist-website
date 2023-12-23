@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import { createSlice } from "@reduxjs/toolkit";
 
 export const applicationFormSlice = createSlice({
@@ -36,6 +40,7 @@ export const applicationFormSlice = createSlice({
     },
     education: [
       {
+        level_3: false,
         body: "",
         degree: "",
         institute: "",

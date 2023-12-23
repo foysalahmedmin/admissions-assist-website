@@ -1,40 +1,24 @@
-import slide1 from "@/assets/images/university-slide-1.png";
-import slide2 from "@/assets/images/university-slide-2.png";
-import slide3 from "@/assets/images/university-slide-3.png";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Button from "@/components/Buttons/Button";
 import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {Autoplay, Navigation, Pagination} from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-const card_data = [
-  {
-    image_url: slide1,
-    title: "University of Oxford",
-    course_quantity: 65,
-  },
-  {
-    image_url: slide2,
-    title: "University of Essex",
-    course_quantity: 75,
-  },
-  {
-    image_url: slide3,
-    title: "University of Cambridge",
-    course_quantity: 37,
-  },
-  {
-    image_url: slide2,
-    title: "University of Essex",
-    course_quantity: 75,
-  },
-];
+import {useQuery} from "react-query";
+import {fetchTopUniversities} from "@/network/common/commonApi.js";
 
 const TopUniversities = () => {
+  const { data: universities } = useQuery({
+    queryKey: ["top_universities"],
+    queryFn: () => fetchTopUniversities(),
+  });
   return (
     <section className="lg:py-24 py-14">
       <div className="container mx-auto">
@@ -66,9 +50,16 @@ const TopUniversities = () => {
                 }}
                 className="top-universities-slider"
               >
-                {card_data.map((data, i) => (
+                {universities?.map((data, i) => (
                   <SwiperSlide key={i}>
-                    <UniversityCard data={data} />
+                    <UniversityCard
+                      data={{
+                        _id: data?._id,
+                        image_url: data?.cover,
+                        title: data?.name,
+                        course_quantity: data?.courses,
+                      }}
+                    />
                   </SwiperSlide>
                 ))}
               </Swiper>

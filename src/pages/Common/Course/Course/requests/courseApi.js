@@ -21,3 +21,55 @@ export async function fetchFilteredRequirement(uId, sId, _id) {
   );
   return response?.data;
 }
+
+export async function submitApplication({
+  session,
+  university,
+  subject,
+  course,
+}) {
+  const payload = {
+    session,
+    university,
+    subject,
+    ...(course && { course }),
+  };
+
+  const response = await base.post(
+    `/api/application/add_application`,
+    payload,
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  return response?.data;
+}
+
+export async function fetchMySuggestedUniversities({
+  page,
+  limit,
+  type,
+  points,
+  experience,
+  level_3,
+  ielts,
+}) {
+  const payload = {
+    page,
+    limit,
+    type,
+    points,
+    experience,
+    level_3,
+    ielts,
+  };
+
+  const response = await base.post(
+    `/api/requirement/get_suggested_universities`,
+    payload,
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+  return response?.data[0];
+}

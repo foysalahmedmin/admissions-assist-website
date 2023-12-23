@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Button from "@/components/Buttons/Button";
 import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
 import ContactAndResidencyDetails from "./Steps/ContactAndResidencyDetails";
@@ -7,12 +11,12 @@ import LanguageRequirements from "./Steps/LanguageRequirements";
 import NationalityDetails from "./Steps/NationalityDetails";
 import PersonalDetails from "./Steps/PersonalDetails";
 import WorkExperience from "./Steps/WorkExperience";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import { SetRegisterReset } from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
-import { useMutation } from "react-query";
-import { StudentRegister } from "@/pages/Authentication/requests/auth.js";
-import { useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {toast} from "react-toastify";
+import {SetRegisterReset} from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
+import {useMutation} from "react-query";
+import {StudentRegister} from "@/pages/Authentication/requests/auth.js";
+import {useNavigate} from "react-router-dom";
 
 const SignUpInfoForm = () => {
   const dispatch = useDispatch();
@@ -66,21 +70,25 @@ const SignUpInfoForm = () => {
         finance,
         education: education?.map((e) => {
           return {
-            degree: e?.degree,
+            level_3: e?.level_3,
+            ...(e?.body && { body: e?.body }),
+            ...(e?.degree && { degree: e?.degree }),
             institute: e?.institute,
             passing_year: e?.passing_year,
             grade: e?.grade,
           };
         }),
-        experience: experience?.map((x) => {
-          return {
-            title: x?.title,
-            company: x?.company,
-            working_from: x?.working_from,
-            working_to: x?.working_to,
-            stillWorking: x?.stillWorking,
-          };
-        }),
+        experience: experience
+          ?.filter((f) => f?.title && f?.company)
+          ?.map((x) => {
+            return {
+              title: x?.title,
+              company: x?.company,
+              working_from: x?.working_from,
+              working_to: x?.working_to,
+              stillWorking: x?.stillWorking,
+            };
+          }),
         ielts_certificate: english_language?.certificate,
         education_certificate: education?.map((e) => e?.certificate),
         experience_certificate: experience?.map((e) => e?.certificate),

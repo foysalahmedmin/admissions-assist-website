@@ -1,18 +1,27 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import groupTalk from "@/assets/images/icons/group-talk-sky-blue.svg";
 import madel from "@/assets/images/icons/madel-sky-blue.svg";
 import profileImg from "@/assets/images/profile.jpg";
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 import StarRating from "@/components/StarRating/StarRating";
-import {
-  BiLogoFacebook,
-  BiLogoInstagramAlt,
-  BiLogoLinkedin,
-} from "react-icons/bi";
-import { LuCalendarCheck, LuMessageCircle } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoLinkedin,} from "react-icons/bi";
+import {LuCalendarCheck, LuMessageCircle} from "react-icons/lu";
+import {Link} from "react-router-dom";
+import {useQuery} from "react-query";
+import {fetchStudentCouncilor} from "@/pages/Student/Application/requests/applicationApis.js";
+import {urls} from "@/apis/config/urls.js";
+import {useSelector} from "react-redux";
 
 const Banner = () => {
+  const { university } = useSelector((state) => state?.filter);
+  const { data: councilor } = useQuery({
+    queryKey: ["student_councilor"],
+    queryFn: () => fetchStudentCouncilor(),
+  });
   return (
     <BackgroundLayer image_url={"/background/application-banner.png"}>
       <div className="container mx-auto lg:py-24 py-14">
@@ -32,7 +41,10 @@ const Banner = () => {
                   <Link to={"/student"}>Application</Link>
                 </span>
                 {" : "}
-                <span> American International University</span>
+                <span>
+                  {" "}
+                  {university?.name ? university?.name : "select a application"}
+                </span>
               </div>
             </div>
           </div>
@@ -41,7 +53,7 @@ const Banner = () => {
               <div className="flex-shrink-0 h-20 w-20 hidden lg:block">
                 <img
                   className="h-full w-full object-cover object-center rounded-full"
-                  src={profileImg}
+                  src={`${urls?.user_photos}/${councilor?.councilor?.photo}`}
                   alt=""
                 />
               </div>
@@ -56,7 +68,9 @@ const Banner = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="title text-2xl mb-2">Musa Zain</h3>
+                      <h3 className="title text-2xl mb-2">
+                        {councilor?.councilor?.name}
+                      </h3>
                       <button className="py-1 px-4 rounded bg-primary-500 text-white text-sm">
                         <span>Councilor</span>
                       </button>
@@ -64,13 +78,28 @@ const Banner = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-4">
-                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
+                      <div
+                        onClick={() =>
+                          window.open(`${councilor?.councilor?.facebook}`)
+                        }
+                        className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer"
+                      >
                         <BiLogoFacebook className="text-xl" />
                       </div>
-                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
+                      <div
+                        onClick={() =>
+                          window.open(`${councilor?.councilor?.linkedin}`)
+                        }
+                        className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer"
+                      >
                         <BiLogoLinkedin className="text-xl" />
                       </div>
-                      <div className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer">
+                      <div
+                        onClick={() =>
+                          window.open(`${councilor?.councilor?.instagram}`)
+                        }
+                        className="h-7 w-7 rounded border border-text-500-300 hover:border-primary-500 text-text-300 hover:text-primary-500 flex items-center justify-center cursor-pointer"
+                      >
                         <BiLogoInstagramAlt className="text-xl" />
                       </div>
                     </div>
@@ -89,9 +118,9 @@ const Banner = () => {
                       <h5 className="text-sm text-text-300">
                         Students Counselled
                       </h5>
-                      {<p className="text-sm text-text-900">12</p> || (
-                        <p className="text-sm text-text-100">N/A</p>
-                      )}
+                      <p className="text-sm text-text-900">
+                        {councilor?.councilor?.counselled}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -104,12 +133,14 @@ const Banner = () => {
                     </div>
                     <div>
                       <h5 className="text-sm text-text-300">Rating</h5>
-                      {(
-                        <div className="flex gap-2 items-center">
-                          <StarRating rating={3.5} starSize={20} />{" "}
-                          <span>({5})</span>
-                        </div>
-                      ) || <p className="text-sm text-text-100">N/A</p>}
+                      <div className="flex gap-2 items-center">
+                        <StarRating
+                          out_of={5}
+                          rating={councilor?.councilor?.rating}
+                          starSize={20}
+                        />{" "}
+                        <span>({councilor?.councilor?.rating || 0})</span>
+                      </div>
                     </div>
                   </div>
                 </div>

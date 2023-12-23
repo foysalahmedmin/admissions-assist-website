@@ -1,13 +1,90 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Button from "@/components/Buttons/Button";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import EnrollModal from "../EnrollRequireModal/EnrollRequireModal";
-import { urls } from "@/apis/config/urls.js";
-import { useNavigate } from "react-router-dom";
+import EnrollSuccessModal from "../EnrollSuccessModal/EnrollSuccessModal.jsx";
+import {urls} from "@/apis/config/urls.js";
+import {useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCommonStudent} from "@/redux/studentSlice/studentSlice.js";
+import {studentType} from "@/helpers/studentType.js";
+import {toast} from "react-toastify";
+import moment from "moment";
+import {isInternationalStudentQualified, isLocalStudentQualified,} from "@/helpers/requirementStatus.js";
+import {useMutation} from "react-query";
+import {submitApplication} from "@/pages/Common/Course/Course/requests/courseApi.js";
 
 const CourseSummary = ({ info }) => {
+  const [student_type, setStudentType] = useState("");
   const navigation = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCommonStudent());
+  }, [dispatch]);
   const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+  const [isEnrollSuccessModalOpen, setIsEnrollSuccessModalOpen] =
+    useState(false);
+  const { userInfo } = useSelector((state) => state.student);
+  studentType().then((x) => setStudentType(x));
   const status = JSON.parse(localStorage.getItem("aa_website"));
+
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: submitApplication,
+  });
+  const handleApplication = async () => {
+    try {
+      if (!info?.university?.session?._id) {
+        return toast.warn("No session currently active");
+      }
+      let isExpired = moment(info?.university?.session?.end_date).isBefore(
+        new Date().toISOString()
+      );
+      if (isExpired) {
+        return toast.warn("Application Deadline Expired");
+      }
+      if (student_type === "local") {
+        let isRequirementMatch = isLocalStudentQualified(
+          info?.notRequiredLocal,
+          info?.local,
+          userInfo
+        );
+        if (isRequirementMatch) {
+          await mutateAsync({
+            session: info?.university?.session?._id,
+            university: info?.university?._id,
+            subject: info?.subject?._id,
+            course: info?.isCourse && info?.course_details?._id,
+          });
+          setIsEnrollSuccessModalOpen(true);
+        } else {
+          setIsEnrollModalOpen(true);
+        }
+      } else if (student_type === "international") {
+        let isRequirementMatch = isInternationalStudentQualified(
+          info?.notRequiredInternational,
+          info?.international,
+          info?.international_type,
+          userInfo
+        );
+        if (isRequirementMatch) {
+          await mutateAsync({
+            session: info?.university?.session?._id,
+            university: info?.university?._id,
+            subject: info?.subject?._id,
+            course: info?.isCourse && info?.course_details?._id,
+          });
+          setIsEnrollSuccessModalOpen(true);
+        } else {
+          setIsEnrollModalOpen(true);
+        }
+      }
+    } catch (error) {
+      toast.error(error?.message);
+    }
+  };
   return (
     <section className="py-7" id="course_summary">
       <div className="container mx-auto">
@@ -52,13 +129,16 @@ const CourseSummary = ({ info }) => {
                 </div>
                 <div className="py-7 px-7">
                   <Button
-                    onClick={() => {
+                    onClick={async () => {
                       if (status?.accessToken) {
-                        setIsEnrollModalOpen(true);
+                        await handleApplication();
+                        // setIsEnrollModalOpen(true);
                       } else {
                         navigation("/authentication/sign_up");
                       }
                     }}
+                    isLoading={isLoading}
+                    disabled={isLoading}
                     className={"mx-auto w-full"}
                     text={"Enroll Now"}
                     icon={
@@ -70,6 +150,15 @@ const CourseSummary = ({ info }) => {
                   <EnrollModal
                     isOpen={isEnrollModalOpen}
                     setIsOpen={setIsEnrollModalOpen}
+                    points={userInfo?.points}
+                    ielts={userInfo?.ielts}
+                    experience={userInfo?.experience}
+                    level_3={userInfo?.level_3}
+                    student_type={student_type}
+                  />
+                  <EnrollSuccessModal
+                    isOpen={isEnrollSuccessModalOpen}
+                    setIsOpen={setIsEnrollSuccessModalOpen}
                   />
                 </div>
               </div>

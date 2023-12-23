@@ -1,21 +1,67 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
-import { LuDownload } from "react-icons/lu";
+import {LuDownload} from "react-icons/lu";
+import {useQuery} from "react-query";
+import {fetchAppliedUniversities} from "@/pages/Student/Application/requests/applicationApis.js";
+import {useDispatch} from "react-redux";
+import {SetCourse, SetSubject, SetUniversity,} from "@/redux/filterSlice/filterSlice.js";
+import {SetApplication} from "@/redux/submissionSlice/submissionSlice.js";
 
 const Selector = () => {
+  const dispatch = useDispatch();
+  const { data: universities } = useQuery({
+    queryKey: ["applied_universities"],
+    queryFn: () => fetchAppliedUniversities(),
+  });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-7">
       <div>
         <h3 className="title text-2xl mb-4">Select A university to proceed</h3>
         <div>
           <select
-            type="text"
             name="graduation_year"
+            onChange={(e) => {
+              let university =
+                e.target.selectedOptions[0]?.parentNode?.dataset.university;
+              let university_name =
+                e.target.selectedOptions[0]?.parentNode?.dataset
+                  .university_name;
+              let subject =
+                e.target.selectedOptions[0]?.parentNode?.dataset.subject;
+              let application =
+                e.target.selectedOptions[0]?.parentNode?.dataset.application;
+              let course = e.target.value;
+              dispatch(
+                SetUniversity({ _id: university, name: university_name })
+              );
+              dispatch(SetSubject(subject ? subject : course));
+              dispatch(SetCourse(course));
+              dispatch(SetApplication(application));
+            }}
             className="px-7 py-4 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="graduation_year"
             required
           >
-            <option value="">Select University</option>
-            <option value="">American International University</option>
+            <option value="">Select Application</option>
+            {universities?.map((x, i) => (
+              <optgroup
+                key={i}
+                data-application={x?._id}
+                data-university_name={x?.university?.name}
+                data-university={x?.university?._id}
+                data-subject={x?.course?._id ? x?.subject?._id : ""}
+                label={x?.university?.name}
+              >
+                {x?.course?._id ? (
+                  <option value={x?.course?._id}>{x?.course?.name}</option>
+                ) : (
+                  <option value={x?.subject?._id}>{x?.subject?.name}</option>
+                )}
+              </optgroup>
+            ))}
           </select>
         </div>
       </div>

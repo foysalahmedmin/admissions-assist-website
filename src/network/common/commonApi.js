@@ -44,3 +44,8 @@ export async function fetchFilteredGrades() {
   const response = await base.get(`/api/grade/get_filtered_grades`);
   return response?.data;
 }
+
+export async function fetchTopUniversities() {
+  const response = await base.get(`/api/university/get_top_universities`);
+  return response?.data;
+}

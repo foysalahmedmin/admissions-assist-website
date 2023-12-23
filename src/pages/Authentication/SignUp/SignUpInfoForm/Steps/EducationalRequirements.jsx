@@ -1,15 +1,16 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Accordion from "@/components/Accordion/Accordion";
 import Button from "@/components/Buttons/Button";
-import { LuTrash2, LuUploadCloud } from "react-icons/lu";
-import { useQuery } from "react-query";
-import {
-  fetchFilteredGrades,
-  fetchGroupedDegrees,
-} from "@/network/common/commonApi.js";
-import { useDispatch, useSelector } from "react-redux";
-import { SetEducation } from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
-import { useEffect } from "react";
-import { SetRegister } from "@/redux/progressSlice/progressSlice.js";
+import {LuTrash2, LuUploadCloud} from "react-icons/lu";
+import {useQuery} from "react-query";
+import {fetchFilteredGrades, fetchGroupedDegrees,} from "@/network/common/commonApi.js";
+import {useDispatch, useSelector} from "react-redux";
+import {SetEducation} from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
+import {useEffect} from "react";
+import {SetRegister} from "@/redux/progressSlice/progressSlice.js";
 
 const EducationalRequirements = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,6 @@ const EducationalRequirements = () => {
     body,
     degree
   ) => {
-    console.log("onchange===>", { index, inputName, newValue });
     const updatedEducation = [...education];
     if (isCompound) {
       updatedEducation[index] = {
@@ -65,7 +65,6 @@ const EducationalRequirements = () => {
     updatedEducation.splice(index, 1);
     dispatch(SetEducation(updatedEducation));
   };
-  console.log(education);
   return (
     <Accordion
       title={"Educational Requirements"}
@@ -76,6 +75,24 @@ const EducationalRequirements = () => {
       {education?.map((x, index) => (
         <div key={index} className="mb-12">
           <div className="mb-7">
+            <div className="flex items-center gap-2 mb-7">
+              <input
+                value={x?.level_3}
+                onChange={(e) =>
+                  handleInputChange(index, "level_3", e.target.checked)
+                }
+                className="h-4 w-4 cursor-pointer"
+                type="checkbox"
+                name={`job_running_${index}`}
+                id={`job_running_${index}`}
+              />
+              <label
+                className="cursor-pointer"
+                htmlFor={`job_running_${index}`}
+              >
+                Do you have level 3 qualification ?
+              </label>
+            </div>
             <div className="flex items-center justify-between gap-4 mb-4">
               <label
                 htmlFor={`educational_qualification_name_${index}`}
@@ -93,6 +110,7 @@ const EducationalRequirements = () => {
             <select
               name={`educational_qualification_name_${index}`}
               value={x?.degree}
+              disabled={x?.level_3}
               onChange={(e) => {
                 let body =
                   e.target.selectedOptions[0]?.parentNode?.dataset.groupvalue;
@@ -104,7 +122,6 @@ const EducationalRequirements = () => {
                   body,
                   e.target.value
                 );
-                // handleInputChange(index, "degree", e.target.value);
               }}
               className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
               id={`educational_qualification_name_${index}`}
@@ -154,7 +171,7 @@ const EducationalRequirements = () => {
                 className="block mb-4"
               >
                 <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
-                  Graduation Year
+                  Passing Year
                 </span>
               </label>
               <input
@@ -233,6 +250,7 @@ const EducationalRequirements = () => {
               SetEducation([
                 ...education,
                 {
+                  level_3: false,
                   body: "",
                   degree: "",
                   institute: "",

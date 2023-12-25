@@ -91,3 +91,10 @@ export async function updateASubmission({
   );
   return response?.data;
 }
+
+export async function fetchApplicationPercentage(id) {
+  const response = await base.get(
+    `/api/application/get_applied_percentage/${id}`
+  );
+  return response?.data[0];
+}

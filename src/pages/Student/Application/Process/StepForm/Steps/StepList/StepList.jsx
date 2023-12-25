@@ -16,7 +16,9 @@ import {
 import {SetLists} from "@/redux/submissionSlice/submissionSlice.js";
 import {Tooltip} from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import {LuFlag} from "react-icons/lu";
 
+// eslint-disable-next-line react/prop-types
 const StepList = ({ info }) => {
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
@@ -27,18 +29,7 @@ const StepList = ({ info }) => {
     queryKey: ["step_status", application, processes, sl],
     queryFn: () => fetchStepStatus(application, processes, sl),
     onSuccess: (output) => {
-      if (
-        application === output?.application &&
-        processes === output?.processes &&
-        sl === output?.sl &&
-        lists?.length === 0
-      ) {
-        dispatch(SetLists(output?.lists));
-      } else if (
-        application !== output?.application &&
-        processes !== output?.processes &&
-        sl !== output?.sl
-      ) {
+      if (output?._id) {
         dispatch(SetLists(output?.lists));
       }
       // dispatch(SetLists(output?.lists));
@@ -132,7 +123,13 @@ const StepList = ({ info }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">{info?.activity}</h1>
+          <div className="flex flex-wrap gap-4 items-center">
+            <h1 className="title text-2xl max-w-[24rem]">{info?.activity}</h1>
+            <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
+              <LuFlag />
+              <span>Passport was not properly uploated</span>
+            </p>
+          </div>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">

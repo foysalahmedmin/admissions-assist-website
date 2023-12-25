@@ -5,16 +5,25 @@
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
 import {LuDownload} from "react-icons/lu";
 import {useQuery} from "react-query";
-import {fetchAppliedUniversities} from "@/pages/Student/Application/requests/applicationApis.js";
-import {useDispatch} from "react-redux";
+import {
+    fetchApplicationPercentage,
+    fetchAppliedUniversities,
+} from "@/pages/Student/Application/requests/applicationApis.js";
+import {useDispatch, useSelector} from "react-redux";
 import {SetCourse, SetSubject, SetUniversity,} from "@/redux/filterSlice/filterSlice.js";
 import {SetApplication} from "@/redux/submissionSlice/submissionSlice.js";
 
 const Selector = () => {
   const dispatch = useDispatch();
+  const { application } = useSelector((state) => state?.submission);
   const { data: universities } = useQuery({
     queryKey: ["applied_universities"],
     queryFn: () => fetchAppliedUniversities(),
+  });
+  const { data: percentage } = useQuery({
+    queryKey: ["application_percentage", application],
+    queryFn: () => fetchApplicationPercentage(application),
+    enabled: !!application,
   });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-7">
@@ -25,14 +34,14 @@ const Selector = () => {
             name="graduation_year"
             onChange={(e) => {
               let university =
-                e.target.selectedOptions[0]?.parentNode?.dataset.university;
+                e.target.selectedOptions[0]?.parentNode?.dataset?.university;
               let university_name =
                 e.target.selectedOptions[0]?.parentNode?.dataset
-                  .university_name;
+                  ?.university_name;
               let subject =
-                e.target.selectedOptions[0]?.parentNode?.dataset.subject;
+                e.target.selectedOptions[0]?.parentNode?.dataset?.subject;
               let application =
-                e.target.selectedOptions[0]?.parentNode?.dataset.application;
+                e.target.selectedOptions[0]?.parentNode?.dataset?.application;
               let course = e.target.value;
               dispatch(
                 SetUniversity({ _id: university, name: university_name })
@@ -74,13 +83,13 @@ const Selector = () => {
       <div>
         <div className="lg:max-w-[12rem] lg:ml-auto lg:text-center">
           <ProgressBarLinear
-            percentage={45}
+            percentage={percentage?.percentage || 0}
             strokeSize={8}
             className={"text"}
             percentSize={"2rem"}
           >
             <div className="mb-4">
-              <h3 className="title text-2xl">{45}%</h3>
+              <h3 className="title text-2xl">{percentage?.percentage || 0}%</h3>
               <strong className="title text-sm">Application Completed</strong>
             </div>
           </ProgressBarLinear>

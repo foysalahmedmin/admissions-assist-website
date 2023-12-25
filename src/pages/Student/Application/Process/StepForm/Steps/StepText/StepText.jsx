@@ -15,6 +15,7 @@ import {SetLists} from "@/redux/submissionSlice/submissionSlice.js";
 import {useDispatch, useSelector} from "react-redux";
 import {toast} from "react-toastify";
 import {Tooltip} from "react-tooltip";
+import {LuFlag} from "react-icons/lu";
 
 const StepText = ({ info }) => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const StepText = ({ info }) => {
   const { data: status } = useQuery({
     queryKey: ["step_status", application, processes, sl],
     queryFn: () => fetchStepStatus(application, processes, sl),
-    onSuccess: (output) => {
+    onSuccess: () => {
       dispatch(SetLists([]));
     },
   });
@@ -101,7 +102,15 @@ const StepText = ({ info }) => {
     <div>
       <div>
         <div>
-          <h1 className="title text-2xl">{info?.activity}</h1>
+          <div className="flex flex-wrap gap-4 items-center">
+            <h1 className="title text-2xl max-w-[24rem]">{info?.activity}</h1>
+            {status?.is_declined && (
+              <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
+                <LuFlag />
+                <span>{status?.declined_reason}</span>
+              </p>
+            )}
+          </div>
         </div>
         <hr className="mt-4 mb-7" />
         <div className="mb-7">

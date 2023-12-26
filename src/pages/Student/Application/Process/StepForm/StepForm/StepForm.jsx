@@ -7,7 +7,6 @@ import {useSelector} from "react-redux";
 import {useQuery} from "react-query";
 import {fetchOneProcesses} from "@/pages/Student/Application/requests/applicationApis.js";
 import Loading from "@/components/Loading/Loading.jsx";
-import useDownloader from "react-use-downloader";
 
 const StepList = lazy(() =>
   import(
@@ -22,10 +21,7 @@ const StepText = lazy(() =>
 );
 
 const StepForm = () => {
-  const { size, elapsed, percentage, download, cancel, error, isInProgress } =
-    useDownloader();
   const { stepTab } = useSelector((state) => state?.processes);
-
   const { data: currentProcess } = useQuery({
     queryKey: ["one_process", stepTab?._id],
     queryFn: () => fetchOneProcesses(stepTab?._id),

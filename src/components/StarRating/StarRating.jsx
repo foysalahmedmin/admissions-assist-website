@@ -19,20 +19,20 @@ const StarRating = ({
   const star_size = parseInt(starSize) || 24;
   const gap = starSize / 5;
   useEffect(() => {
-    setRating_show(rating);
+    !setRating && setRating_show(rating);
     if (setRating) {
       setRating(rating_show);
     }
   }, [rating_show, rating]);
   return (
     <div style={{ display: "flex", alignItems: "center", gap: gap + "px" }}>
-      {Array.from(
+      {Array?.from(
         Array(
-          Math.floor(
+          Math?.floor(
             (out_of || 5) < rating_show ? out_of || 5 : rating_show || 0
           )
         ).keys()
-      ).map((x, i) => (
+      )?.map((x, i) => (
         <span
           onClick={() => setRating_show(i + 1)}
           key={i}

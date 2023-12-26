@@ -9,6 +9,7 @@ import {toast} from "react-toastify";
 import {useDispatch, useSelector} from "react-redux";
 import {useMutation, useQuery, useQueryClient} from "react-query";
 import {
+  fetchOneApplicationFeedback,
   fetchStepStatus,
   submitAProcess,
   updateASubmission,
@@ -17,11 +18,15 @@ import {SetLists} from "@/redux/submissionSlice/submissionSlice.js";
 import {Tooltip} from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import {LuFlag} from "react-icons/lu";
+import {useState} from "react";
+import FeedbackModal from "@/pages/Student/Application/Process/Feedback/FeedbackModal.jsx";
 
 // eslint-disable-next-line react/prop-types
 const StepList = ({ info }) => {
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
+  const { last_step } = useSelector((state) => state.processes);
   const { application, processes, sl, text, attachment, date, lists } =
     useSelector((state) => state?.submission);
 
@@ -34,6 +39,12 @@ const StepList = ({ info }) => {
       }
       // dispatch(SetLists(output?.lists));
     },
+  });
+
+  const { data: feedback } = useQuery({
+    queryKey: ["one_feedback", application],
+    queryFn: () => fetchOneApplicationFeedback(application),
+    enabled: !!application,
   });
 
   const { isLoading, mutateAsync } = useMutation({
@@ -125,10 +136,12 @@ const StepList = ({ info }) => {
         <div>
           <div className="flex flex-wrap gap-4 items-center">
             <h1 className="title text-2xl max-w-[24rem]">{info?.activity}</h1>
-            <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
-              <LuFlag />
-              <span>Passport was not properly uploated</span>
-            </p>
+            {status?.is_declined && (
+              <p className="bg-[#FFDEDE] text-[#FF2222] inline-flex items-center gap-2 px-4 py-1 rounded-full">
+                <LuFlag />
+                <span>{status?.declined_reason}</span>
+              </p>
+            )}
           </div>
         </div>
         <hr className="mt-4 mb-7" />
@@ -136,7 +149,7 @@ const StepList = ({ info }) => {
           <Table lists={info?.lists} instruction={info?.instructions} />
         </div>
         <div>
-          {status?._id ? (
+          {status?._id && !status?.is_approved && (
             <Button
               disabled={updateLoading || status?.is_approved}
               isLoading={updateLoading}
@@ -148,7 +161,8 @@ const StepList = ({ info }) => {
                 <span className="material-icons-outlined">trending_flat</span>
               }
             />
-          ) : (
+          )}
+          {!status?._id && (
             <Button
               disabled={isLoading || status?.is_approved}
               isLoading={isLoading}
@@ -161,6 +175,29 @@ const StepList = ({ info }) => {
               }
             />
           )}
+          {status?._id &&
+            status?.is_approved &&
+            last_step === status?.sl &&
+            !feedback?._id && (
+              <div className="ml-5">
+                <span>you have completed all steps, please give us </span>
+                <span
+                  onClick={() => setIsFeedbackModalOpen(true)}
+                  className="text-secondary-500 cursor-pointer"
+                >
+                  Feedback
+                </span>
+              </div>
+            )}
+          {status?._id &&
+            status?.is_approved &&
+            last_step === status?.sl &&
+            feedback?._id && (
+              <div className="ml-5">
+                <span>Thanks for your valuable </span>
+                <span className="text-secondary-500">Feedback</span>
+              </div>
+            )}
         </div>
         <Tooltip
           id="save-my-tooltip"
@@ -177,6 +214,10 @@ const StepList = ({ info }) => {
             !status?.is_approved &&
             "waiting for councilor approval, min time you can edit"
           }
+        />
+        <FeedbackModal
+          isOpen={isFeedbackModalOpen}
+          setIsOpen={setIsFeedbackModalOpen}
         />
       </div>
       <FAQ data={info?.faqs} title={info?.name} />

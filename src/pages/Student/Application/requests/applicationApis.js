@@ -98,3 +98,35 @@ export async function fetchApplicationPercentage(id) {
   );
   return response?.data[0];
 }
+
+//Feedback
+
+export async function createFeedback({
+  application,
+  councilor_experience,
+  councilor_response,
+  informative,
+  software_experience,
+  feedback,
+}) {
+  const payload = {
+    application,
+    councilor_experience,
+    councilor_response,
+    informative,
+    software_experience,
+    feedback,
+  };
+
+  const response = await base.post(`/api/feedback/add_feedback`, payload, {
+    headers: { "Content-Type": "application/json" },
+  });
+  return response?.data;
+}
+
+export async function fetchOneApplicationFeedback(application) {
+  const response = await base.get(
+    `/api/feedback/get_one_application_feedback?application=${application}`
+  );
+  return response?.data[0];
+}

@@ -7,6 +7,7 @@ import Button from "@/components/Buttons/Button.jsx";
 import FAQ from "@/pages/Student/Application/Process/StepForm/Steps/FAQ/FAQ.jsx";
 import {useMutation, useQuery, useQueryClient} from "react-query";
 import {
+  fetchOneApplicationFeedback,
   fetchStepStatus,
   submitAProcess,
   updateASubmission,
@@ -16,8 +17,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {toast} from "react-toastify";
 import {Tooltip} from "react-tooltip";
 import {LuFlag} from "react-icons/lu";
+import {useState} from "react";
+import FeedbackModal from "@/pages/Student/Application/Process/Feedback/FeedbackModal.jsx";
 
+// eslint-disable-next-line react/prop-types
 const StepText = ({ info }) => {
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState(false);
   const dispatch = useDispatch();
   const queryClient = useQueryClient();
   const {
@@ -30,12 +35,18 @@ const StepText = ({ info }) => {
     date,
     lists,
   } = useSelector((state) => state?.submission);
+  const { last_step } = useSelector((state) => state.processes);
   const { data: status } = useQuery({
     queryKey: ["step_status", application, processes, sl],
     queryFn: () => fetchStepStatus(application, processes, sl),
     onSuccess: () => {
       dispatch(SetLists([]));
     },
+  });
+  const { data: feedback } = useQuery({
+    queryKey: ["one_feedback", application],
+    queryFn: () => fetchOneApplicationFeedback(application),
+    enabled: !!application,
   });
   const { isLoading, mutateAsync } = useMutation({
     mutationFn: submitAProcess,
@@ -97,7 +108,6 @@ const StepText = ({ info }) => {
       toast.error(error?.response?.data?.error?.message);
     }
   };
-
   return (
     <div>
       <div>
@@ -123,19 +133,7 @@ const StepText = ({ info }) => {
           />
         </div>
         <div>
-          {status?._id ? (
-            <Button
-              disabled={updateLoading || status?.is_approved}
-              isLoading={updateLoading}
-              onClick={handleUpdate}
-              type={"submit"}
-              text={"Update"}
-              data-tooltip-id="update-my-tooltip"
-              icon={
-                <span className="material-icons-outlined">trending_flat</span>
-              }
-            />
-          ) : (
+          {!status?._id && (
             <Button
               disabled={isLoading || status?.is_approved}
               isLoading={isLoading}
@@ -148,6 +146,42 @@ const StepText = ({ info }) => {
               }
             />
           )}
+          {status?._id && !status?.is_approved && (
+            <Button
+              disabled={updateLoading || status?.is_approved}
+              isLoading={updateLoading}
+              onClick={handleUpdate}
+              type={"submit"}
+              text={"Update"}
+              data-tooltip-id="update-my-tooltip"
+              icon={
+                <span className="material-icons-outlined">trending_flat</span>
+              }
+            />
+          )}
+          {status?._id &&
+            status?.is_approved &&
+            last_step === status?.sl &&
+            !feedback?._id && (
+              <div className="ml-5">
+                <span>you have completed all steps, please give us </span>
+                <span
+                  onClick={() => setIsFeedbackModalOpen(true)}
+                  className="text-secondary-500 cursor-pointer"
+                >
+                  Feedback
+                </span>
+              </div>
+            )}
+          {status?._id &&
+            status?.is_approved &&
+            last_step === status?.sl &&
+            feedback?._id && (
+              <div className="ml-5">
+                <span>Thanks for your valuable </span>
+                <span className="text-secondary-500">Feedback</span>
+              </div>
+            )}
         </div>
         <Tooltip
           id="save-my-tooltip"
@@ -164,6 +198,10 @@ const StepText = ({ info }) => {
             !status?.is_approved &&
             "waiting for councilor approval, min time you can edit"
           }
+        />
+        <FeedbackModal
+          isOpen={isFeedbackModalOpen}
+          setIsOpen={setIsFeedbackModalOpen}
         />
       </div>
       <FAQ data={info?.faqs} title={info?.name} />

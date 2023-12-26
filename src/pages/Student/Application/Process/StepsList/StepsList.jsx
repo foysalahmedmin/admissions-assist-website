@@ -13,6 +13,7 @@ import {
     SetText,
 } from "@/redux/submissionSlice/submissionSlice.js";
 
+// eslint-disable-next-line react/prop-types
 const StepsList = ({ steps, setIsFormShow }) => {
   const dispatch = useDispatch();
   const { stepTab } = useSelector((state) => state?.processes);

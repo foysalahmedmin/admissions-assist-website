@@ -9,7 +9,7 @@ import StepsList from "../StepsList/StepsList";
 import {useQuery} from "react-query";
 import {fetchApplicationProcesses} from "@/pages/Student/Application/requests/applicationApis.js";
 import {useDispatch, useSelector} from "react-redux";
-import {SetStepTab} from "@/redux/processSlice/processSlice.js";
+import {SetLastStep, SetStepTab} from "@/redux/processSlice/processSlice.js";
 import {SetProcesses, SetSl,} from "@/redux/submissionSlice/submissionSlice.js";
 
 const Process = () => {
@@ -28,6 +28,7 @@ const Process = () => {
         dispatch(SetProcesses(output?.find((x) => x?.sl === 1)?._id));
         dispatch(SetSl(output?.find((x) => x?.sl === 1)?.sl));
       }
+      dispatch(SetLastStep(Math.max(...output?.map((x) => x?.sl))));
     },
   });
   return (
@@ -61,12 +62,7 @@ const Process = () => {
                 </span>
               </div>
               <div className="h-[calc(100vh-11.25rem)] lg:h-auto overflow-y-auto scroll-hidden">
-                <StepForm
-                  steps={steps}
-                  // setSteps={setSteps}
-                  // stepTab={stepTab}
-                  // setStepTab={setStepTab}
-                />
+                <StepForm />
               </div>
             </div>
           </div>

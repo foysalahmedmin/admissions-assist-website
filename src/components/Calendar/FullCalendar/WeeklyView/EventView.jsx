@@ -1,10 +1,14 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import courseImg1 from "@/assets/images/calendar-course-1.png";
 import courseImg2 from "@/assets/images/calendar-course-2.png";
 import courseImg from "@/assets/images/calendar-course.png";
-import { format } from "date-fns";
-import { useEffect, useRef, useState } from "react";
-import { BiLogoZoom } from "react-icons/bi";
+import {format} from "date-fns";
+import {useEffect, useRef, useState} from "react";
 import EventModal from "../EventModal/EventModal";
+import {BiLogoZoom} from "react-icons/bi";
 
 const EventView = ({ event }) => {
   const [gap, setGap] = useState({});
@@ -45,7 +49,7 @@ const EventView = ({ event }) => {
 
   return (
     <div ref={timeBlockRef} className="relative flex-1">
-      {event?.type == "course" ? (
+      {event?.type === "course" ? (
         <div
           onClick={() => setIsEventModalOpen(true)}
           style={{
@@ -90,15 +94,15 @@ const EventView = ({ event }) => {
         <div
           onClick={() => setIsEventModalOpen(true)}
           style={{
-            height: `${3.5 * (gap?.hours + 1) - 1}rem`,
-            width: `${timeBlockWidth * (gap?.days + 1) - 16}px`,
+            height: `${3.5 * (gap?.hours + 1) - 0.5}rem`,
+            width: `${timeBlockWidth * (gap?.days + 1) - 8}px`,
           }}
-          className="absolute top-2 left-2 right-2 bg-[#01D7DF] rounded-2xl py-4 px-2 lg:px-4 flex flex-col"
+          className="absolute top-1 button-1 left-1 right-1 bg-[#01D7DF] rounded-2xl py-2 px-1 lg:px-4 flex flex-col"
         >
           <div>
-            <h5 className="title text-sm md:text-base mb-2">{event.title}</h5>
+            <h5 className="title text-sm md:text-base mb-1">{event?.title}</h5>
             {event?.platform && (
-              <div className="inline-flex flex-wrap gap-2 items-center justify-center p-2 rounded-xl bg-white bg-opacity-40">
+              <div className="inline-flex flex-wrap gap-2 items-center justify-center px-2 py-2 rounded-xl bg-white bg-opacity-40">
                 <div className="h-5 w-5 rounded bg-[#4087FC] text-white flex items-center justify-center">
                   <BiLogoZoom />
                 </div>
@@ -108,7 +112,7 @@ const EventView = ({ event }) => {
               </div>
             )}
           </div>
-          <div className="mt-auto">
+          <div className="mt-auto flex flex-wrap items-center gap-1">
             <span className="block text-text-900 font-semibold text-sm">
               {format(event.start, "EEE")}
             </span>

@@ -16,6 +16,7 @@ import {SetApplication} from "@/redux/submissionSlice/submissionSlice.js";
 const Selector = () => {
   const dispatch = useDispatch();
   const { application } = useSelector((state) => state?.submission);
+  const { subject, course } = useSelector((state) => state?.filter);
   const { data: universities } = useQuery({
     queryKey: ["applied_universities"],
     queryFn: () => fetchAppliedUniversities(),
@@ -65,9 +66,13 @@ const Selector = () => {
                 label={x?.university?.name}
               >
                 {x?.course?._id ? (
-                  <option value={x?.course?._id}>{x?.course?.name}</option>
+                  <option value={x?.course?._id || course}>
+                    {x?.course?.name}
+                  </option>
                 ) : (
-                  <option value={x?.subject?._id}>{x?.subject?.name}</option>
+                  <option value={x?.subject?._id || subject}>
+                    {x?.subject?.name}
+                  </option>
                 )}
               </optgroup>
             ))}

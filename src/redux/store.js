@@ -10,6 +10,7 @@ import tableReducer from "./tableSlice/tableSlice.js";
 import studentCommonReducer from "./studentSlice/studentSlice.js";
 import processesReducer from "./processSlice/processSlice.js";
 import submissionReducer from "./submissionSlice/submissionSlice.js";
+import calenderReducer from "./calenderSlice/calenderSlice.js";
 
 export default configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export default configureStore({
     student: studentCommonReducer,
     processes: processesReducer,
     submission: submissionReducer,
+    calender: calenderReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

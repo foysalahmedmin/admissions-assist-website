@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import Loading from "@/components/Loading/Loading";
 import {lazy, Suspense} from "react";
 import {createBrowserRouter} from "react-router-dom";
@@ -5,6 +9,8 @@ import {createBrowserRouter} from "react-router-dom";
 /* Layouts */
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
+const Meet = lazy(() => import("@/layout/Meet.jsx"));
+const MeetBody = lazy(() => import("@/pages/ChatSystem/Meet/Meet.jsx"));
 // const Student = lazy(() => import("@/layout/Student"));
 const ChatSystem = lazy(() => import("@/layout/ChatSystem"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
@@ -74,6 +80,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/meet",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Meet />
           </Suspense>
         ),
       },
@@ -190,15 +204,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // {
-  //   path: "/student",
-  //   element: (
-  //     <Suspense fallback={<Loading />}>
-  //       <Student />
-  //     </Suspense>
-  //   ),
-  //   children: [],
-  // },
   {
     path: "/chat_system",
     //no_need
@@ -275,6 +280,26 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <SignUp />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/meet/:id/:title",
+    //no_need
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Meet />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "",
+        //done
+        element: (
+          <Suspense fallback={<Loading />}>
+            <MeetBody />
           </Suspense>
         ),
       },

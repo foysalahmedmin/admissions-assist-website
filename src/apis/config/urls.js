@@ -15,4 +15,5 @@ export const urls = {
   scholarship: `${current}/uploads/university/scholarship`,
   subject: `${current}/uploads/subject`,
   submission: `${current}/uploads/submission`,
+  student: `${current}/uploads/student/photo`,
 };

@@ -1,9 +1,15 @@
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
-import { LuCalendarCheck } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import {LuCalendarCheck} from "react-icons/lu";
+import ScheduleModal from "@/pages/Student/Profile/Appointment/ScheduleModal.jsx";
+import {useState} from "react";
 
 const Appointment = () => {
+  const [isScheduleModal, setIsScheduleModal] = useState(false);
   return (
     <>
       <BackgroundLayer
@@ -24,16 +30,19 @@ const Appointment = () => {
                 </p>
               </div>
               <div>
-                <Link to={"/student/book_session"}>
-                  <Button
-                    className={"ml-auto"}
-                    text={"Book a Session"}
-                    icon={<LuCalendarCheck className="text-xl" />}
-                  />
-                </Link>
+                <Button
+                  onClick={() => setIsScheduleModal(true)}
+                  className={"ml-auto"}
+                  text={"Book a Session"}
+                  icon={<LuCalendarCheck className="text-xl" />}
+                />
               </div>
             </div>
           </div>
+          <ScheduleModal
+            isOpen={isScheduleModal}
+            setIsOpen={setIsScheduleModal}
+          />
         </div>
       </BackgroundLayer>
     </>

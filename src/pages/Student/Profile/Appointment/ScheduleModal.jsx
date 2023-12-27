@@ -1,9 +1,69 @@
-import Modal from "@/components/Modal/Modal";
-import { useRef } from "react";
-import { LuCalendar, LuClock, LuMapPin } from "react-icons/lu";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
 
+import Modal from "@/components/Modal/Modal";
+import {useState} from "react";
+import {LuCalendar, LuCalendarCheck, LuClock, LuMapPin} from "react-icons/lu";
+import {toast} from "react-toastify";
+import {useMutation} from "react-query";
+import {createStudentMeeting} from "@/pages/Student/Profile/requests/profileApis.js";
+import Button from "@/components/Buttons/Button.jsx";
+import {useNavigate} from "react-router-dom";
+
+// eslint-disable-next-line react/prop-types
 const ScheduleModal = ({ isOpen, setIsOpen }) => {
-  const dateInput = useRef(null);
+  const navigation = useNavigate();
+  const [title, setTitle] = useState("");
+  const [start_date, setStartDate] = useState("");
+  const [end_date, setEndDate] = useState("");
+  const [start_time, setStartTime] = useState("");
+  const [end_time, setEndTime] = useState("");
+  const [location, setLocation] = useState("");
+  const [isOnline, setIsOnline] = useState(false);
+  const [description, setDescription] = useState("");
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: createStudentMeeting,
+    onSuccess: () => {
+      setIsOpen(false);
+      navigation("/chat_system/calendar");
+    },
+  });
+  const handleSave = async () => {
+    try {
+      if (!title || !start_date || !end_date || !start_time || !end_time) {
+        return toast.warn(
+          `No ${
+            (!title && "title") ||
+            (!title && "title") ||
+            (!start_date && "start_date") ||
+            (!end_date && "end_date") ||
+            (!start_time && "start_time") ||
+            (!end_time && "end_time")
+          }`
+        );
+      }
+      const status = await mutateAsync({
+        title,
+        start_date: new Date(start_date + " " + start_time).toISOString(),
+        end_date: new Date(end_date + " " + end_time).toISOString(),
+        location,
+        isOnline,
+        description,
+      });
+      toast.success(status?.message);
+      setTitle("");
+      setStartDate("");
+      setEndDate("");
+      setStartTime("");
+      setEndTime("");
+      setLocation("");
+      setIsOnline(false);
+      setDescription("");
+    } catch (error) {
+      toast.error(error?.message);
+    }
+  };
   return (
     <>
       <Modal
@@ -14,7 +74,7 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
       >
         <div>
           <div className="w-full bg-primary-500 text-white px-7 py-4">
-            <h3 className="title text-white text-2xl">New Meeting</h3>
+            <h3 className="title text-white text-2xl">New Schedule</h3>
           </div>
           <div className="bg-white px-7 py-7">
             <div className="mb-4">
@@ -28,6 +88,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                 <input
                   className="py-3 w-full bg-transparent outline-none"
                   type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
                   name="meeting_title"
                   id="meeting_title"
                   placeholder="Enter meeting title"
@@ -51,6 +113,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                     <LuCalendar className="text-2xl" />
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
+                      value={start_date}
+                      onChange={(e) => setStartDate(e.target.value)}
                       className="py-3 w-full bg-transparent outline-none icon-none"
                       type="date"
                       name="meeting_start_date"
@@ -64,6 +128,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   >
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
+                      value={start_time}
+                      onChange={(e) => setStartTime(e.target.value)}
                       className="py-3 w-full bg-transparent outline-none icon-none"
                       type="time"
                       name="meeting_start_time"
@@ -84,6 +150,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                     <LuCalendar className="text-2xl" />
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
+                      value={end_date}
+                      onChange={(e) => setEndDate(e.target.value)}
                       className="py-3 w-full bg-transparent outline-none icon-none"
                       type="date"
                       name="meeting_end_date"
@@ -97,6 +165,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   >
                     <input
                       onClick={(e) => e.currentTarget.showPicker()}
+                      value={end_time}
+                      onChange={(e) => setEndTime(e.target.value)}
                       className="py-3 w-full bg-transparent outline-none icon-none"
                       type="time"
                       name="meeting_end_time"
@@ -118,9 +188,11 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   <input
                     className="sm:py-3 w-full bg-transparent outline-none"
                     type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
                     name="location"
                     id="location"
-                    placeholder="Enter meeting title"
+                    placeholder="Enter meeting location"
                     required
                   />
                 </div>
@@ -135,6 +207,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input
                       type="checkbox"
+                      checked={isOnline}
+                      onChange={(e) => setIsOnline(e.target.checked)}
                       value=""
                       className="sr-only peer"
                       id="online_meeting_witch"
@@ -154,7 +228,8 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
               <div className="px-4 flex items-center gap-2 text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 text-sm">
                 <textarea
                   className="py-3 w-full bg-transparent outline-none resize-none"
-                  type="text"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                   name="meeting_details"
                   id="meeting_details"
                   placeholder="Start writing here"
@@ -163,6 +238,14 @@ const ScheduleModal = ({ isOpen, setIsOpen }) => {
                 ></textarea>
               </div>
             </div>
+            <Button
+              onClick={handleSave}
+              isLoading={isLoading}
+              disabled={isLoading}
+              className={"ml-auto bg-primary-500"}
+              text={"Book a Session"}
+              icon={<LuCalendarCheck className="text-xl text-sm" />}
+            />
           </div>
         </div>
       </Modal>

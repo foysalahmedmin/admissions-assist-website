@@ -1,47 +1,33 @@
-import { addDays, addMonths, subDays, subMonths } from "date-fns";
-import { useState } from "react";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import {addDays, addMonths, subDays, subMonths} from "date-fns";
 import AgendaView from "./AgendaView/AgendaView";
 import CalendarHeader from "./CalendarHeader/CalendarHeader";
 import DailyView from "./DailyView/DailyView";
 import MonthlyView from "./MonthlyView/MonthlyView";
 import WeeklyView from "./WeeklyView/WeeklyView";
+import {useDispatch, useSelector} from "react-redux";
+import {SetCalenderDate} from "@/redux/calenderSlice/calenderSlice.js";
 
-const Calendar = ({ Events }) => {
+const Calendar = ({ events }) => {
+  const dispatch = useDispatch();
   const today = new Date();
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [view, setView] = useState("monthly");
-  const [events, setEvents] = useState(
-    Events || [
-      {
-        start: new Date(2023, 9, 29, 6, 30),
-        end: new Date(2023, 9, 29, 9, 0),
-        title: "Webinar",
-        platform: "zoom",
-        type: "meeting",
-      },
-      {
-        start: new Date(2023, 10, 1, 11, 0),
-        end: new Date(2023, 10, 3, 12, 0),
-        title: "App Development Course",
-        platform: null,
-        type: "course",
-      },
-    ]
-  );
-
+  const { date, view } = useSelector((state) => state.calender);
   const next = () => {
     if (view === "monthly") {
-      setCurrentDate(addMonths(currentDate, 1));
+      dispatch(SetCalenderDate(addMonths(date, 1)));
     } else if (view === "weekly" || view === "daily") {
-      setCurrentDate(addDays(currentDate, 7));
+      dispatch(SetCalenderDate(addDays(date, 7)));
     }
   };
 
   const prev = () => {
     if (view === "monthly") {
-      setCurrentDate(subMonths(currentDate, 1));
+      dispatch(SetCalenderDate(subMonths(date, 1)));
     } else if (view === "weekly" || view === "daily") {
-      setCurrentDate(subDays(currentDate, 7));
+      dispatch(SetCalenderDate(subDays(date, 7)));
     }
   };
 
@@ -50,10 +36,10 @@ const Calendar = ({ Events }) => {
       <div>
         <CalendarHeader
           view={view}
-          setView={setView}
+          // setView={setView}
           today={today}
-          currentDate={currentDate}
-          setCurrentDate={setCurrentDate}
+          // currentDate={currentDate}
+          // setCurrentDate={setCurrentDate}
           events={events}
           next={next}
           prev={prev}
@@ -63,24 +49,24 @@ const Calendar = ({ Events }) => {
         {view === "monthly" && (
           <MonthlyView
             today={today}
-            currentDate={currentDate}
-            setCurrentDate={setCurrentDate}
+            // currentDate={currentDate}
+            // setCurrentDate={setCurrentDate}
             events={events}
           />
         )}
         {view === "weekly" && (
           <WeeklyView
             today={today}
-            currentDate={currentDate}
-            setCurrentDate={setCurrentDate}
+            // currentDate={currentDate}
+            // setCurrentDate={setCurrentDate}
             events={events}
           />
         )}
         {view === "daily" && (
           <DailyView
             today={today}
-            currentDate={currentDate}
-            setCurrentDate={setCurrentDate}
+            // currentDate={currentDate}
+            // setCurrentDate={setCurrentDate}
             events={events}
           />
         )}

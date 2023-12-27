@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@jitsi/react-sdk": "^1.4.0",
     "@preact/signals": "^1.2.1",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.2",

@@ -1,20 +1,19 @@
-import {
-  addDays,
-  endOfMonth,
-  endOfWeek,
-  startOfMonth,
-  startOfWeek,
-  subDays,
-} from "date-fns";
-import { useEffect, useState } from "react";
-import Day from "./Day";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
 
-const MonthlyView = ({ today, currentDate, events }) => {
+import {addDays, endOfMonth, endOfWeek, startOfMonth, startOfWeek, subDays,} from "date-fns";
+import {useEffect, useState} from "react";
+import Day from "./Day";
+import {useSelector} from "react-redux";
+
+const MonthlyView = ({ today, events }) => {
+  const { date } = useSelector((state) => state.calender);
   const [calendarDates, setCalendarDates] = useState([]);
 
   useEffect(() => {
-    const start = startOfWeek(startOfMonth(currentDate), { weekStartsOn: 0 });
-    const end = endOfWeek(endOfMonth(currentDate), { weekStartsOn: 0 });
+    const start = startOfWeek(startOfMonth(date), { weekStartsOn: 0 });
+    const end = endOfWeek(endOfMonth(date), { weekStartsOn: 0 });
 
     const dates = [];
     let current = start;
@@ -39,7 +38,7 @@ const MonthlyView = ({ today, currentDate, events }) => {
     }
 
     setCalendarDates(dates);
-  }, [currentDate]);
+  }, [date]);
 
   return (
     <div className="monthly-view">
@@ -56,7 +55,7 @@ const MonthlyView = ({ today, currentDate, events }) => {
             <Day
               key={dayIndex}
               day={day}
-              currentDate={currentDate}
+              currentDate={date}
               today={today}
               events={events}
             />

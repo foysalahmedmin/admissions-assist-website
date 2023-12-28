@@ -7,7 +7,10 @@ import {BiLogoZoom} from "react-icons/bi";
 import {format} from "date-fns";
 import Button from "@/components/Buttons/Button.jsx";
 import {useNavigate} from "react-router-dom";
+import {Tooltip} from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
+// eslint-disable-next-line react/prop-types
 const EventModal = ({ isOpen, setIsOpen, event }) => {
   console.log(event);
   const navigation = useNavigate();
@@ -48,12 +51,24 @@ const EventModal = ({ isOpen, setIsOpen, event }) => {
             </div>
             <div>
               <Button
+                data-tooltip-id="my-tooltip"
+                disabled={!event?.isStarted}
                 onClick={() =>
                   navigation(`/meet/${event?._id}/${event?.title}`)
                 }
                 icon={<BiLogoZoom />}
                 className="mx-auto"
                 text="Start"
+              />
+              <Tooltip
+                id="my-tooltip"
+                variant="warning"
+                place="top"
+                content={
+                  !event?.isStarted
+                    ? "please wait councilor will start meeting soon"
+                    : "councilor started meeting"
+                }
               />
             </div>
           </div>

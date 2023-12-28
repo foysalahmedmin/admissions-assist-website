@@ -50,6 +50,7 @@ const Calendar = () => {
               type: x?.type,
               platform: x?.platform,
               description: x?.description,
+              isStarted: x?.isStarted,
             };
           })}
         />

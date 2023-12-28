@@ -2,7 +2,7 @@
  * Copyright (c) 2023. This product is copyright by Rian
  */
 
-import React from "react";
+import React, {useState} from "react";
 import {JitsiMeeting} from "@jitsi/react-sdk";
 import {useNavigate, useParams} from "react-router-dom";
 import {fetchStudentData} from "@/redux/studentSlice/api.js";
@@ -11,6 +11,7 @@ import {urls} from "@/apis/config/urls.js";
 import Loading from "@/components/Loading/Loading.jsx";
 
 const Meet = () => {
+  const [isStarted, setIsStarted] = useState(true);
   const navigation = useNavigate();
   const { id, title } = useParams();
   const { data: student } = useQuery({
@@ -83,15 +84,13 @@ const Meet = () => {
           displayName: `${student?.first_name} ${student?.last_name}`,
           email: student?.email,
           avatar: `${urls?.student}/${student?.photo}`,
-          role: "participant",
+          role: "none",
         }}
         spinner={() => <Loading />}
         onReadyToClose={() => {
           navigation("/chat_system/calendar");
         }}
-        onApiReady={(externalApi) => {
-          console.log({ externalApi });
-        }}
+        onApiReady={(externalApi) => {}}
         getIFrameRef={(iframeRef) => {
           iframeRef.style.height = "800px";
         }}

@@ -11,6 +11,7 @@ import studentCommonReducer from "./studentSlice/studentSlice.js";
 import processesReducer from "./processSlice/processSlice.js";
 import submissionReducer from "./submissionSlice/submissionSlice.js";
 import calenderReducer from "./calenderSlice/calenderSlice.js";
+import chatReducer from "./chatSlice/chatSlice.js";
 
 export default configureStore({
   reducer: {
@@ -22,6 +23,7 @@ export default configureStore({
     processes: processesReducer,
     submission: submissionReducer,
     calender: calenderReducer,
+    chat: chatReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -12,7 +12,6 @@ import "react-tooltip/dist/react-tooltip.css";
 
 // eslint-disable-next-line react/prop-types
 const EventModal = ({ isOpen, setIsOpen, event }) => {
-  console.log(event);
   const navigation = useNavigate();
   return (
     <>

@@ -1,9 +1,14 @@
-import profileImg from "@/assets/images/profile.jpg";
-import { format } from "date-fns";
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
 
-const SingleChat = ({ chat, currentUser }) => {
-  const { sender, content, timestamp } = chat;
-  const isOpponent = sender?.username !== currentUser.username;
+import profileImg from "@/assets/images/profile.jpg";
+import {format} from "date-fns";
+import {useSelector} from "react-redux";
+
+const SingleChat = ({ message }) => {
+  const { me, chat } = useSelector((state) => state.chat);
+  const isOpponent = message?.sender !== me?._id;
   return (
     <div
       className={`${
@@ -27,11 +32,11 @@ const SingleChat = ({ chat, currentUser }) => {
               : "justify-end ml-auto text-right"
           } flex gap-7 text-xs text-text-900 mb-1`}
         >
-          {isOpponent && <h1 className="">{sender?.name}</h1>}
-          <p>{format(new Date(timestamp), "dd/MM/yy HH:mm a")}</p>
+          {isOpponent && <h1 className="">{chat?.user?.name}</h1>}
+          <p>{format(new Date(message?.createdAt), "dd/MM/yy HH:mm a")}</p>
         </div>
         <p className="px-2 py-1 rounded bg-input text-text-900 text-sm">
-          {content}
+          {message?.content}
         </p>
       </div>
     </div>

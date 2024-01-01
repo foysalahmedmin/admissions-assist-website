@@ -1,10 +1,11 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import profileImg from "@/assets/images/profile.jpg";
 import {format} from "date-fns";
 import {useSelector} from "react-redux";
+import {urls} from "@/apis/config/urls.js";
 
 const SingleChat = ({ message }) => {
   const { me, chat } = useSelector((state) => state.chat);
@@ -35,9 +36,17 @@ const SingleChat = ({ message }) => {
           {isOpponent && <h1 className="">{chat?.user?.name}</h1>}
           <p>{format(new Date(message?.createdAt), "dd/MM/yy HH:mm a")}</p>
         </div>
-        <p className="px-2 py-1 rounded bg-input text-text-900 text-sm">
-          {message?.content}
-        </p>
+        {message?.isFile ? (
+          <img
+            className="h-60 w-60 rounded object-cover object-center"
+            src={`${urls?.message}/${message?.content}`}
+            alt=""
+          />
+        ) : (
+          <p className="px-2 py-1 rounded bg-input text-text-900 text-sm">
+            {message?.content}
+          </p>
+        )}
       </div>
     </div>
   );

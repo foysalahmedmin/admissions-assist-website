@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import profileImg from "@/assets/images/profile.jpg";
@@ -27,6 +27,7 @@ const Chats = ({ socket }) => {
       queryClient.invalidateQueries(["chats"]);
     },
   });
+  console.log(messages);
   // eslint-disable-next-line react/prop-types
   useEffect(() => {
     socket.on("chat message", (msg) => {
@@ -43,11 +44,17 @@ const Chats = ({ socket }) => {
   });
   const handleSendMessage = async () => {
     try {
+      // if (!content || !file) {
+      //   return toast.warn(`Please type or select file`);
+      // }
       const status = await mutateAsync({ content, chat: chat?._id, file });
       socket.emit("chat message", content);
       setContent("");
+      setFile(null);
       toast.success(status?.message);
     } catch (e) {
+      setContent("");
+      setFile(null);
       toast.error(e.message);
     }
   };
@@ -117,18 +124,21 @@ const Chats = ({ socket }) => {
         </div>
         <div className="w-full h-full flex items-center justify-between text-text-300">
           <div className="flex items-center gap-2">
-            <button className="hover:text-primary-500 text-xl">
+            <label className="hover:text-primary-500 text-xl">
+              <input
+                accept="image/*"
+                onChange={(e) => {
+                  setContent(e.target.files[0]?.name);
+                  setFile(e.target.files[0]);
+                }}
+                type="file"
+                className="hidden"
+              />
               <LuPaperclip />
-            </button>
-            {/*<button className="hover:text-primary-500 text-xl">*/}
-            {/*  <LuCalendarPlus />*/}
-            {/*</button>*/}
-            {/*<button className="hover:text-primary-500 text-xl">*/}
-            {/*  <LuSmile />*/}
-            {/*</button>*/}
+            </label>
           </div>
           <div className="hover:text-primary-500 text-2xl">
-            <button>
+            <button onClick={handleSendMessage}>
               <LuSendHorizonal />
             </button>
           </div>

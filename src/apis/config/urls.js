@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 let current =
@@ -16,4 +16,5 @@ export const urls = {
   subject: `${current}/uploads/subject`,
   submission: `${current}/uploads/submission`,
   student: `${current}/uploads/student/photo`,
+  message: `${current}/uploads/message`,
 };

@@ -30,7 +30,7 @@ export async function fetchMessages(chat) {
 
 export async function createMessage({ content, chat, file }) {
   const payload = new FormData();
-  payload.append("content", content);
+  payload.append("content", file ? "" : content);
   payload.append("chat", chat);
   file && payload.append("file", file);
 

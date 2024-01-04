@@ -17,4 +17,7 @@ export const urls = {
   submission: `${current}/uploads/submission`,
   student: `${current}/uploads/student/photo`,
   message: `${current}/uploads/message`,
+  education: `${current}/uploads/student/education`,
+  experience: `${current}/uploads/student/experience`,
+  ielts: `${current}/uploads/student/ielts`,
 };

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import base from "@/apis/config/base.js";
@@ -40,6 +40,40 @@ export async function StudentRegister({
   });
 
   const response = await base.post(`/api/student/student_register`, payload, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return response?.data;
+}
+
+export async function StudentUpdate({
+  personal,
+  residency,
+  nationality,
+  english_language,
+  finance,
+  education,
+  experience,
+  ielts_certificate,
+  experience_certificate,
+  education_certificate,
+}) {
+  const payload = new FormData();
+  payload.append("personal", JSON.stringify(personal));
+  payload.append("residency", JSON.stringify(residency));
+  payload.append("nationality", JSON.stringify(nationality));
+  payload.append("english_language", JSON.stringify(english_language));
+  payload.append("finance", JSON.stringify(finance));
+  payload.append("education", JSON.stringify(education));
+  payload.append("experience", JSON.stringify(experience));
+  payload.append("ielts_certificate", ielts_certificate);
+  experience_certificate?.forEach((file) => {
+    payload.append(`experience_certificate`, file);
+  });
+  education_certificate?.forEach((file) => {
+    payload.append(`education_certificate`, file);
+  });
+
+  const response = await base.put(`/api/student/student_update`, payload, {
     headers: { "Content-Type": "multipart/form-data" },
   });
   return response?.data;
@@ -92,4 +126,9 @@ export async function StudentSignIn({ email, password }) {
     headers: { "Content-Type": "application/json" },
   });
   return response?.data;
+}
+
+export async function fetchOneStudent() {
+  const response = await base.get(`/api/student/get_one_student`);
+  return response?.data[0];
 }

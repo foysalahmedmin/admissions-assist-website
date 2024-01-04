@@ -1,12 +1,16 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import Loading from "@/components/Loading/Loading";
 import {lazy, Suspense} from "react";
 import {createBrowserRouter} from "react-router-dom";
+import SignUpUpdate from "@/pages/Authentication/Update/SignUp/SignUpUpdate.jsx";
 
 /* Layouts */
+const SignUpInfoForm = lazy(() =>
+  import("@/pages/Authentication/Update/SignUpInfoForm/SignUpUpdateForm.jsx")
+);
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
 const Meet = lazy(() => import("@/layout/Meet.jsx"));
@@ -280,6 +284,15 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <SignUp />
+          </Suspense>
+        ),
+      },
+      {
+        path: "update_profile",
+        //done
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SignUpUpdate />
           </Suspense>
         ),
       },

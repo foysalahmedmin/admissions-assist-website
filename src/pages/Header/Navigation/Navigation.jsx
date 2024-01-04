@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import avatar from "@/assets/images/icons/profile-user.svg";
 import logoDark from "@/assets/images/logo-dark.svg";
 import logo from "@/assets/images/logo.svg";
@@ -5,12 +9,14 @@ import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import Button from "@/components/Buttons/Button";
 import useMenuAnimation from "@/hooks/useMenuAnimation/useMenuAnimation";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
-import { MenuToggle } from "@/pages/Header/Navigation/MenuToggle";
+import {MenuToggle} from "@/pages/Header/Navigation/MenuToggle";
 import NavMenus from "@/pages/Header/Navigation/NavMenus";
-import { useState } from "react";
-import { LuArrowRightFromLine, LuBell, LuUser2 } from "react-icons/lu";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { twMerge } from "tailwind-merge";
+import {useState} from "react";
+import {LuArrowRightFromLine, LuBell, LuUser2} from "react-icons/lu";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {twMerge} from "tailwind-merge";
+import {useQuery} from "react-query";
+import {fetchNotificationCount} from "@/network/notification.js";
 
 // eslint-disable-next-line react/prop-types
 const Navigation = ({ className }) => {
@@ -21,6 +27,11 @@ const Navigation = ({ className }) => {
   const [menuActive, setMenuActive] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
+
+  const { data: count } = useQuery({
+    queryKey: ["my_count"],
+    queryFn: () => fetchNotificationCount(),
+  });
 
   return (
     <nav
@@ -105,7 +116,7 @@ const Navigation = ({ className }) => {
                     />
                   </ActiveLink>
                   <span className="h-4 w-4 flex items-center justify-center rounded-full bg-secondary-500 text-white text-xs absolute top-0 right-0">
-                    4
+                    {count?.count}
                   </span>
                 </div>
                 <div className="relative group">

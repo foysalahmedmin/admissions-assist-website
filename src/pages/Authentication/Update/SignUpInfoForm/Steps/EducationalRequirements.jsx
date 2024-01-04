@@ -26,8 +26,6 @@ const EducationalRequirements = () => {
   });
   const { education } = useSelector((state) => state.application_form);
 
-  console.log({ education });
-
   const handleInputChange = (
     index,
     inputName,

@@ -20,4 +20,5 @@ export const urls = {
   education: `${current}/uploads/student/education`,
   experience: `${current}/uploads/student/experience`,
   ielts: `${current}/uploads/student/ielts`,
+  blog: `${current}/uploads/blog`,
 };

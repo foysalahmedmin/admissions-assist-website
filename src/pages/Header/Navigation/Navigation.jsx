@@ -17,10 +17,16 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import {twMerge} from "tailwind-merge";
 import {useQuery} from "react-query";
 import {fetchNotificationCount} from "@/network/notification.js";
+import {fetchStudentData} from "@/redux/studentSlice/api.js";
+import {urls} from "@/apis/config/urls.js";
 
 // eslint-disable-next-line react/prop-types
 const Navigation = ({ className }) => {
   const auth = JSON.parse(localStorage.getItem("aa_website"));
+  const { data: student } = useQuery({
+    queryKey: ["common_student"],
+    queryFn: () => fetchStudentData(),
+  });
   const navigation = useNavigate();
   const location = useLocation();
   const { isScrolled } = useScrollSpy();
@@ -121,7 +127,11 @@ const Navigation = ({ className }) => {
                 </div>
                 <div className="relative group">
                   <img
-                    src={avatar}
+                    src={
+                      student?.photo
+                        ? `${urls?.student}/${student?.photo}`
+                        : avatar
+                    }
                     className="h-10 w-10 rounded-full peer cursor-pointer"
                     alt=""
                   />

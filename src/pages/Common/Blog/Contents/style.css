@@ -1,0 +1,15 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
+.check-list {
+    @apply space-y-3 font-bold list-inside;
+}
+
+.check-list li {
+    @apply relative py-2 ml-10 before:block before:absolute before:-left-10 before:top-1/2 before:-translate-y-1/2 my-auto before:h-6 before:w-6 before:bg-contain before:bg-center before:bg-no-repeat before:bg-[url(/images/list-check.svg)];
+}
+
+.blockquote-image {
+    @apply relative py-2 ml-20 border-l-4 border-primary-500 before:block before:absolute before:-left-16 before:top-1/2 before:-translate-y-1/2 my-auto before:h-12 before:w-12 before:bg-contain before:bg-center before:bg-no-repeat before:bg-[url('/images/quote.svg')];
+}

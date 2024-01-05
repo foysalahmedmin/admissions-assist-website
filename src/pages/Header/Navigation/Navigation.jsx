@@ -15,10 +15,12 @@ import {useState} from "react";
 import {LuArrowRightFromLine, LuBell, LuUser2} from "react-icons/lu";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import {twMerge} from "tailwind-merge";
-import {useQuery} from "react-query";
+import {useMutation, useQuery} from "react-query";
 import {fetchNotificationCount} from "@/network/notification.js";
 import {fetchStudentData} from "@/redux/studentSlice/api.js";
 import {urls} from "@/apis/config/urls.js";
+import {MakeLogout} from "@/pages/Authentication/requests/auth.js";
+import {toast} from "react-toastify";
 
 // eslint-disable-next-line react/prop-types
 const Navigation = ({ className }) => {
@@ -37,6 +39,14 @@ const Navigation = ({ className }) => {
   const { data: count } = useQuery({
     queryKey: ["my_count"],
     queryFn: () => fetchNotificationCount(),
+  });
+
+  const { mutateAsync } = useMutation({
+    mutationFn: MakeLogout,
+    onSuccess: () => {
+      localStorage.removeItem("aa_website");
+      navigation("/authentication/login");
+    },
   });
 
   return (
@@ -142,7 +152,15 @@ const Navigation = ({ className }) => {
                     >
                       <span>View Profile</span> <LuUser2 />
                     </Link>
-                    <span className="flex items-center gap-4 justify-between px-7 p-4 hover:bg-background cursor-pointer">
+                    <span
+                      onClick={async () => {
+                        const status = await mutateAsync({
+                          refreshToken: auth?.refreshToken,
+                        });
+                        toast.success(status?.message);
+                      }}
+                      className="flex items-center gap-4 justify-between px-7 p-4 hover:bg-background cursor-pointer"
+                    >
                       <span>Logout</span> <LuArrowRightFromLine />
                     </span>
                   </div>

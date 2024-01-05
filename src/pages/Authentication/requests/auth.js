@@ -132,3 +132,14 @@ export async function fetchOneStudent() {
   const response = await base.get(`/api/student/get_one_student`);
   return response?.data[0];
 }
+
+export async function MakeLogout({ refreshToken }) {
+  const payload = {
+    refreshToken,
+  };
+
+  const response = await base.post(`/api/auth/logout`, payload, {
+    headers: { "Content-Type": "application/json" },
+  });
+  return response?.data;
+}

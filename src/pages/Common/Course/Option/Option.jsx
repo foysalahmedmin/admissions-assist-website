@@ -1,7 +1,92 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
+import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
+import {toast} from "react-toastify";
+import moment from "moment";
+import {isInternationalStudentQualified, isLocalStudentQualified,} from "@/helpers/requirementStatus.js";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCommonStudent} from "@/redux/studentSlice/studentSlice.js";
+import {studentType} from "@/helpers/studentType.js";
+import {useMutation} from "react-query";
+import {submitApplication} from "@/pages/Common/Course/Course/requests/courseApi.js";
+import EnrollModal from "@/pages/Common/Course/EnrollRequireModal/EnrollRequireModal.jsx";
+import EnrollSuccessModal from "@/pages/Common/Course/EnrollSuccessModal/EnrollSuccessModal.jsx";
+import ScheduleModal from "@/pages/Student/Profile/Appointment/ScheduleModal.jsx";
 
-const Option = () => {
+const Option = ({ info }) => {
+  const navigate = useNavigate();
+  const [student_type, setStudentType] = useState("");
+  const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCommonStudent());
+  }, [dispatch]);
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+  const [isEnrollSuccessModalOpen, setIsEnrollSuccessModalOpen] =
+    useState(false);
+  const { userInfo } = useSelector((state) => state.student);
+  studentType().then((x) => setStudentType(x));
+  const auth = JSON.parse(localStorage.getItem("aa_website"));
+
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: submitApplication,
+  });
+  const handleApplication = async () => {
+    try {
+      if (!info?.university?.session?._id) {
+        return toast.warn("No session currently active");
+      }
+      let isExpired = moment(info?.university?.session?.end_date).isBefore(
+        new Date().toISOString()
+      );
+      if (isExpired) {
+        return toast.warn("Application Deadline Expired");
+      }
+      if (student_type === "local") {
+        let isRequirementMatch = isLocalStudentQualified(
+          info?.notRequiredLocal,
+          info?.local,
+          userInfo
+        );
+        if (isRequirementMatch) {
+          await mutateAsync({
+            session: info?.university?.session?._id,
+            university: info?.university?._id,
+            subject: info?.subject?._id,
+            course: info?.isCourse && info?.course_details?._id,
+          });
+          setIsEnrollSuccessModalOpen(true);
+        } else {
+          setIsEnrollModalOpen(true);
+        }
+      } else if (student_type === "international") {
+        let isRequirementMatch = isInternationalStudentQualified(
+          info?.notRequiredInternational,
+          info?.international,
+          info?.international_type,
+          userInfo
+        );
+        if (isRequirementMatch) {
+          await mutateAsync({
+            session: info?.university?.session?._id,
+            university: info?.university?._id,
+            subject: info?.subject?._id,
+            course: info?.isCourse && info?.course_details?._id,
+          });
+          setIsEnrollSuccessModalOpen(true);
+        } else {
+          setIsEnrollModalOpen(true);
+        }
+      }
+    } catch (error) {
+      toast.error(error?.message);
+    }
+  };
   return (
     <BackgroundLayer
       image_url={"/background/courses-details-option-section.png"}
@@ -20,8 +105,13 @@ const Option = () => {
                   Book a Session With Our <br /> Expert Consultant{" "}
                 </strong>
                 <Button
+                  onClick={() => {
+                    auth?.accessToken
+                      ? setIsScheduleModalOpen(true)
+                      : navigate("/authentication/login");
+                  }}
                   className={"mt-2 mx-auto"}
-                  text={"Book An Appointmnet"}
+                  text={"Book An Appointment"}
                   icon={
                     <span className="material-icons-outlined">
                       trending_flat
@@ -43,6 +133,16 @@ const Option = () => {
               <div className="p-2">
                 <strong className="title">Proceed To Application</strong>
                 <Button
+                  onClick={async () => {
+                    if (auth?.accessToken) {
+                      await handleApplication();
+                      // setIsEnrollModalOpen(true);
+                    } else {
+                      navigate("/authentication/login");
+                    }
+                  }}
+                  isLoading={isLoading}
+                  disabled={isLoading}
                   className={"mt-2 mx-auto"}
                   text={"Enroll Now"}
                   icon={
@@ -55,6 +155,23 @@ const Option = () => {
             </div>
           </div>
         </div>
+        <EnrollModal
+          isOpen={isEnrollModalOpen}
+          setIsOpen={setIsEnrollModalOpen}
+          points={userInfo?.points}
+          ielts={userInfo?.ielts}
+          experience={userInfo?.experience}
+          level_3={userInfo?.level_3}
+          student_type={student_type}
+        />
+        <EnrollSuccessModal
+          isOpen={isEnrollSuccessModalOpen}
+          setIsOpen={setIsEnrollSuccessModalOpen}
+        />
+        <ScheduleModal
+          isOpen={isScheduleModalOpen}
+          setIsOpen={setIsScheduleModalOpen}
+        />
       </div>
     </BackgroundLayer>
   );

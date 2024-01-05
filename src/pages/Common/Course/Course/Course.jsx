@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import Banner from "../Banner/Banner";
 import Blogs from "../Blogs/Blogs";
 import CourseSummary from "../CourseSummary/CourseSummary";
@@ -42,7 +46,7 @@ const Course = () => {
         }
       />
       <Blogs />
-      <Option />
+      <Option info={requirement} />
     </main>
   );
 };

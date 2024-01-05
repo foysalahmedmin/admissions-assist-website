@@ -1,9 +1,8 @@
-import {
-  LuCalendarCheck,
-  LuFile,
-  LuMessagesSquare,
-  LuPhoneCall,
-} from "react-icons/lu";
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
+import { LuCalendarCheck, LuFile, LuMessagesSquare } from "react-icons/lu";
 import ChatActiveLink from "./ChatActiveLink";
 
 const Sidebar = () => {
@@ -34,14 +33,14 @@ const Sidebar = () => {
             </div>
           </li>
         </ChatActiveLink>
-        <ChatActiveLink to={"/chat_system/calls"}>
-          <li>
-            <div className="flex items-center gap-4 py-1">
-              <LuPhoneCall className="text-2xl" />
-              <span className="font-semibold hidden lg:block">Calls</span>
-            </div>
-          </li>
-        </ChatActiveLink>
+        {/*<ChatActiveLink to={"/chat_system/calls"}>*/}
+        {/*  <li>*/}
+        {/*    <div className="flex items-center gap-4 py-1">*/}
+        {/*      <LuPhoneCall className="text-2xl" />*/}
+        {/*      <span className="font-semibold hidden lg:block">Calls</span>*/}
+        {/*    </div>*/}
+        {/*  </li>*/}
+        {/*</ChatActiveLink>*/}
       </ul>
     </div>
   );

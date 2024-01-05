@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import ActiveLink from "@/components/ActiveLink/ActiveLink";
 import useScrollSpy from "@/hooks/useScrollSpy/useScrollSpy";
 import { useLocation } from "react-router-dom";
@@ -44,11 +48,11 @@ const NavMenus = () => {
           <a href="/#testimonials">Testimonials</a>
         </li>
       )}
-      {auth?.accessToken && (
-        <ActiveLink to={"/points"}>
-          <li className="">Points</li>
-        </ActiveLink>
-      )}
+      {/*{auth?.accessToken && (*/}
+      {/*  <ActiveLink to={"/points"}>*/}
+      {/*    <li className="">Points</li>*/}
+      {/*  </ActiveLink>*/}
+      {/*)}*/}
       {auth?.accessToken && (
         <ActiveLink to={"/chat_system"}>
           <li className="">Chats</li>

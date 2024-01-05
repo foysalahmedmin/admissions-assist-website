@@ -27,7 +27,6 @@ const Chats = ({ socket }) => {
       queryClient.invalidateQueries(["chats"]);
     },
   });
-  console.log(messages);
   // eslint-disable-next-line react/prop-types
   useEffect(() => {
     socket.on("chat message", (msg) => {
@@ -97,16 +96,13 @@ const Chats = ({ socket }) => {
           </button>
         </div>
       </div>
-      <div
-        ref={chatBoxRef}
-        className="h-[calc(100vh-14.5rem)] overflow-y-auto px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4"
-      >
+      <div className="h-[calc(100vh-14.5rem)] overflow-y-auto px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4">
         {messages?.map((chat, i) => (
           <SingleChat key={i} message={chat} />
         ))}
       </div>
       <div className="h-24 flex flex-col px-7 py-2 mb-4">
-        <div>
+        <div ref={chatBoxRef}>
           <textarea
             className="w-full px-4 py-2 text-sm outline-none rounded border focus-within:border-text-500"
             name="content"

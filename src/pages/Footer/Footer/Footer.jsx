@@ -1,11 +1,11 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import logo from "@/assets/images/logo.svg";
-import {
-  BiLogoFacebook,
-  BiLogoInstagramAlt,
-  BiLogoLinkedin,
-} from "react-icons/bi";
-import { LuMail, LuMapPin, LuSmartphone } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoLinkedin,} from "react-icons/bi";
+import {LuMail, LuMapPin, LuSmartphone} from "react-icons/lu";
+import {Link} from "react-router-dom";
 import BottomFooter from "../BottomFooter/BottomFooter";
 
 const Footer = () => {
@@ -46,11 +46,11 @@ const Footer = () => {
               <li className="text-line">
                 <Link to={"/blogs"}>blogs</Link>
               </li>
+              {/*<li className="text-line">*/}
+              {/*  <Link to={"/session_book"}>Book a session</Link>*/}
+              {/*</li>*/}
               <li className="text-line">
-                <Link to={"/session_book"}>Book a session</Link>
-              </li>
-              <li className="text-line">
-                <Link to={"/sign_up"}>Create an account</Link>
+                <Link to={"/authentication/sign_up"}>Create an account</Link>
               </li>
             </ul>
           </div>
@@ -58,17 +58,17 @@ const Footer = () => {
             <h3 className="title text-white text-2xl mb-7">Categories</h3>
             <ul className="flex flex-col gap-4">
               <li className="text-line">
-                <Link to={"/photography"}>Photography</Link>
+                <Link to={"/search/universities"}>University</Link>
               </li>
               <li className="text-line">
-                <Link to={"/engineering"}>Engineering</Link>
+                <Link to={"/search/courses"}>Courses</Link>
               </li>
               <li className="text-line">
-                <Link to={"/development"}>Development</Link>
+                <Link to={"/profile"}>Profile</Link>
               </li>
-              <li className="text-line">
-                <Link to={"/sports"}>Sports</Link>
-              </li>
+              {/*<li className="text-line">*/}
+              {/*  <Link to={"/sports"}>Sports</Link>*/}
+              {/*</li>*/}
             </ul>
           </div>
           <div>

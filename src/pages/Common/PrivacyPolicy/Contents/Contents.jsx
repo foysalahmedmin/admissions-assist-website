@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 const Contents = () => {
   return (
     <section>
@@ -91,7 +95,7 @@ const Contents = () => {
             <li>
               By email:{" "}
               <span className="text-primary-500 underline">
-                hi@antforfigma.com
+                info@admissionsassist.com
               </span>
             </li>
           </ul>

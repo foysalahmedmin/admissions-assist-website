@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
 import BackgroundLayer from "@/components/BackgroundLayer/BackgroundLayer";
 import Button from "@/components/Buttons/Button";
 

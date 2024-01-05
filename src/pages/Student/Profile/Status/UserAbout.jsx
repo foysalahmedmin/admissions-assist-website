@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import badge from "@/assets/images/icons/badge-sky-blue.svg";
@@ -19,13 +19,14 @@ import moment from "moment";
 import {updateStudentPhoto} from "@/pages/Student/Profile/requests/profileApis.js";
 import {toast} from "react-toastify";
 import {urls} from "@/apis/config/urls.js";
+import {useNavigate} from "react-router-dom";
 
 const UserAbout = () => {
+  const navigate = useNavigate();
   const { data: student } = useQuery({
     queryKey: ["student_common"],
     queryFn: () => fetchStudentData(),
   });
-  console.log(student);
   const [imageFile, setImageFile] = useState(null);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const { mutateAsync } = useMutation({
@@ -82,6 +83,7 @@ const UserAbout = () => {
               </div>
               <div>
                 <Button
+                  onClick={() => navigate("/authentication/update_profile")}
                   className={"hidden lg:flex"}
                   text={"Edit Profile"}
                   icon={<LuPenSquare className="text-xl" />}

@@ -14,6 +14,7 @@ export const urls = {
   university_cover: `${current}/uploads/university/covers`,
   scholarship: `${current}/uploads/university/scholarship`,
   subject: `${current}/uploads/subject`,
+  icon: `${current}/uploads/icon`,
   submission: `${current}/uploads/submission`,
   student: `${current}/uploads/student/photo`,
   message: `${current}/uploads/message`,

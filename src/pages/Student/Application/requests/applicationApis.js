@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import base from "@/apis/config/base.js";
@@ -129,4 +129,11 @@ export async function fetchOneApplicationFeedback(application) {
     `/api/feedback/get_one_application_feedback?application=${application}`
   );
   return response?.data[0];
+}
+
+export async function fetchMyIag() {
+  const response = await base.get(`/api/iag/get_my_iag_pdf`, {
+    responseType: "blob",
+  });
+  return response?.data;
 }

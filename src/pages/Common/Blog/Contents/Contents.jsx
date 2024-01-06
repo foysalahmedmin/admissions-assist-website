@@ -45,7 +45,7 @@ const Contents = () => {
           <h3 className="title text-3xl mb-7">{blog?.title}</h3>
           <p>{blog?.description}</p>
         </div>
-        <div className="mb-7">{parse(`${blog?.content}`)}</div>
+        <div className="mb-7 blog">{parse(`${blog?.content}`)}</div>
         <hr className="my-7" />
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2">

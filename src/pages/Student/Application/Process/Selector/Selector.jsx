@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import ProgressBarLinear from "@/components/ProgressBar/ProgressBarLinear";
@@ -8,6 +8,7 @@ import {useQuery} from "react-query";
 import {
     fetchApplicationPercentage,
     fetchAppliedUniversities,
+    fetchMyIag,
 } from "@/pages/Student/Application/requests/applicationApis.js";
 import {useDispatch, useSelector} from "react-redux";
 import {SetCourse, SetSubject, SetUniversity,} from "@/redux/filterSlice/filterSlice.js";
@@ -81,8 +82,15 @@ const Selector = () => {
       </div>
       <div className="lg:ml-auto lg:text-center">
         <h3 className="title text-2xl mb-4">Downloadable</h3>
-        <div className="inline-flex items-center gap-4 text-[#2170E7]">
-          <span>IAG_Student_file.pdf</span> <LuDownload />
+        <div
+          onClick={async () => {
+            const blob = await fetchMyIag();
+            const blobUrl = window.URL.createObjectURL(blob);
+            window.open(blobUrl, "_blank");
+          }}
+          className="inline-flex items-center gap-4 text-[#2170E7] cursor-pointer"
+        >
+          <span className="cursor-pointer">IAG_FORM</span> <LuDownload />
         </div>
       </div>
       <div>

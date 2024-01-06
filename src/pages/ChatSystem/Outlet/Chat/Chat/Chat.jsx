@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import ChatList from "../ChatList/ChatList";
@@ -10,7 +10,7 @@ import {SetChat, SetMe} from "@/redux/chatSlice/chatSlice.js";
 import Chats from "@/pages/ChatSystem/Outlet/Chat/Chats/Chats.jsx";
 import {io} from "socket.io-client";
 
-const socket = io("ws://localhost:3001", {
+const socket = io("ws://chat.admissionsassist.com", {
   transports: ["websocket", "polling"],
 });
 

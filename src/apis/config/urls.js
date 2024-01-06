@@ -4,7 +4,7 @@
 
 let current =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:5021"
+    ? "https://cp.admissionsassist.com"
     : "https://cp.admissionsassist.com";
 export const urls = {
   mainURL: `${current}`,

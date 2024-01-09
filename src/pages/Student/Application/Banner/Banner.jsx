@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import groupTalk from "@/assets/images/icons/group-talk-sky-blue.svg";
@@ -10,13 +10,17 @@ import Button from "@/components/Buttons/Button";
 import StarRating from "@/components/StarRating/StarRating";
 import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoLinkedin,} from "react-icons/bi";
 import {LuCalendarCheck, LuMessageCircle} from "react-icons/lu";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useQuery} from "react-query";
 import {fetchStudentCouncilor} from "@/pages/Student/Application/requests/applicationApis.js";
 import {urls} from "@/apis/config/urls.js";
 import {useSelector} from "react-redux";
+import ScheduleModal from "@/pages/Student/Profile/Appointment/ScheduleModal.jsx";
+import {useState} from "react";
 
 const Banner = () => {
+  const navigate = useNavigate();
+  const [isScheduleModal, setIsScheduleModal] = useState(false);
   const { university } = useSelector((state) => state?.filter);
   const { data: councilor } = useQuery({
     queryKey: ["student_councilor"],
@@ -146,11 +150,13 @@ const Banner = () => {
                 </div>
                 <div className="flex items-center justify-between gap-4">
                   <Button
+                    onClick={() => setIsScheduleModal(true)}
                     className={"auto"}
                     text={"Book a Session"}
                     icon={<LuCalendarCheck className="text-xl" />}
                   />
                   <Button
+                    onClick={() => navigate("/chat_system/calendar")}
                     className={"auto bg-primary-500"}
                     text={"Chat now"}
                     icon={<LuMessageCircle className="text-xl" />}
@@ -160,6 +166,10 @@ const Banner = () => {
             </div>
           </div>
         </div>
+        <ScheduleModal
+          isOpen={isScheduleModal}
+          setIsOpen={setIsScheduleModal}
+        />
       </div>
     </BackgroundLayer>
   );

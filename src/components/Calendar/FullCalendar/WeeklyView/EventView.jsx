@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import courseImg1 from "@/assets/images/calendar-course-1.png";
@@ -63,17 +63,17 @@ const EventView = ({ event }) => {
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
-              <h5 className="title text-sm text-white md:text-base mb-2">
-                {event.title}
+              <h5 className="title text-sm text-white md:text-base mb-1">
+                {event?.title}
               </h5>
               <div className="flex items-center">
                 <img
-                  className="rounded-full h-6 w-6 object-cover object-center border-white border-2"
+                  className="rounded-full h-4 w-4 object-cover object-center border-white border-2"
                   src={courseImg1}
                   alt=""
                 />
                 <img
-                  className="rounded-full h-6 w-6 object-cover object-center border-white border-2 relative -ml-2"
+                  className="rounded-full h-4 w-4 object-cover object-center border-white border-2 relative -ml-2"
                   src={courseImg2}
                   alt=""
                 />
@@ -81,11 +81,11 @@ const EventView = ({ event }) => {
             </div>
             <div className="mt-auto flex items-center justify-between gap-2">
               <span className="block font-semibold text-sm">
-                {format(event.start, "EEE")}
+                {format(event?.start, "EEE")}
               </span>
               <div className="text-xs">
-                <span>{format(event.start, "hh:mm a")}</span> -{" "}
-                <span>{format(event.end, "hh:mm a")}</span>
+                <span>{format(event?.start, "hh:mm a")}</span> -{" "}
+                <span>{format(event?.end, "hh:mm a")}</span>
               </div>
             </div>
           </div>
@@ -100,10 +100,14 @@ const EventView = ({ event }) => {
           className="absolute top-1 button-1 left-1 right-1 bg-[#01D7DF] rounded-2xl py-2 px-1 lg:px-4 flex flex-col"
         >
           <div>
-            <h5 className="title text-sm md:text-base mb-1">{event?.title}</h5>
+            <h5 className="title text-sm mb-1">
+              {event?.title?.length > 21
+                ? event?.title?.split(0, 21) + " ...."
+                : event?.title}
+            </h5>
             {event?.platform && (
               <div className="inline-flex flex-wrap gap-2 items-center justify-center px-2 py-2 rounded-xl bg-white bg-opacity-40">
-                <div className="h-5 w-5 rounded bg-[#4087FC] text-white flex items-center justify-center">
+                <div className="h-4 w-4 rounded bg-[#4087FC] text-white flex items-center justify-center">
                   <BiLogoZoom />
                 </div>
                 <span className="text-xs text-text-900 capitalize">

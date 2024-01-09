@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import Button from "@/components/Buttons/Button";
@@ -82,6 +82,9 @@ const CourseSummary = ({ info }) => {
         }
       }
     } catch (error) {
+      if (error?.response?.data?.error?.message?.startsWith("E11000")) {
+        return toast.error("you have applied before !");
+      }
       toast.error(error?.message);
     }
   };

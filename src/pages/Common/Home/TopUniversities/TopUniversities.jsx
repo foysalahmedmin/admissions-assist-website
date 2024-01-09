@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import Button from "@/components/Buttons/Button";
@@ -13,8 +13,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {useQuery} from "react-query";
 import {fetchTopUniversities} from "@/network/common/commonApi.js";
+import {useNavigate} from "react-router-dom";
 
 const TopUniversities = () => {
+  const navigate = useNavigate();
   const { data: universities } = useQuery({
     queryKey: ["top_universities"],
     queryFn: () => fetchTopUniversities(),
@@ -77,6 +79,7 @@ const TopUniversities = () => {
           </div>
           <div className="mt-12">
             <Button
+              onClick={() => navigate('"/search/universities"')}
               className={"mx-auto"}
               text={"View More"}
               icon={

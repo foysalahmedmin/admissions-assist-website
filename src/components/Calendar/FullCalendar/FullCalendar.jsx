@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023. This product is copyright by Rian
+ * Copyright (c) 2023-2024. This product is copyright by Rian
  */
 
 import {addDays, addMonths, subDays, subMonths} from "date-fns";
@@ -36,40 +36,16 @@ const Calendar = ({ events }) => {
       <div>
         <CalendarHeader
           view={view}
-          // setView={setView}
           today={today}
-          // currentDate={currentDate}
-          // setCurrentDate={setCurrentDate}
           events={events}
           next={next}
           prev={prev}
         />
       </div>
       <div className="overflow-x-auto">
-        {view === "monthly" && (
-          <MonthlyView
-            today={today}
-            // currentDate={currentDate}
-            // setCurrentDate={setCurrentDate}
-            events={events}
-          />
-        )}
-        {view === "weekly" && (
-          <WeeklyView
-            today={today}
-            // currentDate={currentDate}
-            // setCurrentDate={setCurrentDate}
-            events={events}
-          />
-        )}
-        {view === "daily" && (
-          <DailyView
-            today={today}
-            // currentDate={currentDate}
-            // setCurrentDate={setCurrentDate}
-            events={events}
-          />
-        )}
+        {view === "monthly" && <MonthlyView today={today} events={events} />}
+        {view === "weekly" && <WeeklyView today={today} events={events} />}
+        {view === "daily" && <DailyView today={today} events={events} />}
         {view === "agenda" && <AgendaView events={events} />}
       </div>
     </div>

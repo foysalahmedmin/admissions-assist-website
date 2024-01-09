@@ -1,8 +1,23 @@
+<<<<<<< HEAD
 import { addDays, addHours, format, isSameDay, startOfWeek } from "date-fns";
 import { useEffect, useState } from "react";
 import Time from "./Time";
 
 const WeeklyView = ({ today, currentDate, setCurrentDate, events }) => {
+=======
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import {addDays, addHours, format, isSameDay, startOfWeek} from "date-fns";
+import {useEffect, useState} from "react";
+import Time from "./Time";
+import {useSelector} from "react-redux";
+
+// eslint-disable-next-line react/prop-types
+const WeeklyView = ({ today, events }) => {
+  const { date } = useSelector((state) => state.calender);
+>>>>>>> update-project/main
   const [days, setDays] = useState([]);
   const times = Array.from({ length: 24 }, (_, i) =>
     addHours(new Date().setHours(0), i)
@@ -10,7 +25,11 @@ const WeeklyView = ({ today, currentDate, setCurrentDate, events }) => {
 
   useEffect(() => {
     const days = [];
+<<<<<<< HEAD
     const start = startOfWeek(currentDate);
+=======
+    const start = startOfWeek(date);
+>>>>>>> update-project/main
 
     for (let i = 0; i < 7; i++) {
       const day = {};
@@ -21,7 +40,11 @@ const WeeklyView = ({ today, currentDate, setCurrentDate, events }) => {
     }
 
     setDays(days);
+<<<<<<< HEAD
   }, [currentDate]);
+=======
+  }, [date]);
+>>>>>>> update-project/main
 
   return (
     <div className="flex">

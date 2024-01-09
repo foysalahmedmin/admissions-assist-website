@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+>>>>>>> update-project/main
 import Button from "@/components/Buttons/Button";
 import ProgressBarCircle from "@/components/ProgressBar/ProgressBarCircle";
 import ContactAndResidencyDetails from "./Steps/ContactAndResidencyDetails";
@@ -7,15 +14,113 @@ import LanguageRequirements from "./Steps/LanguageRequirements";
 import NationalityDetails from "./Steps/NationalityDetails";
 import PersonalDetails from "./Steps/PersonalDetails";
 import WorkExperience from "./Steps/WorkExperience";
+<<<<<<< HEAD
 
 const SignUpInfoForm = () => {
+=======
+import {useDispatch, useSelector} from "react-redux";
+import {toast} from "react-toastify";
+import {SetRegisterReset} from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
+import {useMutation} from "react-query";
+import {StudentRegister} from "@/pages/Authentication/requests/auth.js";
+import {useNavigate} from "react-router-dom";
+
+const SignUpInfoForm = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigate();
+  const { register } = useSelector((state) => state.progress);
+  const {
+    user_name,
+    email,
+    password,
+    personal,
+    residency,
+    nationality,
+    english_language,
+    finance,
+    education,
+    experience,
+  } = useSelector((state) => state.application_form);
+
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: StudentRegister,
+    onSuccess: () => {
+      navigation("/authentication/login");
+    },
+  });
+
+  const handleSave = async () => {
+    try {
+      if (!personal?.first_name) {
+        return toast.warn(`No ${!personal?.first_name && "first_name"}`);
+      }
+      const status = await mutateAsync({
+        user_name,
+        email,
+        password,
+        personal: {
+          first_name: personal?.first_name,
+          last_name: personal?.last_name,
+          dob: personal?.dob,
+          gender: personal?.gender,
+          heard_us: personal?.heard_us,
+          ...(personal?.agent && { agent: personal?.agent }),
+        },
+        residency,
+        nationality,
+        english_language: {
+          platform: english_language?.platform,
+          score: english_language?.score,
+          exam_date: english_language?.exam_date,
+          center: english_language?.center,
+        },
+        finance,
+        education: education?.map((e) => {
+          return {
+            level_3: e?.level_3,
+            ...(e?.body && { body: e?.body }),
+            ...(e?.degree && { degree: e?.degree }),
+            institute: e?.institute,
+            passing_year: e?.passing_year,
+            grade: e?.grade,
+          };
+        }),
+        experience: experience
+          ?.filter((f) => f?.title && f?.company)
+          ?.map((x) => {
+            return {
+              title: x?.title,
+              company: x?.company,
+              working_from: x?.working_from,
+              working_to: x?.working_to,
+              stillWorking: x?.stillWorking,
+            };
+          }),
+        ielts_certificate: english_language?.certificate,
+        education_certificate: education?.map((e) => e?.certificate),
+        experience_certificate: experience?.map((e) => e?.certificate),
+      });
+      toast.success(status?.message);
+      dispatch(SetRegisterReset());
+    } catch (error) {
+      toast.error(error?.message);
+    }
+  };
+
+>>>>>>> update-project/main
   return (
     <>
       <div className="flex flex-wrap-reverse items-center justify-between bg-input px-7 py-4">
         <h3 className="title text-3xl">Profile Completeness</h3>
+<<<<<<< HEAD
         <ProgressBarCircle percentage={45} size={67}>
           <div>
             <h3 className="text-text-900 font-bold">{45}%</h3>
+=======
+        <ProgressBarCircle percentage={register} size={67}>
+          <div>
+            <h3 className="text-text-900 font-bold">{register}%</h3>
+>>>>>>> update-project/main
           </div>
         </ProgressBarCircle>
       </div>
@@ -33,6 +138,12 @@ const SignUpInfoForm = () => {
           <div className="text-center">
             <Button
               type={"submit"}
+<<<<<<< HEAD
+=======
+              disabled={isLoading}
+              isLoading={isLoading}
+              onClick={handleSave}
+>>>>>>> update-project/main
               className={"mx-auto w-full mb-4"}
               text={"Submit"}
               icon={

@@ -1,8 +1,22 @@
+<<<<<<< HEAD
 import { addDays, endOfWeek, format, isSameDay, startOfWeek } from "date-fns";
 
 const DailyView = ({ today, currentDate, setCurrentDate, events }) => {
   const dayStart = startOfWeek(currentDate);
   const dayEnd = endOfWeek(currentDate);
+=======
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import { addDays, endOfWeek, format, isSameDay, startOfWeek } from "date-fns";
+import { useSelector } from "react-redux";
+
+const DailyView = ({ today, events }) => {
+  const { date } = useSelector((state) => state.calender);
+  const dayStart = startOfWeek(date);
+  const dayEnd = endOfWeek(date);
+>>>>>>> update-project/main
 
   const days = [];
   let current = dayStart;
@@ -19,7 +33,11 @@ const DailyView = ({ today, currentDate, setCurrentDate, events }) => {
             const time = `${Math.floor(i / 2)}:${i % 2 === 0 ? "00" : "30"}`;
             const eventsForTime = events.filter(
               (event) =>
+<<<<<<< HEAD
                 isSameDay(event.start, currentDate) &&
+=======
+                isSameDay(event.start, date) &&
+>>>>>>> update-project/main
                 format(event.start, "H:mm") === time
             );
             return (

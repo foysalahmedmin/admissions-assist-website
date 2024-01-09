@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { format } from "date-fns";
 
 const AgendaView = ({ events }) => {
@@ -6,6 +7,20 @@ const AgendaView = ({ events }) => {
   return (
     <div className="agenda-view">
       {sortedEvents.map((event, index) => (
+=======
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import {format} from "date-fns";
+
+const AgendaView = ({ events }) => {
+  // const sortedEvents = events?.sort((a, b) => a.start_date - b.start_date);
+
+  return (
+    <div className="agenda-view">
+      {events?.map((event, index) => (
+>>>>>>> update-project/main
         <div key={index} className="border-b pb-2 mb-2">
           <h3 className="title">{event.title}</h3>
           <p>

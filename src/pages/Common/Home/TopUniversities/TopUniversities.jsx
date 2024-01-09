@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import slide1 from "@/assets/images/university-slide-1.png";
 import slide2 from "@/assets/images/university-slide-2.png";
 import slide3 from "@/assets/images/university-slide-3.png";
@@ -6,10 +7,22 @@ import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+=======
+/*
+ * Copyright (c) 2023-2024. This product is copyright by Rian
+ */
+
+import Button from "@/components/Buttons/Button";
+import UniversityCard from "@/components/Cards/UniversityCard.jsx/UniversityCard";
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import {Autoplay, Navigation, Pagination} from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
+>>>>>>> update-project/main
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+<<<<<<< HEAD
 
 const card_data = [
   {
@@ -35,6 +48,18 @@ const card_data = [
 ];
 
 const TopUniversities = () => {
+=======
+import {useQuery} from "react-query";
+import {fetchTopUniversities} from "@/network/common/commonApi.js";
+import {useNavigate} from "react-router-dom";
+
+const TopUniversities = () => {
+  const navigate = useNavigate();
+  const { data: universities } = useQuery({
+    queryKey: ["top_universities"],
+    queryFn: () => fetchTopUniversities(),
+  });
+>>>>>>> update-project/main
   return (
     <section className="lg:py-24 py-14">
       <div className="container mx-auto">
@@ -66,9 +91,22 @@ const TopUniversities = () => {
                 }}
                 className="top-universities-slider"
               >
+<<<<<<< HEAD
                 {card_data.map((data, i) => (
                   <SwiperSlide key={i}>
                     <UniversityCard data={data} />
+=======
+                {universities?.map((data, i) => (
+                  <SwiperSlide key={i}>
+                    <UniversityCard
+                      data={{
+                        _id: data?._id,
+                        image_url: data?.cover,
+                        title: data?.name,
+                        course_quantity: data?.courses,
+                      }}
+                    />
+>>>>>>> update-project/main
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -86,6 +124,10 @@ const TopUniversities = () => {
           </div>
           <div className="mt-12">
             <Button
+<<<<<<< HEAD
+=======
+              onClick={() => navigate('"/search/universities"')}
+>>>>>>> update-project/main
               className={"mx-auto"}
               text={"View More"}
               icon={

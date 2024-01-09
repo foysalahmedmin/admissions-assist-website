@@ -1,8 +1,65 @@
 import robotCheckIcon from "@/assets/images/icons/robot-check.svg";
 import Button from "@/components/Buttons/Button";
 import SectionTitle from "@/components/SectionTitle/SectionTitle";
+<<<<<<< HEAD
 
 const ContactForm = () => {
+=======
+import { useState } from "react";
+import { useMutation, useQuery } from "react-query";
+import {
+  AddNewContact,
+  fetchContactCategories,
+} from "@/pages/Common/Contact/requests/contactApis.js";
+import { toast } from "react-toastify";
+
+const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+
+  const { data: categories } = useQuery({
+    queryKey: ["contact_categories"],
+    queryFn: () => fetchContactCategories(),
+  });
+
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: AddNewContact,
+  });
+
+  const handleSave = async () => {
+    try {
+      if (!name || !email || !phone || !category || !description) {
+        return toast.warn(
+          `No ${
+            (!email && "email") ||
+            (!name && "name") ||
+            (!phone && "phone") ||
+            (!category && "category") ||
+            (!description && "description")
+          }`
+        );
+      }
+      const status = await mutateAsync({
+        name,
+        email,
+        phone,
+        category,
+        description,
+      });
+      toast.success(status?.message);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setCategory("");
+      setDescription("");
+    } catch (error) {
+      toast.error(error?.message);
+    }
+  };
+>>>>>>> update-project/main
   return (
     <section className="lg:py-24 py-14">
       <div className="container mx-auto">
@@ -24,6 +81,11 @@ const ContactForm = () => {
                 </label>
                 <input
                   type="text"
+<<<<<<< HEAD
+=======
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+>>>>>>> update-project/main
                   name="name"
                   className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="name"
@@ -40,6 +102,11 @@ const ContactForm = () => {
                 <input
                   type="email"
                   name="email"
+<<<<<<< HEAD
+=======
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+>>>>>>> update-project/main
                   className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="email"
                   placeholder="Enter your email address"
@@ -55,6 +122,11 @@ const ContactForm = () => {
                 <input
                   type="tel"
                   name="phone"
+<<<<<<< HEAD
+=======
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+>>>>>>> update-project/main
                   className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="phone"
                   placeholder="Enter your phone number"
@@ -64,18 +136,36 @@ const ContactForm = () => {
               <div>
                 <label htmlFor="inquiry" className="block mb-4">
                   <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
+<<<<<<< HEAD
                     Select Inquiry
                   </span>
                 </label>
                 <select
                   type="text"
                   name="inquiry"
+=======
+                    Select Category
+                  </span>
+                </label>
+                <select
+                  name="inquiry"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+>>>>>>> update-project/main
                   className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="inquiry"
                   required
                 >
                   <option value="">Select Inquiry</option>
+<<<<<<< HEAD
                   <option value="">Admission help</option>
+=======
+                  {categories?.map((c) => (
+                    <option key={c?._id} value={c?._id}>
+                      {c?.name}
+                    </option>
+                  ))}
+>>>>>>> update-project/main
                 </select>
               </div>
               <div className="col-span-2">
@@ -85,8 +175,14 @@ const ContactForm = () => {
                   </span>
                 </label>
                 <textarea
+<<<<<<< HEAD
                   type="text"
                   name="describe"
+=======
+                  name="describe"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+>>>>>>> update-project/main
                   className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500 bg-white"
                   id="describe"
                   placeholder="Write here"
@@ -114,8 +210,16 @@ const ContactForm = () => {
             <div>
               <Button
                 className={"w-full"}
+<<<<<<< HEAD
                 type={"submit"}
                 text={"submit"}
+=======
+                onClick={handleSave}
+                isLoading={isLoading}
+                disabled={isLoading}
+                type={"submit"}
+                text={"Submit"}
+>>>>>>> update-project/main
                 icon={
                   <span className="material-icons-outlined">trending_flat</span>
                 }

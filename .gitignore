@@ -15,6 +15,10 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> update-project/main
 .DS_Store
 *.suo
 *.ntvs*

@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 const Overview = () => {
+=======
+// eslint-disable-next-line react/prop-types
+const Overview = ({ overview }) => {
+>>>>>>> update-project/main
   return (
     <section className="py-14" id="overview">
       <div className="container mx-auto">
         <h2 className="title text-3xl mb-7">Overview</h2>
+<<<<<<< HEAD
         <p>
           The Pearson BTEC Level 5 Higher National Diploma in Engineering offers
           students seven pathways, designed to support progression into relevant
@@ -17,6 +23,9 @@ const Overview = () => {
           qualities necessary for employment in situations requiring the
           exercise of personal responsibility and decision-making.
         </p>
+=======
+        <p>{overview}</p>
+>>>>>>> update-project/main
       </div>
     </section>
   );

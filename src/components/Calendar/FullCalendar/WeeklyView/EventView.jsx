@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import courseImg1 from "@/assets/images/calendar-course-1.png";
 import courseImg2 from "@/assets/images/calendar-course-2.png";
 import courseImg from "@/assets/images/calendar-course.png";
@@ -5,6 +6,19 @@ import { format } from "date-fns";
 import { useEffect, useRef, useState } from "react";
 import { BiLogoZoom } from "react-icons/bi";
 import EventModal from "../EventModal/EventModal";
+=======
+/*
+ * Copyright (c) 2023-2024. This product is copyright by Rian
+ */
+
+import courseImg1 from "@/assets/images/calendar-course-1.png";
+import courseImg2 from "@/assets/images/calendar-course-2.png";
+import courseImg from "@/assets/images/calendar-course.png";
+import {format} from "date-fns";
+import {useEffect, useRef, useState} from "react";
+import EventModal from "../EventModal/EventModal";
+import {BiLogoZoom} from "react-icons/bi";
+>>>>>>> update-project/main
 
 const EventView = ({ event }) => {
   const [gap, setGap] = useState({});
@@ -45,7 +59,11 @@ const EventView = ({ event }) => {
 
   return (
     <div ref={timeBlockRef} className="relative flex-1">
+<<<<<<< HEAD
       {event?.type == "course" ? (
+=======
+      {event?.type === "course" ? (
+>>>>>>> update-project/main
         <div
           onClick={() => setIsEventModalOpen(true)}
           style={{
@@ -59,17 +77,30 @@ const EventView = ({ event }) => {
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
+<<<<<<< HEAD
               <h5 className="title text-sm text-white md:text-base mb-2">
                 {event.title}
               </h5>
               <div className="flex items-center">
                 <img
                   className="rounded-full h-6 w-6 object-cover object-center border-white border-2"
+=======
+              <h5 className="title text-sm text-white md:text-base mb-1">
+                {event?.title}
+              </h5>
+              <div className="flex items-center">
+                <img
+                  className="rounded-full h-4 w-4 object-cover object-center border-white border-2"
+>>>>>>> update-project/main
                   src={courseImg1}
                   alt=""
                 />
                 <img
+<<<<<<< HEAD
                   className="rounded-full h-6 w-6 object-cover object-center border-white border-2 relative -ml-2"
+=======
+                  className="rounded-full h-4 w-4 object-cover object-center border-white border-2 relative -ml-2"
+>>>>>>> update-project/main
                   src={courseImg2}
                   alt=""
                 />
@@ -77,11 +108,19 @@ const EventView = ({ event }) => {
             </div>
             <div className="mt-auto flex items-center justify-between gap-2">
               <span className="block font-semibold text-sm">
+<<<<<<< HEAD
                 {format(event.start, "EEE")}
               </span>
               <div className="text-xs">
                 <span>{format(event.start, "hh:mm a")}</span> -{" "}
                 <span>{format(event.end, "hh:mm a")}</span>
+=======
+                {format(event?.start, "EEE")}
+              </span>
+              <div className="text-xs">
+                <span>{format(event?.start, "hh:mm a")}</span> -{" "}
+                <span>{format(event?.end, "hh:mm a")}</span>
+>>>>>>> update-project/main
               </div>
             </div>
           </div>
@@ -90,6 +129,7 @@ const EventView = ({ event }) => {
         <div
           onClick={() => setIsEventModalOpen(true)}
           style={{
+<<<<<<< HEAD
             height: `${3.5 * (gap?.hours + 1) - 1}rem`,
             width: `${timeBlockWidth * (gap?.days + 1) - 16}px`,
           }}
@@ -100,6 +140,22 @@ const EventView = ({ event }) => {
             {event?.platform && (
               <div className="inline-flex flex-wrap gap-2 items-center justify-center p-2 rounded-xl bg-white bg-opacity-40">
                 <div className="h-5 w-5 rounded bg-[#4087FC] text-white flex items-center justify-center">
+=======
+            height: `${3.5 * (gap?.hours + 1) - 0.5}rem`,
+            width: `${timeBlockWidth * (gap?.days + 1) - 8}px`,
+          }}
+          className="absolute top-1 button-1 left-1 right-1 bg-[#01D7DF] rounded-2xl py-2 px-1 lg:px-4 flex flex-col"
+        >
+          <div>
+            <h5 className="title text-sm mb-1">
+              {event?.title?.length > 21
+                ? event?.title?.split(0, 21) + " ...."
+                : event?.title}
+            </h5>
+            {event?.platform && (
+              <div className="inline-flex flex-wrap gap-2 items-center justify-center px-2 py-2 rounded-xl bg-white bg-opacity-40">
+                <div className="h-4 w-4 rounded bg-[#4087FC] text-white flex items-center justify-center">
+>>>>>>> update-project/main
                   <BiLogoZoom />
                 </div>
                 <span className="text-xs text-text-900 capitalize">
@@ -108,7 +164,11 @@ const EventView = ({ event }) => {
               </div>
             )}
           </div>
+<<<<<<< HEAD
           <div className="mt-auto">
+=======
+          <div className="mt-auto flex flex-wrap items-center gap-1">
+>>>>>>> update-project/main
             <span className="block text-text-900 font-semibold text-sm">
               {format(event.start, "EEE")}
             </span>

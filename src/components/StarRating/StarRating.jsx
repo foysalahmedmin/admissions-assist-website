@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+=======
+/*
+ * Copyright (c) 2023. This product is copyright by Rian
+ */
+
+import {useEffect, useState} from "react";
+import {twMerge} from "tailwind-merge";
+>>>>>>> update-project/main
 
 const StarRating = ({
   rating,
@@ -15,6 +24,7 @@ const StarRating = ({
   const star_size = parseInt(starSize) || 24;
   const gap = starSize / 5;
   useEffect(() => {
+<<<<<<< HEAD
     if (setRating) {
       setRating(rating_show);
     }
@@ -28,6 +38,22 @@ const StarRating = ({
           )
         ).keys()
       ).map((x, i) => (
+=======
+    !setRating && setRating_show(rating);
+    if (setRating) {
+      setRating(rating_show);
+    }
+  }, [rating_show, rating]);
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: gap + "px" }}>
+      {Array?.from(
+        Array(
+          Math?.floor(
+            (out_of || 5) < rating_show ? out_of || 5 : rating_show || 0
+          )
+        ).keys()
+      )?.map((x, i) => (
+>>>>>>> update-project/main
         <span
           onClick={() => setRating_show(i + 1)}
           key={i}

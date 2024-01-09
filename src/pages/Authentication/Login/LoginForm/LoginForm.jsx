@@ -1,7 +1,34 @@
 import Button from "@/components/Buttons/Button";
 import { LuLock, LuMail } from "react-icons/lu";
+<<<<<<< HEAD
 
 const LoginForm = () => {
+=======
+import { useMutation } from "react-query";
+import { StudentSignIn } from "@/pages/Authentication/requests/auth.js";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigation = useNavigate();
+  const { isLoading, mutateAsync } = useMutation({
+    mutationFn: StudentSignIn,
+  });
+
+  const handleLogin = async () => {
+    try {
+      const response = await mutateAsync({ email, password });
+      toast.success("Login Successful");
+      localStorage.setItem("aa_website", JSON.stringify(response));
+      navigation("/profile");
+    } catch (err) {
+      toast.error(err?.response?.data?.error?.message);
+    }
+  };
+>>>>>>> update-project/main
   return (
     <form action="">
       <div className="mb-7">
@@ -12,6 +39,11 @@ const LoginForm = () => {
           <input
             className="py-3 w-full bg-transparent outline-none"
             type="email"
+<<<<<<< HEAD
+=======
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+>>>>>>> update-project/main
             name="email"
             id="email"
             placeholder="Email address/Username"
@@ -25,6 +57,11 @@ const LoginForm = () => {
           <input
             className="py-3 w-full bg-transparent outline-none"
             type="password"
+<<<<<<< HEAD
+=======
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+>>>>>>> update-project/main
             name="password"
             id="password"
             placeholder="Password"
@@ -46,6 +83,12 @@ const LoginForm = () => {
       <div>
         <Button
           type={"submit"}
+<<<<<<< HEAD
+=======
+          disabled={isLoading}
+          isLoading={isLoading}
+          onClick={handleLogin}
+>>>>>>> update-project/main
           className={"mx-auto w-full"}
           text={"Login"}
           icon={<span className="material-icons-outlined">trending_flat</span>}

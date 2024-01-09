@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Loading from "@/components/Loading/Loading";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
@@ -5,6 +6,25 @@ import { createBrowserRouter } from "react-router-dom";
 /* Layouts */
 const Main = lazy(() => import("@/layout/Main"));
 const Search = lazy(() => import("@/layout/Search"));
+=======
+/*
+ * Copyright (c) 2023-2024. This product is copyright by Rian
+ */
+
+import Loading from "@/components/Loading/Loading";
+import {lazy, Suspense} from "react";
+import {createBrowserRouter} from "react-router-dom";
+import SignUpUpdate from "@/pages/Authentication/Update/SignUp/SignUpUpdate.jsx";
+
+/* Layouts */
+const SignUpInfoForm = lazy(() =>
+  import("@/pages/Authentication/Update/SignUpInfoForm/SignUpUpdateForm.jsx")
+);
+const Main = lazy(() => import("@/layout/Main"));
+const Search = lazy(() => import("@/layout/Search"));
+const Meet = lazy(() => import("@/layout/Meet.jsx"));
+const MeetBody = lazy(() => import("@/pages/ChatSystem/Meet/Meet.jsx"));
+>>>>>>> update-project/main
 // const Student = lazy(() => import("@/layout/Student"));
 const ChatSystem = lazy(() => import("@/layout/ChatSystem"));
 const Authentication = lazy(() => import("@/layout/Authentication"));
@@ -52,6 +72,10 @@ const Calls = lazy(() => import("@/pages/ChatSystem/Outlet/Calls/Calls/Calls"));
 const router = createBrowserRouter([
   {
     path: "/",
+<<<<<<< HEAD
+=======
+    //no_need
+>>>>>>> update-project/main
     element: (
       <Suspense fallback={<Loading />}>
         <Main />
@@ -60,6 +84,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+<<<<<<< HEAD
+=======
+        //no_need
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <Home />
@@ -68,6 +96,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact",
+<<<<<<< HEAD
+=======
+        //done
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <Contact />
@@ -75,6 +107,17 @@ const router = createBrowserRouter([
         ),
       },
       {
+<<<<<<< HEAD
+=======
+        path: "/meet",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Meet />
+          </Suspense>
+        ),
+      },
+      {
+>>>>>>> update-project/main
         path: "/notifications",
         element: (
           <Suspense fallback={<Loading />}>
@@ -100,6 +143,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/search",
+<<<<<<< HEAD
+=======
+        //no_need
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <Search />
@@ -108,6 +155,10 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
+<<<<<<< HEAD
+=======
+            //no_need
+>>>>>>> update-project/main
             element: (
               <Suspense fallback={<Loading />}>
                 <Courses />
@@ -124,6 +175,10 @@ const router = createBrowserRouter([
           },
           {
             path: "universities",
+<<<<<<< HEAD
+=======
+            //done
+>>>>>>> update-project/main
             element: (
               <Suspense fallback={<Loading />}>
                 <Universities />
@@ -141,7 +196,12 @@ const router = createBrowserRouter([
         ),
       },
       {
+<<<<<<< HEAD
         path: "/course/:id",
+=======
+        path: "/course/:sId/:rId/:uId",
+        //done
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <Course />
@@ -150,6 +210,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/university/:id",
+<<<<<<< HEAD
+=======
+        //done
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <University />
@@ -182,6 +246,7 @@ const router = createBrowserRouter([
       },
     ],
   },
+<<<<<<< HEAD
   // {
   //   path: "/student",
   //   element: (
@@ -193,6 +258,11 @@ const router = createBrowserRouter([
   // },
   {
     path: "/chat_system",
+=======
+  {
+    path: "/chat_system",
+    //no_need
+>>>>>>> update-project/main
     element: (
       <Suspense fallback={<Loading />}>
         <ChatSystem />
@@ -201,6 +271,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+<<<<<<< HEAD
+=======
+        //no_need
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <MoveToChat />
@@ -243,6 +317,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/authentication",
+<<<<<<< HEAD
+=======
+    //no_need
+>>>>>>> update-project/main
     element: (
       <Suspense fallback={<Loading />}>
         <Authentication />
@@ -251,6 +329,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "login",
+<<<<<<< HEAD
+=======
+        //done
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <Login />
@@ -259,12 +341,48 @@ const router = createBrowserRouter([
       },
       {
         path: "sign_up",
+<<<<<<< HEAD
+=======
+        //done
+>>>>>>> update-project/main
         element: (
           <Suspense fallback={<Loading />}>
             <SignUp />
           </Suspense>
         ),
       },
+<<<<<<< HEAD
+=======
+      {
+        path: "update_profile",
+        //done
+        element: (
+          <Suspense fallback={<Loading />}>
+            <SignUpUpdate />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/meet/:id/:title",
+    //no_need
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Meet />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "",
+        //done
+        element: (
+          <Suspense fallback={<Loading />}>
+            <MeetBody />
+          </Suspense>
+        ),
+      },
+>>>>>>> update-project/main
     ],
   },
 ]);

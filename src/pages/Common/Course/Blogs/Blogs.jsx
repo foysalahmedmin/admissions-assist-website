@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import img1 from "@/assets/images/university-slide-1.png";
 import img2 from "@/assets/images/university-slide-2.png";
 import img3 from "@/assets/images/university-slide-3.png";
@@ -32,6 +33,22 @@ const card_data = [
 ];
 
 const Blogs = () => {
+=======
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
+import SectionTitle from "@/components/SectionTitle/SectionTitle";
+import BlogCard from "../../../../components/Cards/BlogCard/BlogCard";
+import { useQuery } from "react-query";
+import { fetchLatestBlogs } from "@/pages/Common/Blogs/requests/blogApis.js";
+
+const Blogs = () => {
+  const { data: blogs } = useQuery({
+    queryKey: ["latest_blogs"],
+    queryFn: () => fetchLatestBlogs(),
+  });
+>>>>>>> update-project/main
   return (
     <section className="lg:py-24 py-14 bg-primary-500 bg-opacity-10" id="blogs">
       <div className="container mx-auto">
@@ -42,8 +59,13 @@ const Blogs = () => {
         />
         <div>
           <div className="grid lg:grid-cols-3 gap-7">
+<<<<<<< HEAD
             {card_data.slice(0, 3).map((data, i) => (
               <BlogCard key={i} data={data} />
+=======
+            {blogs?.map((data, i) => (
+              <BlogCard key={i} info={data} />
+>>>>>>> update-project/main
             ))}
           </div>
         </div>

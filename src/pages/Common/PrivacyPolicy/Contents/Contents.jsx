@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+/*
+ * Copyright (c) 2024. This product is copyright by Rian
+ */
+
+>>>>>>> update-project/main
 const Contents = () => {
   return (
     <section>
@@ -91,7 +98,11 @@ const Contents = () => {
             <li>
               By email:{" "}
               <span className="text-primary-500 underline">
+<<<<<<< HEAD
                 hi@antforfigma.com
+=======
+                info@admissionsassist.com
+>>>>>>> update-project/main
               </span>
             </li>
           </ul>

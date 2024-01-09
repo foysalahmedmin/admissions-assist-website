@@ -1,9 +1,65 @@
 import Accordion from "@/components/Accordion/Accordion";
+<<<<<<< HEAD
 
 const PersonalDetails = () => {
   return (
     <>
       <Accordion title={"Personal Details"} doneStatus={true}>
+=======
+import { useDispatch, useSelector } from "react-redux";
+import {
+  SetAgent,
+  SetDob,
+  SetFirstName,
+  SetGender,
+  SetHeardUs,
+  SetLastName,
+} from "@/redux/applicationFormSlice/applicationFormSlice.jsx";
+import { useQuery } from "react-query";
+import { fetchAgents } from "@/pages/Authentication/requests/auth.js";
+import { useEffect } from "react";
+import { SetRegister } from "@/redux/progressSlice/progressSlice.js";
+
+const PersonalDetails = () => {
+  const dispatch = useDispatch();
+  const { register } = useSelector((state) => state.progress);
+  const { personal } = useSelector((state) => state.application_form);
+  useEffect(() => {
+    if (
+      personal?.first_name &&
+      personal?.last_name &&
+      personal?.dob &&
+      personal?.gender &&
+      personal?.heard_us
+    ) {
+      dispatch(SetRegister(register + 20));
+    }
+  }, [
+    personal?.first_name,
+    personal?.last_name,
+    personal?.dob,
+    personal?.gender,
+    personal?.heard_us,
+  ]);
+
+  const { data: agents } = useQuery({
+    queryKey: ["agents"],
+    queryFn: () => fetchAgents("agent"),
+    enabled: personal?.heard_us === "agent",
+  });
+  return (
+    <>
+      <Accordion
+        title={"Personal Details"}
+        doneStatus={
+          personal?.first_name &&
+          personal?.last_name &&
+          personal?.dob &&
+          personal?.gender &&
+          personal?.heard_us
+        }
+      >
+>>>>>>> update-project/main
         <div className="mb-7">
           <label htmlFor="first_name" className="block mb-4">
             <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900 mb-2">
@@ -17,6 +73,11 @@ const PersonalDetails = () => {
           <input
             type="text"
             name="first_name"
+<<<<<<< HEAD
+=======
+            value={personal?.first_name}
+            onChange={(e) => dispatch(SetFirstName(e.target.value))}
+>>>>>>> update-project/main
             className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="first_name"
             placeholder="First name"
@@ -35,6 +96,11 @@ const PersonalDetails = () => {
           <input
             type="text"
             name="last_name"
+<<<<<<< HEAD
+=======
+            value={personal?.last_name}
+            onChange={(e) => dispatch(SetLastName(e.target.value))}
+>>>>>>> update-project/main
             className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="last_name"
             placeholder="Last name"
@@ -52,6 +118,11 @@ const PersonalDetails = () => {
             <input
               type="date"
               name="date_of_birth"
+<<<<<<< HEAD
+=======
+              value={personal?.dob}
+              onChange={(e) => dispatch(SetDob(e.target.value))}
+>>>>>>> update-project/main
               className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
               id="date_of_birth"
               required
@@ -70,6 +141,10 @@ const PersonalDetails = () => {
                   type="radio"
                   name="gender"
                   className="h-5 w-5"
+<<<<<<< HEAD
+=======
+                  onChange={(e) => dispatch(SetGender(e.target.value))}
+>>>>>>> update-project/main
                   id="male"
                   value={"male"}
                 />
@@ -82,6 +157,10 @@ const PersonalDetails = () => {
                   type="radio"
                   name="gender"
                   className="h-5 w-5"
+<<<<<<< HEAD
+=======
+                  onChange={(e) => dispatch(SetGender(e.target.value))}
+>>>>>>> update-project/main
                   id="female"
                   value={"female"}
                 />
@@ -94,10 +173,18 @@ const PersonalDetails = () => {
                   type="radio"
                   name="gender"
                   className="h-5 w-5"
+<<<<<<< HEAD
                   id="N/A"
                   value={"N/A"}
                 />
                 <label htmlFor="N/A" className="text-text-900">
+=======
+                  onChange={(e) => dispatch(SetGender(e.target.value))}
+                  id="not_prefer"
+                  value={"not_prefer"}
+                />
+                <label htmlFor="not_prefer" className="text-text-900">
+>>>>>>> update-project/main
                   I prefer not to say
                 </label>
               </div>
@@ -111,16 +198,54 @@ const PersonalDetails = () => {
             </span>
           </label>
           <select
+<<<<<<< HEAD
             type="text"
             name="known_from"
+=======
+            name="known_from"
+            value={personal?.heard_us}
+            onChange={(e) => dispatch(SetHeardUs(e.target.value))}
+>>>>>>> update-project/main
             className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
             id="known_from"
             required
           >
             <option value="">Select</option>
+<<<<<<< HEAD
             <option value="">Agent</option>
           </select>
         </div>
+=======
+            <option value="social_media">Social Media</option>
+            <option value="friends">Friends</option>
+            <option value="agent">Agent</option>
+          </select>
+        </div>
+        {personal?.heard_us === "agent" && (
+          <div>
+            <label htmlFor="known_from" className="block mb-4 mt-4">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-text-900">
+                Agent
+              </span>
+            </label>
+            <select
+              value={personal?.agent}
+              onChange={(e) => dispatch(SetAgent(e.target.value))}
+              name="known_from"
+              className="px-4 py-3 w-full outline-none bg-transparent text-text-100 border rounded-xl focus-within:text-text-500 focus-within:border-text-500"
+              id="known_from"
+              required
+            >
+              <option value="">Select</option>
+              {agents?.map((x) => (
+                <option key={x?._id} value={x?._id}>
+                  {x?.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+>>>>>>> update-project/main
       </Accordion>
     </>
   );

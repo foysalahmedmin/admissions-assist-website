@@ -1,9 +1,31 @@
+<<<<<<< HEAD
 import Button from "@/components/Buttons/Button";
 import FullCalendar from "@/components/Calendar/FullCalendar/FullCalendar";
 import { useState } from "react";
 import ScheduleModal from "../ScheduleModal/ScheduleModal";
 
 const Calendar = () => {
+=======
+/*
+ * Copyright (c) 2023-2024. This product is copyright by Rian
+ */
+
+import Button from "@/components/Buttons/Button";
+import FullCalendar from "@/components/Calendar/FullCalendar/FullCalendar";
+import {useState} from "react";
+import {useQuery} from "react-query";
+import {fetchMyWeeklyEvents} from "@/pages/ChatSystem/requests/chatSystemApis.js";
+import {parseISO} from "date-fns";
+import ScheduleModal from "@/pages/Student/Profile/Appointment/ScheduleModal.jsx";
+import {useSelector} from "react-redux";
+
+const Calendar = () => {
+  const { date, view } = useSelector((state) => state.calender);
+  const { data: events } = useQuery({
+    queryKey: ["student_events", date, view],
+    queryFn: () => fetchMyWeeklyEvents(date, view),
+  });
+>>>>>>> update-project/main
   const [isScheduleModalOpen, setIsScheduleModalOpen] = useState(false);
   return (
     <div>
@@ -27,7 +49,24 @@ const Calendar = () => {
         </div>
       </div>
       <div className="px-[3.5vw] lg:pl-7 lg:pr-[3.5vw] py-4 grid grid-cols-1 overflow-x-auto">
+<<<<<<< HEAD
         <FullCalendar />
+=======
+        <FullCalendar
+          events={events?.map((x) => {
+            return {
+              _id: x?._id,
+              title: x?.title,
+              start: parseISO(x?.start),
+              end: parseISO(x?.end),
+              type: x?.type,
+              platform: x?.platform,
+              description: x?.description,
+              isStarted: x?.isStarted,
+            };
+          })}
+        />
+>>>>>>> update-project/main
       </div>
     </div>
   );
